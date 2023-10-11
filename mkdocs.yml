@@ -1,0 +1,129 @@
+site_name: 开发知识wiki
+site_description: 开发知识wiki
+site_author: tink
+site_url: https://docs.cyub.vip/dev-wiki
+strict: false
+
+nav:
+  - 简介: index.md
+  - 操作系统: 
+    - IO: computer-system/io.md
+    - proc文件系统: computer-system/proc.md
+    - NPTL: computer-system/nptl.md
+    - 常用命令: computer-system/command.md
+    - Systemtap: computer-system/systemtap.md
+    - CPU架构: computer-system/cpu-arch.md
+    - 编译Linux内核: computer-system/compiling-linux-kernel.md
+  - 计算机网络:
+    - TCP: computer-network/tcp/README.md
+    - HTTP: computer-network/http/README.md
+  - 数据库:
+    - mysql:
+      - 概览: database/mysql/简介.md
+      - 事务: database/mysql/事务.md
+      - 索引: database/mysql/索引.md
+      - FAQ: database/mysql/FAQ.md
+    - Elasticsearch:
+      - 概览: database/elasticsearch/README.md
+      - 内存占用: database/elasticsearch/memory.md
+      - 性能调优: database/elasticsearch/performance_tuning.md
+      - 生产配置参考: database/elasticsearch/production_configuring.md
+      - docs value与 field data: database/elasticsearch/doc_values_and_fielddata.md
+    - Redis: database/redis/redis.md
+  - 缓存系统: cache/README.md
+  - 容器: 
+    - 简介: container/install.md
+    - 镜像: container/image.md
+    - cgroup: container/cgroup.md
+    - namespace: container/namespace.md
+  - QA:
+    - redis: qa/redis.md
+    - mysql: qa/mysql.md
+    - tcp: qa/tcp.md
+    - http: qa/http.md
+    - 缓存: qa/cache.md
+    - nginx: qa/nginx.md
+    - 消息队列: qa/queue.md
+    - IO: qa/io.md
+    - protobuf: qa/protobuf.md
+    - go: qa/go.md
+    - 分布式: qa/dist.md
+    - Elasticsearch: qa/es.md
+    - docker: qa/docker.md
+    - 参考资料: qa/ref.md
+
+
+
+theme:
+  name: material
+  language: 'zh'
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: red
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  include_search_page: false
+  search_index_only: true
+  favicon: 'favicon.ico'
+  icon:
+    logo: 'material/school'
+  features:
+    - navigation.tabs
+    - navigation.instant
+  font:
+    text: 'Fira Sans'
+    code: 'Fira Mono'
+
+# extra_css:
+#   - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - def_list
+  - footnotes
+  - meta
+  # - toc:
+  #     permalink: ""
+  #     slugify: !!python/name:pymdownx.slugs.uslugify
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.progressbar
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: math
+          class: arithmatex
+          format: !!python/name:pymdownx.arithmatex.fence_mathjax_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.tabbed:
+      alternate_style: true
+
+
