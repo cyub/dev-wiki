@@ -1,0 +1,2961 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="开发知识wiki">
+      
+      
+        <meta name="author" content="tink">
+      
+      
+        <link rel="canonical" href="https://docs.cyub.vip/dev-wiki/qa/mysql/">
+      
+      
+        <link rel="prev" href="../redis/">
+      
+      
+        <link rel="next" href="../tcp/">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.4">
+    
+    
+      
+        <title>mysql - 开发知识wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bd3936ea.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Sans";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mysql" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="开发知识wiki" class="md-header__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            开发知识wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              mysql
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  简介
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../computer-system/io/" class="md-tabs__link">
+          
+  
+  操作系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../computer-network/tcp/" class="md-tabs__link">
+          
+  
+  计算机网络
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../database/mysql/%E7%AE%80%E4%BB%8B/" class="md-tabs__link">
+          
+  
+  数据库
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cache/" class="md-tabs__link">
+        
+  
+    
+  
+  缓存系统
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../container/install/" class="md-tabs__link">
+          
+  
+  容器
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../redis/" class="md-tabs__link">
+          
+  
+  QA
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="开发知识wiki" class="md-nav__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+
+    </a>
+    开发知识wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    操作系统
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            操作系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-system/io/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-system/proc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    proc文件系统
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-system/nptl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NPTL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-system/command/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    常用命令
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-system/systemtap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systemtap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-system/cpu-arch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CPU架构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-system/compiling-linux-kernel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    编译Linux内核
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    计算机网络
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            计算机网络
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-network/tcp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TCP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-network/http/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTTP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    数据库
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            数据库
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    mysql
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            mysql
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/mysql/%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    概览
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/mysql/%E4%BA%8B%E5%8A%A1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    事务
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/mysql/%E7%B4%A2%E5%BC%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    索引
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/mysql/FAQ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Elasticsearch
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Elasticsearch
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/elasticsearch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    概览
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/elasticsearch/memory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    内存占用
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/elasticsearch/performance_tuning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    性能调优
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/elasticsearch/production_configuring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    生产配置参考
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/elasticsearch/doc_values_and_fielddata/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    docs value与 field data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/redis/redis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cache/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    缓存系统
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    容器
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            容器
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    镜像
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/cgroup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cgroup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/namespace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    namespace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    QA
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            QA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../redis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    redis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    mysql
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    mysql
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mysqlmyisaminnodb" class="md-nav__link">
+    mysql存储引擎Myisam和innodb区别？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysqlacid" class="md-nav__link">
+    mysql是ACID是如何保证的？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_1" class="md-nav__link">
+    mysql事务隔离级别有哪些？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_2" class="md-nav__link">
+    mysql在可重复读模式下，如何解决不可重复读的问题？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_3" class="md-nav__link">
+    mysql的当前读和快照读是什么回事？
+  </a>
+  
+    <nav class="md-nav" aria-label="mysql的当前读和快照读是什么回事？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    快照读
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    当前读
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mvcc" class="md-nav__link">
+    MVCC
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#innodb" class="md-nav__link">
+    innodb三种行锁算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#truncatedeletedrop" class="md-nav__link">
+    truncate,delete,drop区别？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_4" class="md-nav__link">
+    mysql索引分类
+  </a>
+  
+    <nav class="md-nav" aria-label="mysql索引分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    从物理存储角度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    从数据结构角度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    从逻辑角度
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysqlb" class="md-nav__link">
+    mysql为什么使用b+树？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    哈希索引的优势与劣势？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uuidinnodb" class="md-nav__link">
+    为什么uuid不适合做innodb主键？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_5" class="md-nav__link">
+    mysql调优几种方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_6" class="md-nav__link">
+    mysql语句性能评测？
+  </a>
+  
+    <nav class="md-nav" aria-label="mysql语句性能评测？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-select_type" class="md-nav__link">
+    查询类型 - select_type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-type" class="md-nav__link">
+    连接类型 - type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key" class="md-nav__link">
+    key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possiable-keys" class="md-nav__link">
+    possiable keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rows" class="md-nav__link">
+    rows
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_7" class="md-nav__link">
+    mysql主从复制流程？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_8" class="md-nav__link">
+    mysql日志类型
+  </a>
+  
+    <nav class="md-nav" aria-label="mysql日志类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binlog" class="md-nav__link">
+    binlog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redo-log" class="md-nav__link">
+    redo log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#undo-log" class="md-nav__link">
+    Undo log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slow-log" class="md-nav__link">
+    slow log
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wherejionlimitgroup-byhaving" class="md-nav__link">
+    查询语句不同元素（where、jion、limit、group by、having等等）执行先后顺序？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#innodb_1" class="md-nav__link">
+    Innodb为什么一定需要一个主键，且必须自增列作为主键？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mvcc_1" class="md-nav__link">
+    在MVCC并发控制中，读操作可以分成哪两类?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysqldatatimetimestap" class="md-nav__link">
+    Mysql中DATATIME和TIMESTAP的区别？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_9" class="md-nav__link">
+    MySQL是如何解决幻读的？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysqlgap-locknextkey-lock" class="md-nav__link">
+    Mysql什么时候会取得gap lock或nextkey lock?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_10" class="md-nav__link">
+    Mysql为什么要进行分库分表？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_11" class="md-nav__link">
+    Mysql什么时候使用分区？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_12" class="md-nav__link">
+    Mysql分区类型有哪些？
+  </a>
+  
+    <nav class="md-nav" aria-label="Mysql分区类型有哪些？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    范围分区
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    LIST分区
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash" class="md-nav__link">
+    HASH分区
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key_1" class="md-nav__link">
+    KEY分区
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_13" class="md-nav__link">
+    Mysql分库分表中间件有哪些？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_14" class="md-nav__link">
+    Mysql小表驱动大表优化技巧？
+  </a>
+  
+    <nav class="md-nav" aria-label="Mysql小表驱动大表优化技巧？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#join" class="md-nav__link">
+    Join
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exist-in" class="md-nav__link">
+    exist 还是 in
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    索引名字规则
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#select-xx-for-update-where-id-x" class="md-nav__link">
+    select xx for update where id = x操作会加写锁吗？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_15" class="md-nav__link">
+    mysql中悲观锁、乐观锁、共享锁、排他锁有什么区别？
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tcp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tcp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../http/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    http
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cache/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    缓存
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nginx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nginx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../queue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    消息队列
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../io/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protobuf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    protobuf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../go/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    go
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    分布式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Elasticsearch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ref/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    参考资料
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mysqlmyisaminnodb" class="md-nav__link">
+    mysql存储引擎Myisam和innodb区别？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysqlacid" class="md-nav__link">
+    mysql是ACID是如何保证的？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_1" class="md-nav__link">
+    mysql事务隔离级别有哪些？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_2" class="md-nav__link">
+    mysql在可重复读模式下，如何解决不可重复读的问题？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_3" class="md-nav__link">
+    mysql的当前读和快照读是什么回事？
+  </a>
+  
+    <nav class="md-nav" aria-label="mysql的当前读和快照读是什么回事？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    快照读
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    当前读
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mvcc" class="md-nav__link">
+    MVCC
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#innodb" class="md-nav__link">
+    innodb三种行锁算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#truncatedeletedrop" class="md-nav__link">
+    truncate,delete,drop区别？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_4" class="md-nav__link">
+    mysql索引分类
+  </a>
+  
+    <nav class="md-nav" aria-label="mysql索引分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    从物理存储角度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    从数据结构角度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    从逻辑角度
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysqlb" class="md-nav__link">
+    mysql为什么使用b+树？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    哈希索引的优势与劣势？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uuidinnodb" class="md-nav__link">
+    为什么uuid不适合做innodb主键？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_5" class="md-nav__link">
+    mysql调优几种方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_6" class="md-nav__link">
+    mysql语句性能评测？
+  </a>
+  
+    <nav class="md-nav" aria-label="mysql语句性能评测？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-select_type" class="md-nav__link">
+    查询类型 - select_type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-type" class="md-nav__link">
+    连接类型 - type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key" class="md-nav__link">
+    key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possiable-keys" class="md-nav__link">
+    possiable keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rows" class="md-nav__link">
+    rows
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_7" class="md-nav__link">
+    mysql主从复制流程？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_8" class="md-nav__link">
+    mysql日志类型
+  </a>
+  
+    <nav class="md-nav" aria-label="mysql日志类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binlog" class="md-nav__link">
+    binlog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redo-log" class="md-nav__link">
+    redo log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#undo-log" class="md-nav__link">
+    Undo log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slow-log" class="md-nav__link">
+    slow log
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wherejionlimitgroup-byhaving" class="md-nav__link">
+    查询语句不同元素（where、jion、limit、group by、having等等）执行先后顺序？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#innodb_1" class="md-nav__link">
+    Innodb为什么一定需要一个主键，且必须自增列作为主键？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mvcc_1" class="md-nav__link">
+    在MVCC并发控制中，读操作可以分成哪两类?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysqldatatimetimestap" class="md-nav__link">
+    Mysql中DATATIME和TIMESTAP的区别？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_9" class="md-nav__link">
+    MySQL是如何解决幻读的？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysqlgap-locknextkey-lock" class="md-nav__link">
+    Mysql什么时候会取得gap lock或nextkey lock?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_10" class="md-nav__link">
+    Mysql为什么要进行分库分表？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_11" class="md-nav__link">
+    Mysql什么时候使用分区？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_12" class="md-nav__link">
+    Mysql分区类型有哪些？
+  </a>
+  
+    <nav class="md-nav" aria-label="Mysql分区类型有哪些？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    范围分区
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    LIST分区
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash" class="md-nav__link">
+    HASH分区
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key_1" class="md-nav__link">
+    KEY分区
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_13" class="md-nav__link">
+    Mysql分库分表中间件有哪些？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_14" class="md-nav__link">
+    Mysql小表驱动大表优化技巧？
+  </a>
+  
+    <nav class="md-nav" aria-label="Mysql小表驱动大表优化技巧？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#join" class="md-nav__link">
+    Join
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exist-in" class="md-nav__link">
+    exist 还是 in
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    索引名字规则
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#select-xx-for-update-where-id-x" class="md-nav__link">
+    select xx for update where id = x操作会加写锁吗？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_15" class="md-nav__link">
+    mysql中悲观锁、乐观锁、共享锁、排他锁有什么区别？
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="mysql">mysql</h1>
+<h2 id="mysqlmyisaminnodb">mysql存储引擎Myisam和innodb区别？</h2>
+<p><img alt="" src="https://a-tour-of-golang.cyub.vip/_images/myisam_innodb.png" /></p>
+<ol>
+<li>
+<p>InnoDB支持事务，MyISAM不支持</p>
+</li>
+<li>
+<p>InnoDB支持外键，而MyISAM不支持</p>
+</li>
+<li>
+<p>InoDB支持行级别锁，有更高的并发性，而MyISAM只支持表级别锁</p>
+</li>
+<li>
+<p>InnoDB是聚集索引，数据文件是和索引绑在一起的，必须要有主键，通过主键索引效率很高</p>
+</li>
+</ol>
+<h2 id="mysqlacid">mysql是ACID是如何保证的？</h2>
+<p>mysql事务特征有：</p>
+<ul>
+<li>
+<p>原子性(Atomicity)： 事务是最小的执行单位，不允许分割。事务的原子性确保动作要么全部完成，要么完全不起作用；</p>
+</li>
+<li>
+<p>一致性(Consistency)： 执行事务前后，数据保持一致；</p>
+</li>
+<li>
+<p>隔离性(Isolation)： 并发访问数据库时，一个用户的事务不被其他事务所干扰，各并发事务之间数据库是独立的；</p>
+</li>
+<li>
+<p>持久性(Durability): 一个事务被提交之后。它对数据库中数据的改变是持久的，即使数据库 发生故障也不应该对其有任何影响。</p>
+</li>
+</ul>
+<p>保证措施：</p>
+<ul>
+<li>A 原子性由undo log日志保证，它记录了需要回滚的日志信息，事务回滚时撤销已经执行成功的sql</li>
+<li>C 一致性一般由代码层面来保证</li>
+<li>I 隔离性由MVCC来保证</li>
+<li>D 持久性由内存+redo log来保证，mysql修改数据同时在内存和redo log记录这次操作，事务提交的时候通过redo log刷盘，宕机的时候可以从redo log恢复。</li>
+</ul>
+<h2 id="mysql_1">mysql事务隔离级别有哪些？</h2>
+<p>mysql支持四种隔离级别，默认是可重复读的 (REPEATABLE READ)。</p>
+<table>
+<thead>
+<tr>
+<th>隔离级别</th>
+<th>脏读</th>
+<th>不可重复读取</th>
+<th>幻影数据行</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>READ UNCOMMITTED(RU) - 读未提交</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>READ COMMITTED(RC) - 读已提交</td>
+<td>√</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>REPEATABLE READ(RR) - 可重复读</td>
+<td>√</td>
+<td>√</td>
+<td>X</td>
+</tr>
+<tr>
+<td>SERIALIZABLE(SZ) - 串行化</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+</tbody>
+</table>
+<p>不可重复读与幻读的区别是？</p>
+<ol>
+<li>不可重复读的重点是修改:同样的条件, 你读取过的数据, 再次读取出来发现值不一样了，其只需要锁住满足条件的记录</li>
+<li>幻读的重点在于新增或者删除：同样的条件, 第1次和第2次读出来的记录数不一样，要锁住满足条件及其相近的记录</li>
+</ol>
+<h2 id="mysql_2">mysql在可重复读模式下，如何解决不可重复读的问题？</h2>
+<p>mvcc+undo log解决了快照读可能会导致的不可重复读的问题。Mysql默认隔离级别是RR（可重复读），是通过“行锁+MVCC”来实现的，正常读时不加锁，写时加锁，MVCC的实现依赖于：三个隐藏字段，Read View、Undo log 来实现。</p>
+<p>MVCC的目的就是多版本并发控制，在数据库中的实现，就是为了解决读写冲突，它的实现原理主要是依赖记录中的 3个隐式字段，undo log ，Read View 来实现的。
+InnoDB MVCC的实现基于undo log，通过回滚指针来构建需要的版本记录。通过ReadView来判断哪些版本的数据可见。同时Purge线程是通过ReadView来清理旧版本数据。</p>
+<h2 id="mysql_3">mysql的当前读和快照读是什么回事？</h2>
+<h3 id="_1">快照读</h3>
+<p>MVCC就是为了实现读-写冲突不加锁，而这个读指的就是快照读, 而非当前读，当前读实际上是一种加锁的操作，是悲观锁的实现。这个快照读的实现方式就是多版本并发控制MVCC。</p>
+<p>快照读（snapshot read）能看到别的事务生成快照前提交的数据，而不能看到别的事务生成快照后提交的数据或者未提交的数据。快照读是repeatable-read 和 read-committed 级别下，默认的查询模式，好处是：读不加锁，读写不冲突，这个对于 MySQL 并发访问提升很大。</p>
+<p>使用快照读的场景：</p>
+<ul>
+<li>
+<p>单纯的select操作，不包括上述 select … lock in share mode、select … for update</p>
+</li>
+<li>
+<p>Read Committed隔离级别下快照读：每次select都生成一个快照读</p>
+</li>
+<li>
+<p>Read Repeatable隔离级别下快照读：开启事务后第一个select语句才是快照读的地方，而不是一开启事务就快照读</p>
+</li>
+</ul>
+<h3 id="_2">当前读</h3>
+<p>当前读读取的是最新版本, 并且对读取的记录加锁，保证其他事务不会再并发的修改这条记录，避免出现安全问题。</p>
+<p>使用当前读的场景：</p>
+<ul>
+<li>
+<p>select…lock in share mode (共享读锁)</p>
+</li>
+<li>
+<p>select…for update</p>
+</li>
+<li>
+<p>update</p>
+</li>
+<li>
+<p>delete</p>
+</li>
+<li>
+<p>insert</p>
+</li>
+</ul>
+<p>当前读的实现方式：next-key锁(行记录锁+Gap间隙锁)</p>
+<p>快照读和当前读实验：</p>
+<p><img alt="" src="https://static.cyub.vip/images/202107/mysql-snapshot-read.jpg" /></p>
+<h3 id="mvcc">MVCC</h3>
+<p><img alt="" src="https://static.cyub.vip/images/202107/mvcc_version.png" /></p>
+<p>未完成事务，也称为活跃事务。</p>
+<ul>
+<li>m_ids: 在生成ReadView时，当前活跃的-读写事务的事务id列表，包含当前事务版本</li>
+<li>min_trx_id: m_ids的最小值</li>
+<li>max_trx_id: m_ids的最大值+1，即下一个要生成的事务id</li>
+<li>creator_trx_id: 生成该事务的事务id</li>
+</ul>
+<p>版本链中的当前版本是否可以被当前事务可见的要根据这四个属性按照以下几种情况来判断</p>
+<ul>
+<li>当 trx_id = creator_trx_id 时:当前事务可以看见自己所修改的数据， 可见，</li>
+<li>当 trx_id &lt; min_trx_id 时 : 生成此数据的事务已经在生成readView前提交了， 可见</li>
+<li>当 trx_id &gt;= max_trx_id 时 :表明生成该数据的事务是在生成ReadView后才开启的， 不可见</li>
+<li>当 min_trx_id &lt;= trx_id &lt; max_trx_id 时<ul>
+<li>trx_id 在 m_ids 列表里面 ：生成ReadView时，活跃事务还未提交，不可见</li>
+<li>trx_id 不在 m_ids 列表里面 ：事务在生成readView前已经提交了，可见。(RC隔离级别会出现这种情况)</li>
+</ul>
+</li>
+</ul>
+<h2 id="innodb">innodb三种行锁算法</h2>
+<p>InnoDB有三种行锁的算法：</p>
+<ol>
+<li>
+<p>Record Lock：单个行记录上的锁。</p>
+</li>
+<li>
+<p>Gap Lock：间隙锁，锁定一个范围，但不包括记录本身。GAP锁的目的，是为了防止同一事务的两次当前读，出现幻读的情况。</p>
+</li>
+<li>
+<p>Next-Key Lock：1+2，锁定一个范围，并且锁定记录本身。对于行的查询，都是采用该方法，主要目的是解决幻读的问题。</p>
+</li>
+</ol>
+<h2 id="truncatedeletedrop">truncate,delete,drop区别？</h2>
+<ul>
+<li>truncate 会删除所有数据</li>
+<li>delete 可以删除部分数据，会触发触发器</li>
+<li>drop会删除整个表和数据</li>
+</ul>
+<h2 id="mysql_4">mysql索引分类</h2>
+<h3 id="_3">从物理存储角度</h3>
+<ol>
+<li>聚簇索引</li>
+</ol>
+<p>InnoDB中主键索引是聚集索引，索引跟数据在一起的。其他索引是非聚集索引，索引指向的是主键索引。为MyISAM存储引擎数据文件和索引文件是分离的，不存在聚集索引的概念。</p>
+<ol>
+<li>非聚簇索引</li>
+</ol>
+<h3 id="_4">从数据结构角度</h3>
+<ol>
+<li>
+<p>B+树索引</p>
+</li>
+<li>
+<p>hash索引</p>
+<p>基于哈希表实现，只有全值匹配才有效</p>
+</li>
+<li>
+<p>全文索引</p>
+<p>查找的是文本中的关键词，而不是直接比较索引中的值，类似于搜索引擎做的事情。</p>
+</li>
+</ol>
+<h3 id="_5">从逻辑角度</h3>
+<ol>
+<li>
+<p>唯一索引，唯一索引也是一种约束。唯一索引的属性列不能出现重复的数据，但是<strong>允许数据为NULL</strong>，一张表允许创建多个唯一索引。UNIQUE ( column )</p>
+</li>
+<li>
+<p>主键索引，数据表的主键列使用的就是主键索引PRIMARY KEY ( column)</p>
+</li>
+<li>
+<p>联合索引，指多个字段上创建的索引 INDEX index_name ( column1, ... )，使用时最左匹配原则</p>
+</li>
+<li>
+<p>普通 /单列索引，普通索引的唯一作用就是为了快速查询数据，一张表允许创建多个普通索引，并允许数据重复和NULL。INDEX index_name ( column )。</p>
+</li>
+<li>
+<p>全文索引，查找的是文本中的关键词，而不是直接比较索引中的值，类似于搜索引擎做的事情。FULLTEXT ( column)</p>
+</li>
+</ol>
+<p>资料：<a href="https://juejin.cn/post/6907966385394515975">https://juejin.cn/post/6907966385394515975</a></p>
+<h2 id="mysqlb">mysql为什么使用b+树？</h2>
+<p>B+树是一个平衡的多叉树，B+树中的B不是代表二叉（binary），而是代表平衡（balance）。</p>
+<p>B+树和B树区别：</p>
+<ol>
+<li>
+<p>B +树中的非叶子节点不存储数据，并且存储在叶节点中的所有数据使得查询时间复杂度固定为log n。</p>
+</li>
+<li>
+<p>B树查询时间的复杂度不是固定的，它与键在树中的位置有关，最好是O（1）。</p>
+</li>
+<li>
+<p>由于B+树的叶子节点是通过双向链表链接的，所以支持范围查询，且效率比B树高</p>
+</li>
+<li>
+<p>B树每个节点的键和数据是一起的</p>
+</li>
+</ol>
+<h2 id="_6">哈希索引的优势与劣势？</h2>
+<p>优点：</p>
+<ol>
+<li>等值查询，哈希索引具有绝对优势，时间复杂度为O(1)</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>
+<p>不支持范围查询</p>
+</li>
+<li>
+<p>不支持索引完成排序</p>
+</li>
+<li>
+<p>不支持联合索引的最左前缀匹配规则</p>
+</li>
+</ol>
+<h2 id="uuidinnodb">为什么uuid不适合做innodb主键？</h2>
+<h2 id="mysql_5">mysql调优几种方式</h2>
+<ol>
+<li>打开慢查询日志，查看慢查询</li>
+<li>explain看一下执行计划，查看①key字段是否使用到索引，使用到什么索引。②type字段是否为ALL全表扫描。③row字段扫描的行数是否过大，估计值。MySQL数据单位都是页，使用采样统计方法。④extra字段是否需要额外排序，就是不能通过索引顺序达到排序效果；是否需要使用临时表等。⑤如果是组合索引的话通过key_len字段判断是否被完全使用。</li>
+<li>使用覆盖索引。</li>
+<li>注意最左前缀原则</li>
+<li>使用前缀索引。当要给字符串加索引时，可以使用前缀索引，节省资源占用。如果前缀区分度不高可以倒序存储或者是存储hash。</li>
+<li>索引下推</li>
+<li>注意隐式类型转换，防止索引实现</li>
+<li>区分度不大的字段避免使用索引，比如性别字段</li>
+</ol>
+<h2 id="mysql_6">mysql语句性能评测？</h2>
+<p>使用explain分析语句执行，主要看select_type、type、key、possiable keys、extra列。</p>
+<h3 id="-select_type">查询类型 - select_type</h3>
+<ul>
+<li>
+<p>SIMPLE : 简单的select查询,查询中不包含子查询或者UNION</p>
+</li>
+<li>
+<p>PRIMARY: 查询中若包含复杂的子查询,最外层的查询则标记为PRIMARY</p>
+</li>
+<li>
+<p>SUBQUERY : 在SELECT或者WHERE列表中包含子查询</p>
+</li>
+<li>
+<p>DERIVED : 在from列表中包含子查询被标记为DRIVED衍生,MYSQL会递归执行这些子查询,把结果放到临时表中</p>
+</li>
+<li>
+<p>UNION: 若第二个SELECT出现在union之后,则被标记为UNION, 若union包含在from子句的子查询中,外层select被标记为:derived</p>
+</li>
+<li>
+<p>UNION RESULT: 从union表获取结果的select</p>
+</li>
+</ul>
+<h3 id="-type">连接类型 - type</h3>
+<p>有如下几种取值，性能从好到坏排序 如下：</p>
+<ul>
+<li>
+<p>const</p>
+<p>针对主键或唯一索引的等值查询扫描, 最多只返回一行数据. const 查询速度非常快, 因为它仅仅读取一次即可</p>
+</li>
+<li>
+<p>ref</p>
+<p>当满足索引的<strong>最左前缀规则</strong>，或者索引不是主键也不是唯一索引时才会发生。如果使用的索引只会匹配到少量的行，性能也是不错的</p>
+</li>
+<li>
+<p>range</p>
+<p>范围扫描，表示检索了指定范围的行，主要用于<strong>有限制的索引扫描</strong>。比较常见的范围扫描是带有BETWEEN子句或WHERE子句里有&gt;、&gt;=、&lt;、&lt;=、IS NULL、&lt;=&gt;、BETWEEN、LIKE、IN()等操作符。</p>
+</li>
+<li>
+<p>index</p>
+<p><strong>全索引扫描</strong>，和ALL类似，只不过index是全盘扫描了索引的数据。当查询仅使用索引中的一部分列时，可使用此类型。有两种场景会触发：
+如果索引是查询的覆盖索引，并且索引查询的数据就可以满足查询中所需的所有数据，则只扫描索引树。此时，explain的Extra 列的结果是Using index。index通常比ALL快，因为索引的大小通常小于表数据。</p>
+</li>
+<li>
+<p>ALL</p>
+<p><strong>全表扫描</strong>，性能最差</p>
+</li>
+</ul>
+<h3 id="key">key</h3>
+<p>表示MySQL实际选择的索引</p>
+<h3 id="possiable-keys">possiable keys</h3>
+<p>MYSQL可能用到的key</p>
+<h3 id="rows">rows</h3>
+<p>MySQL估算会扫描的行数，数值越小越好。</p>
+<h2 id="mysql_7">mysql主从复制流程？</h2>
+<p><img alt="" src="https://static.cyub.vip/images/202107/mysql_bindump.png" /></p>
+<p>mysql slave节点连接master节点时，master节点会新建一个binlog dump线程，当master数据有更新时写入到binlog，dump线程通知slave的io线程接收后写入到本地的relaylog，然后通过sql线程重放</p>
+<h2 id="mysql_8">mysql日志类型</h2>
+<p>mysql日志主要包括错误日志、查询日志、慢查询日志、事务日志、二进制日志几大类。</p>
+<h3 id="binlog">binlog</h3>
+<p>binlog 用于记录数据库执行的写入性操作(不包括查询)信息，以二进制的形式保存在磁盘中。binlog 的主要使用场景有两个，分别是 主从复制 和 数据恢复。</p>
+<ul>
+<li>
+<p>主从复制 ：在 Master 端开启 binlog ，然后将 binlog发送到各个 Slave 端， Slave 端重放 binlog 从而达到主从数据一致。</p>
+</li>
+<li>
+<p>数据恢复 ：通过使用 mysqlbinlog 工具来恢复数据。</p>
+</li>
+</ul>
+<h3 id="redo-log">redo log</h3>
+<p>当有一条记录要更新时，InnoDB先记录日志再更新内存，然后在比较空闲的时候将操作更新到磁盘，有了redolog即使MySQL崩溃也不会丢失数据，这个能力称为crash-safe。redo log是事务持久性的保证。</p>
+<h3 id="undo-log">Undo log</h3>
+<p>undo log用于回滚操作，保证事务的原子性。</p>
+<h3 id="slow-log">slow log</h3>
+<p>slow log用来记录慢查询</p>
+<h2 id="wherejionlimitgroup-byhaving">查询语句不同元素（where、jion、limit、group by、having等等）执行先后顺序？</h2>
+<p>where字句在聚合前先筛选记录，也就是说作用在group by和having字句前。而 having子句在聚合后对组记录进行筛选。</p>
+<h2 id="innodb_1">Innodb为什么一定需要一个主键，且必须自增列作为主键？</h2>
+<p>如果我们定义了主键(PRIMARY KEY)，那么InnoDB会选择主键作为聚集索引。如果没有显式定义主键，则InnoDB会选择第一个不包含有NULL值的唯一索引作为主键索引。如果也没有这样的唯一索引，则InnoDB会选择内置6字节长的ROWID作为隐含的聚集索引(ROWID随着行记录的写入而主键递增，这个ROWID不像ORACLE的ROWID那样可引用，是隐含的)。</p>
+<p>总之Innodb一定需要一个主键。</p>
+<ol>
+<li>这是因为数据记录本身被存于主索引（一颗B+Tree）的叶子节点上，这就要求同一个叶子节点内（大小为一个内存页或磁盘页）的各条数据记录按主键顺序存放</li>
+<li>如果表使用自增主键，那么每次插入新的记录，记录就会顺序添加到当前索引节点的后续位置，当一页写满，就会自动开辟一个新的页（这样的页称为叶子页)</li>
+<li>如果使用非自增主键（如果身份证号或学号等），由于每次插入主键的值近似于随机，因此每次新记录都要被插到现有索引页得中间某个位置</li>
+</ol>
+<h2 id="mvcc_1">在MVCC并发控制中，读操作可以分成哪两类?</h2>
+<p>快照读 (snapshot read)：读取的是记录的可见版本 (有可能是历史版本)，不用加锁（共享读锁s锁也不加，所以不会阻塞其他事务的写）。</p>
+<p>当前读 (current read)：读取的是记录的最新版本，并且，当前读返回的记录，都会加上锁，保证其他事务不会再并发修改这条记录。</p>
+<h2 id="mysqldatatimetimestap">Mysql中DATATIME和TIMESTAP的区别？</h2>
+<p>datetime、timestamp精确度都是秒，datetime与时区无关，存储的范围广(1001-9999)，占空间8个字节，timestamp与时区有关，查询时候会转换成相应时区显示，存储的范围小(1970-2038)，占用空间4个字节。</p>
+<h2 id="mysql_9">MySQL是如何解决幻读的？</h2>
+<ul>
+<li>事务隔离级别设置为SERIALIZABLE 串行化</li>
+<li>
+<p>MVCC + Next-Key Lock
+    Next-Key Lock是Gap Lock（间隙锁）和Record Lock（行锁）的结合版，都属于Innodb的锁机制。</p>
+<p>比如：select * from tb where id&gt;100 for update：
+1. 主键索引 id 会给 id=100 的记录加上 record行锁
+2. 索引 id 上会加上 gap 锁，锁住 id(100,+无穷大）这个范围，其他事务对  id&gt;100 范围的记录读和写操作都将被阻塞。插入 id=1000的记录时候会命中索引上加的锁会报出事务异常；</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Next-Key Lock会确定一段范围，然后对这个范围加锁，保证A在where的条件下读到的数据是一致的，因为在where这个范围其他事务根本插不了也删不了数据，都被Next-Key Lock锁堵在一边阻塞掉了。
+</code></pre></div></td></tr></table></div>
+</li>
+</ul>
+<h2 id="mysqlgap-locknextkey-lock">Mysql什么时候会取得gap lock或nextkey lock?</h2>
+<ul>
+<li>只在REPEATABLE READ或以上的隔离级别下的特定操作才会有可能取得gap lock或nextkey lock</li>
+<li>
+<p>locking reads（SELECT with FOR UPDATE or LOCK IN SHARE MODE），UPDATE和DELETE时，除了对唯一索引的唯一搜索外都会获取gap锁或next-key锁。即锁住其扫描的范围。</p>
+<p>For locking reads (SELECT with FOR UPDATE or LOCK IN SHARE MODE), UPDATE, and DELETE statements, 
+locking depends on whether the statement uses a unique index with a unique search condition, 
+or a range-type search condition. For a unique index with a unique search condition, 
+InnoDB locks only the index record found, not the gap before it. For other search conditions, 
+InnoDB locks the index range scanned, using gap locks or next-key locks to block insertions 
+by other sessions into the gaps covered by the range.</p>
+<p><a href="http://dev.mysql.com/doc/refman/5.7/en/innodb-transaction-isolation-levels.html">http://dev.mysql.com/doc/refman/5.7/en/innodb-transaction-isolation-levels.html</a></p>
+</li>
+</ul>
+<h2 id="mysql_10">Mysql为什么要进行分库分表？</h2>
+<ul>
+<li>
+<p>数据量</p>
+<p>MySQL单库数据量在5000万以内性能比较好，超过阈值后性能会随着数据量的增大而变弱。MySQL单表的数据量是500w-1000w之间性能比较好，超过1000w性能也会下降。</p>
+</li>
+<li>
+<p>磁盘</p>
+<p>因为单个服务的磁盘空间是有限制的，如果并发压力下，所有的请求都访问同一个节点，肯定会对磁盘IO造成非常大的影响。</p>
+</li>
+<li>
+<p>数据库连接</p>
+<p>数据库连接是非常稀少的资源，如果一个库里既有用户、商品、订单相关的数据，当海量用户同时操作时，数据库连接就很可能成为瓶颈。</p>
+</li>
+</ul>
+<h2 id="mysql_11">Mysql什么时候使用分区？</h2>
+<ul>
+<li>查询速度慢，数据量大</li>
+<li>对数据的操作往往只涉及一部分数据，而不是所有的数据</li>
+</ul>
+<h2 id="mysql_12">Mysql分区类型有哪些？</h2>
+<p>Mysql分区后的一个优点是：涉及到 SUM()/COUNT() 等聚合函数时，可以并行进行。</p>
+<p>MySQL支持范围分区（RANGE），列表分区（LIST），哈希分区（HASH）以及KEY分区四种。</p>
+<p>分区字段不能为NULL，要不然怎么确定分区范围，所以尽量NOT NULL。</p>
+<h3 id="_7">范围分区</h3>
+<p>基于属于一个给定连续区间的列值，把多行分配给分区。这些区间要连续且不能相互重叠，使用VALUES LESS THAN操作符来进行定义。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">fname</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
+<span class="w">    </span><span class="n">lname</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
+<span class="w">    </span><span class="n">hired</span><span class="w"> </span><span class="nb">DATE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;1970-01-01&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">separated</span><span class="w"> </span><span class="nb">DATE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;9999-12-31&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">job_code</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">store_id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+<span class="p">)</span>
+
+<span class="n">partition</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">RANGE</span><span class="w"> </span><span class="p">(</span><span class="n">store_id</span><span class="p">)</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">partition</span><span class="w"> </span><span class="n">p0</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">LESS</span><span class="w"> </span><span class="k">THAN</span><span class="w"> </span><span class="p">(</span><span class="mi">6</span><span class="p">),</span>
+<span class="w">    </span><span class="n">partition</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">LESS</span><span class="w"> </span><span class="k">THAN</span><span class="w"> </span><span class="p">(</span><span class="mi">11</span><span class="p">),</span>
+<span class="w">    </span><span class="n">partition</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">LESS</span><span class="w"> </span><span class="k">THAN</span><span class="w"> </span><span class="p">(</span><span class="mi">16</span><span class="p">),</span>
+<span class="w">    </span><span class="n">partition</span><span class="w"> </span><span class="n">p3</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">LESS</span><span class="w"> </span><span class="k">THAN</span><span class="w"> </span><span class="p">(</span><span class="mi">21</span><span class="p">),</span>
+<span class="w">    </span><span class="n">PARTITION</span><span class="w"> </span><span class="n">p4</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">LESS</span><span class="w"> </span><span class="k">THAN</span><span class="w"> </span><span class="k">MAXVALUE</span><span class="w"> </span><span class="o">#</span><span class="w"> </span><span class="n">MAXVALUE是最大值</span><span class="err">，防止</span><span class="n">store_id大于21时候</span><span class="err">，找不到分区写入失败</span>
+<span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="list">LIST分区</h3>
+<p>类似于按RANGE分区，区别在于LIST分区是基于列值匹配一个离散值集合中的某个值来进行选择.</p>
+<p>假定有20个音像店，分布在4个有经销权的地区，如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>地区</th>
+<th>商店ID 号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>北区</td>
+<td>3, 5, 6, 9, 17</td>
+</tr>
+<tr>
+<td>东区</td>
+<td>1, 2, 10, 11, 19, 20</td>
+</tr>
+<tr>
+<td>西区</td>
+<td>4, 12, 13, 14, 18</td>
+</tr>
+<tr>
+<td>中心区</td>
+<td>7, 8, 15, 16</td>
+</tr>
+</tbody>
+</table>
+<p>要按照属于同一个地区商店的行保存在同一个分区中的方式来分割表，可以使用下面的“CREATE TABLE”语句：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">fname</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
+<span class="w">    </span><span class="n">lname</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
+<span class="w">    </span><span class="n">hired</span><span class="w"> </span><span class="nb">DATE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;1970-01-01&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">separated</span><span class="w"> </span><span class="nb">DATE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;9999-12-31&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">job_code</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">store_id</span><span class="w"> </span><span class="nb">INT</span>
+<span class="p">)</span>
+
+<span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">LIST</span><span class="p">(</span><span class="n">store_id</span><span class="p">)</span>
+<span class="w">    </span><span class="n">PARTITION</span><span class="w"> </span><span class="n">pNorth</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">17</span><span class="p">),</span>
+<span class="w">    </span><span class="n">PARTITION</span><span class="w"> </span><span class="n">pEast</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span>
+<span class="w">    </span><span class="n">PARTITION</span><span class="w"> </span><span class="n">pWest</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">18</span><span class="p">),</span>
+<span class="w">    </span><span class="n">PARTITION</span><span class="w"> </span><span class="n">pCentral</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>需要注意的是如果试图插入列值（或分区表达式的返回值）不在分区值列表中的一行时，那么“INSERT”查询将失败并报错。</p>
+<h3 id="hash">HASH分区</h3>
+<p>基于用户定义的表达式的返回值来进行选择的分区，该表达式使用将要插入到表中的这些行的列值进行计算。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">fname</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
+<span class="w">    </span><span class="n">lname</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
+<span class="w">    </span><span class="n">hired</span><span class="w"> </span><span class="nb">DATE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;1970-01-01&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">separated</span><span class="w"> </span><span class="nb">DATE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;9999-12-31&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">job_code</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">store_id</span><span class="w"> </span><span class="nb">INT</span>
+<span class="p">)</span>
+<span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">HASH</span><span class="p">(</span><span class="n">store_id</span><span class="p">)</span>
+<span class="n">PARTITIONS</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="o">#</span><span class="w"> </span><span class="err">一定要指定分区数</span>
+</code></pre></div></td></tr></table></div>
+<p>Hash分区的字段必须是整数类型，也可以基于用户定义的表达式的返回值进行分布区，但返回值必须是整数类型，比如：partition by hash (YEAR(b))。</p>
+<h3 id="key_1">KEY分区</h3>
+<p>KEY分区跟HASH分区类似，分区字段可以是除text和BLOB外的所有类型，比如varchar类型。</p>
+<h2 id="mysql_13">Mysql分库分表中间件有哪些？</h2>
+<p>分库分表中间件全部可以归结为两大类型：</p>
+<ul>
+<li>
+<p>CLIENT模式</p>
+<p>阿里的TDDL，开源社区的sharding-jdbc</p>
+<p>没有中间层，性能开销低，维护和升级麻烦</p>
+</li>
+<li>
+<p>PROXY模式</p>
+<p>MyCat、DBProxy</p>
+<p>维护和升级相对简单些，支持集中式监控，缺点是有中间层，有成本开销，中间层必须高可用</p>
+</li>
+</ul>
+<h2 id="mysql_14">Mysql小表驱动大表优化技巧？</h2>
+<h3 id="join">Join</h3>
+<p>比如：user表10000条数据，class表20条数据</p>
+<blockquote>
+<p>select * from user u left join class c u.userid=c.userid</p>
+</blockquote>
+<p>这样则需要用user表循环10000次才能查询出来，而如果用class表驱动user表则只需要循环20次就能查询出来</p>
+<p>但是下面使用小结果集驱动大结果集，结果会更好：</p>
+<blockquote>
+<p>select * from class c left join user u c.userid=u.userid</p>
+</blockquote>
+<h3 id="exist-in">exist 还是 in</h3>
+<blockquote>
+<p>select A.name from A where A.id in(select B.id from B)</p>
+</blockquote>
+<p>表B驱动A</p>
+<blockquote>
+<p>select A.name from A where exists(select 1 from B where A.id = B.id)</p>
+</blockquote>
+<p>表A驱动B</p>
+<h2 id="_8">索引名字规则</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>idx(a, b, c)  HIT  where a = x and b = x
+idx(a, b, c)  HIT  where a &gt; x
+idx(a, b, c)  Not HIT  where b &gt; x
+idx(a, b, c)  Not HIT  where a &gt; x and b = x
+idx(a, b, c)  Not HIT  where a = x and c = x
+
+idx(a, b, c)  HIT  where a = x order by b
+idx(a, b, c)  HIT  where a &gt; x order by a
+idx(a, b, c)  HIT  where a = x and b &gt; x order by a
+idx(a, b, c)  Not HIT  where a &gt; x order by b
+idx(a, b, c)  HIT  where a = x group by a, b
+idx(a, b, c)  Not HIT  where a = x group by b
+</code></pre></div></td></tr></table></div>
+<p>mysql建立多列索引（联合索引）有最左前缀的原则，即最左优先，如：
+- 如果有一个2列的索引(col1,col2),则已经对(col1)、(col1,col2)上建立了索引；
+- 如果有一个3列索引(col1,col2,col3)，则已经对(col1)、(col1,col2)、(col1,col2,col3)上建立了索引；</p>
+<p>最左前缀索引：</p>
+<p>mysql会一直向右匹配直到遇到范围查询(&gt;、&lt;、between、like)就停止匹配，比如a = 1 and b = 2 and c &gt; 3 and d = 4 如果建立(a,b,c,d)顺序的索引，d是用不到索引的，如果建立(a,b,d,c)的索引则都可以用到，a,b,d的顺序可以任意调整。</p>
+<p>如where a&gt;10 order by b ,索引a_b 无法排序
+=和in可以乱序，比如a = 1 and b = 2 and c = 3 建立(a,b,c)索引可以任意顺序，mysql的查询优化器会帮你优化成索引可以识别的形式</p>
+<p>b+ 树的数据项是复合的数据结构，比如 (name,age,sex) 的时候，b+ 树是按照从左到右的顺序来建立搜索树的，比如当 (张三,20,F) 这样的数据来检索的时候，b+ 树会优先比较 name 来确定下一步的所搜方向，如果 name 相同再依次比较 age 和 sex，最后得到检索的数据；但当 (20,F) 这样的没有 name 的数据来的时候，b+ 树就不知道第一步该查哪个节点，因为建立搜索树的时候 name 就是第一个比较因子，必须要先根据 name 来搜索才能知道下一步去哪里查询</p>
+<h2 id="select-xx-for-update-where-id-x">select xx for update where id = x操作会加写锁吗？</h2>
+<p>属于当前读，可能是行记录锁，也有可能是间隙锁。但都是加的写锁。写锁，意味着对其他客户端读写都会加锁，需要注意的是，并不是所有的读会加锁，它只对于其他客户端的当前读(select * for update, update, delete等）会加锁，普通的select不加锁的。</p>
+<p><img alt="" src="https://static.cyub.vip/images/202107/mysql-for-update.jpg" /></p>
+<h2 id="mysql_15">mysql中悲观锁、乐观锁、共享锁、排他锁有什么区别？</h2>
+<p><img alt="" src="https://static.cyub.vip/images/202107/mysql-lock.jpg" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.94c44541.min.js"></script>
+      
+    
+  </body>
+</html>

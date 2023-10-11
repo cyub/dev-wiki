@@ -1,0 +1,2593 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="开发知识wiki">
+      
+      
+        <meta name="author" content="tink">
+      
+      
+        <link rel="canonical" href="https://docs.cyub.vip/dev-wiki/database/elasticsearch/performance_tuning/">
+      
+      
+        <link rel="prev" href="../memory/">
+      
+      
+        <link rel="next" href="../production_configuring/">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.4">
+    
+    
+      
+        <title>性能调优 - 开发知识wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.bd3936ea.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Sans";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#elasticsearch" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="开发知识wiki" class="md-header__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            开发知识wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              性能调优
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  简介
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../computer-system/io/" class="md-tabs__link">
+          
+  
+  操作系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../computer-network/tcp/" class="md-tabs__link">
+          
+  
+  计算机网络
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../mysql/%E7%AE%80%E4%BB%8B/" class="md-tabs__link">
+          
+  
+  数据库
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../cache/" class="md-tabs__link">
+        
+  
+    
+  
+  缓存系统
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../container/install/" class="md-tabs__link">
+          
+  
+  容器
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../qa/redis/" class="md-tabs__link">
+          
+  
+  QA
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="开发知识wiki" class="md-nav__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+
+    </a>
+    开发知识wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    操作系统
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            操作系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-system/io/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-system/proc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    proc文件系统
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-system/nptl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NPTL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-system/command/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    常用命令
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-system/systemtap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systemtap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-system/cpu-arch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CPU架构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-system/compiling-linux-kernel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    编译Linux内核
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    计算机网络
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            计算机网络
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-network/tcp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TCP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-network/http/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTTP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    数据库
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            数据库
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    mysql
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            mysql
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mysql/%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    概览
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mysql/%E4%BA%8B%E5%8A%A1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    事务
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mysql/%E7%B4%A2%E5%BC%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    索引
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mysql/FAQ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Elasticsearch
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Elasticsearch
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    概览
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../memory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    内存占用
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    性能调优
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    性能调优
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#elasticsearch" class="md-nav__link">
+    Elasticsearch 性能调优
+  </a>
+  
+    <nav class="md-nav" aria-label="Elasticsearch 性能调优">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    Linux参数调优
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux参数调优">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    关闭交换分区
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    磁盘挂载选项
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    其他
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#es" class="md-nav__link">
+    ES节点配置
+  </a>
+  
+    <nav class="md-nav" aria-label="ES节点配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bufferbulk" class="md-nav__link">
+    buffer和bulk队列长度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shard" class="md-nav__link">
+    新建shard时扫描元数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jvmoptions" class="md-nav__link">
+    jvm.options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    设置内存熔断参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-cache" class="md-nav__link">
+    query cache
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#es_1" class="md-nav__link">
+    ES使用技巧
+  </a>
+  
+    <nav class="md-nav" aria-label="ES使用技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storefiled" class="md-nav__link">
+    StoreFiled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fielddata" class="md-nav__link">
+    fielddata
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docvalues" class="md-nav__link">
+    docvalues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index" class="md-nav__link">
+    index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    开启最佳压缩
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bulk" class="md-nav__link">
+    bulk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#translog" class="md-nav__link">
+    调整translog同步策略
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refresh_interval" class="md-nav__link">
+    调整refresh_interval
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    merge并发控制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_id" class="md-nav__link">
+    不要指定_id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing" class="md-nav__link">
+    使用routing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-or-keyword" class="md-nav__link">
+    text or keyword
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-bool-filterquery" class="md-nav__link">
+    使用query-bool-filter组合取代普通query
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index_1" class="md-nav__link">
+    index按日期滚动存储
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    分片数和副本数按需控制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#segment-memory" class="md-nav__link">
+    Segment Memory优化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping" class="md-nav__link">
+    禁止动态mapping
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../production_configuring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    生产配置参考
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../doc_values_and_fielddata/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    docs value与 field data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../redis/redis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cache/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    缓存系统
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    容器
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            容器
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../container/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../container/image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    镜像
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../container/cgroup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cgroup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../container/namespace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    namespace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    QA
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            QA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/redis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    redis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/mysql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mysql
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/tcp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tcp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/http/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    http
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/cache/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    缓存
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/nginx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nginx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/queue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    消息队列
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/io/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/protobuf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    protobuf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/go/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    go
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/dist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    分布式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Elasticsearch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/ref/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    参考资料
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#elasticsearch" class="md-nav__link">
+    Elasticsearch 性能调优
+  </a>
+  
+    <nav class="md-nav" aria-label="Elasticsearch 性能调优">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    Linux参数调优
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux参数调优">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    关闭交换分区
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    磁盘挂载选项
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    其他
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#es" class="md-nav__link">
+    ES节点配置
+  </a>
+  
+    <nav class="md-nav" aria-label="ES节点配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bufferbulk" class="md-nav__link">
+    buffer和bulk队列长度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shard" class="md-nav__link">
+    新建shard时扫描元数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jvmoptions" class="md-nav__link">
+    jvm.options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    设置内存熔断参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-cache" class="md-nav__link">
+    query cache
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#es_1" class="md-nav__link">
+    ES使用技巧
+  </a>
+  
+    <nav class="md-nav" aria-label="ES使用技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storefiled" class="md-nav__link">
+    StoreFiled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fielddata" class="md-nav__link">
+    fielddata
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docvalues" class="md-nav__link">
+    docvalues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index" class="md-nav__link">
+    index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    开启最佳压缩
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bulk" class="md-nav__link">
+    bulk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#translog" class="md-nav__link">
+    调整translog同步策略
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refresh_interval" class="md-nav__link">
+    调整refresh_interval
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    merge并发控制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_id" class="md-nav__link">
+    不要指定_id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing" class="md-nav__link">
+    使用routing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-or-keyword" class="md-nav__link">
+    text or keyword
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-bool-filterquery" class="md-nav__link">
+    使用query-bool-filter组合取代普通query
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index_1" class="md-nav__link">
+    index按日期滚动存储
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    分片数和副本数按需控制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#segment-memory" class="md-nav__link">
+    Segment Memory优化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping" class="md-nav__link">
+    禁止动态mapping
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>性能调优</h1>
+
+<h2 id="elasticsearch">Elasticsearch 性能调优</h2>
+<p>从linux参数调优、ES节点配置和ES使用技巧三个角度入手，介绍ES调优的基本方案。</p>
+<p>当我们发现es使用还是非常慢，需要优先关注在以下这两类的运行情况：</p>
+<ul>
+<li>hot_threads
+    <a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.8/cluster-nodes-hot-threads.html">hot_threads</a>（GET /_nodes/hot_threads&amp;interval=30），抓取30s的节点上占用资源的热线程，并通过排查占用资源最多的TOP线程来判断对应的资源消耗是否正常，一般情况下，bulk，search类的线程占用资源都可能是业务造成的，但是如果是merge线程占用了大量的资源，就应该考虑是不是创建index或者刷磁盘间隔太小，批量写入size太小造成的。</li>
+<li>pending_tasks
+    <a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.8/cluster-pending.html">pending_tasks</a>（GET /_cluster/pending_tasks），有一些任务只能由主节点去处理，比如创建一个新的 索引或者在集群中移动分片，由于一个集群中只能有一个主节点，所以只有这一master节点可以处理集群级别的元数据变动。在99.9999%的时间里，这不会有什么问题，元数据变动的队列基本上保持为零。在一些罕见的集群里，元数据变动的次数比主节点能处理的还快，这会导致等待中的操作会累积成队列。这个时候可以通过pending_tasks api分析当前什么操作阻塞了es的队列，比如，集群异常时，会有大量的shard在recovery，如果集群在大量创建新字段，会出现大量的put_mappings的操作，所以正常情况下，需要禁用动态mapping。</li>
+</ul>
+<h3 id="linux">Linux参数调优</h3>
+<h4 id="_1">关闭交换分区</h4>
+<p>防止内存置换降低性能</p>
+<blockquote>
+<p>sed -i '/swap/s/^/#/' /etc/fstab swapoff -a</p>
+</blockquote>
+<h4 id="_2">磁盘挂载选项</h4>
+<ul>
+<li>
+<p>noatime：禁止记录访问时间戳，提高文件系统读写性能</p>
+</li>
+<li>
+<p>data=writeback： 不记录data journal，提高文件系统写入性能</p>
+</li>
+<li>
+<p>barrier=0：barrier保证journal先于data刷到磁盘，上面关闭了journal，这里的barrier也就没必要开启了</p>
+</li>
+<li>
+<p>nobh：关闭buffer_head，防止内核打断大块数据的IO操作</p>
+</li>
+</ul>
+<blockquote>
+<p>mount -o noatime,data=writeback,barrier=0,nobh /dev/sda /es_data</p>
+</blockquote>
+<h4 id="_3">其他</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code>// 修改系统资源限制，单用户可以打开的最大文件数量，可以设置为官方推荐的65536或更大些
+echo &quot;* - nofile 655360&quot; &gt;&gt;/etc/security/limits.conf
+
+// 单用户内存地址空间
+echo &quot;* - as unlimited&quot; &gt;&gt;/etc/security/limits.conf
+
+// 单用户线程数
+echo &quot;* - nproc 2056474&quot; &gt;&gt;/etc/security/limits.conf
+
+// 单用户文件大小
+echo &quot;* - fsize unlimited&quot; &gt;&gt;/etc/security/limits.conf
+
+// 单用户锁定内存
+echo &quot;* - memlock unlimited&quot; &gt;&gt;/etc/security/limits.conf
+
+// 单进程可以使用的最大map内存区域数量
+echo &quot;vm.max_map_count = 655300&quot; &gt;&gt;/etc/sysctl.conf
+
+// TCP全连接队列参数设置， 这样设置的目的是防止节点数较多（比如超过100）的ES集群中，节点异常重启时全连接队列在启动瞬间打满，造成节点hang住，整个集群响应迟滞的情况
+echo &quot;net.ipv4.tcp_abort_on_overflow = 1&quot; &gt;&gt;/etc/sysctl.conf
+echo &quot;net.core.somaxconn = 2048&quot; &gt;&gt;/etc/sysctl.conf
+
+//  降低tcp alive time，防止无效链接占用链接数
+echo 300 &gt;/proc/sys/net/ipv4/tcp_keepalive_time
+</code></pre></div></td></tr></table></div>
+<h3 id="es">ES节点配置</h3>
+<h4 id="bufferbulk">buffer和bulk队列长度</h4>
+<p>适当增大写入buffer和bulk队列长度，提高写入性能和稳定性</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code># cat conf/elasticsearch.yml
+
+indices.memory.index_buffer_size: 15%
+thread_pool.bulk.queue_size: 1024
+</code></pre></div></td></tr></table></div>
+<h4 id="shard">新建shard时扫描元数据</h4>
+<p>在规模比较大的集群中，可以防止新建shard时扫描所有shard的元数据，提升shard分配速度。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>cat conf/elasticsearch.yml
+cluster.routing.allocation.disk.include_relocations: false
+</code></pre></div></td></tr></table></div>
+<h4 id="jvmoptions">jvm.options</h4>
+<p>-Xms和-Xmx设置为相同的值，推荐设置为机器内存的一半左右，剩余一半留给系统cache使用。</p>
+<ul>
+<li>jvm内存建议不要低于2G，否则有可能因为内存不足导致ES无法正常启动或OOM</li>
+<li>jvm建议不要超过32G，否则jvm会禁用内存对象指针压缩技术，造成内存浪费</li>
+</ul>
+<h4 id="_4">设置内存熔断参数</h4>
+<p>设置内存熔断参数，防止写入或查询压力过高导致OOM，具体数值可根据使用场景调整。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>// cat conf/elasticsearch.yml
+indices.breaker.total.limit: 30%
+indices.breaker.request.limit: 6%
+indices.breaker.fielddata.limit: 3%
+</code></pre></div></td></tr></table></div>
+<h4 id="query-cache">query cache</h4>
+<p>调小查询使用的cache，避免cache占用过多的jvm内存，具体数值可根据使用场景调整。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code># cat conf/elasticsearch.yml
+indices.queries.cache.count: 500
+indices.queries.cache.size: 5%
+</code></pre></div></td></tr></table></div>
+<h3 id="es_1">ES使用技巧</h3>
+<p>ES底层使用Lucene存储数据，主要包括行存（StoreFiled）、fielddata、列存（DocValues）和倒排索引（InvertIndex）。大多数使用场景中，没有必要同时存储这四个部分。</p>
+<p>当前用得最多的就是doc_values，列存储，对于不需要进行分词的字段，都可以开启doc_values来进行存储（且只保留keyword字段），节约内存，当然，开启doc_values会对查询性能有一定的影响，但是，这个性能损耗是比较小的，而且是值得的。</p>
+<p>可以通过下面的参数来做适当调整：</p>
+<h4 id="storefiled">StoreFiled</h4>
+<p>行存，其中占比最大的是_source字段，它控制doc原始数据的存储。在写入数据时，ES把doc原始数据的整个json结构体当做一个string，存储为source字段。查询时，可以通过source字段拿到当初写入时的整个json结构体。 所以，如果没有取出整个原始json结构体的需求，可以通过下面的命令，在mapping中关闭source字段或者只在source中存储部分字段，数据查询时仍可通过ES的docvaluefields获取所有字段的值。</p>
+<p><strong>注意：</strong>关闭source后， update, updatebyquery, reindex等接口将无法正常使用，所以有update等需求的index不能关闭source。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code>// 关闭 _source
+PUT my_index 
+{
+    &quot;mappings&quot;: {
+        &quot;my_type&quot;: {
+            &quot;_source&quot;: {
+                &quot;enabled&quot;: false
+            }
+        }
+    }
+}
+// _source只存储部分字段，通过includes指定要存储的字段或者通过excludes滤除不需要的字段
+PUT my_index
+{
+    &quot;mappings&quot;: {
+        &quot;_doc&quot;: {
+            &quot;_source&quot;: {
+                &quot;includes&quot;: [
+                    &quot;*.count&quot;,
+                    &quot;meta.*&quot;
+                ],
+                &quot;excludes&quot;: [
+                    &quot;meta.description&quot;,
+                    &quot;meta.other.*&quot;
+                ]
+            }
+        }
+    }
+}
+</code></pre></div></td></tr></table></div>
+<h4 id="fielddata">fielddata</h4>
+<p>构建和管理 100% 在内存中，常驻于 JVM 内存堆，所以可用于快速查询，但是这也意味着它本质上是不可扩展的，有很多边缘情况下要提防，如果对于字段没有分析需求，可以关闭fielddata</p>
+<h4 id="docvalues">docvalues</h4>
+<p>控制列存。ES主要使用列存来支持sorting, aggregations和scripts功能，对于没有上述需求的字段，可以通过下面的命令关闭docvalues，降低存储成本。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>PUT my_index
+{
+    &quot;mappings&quot;: {
+        &quot;my_type&quot;: {
+            &quot;properties&quot;: {
+                &quot;session_id&quot;: {
+                    &quot;type&quot;: &quot;keyword&quot;,
+                    &quot;doc_values&quot;: false
+                }
+            }
+        }
+    }
+}
+</code></pre></div></td></tr></table></div>
+<h4 id="index">index</h4>
+<p>控制倒排索引。ES默认对于所有字段都开启了倒排索引，用于查询。对于没有查询需求的字段，可以通过下面的命令关闭倒排索引。</p>
+<ul>
+<li>all：ES的一个特殊的字段，ES把用户写入json的所有字段值拼接成一个字符串后，做分词，然后保存倒排索引，用于支持整个json的全文检索。这种需求适用的场景较少，可以通过下面的命令将all字段关闭，节约存储成本和cpu开销。（ES 6.0+以上的版本不再支持_all字段，不需要设置）</li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-field-names-field.html">fieldnames</a>：该字段用于exists查询，来确认某个doc里面有无一个字段存在。若没有这种需求，可以将其关闭</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code>PUT my_index
+{
+    &quot;mappings&quot;: {
+        &quot;my_type&quot;: {
+            &quot;properties&quot;: {
+                &quot;session_id&quot;: {
+                    &quot;type&quot;: &quot;keyword&quot;,
+                    &quot;index&quot;: false
+                }
+            }
+        }
+    }
+}
+PUT my_index
+{
+    &quot;mapping&quot;: {
+        &quot;my_type&quot;: {
+            &quot;_all&quot;: {
+                &quot;enabled&quot;: false
+            }
+        }
+    }
+}
+PUT my_index
+{
+    &quot;mapping&quot;: {
+        &quot;my_type&quot;: {
+            &quot;_field_names&quot;: {
+                &quot;enabled&quot;: false
+            }
+        }
+    }
+}
+</code></pre></div></td></tr></table></div>
+<h4 id="_5">开启最佳压缩</h4>
+<p>对于_source字段，可以通过下面的命令来把lucene适用的压缩算法替换成 DEFLATE，提高数据压缩率</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>PUT /my_index/_settings
+{
+    &quot;index.codec&quot;: &quot;best_compression&quot;
+}
+</code></pre></div></td></tr></table></div>
+<h4 id="bulk">bulk</h4>
+<p>写入数据时尽量使用下面的bulk接口批量写入，提高写入效率。每个bulk请求的doc数量设定区间推荐为1k~1w，具体可根据业务场景选取一个适当的数量。</p>
+<h4 id="translog">调整translog同步策略</h4>
+<p>为了保证不丢数据，translog的持久化策略是，对于每个 index、bulk、delete、update请求都做一次flush（刷新translog数据到磁盘上）。这种频繁的磁盘IO操作是严重影响写入性能的，如果可以接受一定概率的数据丢失（这种硬件故障的概率很小），可以通过下面的命令调整 translog 持久化策略为异步周期性执行，并适当调整translog的刷盘周期。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>PUT my_index
+{
+    &quot;settings&quot;: {
+        &quot;index&quot;: {
+            &quot;translog&quot;: {
+                &quot;sync_interval&quot;: &quot;5s&quot;,
+                &quot;durability&quot;: &quot;async&quot;
+            }
+        }
+    }
+}
+</code></pre></div></td></tr></table></div>
+<h4 id="refresh_interval">调整refresh_interval</h4>
+<p>写入Lucene的数据，并不是实时可搜索的，ES必须通过refresh的过程把内存中的数据转换成Lucene的完整segment后，才可以被搜索。</p>
+<p>要不要秒级响应？最快1s（index.refresh_interval【默认为一秒】）写入的数据可以被查询到，势必会产生大量的segment，检索性能会受到影响。所以，非实时的场景可以调大，设置为30s，降低系统开销。</p>
+<h4 id="merge">merge并发控制</h4>
+<p>ES的一个index由多个shard组成，而一个shard其实就是一个Lucene的index，它又由多个segment组成，且Lucene会不断地把一些小的segment合并成一个大的segment，这个过程被称为段merge。执行索引操作时，ES会先生成小的segment，ES有离线的逻辑对小的segment进行合并，优化查询性能。但是合并过程中会消耗较多磁盘IO，会影响查询性能。</p>
+<p>index.merge.scheduler.max_thread_count控制并发的merge线程数，如果存储是并发性能较好的SSD，可以用系统默认的max(1, min(4, availableProcessors / 2))，当节点配置的cpu核数较高时，merge占用的资源可能会偏高，影响集群的性能，普通磁盘的话设为1。可以通过下面的命令调整某个index的merge过程的并发度：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>PUT /my_index/_settings
+{
+    &quot;index.merge.scheduler.max_thread_count&quot;: 2
+}
+</code></pre></div></td></tr></table></div>
+<h4 id="_id">不要指定_id</h4>
+<p>当用户显示指定id写入数据时，ES会先发起查询来确定index中是否已经有相同id的doc存在，若有则先删除原有doc再写入新doc。这样每次写入时，ES都会耗费一定的资源做查询。如果用户写入数据时不指定doc，ES则通过内部算法产生一个随机的id，并且保证id的唯一性，这样就可以跳过前面查询id的步骤，提高写入效率。所以，在不需要通过id字段去重、update的使用场景中，写入不指定id可以提升写入速率。基础架构部数据库团队的测试结果显示，无id的数据写入性能可能比有_id的高出近一倍，实际损耗和具体测试场景相关。</p>
+<h4 id="routing">使用routing</h4>
+<p>对于数据量较大的index，一般会配置多个shard来分摊压力。这种场景下，一个查询会同时搜索所有的shard，然后再将各个shard的结果合并后，返回给用户。对于高并发的小查询场景，每个分片通常仅抓取极少量数据，此时查询过程中的调度开销远大于实际读取数据的开销，且查询速度取决于最慢的一个分片。开启routing功能后，ES会将routing相同的数据写入到同一个分片中（也可以是多个，由index.routingpartitionsize参数控制）。如果查询时指定routing，那么ES只会查询routing指向的那个分片，可显著降低调度开销，提升查询效率。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>// 写入
+PUT my_index/my_type/1?routing=user1
+{
+    &quot;title&quot;: &quot;This is a document&quot;
+}
+//查询
+GET my_index/_search?routing=user1,user2 
+{
+    &quot;query&quot;: {
+        &quot;match&quot;: {
+            &quot;title&quot;: &quot;document&quot;
+        }
+    }
+}
+</code></pre></div></td></tr></table></div>
+<h4 id="text-or-keyword">text or keyword</h4>
+<p>为string类型的字段选取合适的存储方式，text或者keywork类型。</p>
+<h4 id="query-bool-filterquery">使用query-bool-filter组合取代普通query</h4>
+<p>默认情况下，ES通过一定的算法计算返回的每条数据与查询语句的相关度，并通过score字段来表征。但对于非全文索引的使用场景，用户并不care查询结果与查询条件的相关度，只是想精确的查找目标数据。此时，可以通过query-bool-filter组合来让ES不计算score，并且尽可能的缓存filter的结果集，供后续包含相同filter的查询使用，提高查询效率。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code>// 普通查询
+POST my_index/_search
+{
+    &quot;query&quot;: {
+        &quot;term&quot;: {
+            &quot;user&quot;: &quot;Kimchy&quot;
+        }
+    }
+}
+// query-bool-filter 加速查询
+POST my_index/_search
+{
+    &quot;query&quot;: {
+        &quot;bool&quot;: {
+            &quot;filter&quot;: {
+                &quot;term&quot;: {
+                    &quot;user&quot;: &quot;Kimchy&quot;
+                }
+            }
+        }
+    }
+}
+</code></pre></div></td></tr></table></div>
+<h4 id="index_1">index按日期滚动存储</h4>
+<p>写入ES的数据最好通过某种方式做分割，存入不同的index。常见的做法是将数据按模块/功能分类，写入不同的index，然后按照时间去滚动生成index。这样做的好处是各种数据分开管理不会混淆，也易于提高查询效率。同时index按时间滚动，数据过期时删除整个index，要比一条条删除数据或deletebyquery效率高很多，因为删除整个index是直接删除底层文件，而deletebyquery是查询-标记-删除。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code>// module_a
+PUT module_a@2018_01_01
+{
+   &quot;settings&quot; : {
+       &quot;index&quot; : {
+           &quot;number_of_shards&quot; : 3,
+           &quot;number_of_replicas&quot; : 2
+       }
+   }
+}
+PUT module_a@2018_01_02
+{
+   &quot;settings&quot; : {
+       &quot;index&quot; : {
+           &quot;number_of_shards&quot; : 3,
+           &quot;number_of_replicas&quot; : 2
+       }
+   }
+}
+GET module_a@*/_search
+
+// module_b
+PUT module_b@2018_01_01
+{
+   &quot;settings&quot; : {
+       &quot;index&quot; : {
+           &quot;number_of_shards&quot; : 3,
+           &quot;number_of_replicas&quot; : 2
+       }
+   }
+}
+PUT module_b@2018_01_02
+{
+   &quot;settings&quot; : {
+       &quot;index&quot; : {
+           &quot;number_of_shards&quot; : 3,
+           &quot;number_of_replicas&quot; : 2
+       }
+   }
+}
+GET module_b@*/_search
+</code></pre></div></td></tr></table></div>
+<h4 id="_6">分片数和副本数按需控制</h4>
+<p>对于每个index的shard数量，可以根据数据总量、写入压力、节点数量等综合考量后设定，然后根据数据增长状态定期检测下shard数量是否合理。<a href="https://blog.csdn.net/alex_xfboy/article/details/85332383#2.%C2%A0%E5%88%86%E7%89%87%E5%8F%8A%E5%89%AF%E6%9C%AC">多少合适？</a></p>
+<h4 id="segment-memory">Segment Memory优化</h4>
+<p>ES底层采用Lucene做存储，而Lucene的一个index又由若干segment组成，每个segment都会建立自己的倒排索引用于数据查询。Lucene为了加速查询，为每个segment的倒排做了一层前缀索引，这个索引在Lucene4.0以后采用的数据结构是FST (Finite State Transducer)。Lucene加载segment的时候将其全量装载到内存中，加快查询速度。这部分内存被称为SegmentMemory， 常驻内存，占用heap，无法被GC。前面提到，为利用JVM的对象指针压缩技术来节约内存，通常建议JVM内存分配不要超过32G。当集群的数据量过大时，SegmentMemory会吃掉大量的堆内存，而JVM内存空间又有限，此时就需要想办法降低SegmentMemory的使用量了，常用方法有下面几个：</p>
+<ul>
+<li>定期删除不使用的index</li>
+<li>对于不常访问的index，可以通过close接口将其关闭，用到时再打开</li>
+<li>通过force_merge接口强制合并segment，降低segment数量</li>
+</ul>
+<h4 id="mapping">禁止动态mapping</h4>
+<p>动态mapping的坏处：</p>
+<ul>
+<li>造成集群元数据一直变更，导致集群不稳定</li>
+<li>可能造成数据类型与实际类型不一致</li>
+<li>对于一些异常字段或者是扫描类的字段，也会频繁的修改mapping，导致业务不可控</li>
+</ul>
+<h3 id="_7">参考资料</h3>
+<ul>
+<li><a href="https://blog.csdn.net/alex_xfboy/article/details/87938810">Elasticsearch 性能调优</a></li>
+<li><a href="https://blog.csdn.net/laoyang360/article/details/100070285">Elasticsearch高级调优方法论之——根治慢查询！</a></li>
+<li><a href="https://blog.csdn.net/laoyang360/article/details/83048087">为什么Elasticsearch查询变得这么慢了？</a></li>
+<li><a href="https://learnku.com/articles/40845">提升集群写性能</a></li>
+<li><a href="https://blog.csdn.net/wmj2004/article/details/80804411">elasticsearch写入优化记录,从3000到8000/s</a></li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.94c44541.min.js"></script>
+      
+    
+  </body>
+</html>

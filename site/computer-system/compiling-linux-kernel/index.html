@@ -1,0 +1,2675 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="开发知识wiki">
+      
+      
+        <meta name="author" content="tink">
+      
+      
+        <link rel="canonical" href="https://docs.cyub.vip/dev-wiki/computer-system/compiling-linux-kernel/">
+      
+      
+        <link rel="prev" href="../cpu-arch/">
+      
+      
+        <link rel="next" href="../../computer-network/tcp/">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.4">
+    
+    
+      
+        <title>编译Linux内核 - 开发知识wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bd3936ea.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Sans";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linux" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="开发知识wiki" class="md-header__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            开发知识wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              编译Linux内核
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  简介
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../io/" class="md-tabs__link">
+          
+  
+  操作系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../computer-network/tcp/" class="md-tabs__link">
+          
+  
+  计算机网络
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../database/mysql/%E7%AE%80%E4%BB%8B/" class="md-tabs__link">
+          
+  
+  数据库
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cache/" class="md-tabs__link">
+        
+  
+    
+  
+  缓存系统
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../container/install/" class="md-tabs__link">
+          
+  
+  容器
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../qa/redis/" class="md-tabs__link">
+          
+  
+  QA
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="开发知识wiki" class="md-nav__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+
+    </a>
+    开发知识wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    操作系统
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            操作系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../io/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    proc文件系统
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nptl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NPTL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../command/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    常用命令
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systemtap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systemtap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpu-arch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CPU架构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    编译Linux内核
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    编译Linux内核
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    前置准备
+  </a>
+  
+    <nav class="md-nav" aria-label="前置准备">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux_1" class="md-nav__link">
+    Linux 版本导览
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    系统准备
+  </a>
+  
+    <nav class="md-nav" aria-label="系统准备">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux_2" class="md-nav__link">
+    下载 Linux 内核源码
+  </a>
+  
+    <nav class="md-nav" aria-label="下载 Linux 内核源码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tar" class="md-nav__link">
+    校验 Tar 文件的完整性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tar_1" class="md-nav__link">
+    解压 Tar 文件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux_3" class="md-nav__link">
+    配置 Linux 内核
+  </a>
+  
+    <nav class="md-nav" aria-label="配置 Linux 内核">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    使用发行版提供的配置
+  </a>
+  
+    <nav class="md-nav" aria-label="使用发行版提供的配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    更新配置文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debian" class="md-nav__link">
+    针对 Debian 及其衍生版用户
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    使用自定义配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    修改配置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux_4" class="md-nav__link">
+    构建 Linux 内核
+  </a>
+  
+    <nav class="md-nav" aria-label="构建 Linux 内核">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make" class="md-nav__link">
+    自定义 make 目标
+  </a>
+  
+    <nav class="md-nav" aria-label="自定义 make 目标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    构建目标
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    清理目标
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    安装
+  </a>
+  
+    <nav class="md-nav" aria-label="安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    安装内核模块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_5" class="md-nav__link">
+    （可选）安装 Linux 内核头文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dtb-arm-risc-v" class="md-nav__link">
+    安装 DTB（只针对 ARM 和 RISC-V）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_6" class="md-nav__link">
+    安装 Linux 内核
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arch-linux" class="md-nav__link">
+    针对 Arch Linux 用户的说明
+  </a>
+  
+    <nav class="md-nav" aria-label="针对 Arch Linux 用户的说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ram" class="md-nav__link">
+    生成初始 RAM 磁盘
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grub" class="md-nav__link">
+    更新 GRUB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    重启电脑
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    卸载操作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    计算机网络
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            计算机网络
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-network/tcp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TCP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-network/http/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTTP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    数据库
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            数据库
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    mysql
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            mysql
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/mysql/%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    概览
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/mysql/%E4%BA%8B%E5%8A%A1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    事务
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/mysql/%E7%B4%A2%E5%BC%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    索引
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/mysql/FAQ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Elasticsearch
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Elasticsearch
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/elasticsearch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    概览
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/elasticsearch/memory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    内存占用
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/elasticsearch/performance_tuning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    性能调优
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/elasticsearch/production_configuring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    生产配置参考
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/elasticsearch/doc_values_and_fielddata/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    docs value与 field data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/redis/redis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cache/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    缓存系统
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    容器
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            容器
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    镜像
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/cgroup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cgroup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/namespace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    namespace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    QA
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            QA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/redis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    redis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/mysql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mysql
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/tcp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tcp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/http/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    http
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/cache/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    缓存
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/nginx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nginx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/queue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    消息队列
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/io/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/protobuf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    protobuf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/go/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    go
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/dist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    分布式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Elasticsearch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/ref/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    参考资料
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    前置准备
+  </a>
+  
+    <nav class="md-nav" aria-label="前置准备">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux_1" class="md-nav__link">
+    Linux 版本导览
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    系统准备
+  </a>
+  
+    <nav class="md-nav" aria-label="系统准备">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux_2" class="md-nav__link">
+    下载 Linux 内核源码
+  </a>
+  
+    <nav class="md-nav" aria-label="下载 Linux 内核源码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tar" class="md-nav__link">
+    校验 Tar 文件的完整性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tar_1" class="md-nav__link">
+    解压 Tar 文件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux_3" class="md-nav__link">
+    配置 Linux 内核
+  </a>
+  
+    <nav class="md-nav" aria-label="配置 Linux 内核">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    使用发行版提供的配置
+  </a>
+  
+    <nav class="md-nav" aria-label="使用发行版提供的配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    更新配置文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debian" class="md-nav__link">
+    针对 Debian 及其衍生版用户
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    使用自定义配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    修改配置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux_4" class="md-nav__link">
+    构建 Linux 内核
+  </a>
+  
+    <nav class="md-nav" aria-label="构建 Linux 内核">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make" class="md-nav__link">
+    自定义 make 目标
+  </a>
+  
+    <nav class="md-nav" aria-label="自定义 make 目标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    构建目标
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    清理目标
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    安装
+  </a>
+  
+    <nav class="md-nav" aria-label="安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    安装内核模块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_5" class="md-nav__link">
+    （可选）安装 Linux 内核头文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dtb-arm-risc-v" class="md-nav__link">
+    安装 DTB（只针对 ARM 和 RISC-V）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_6" class="md-nav__link">
+    安装 Linux 内核
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arch-linux" class="md-nav__link">
+    针对 Arch Linux 用户的说明
+  </a>
+  
+    <nav class="md-nav" aria-label="针对 Arch Linux 用户的说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ram" class="md-nav__link">
+    生成初始 RAM 磁盘
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grub" class="md-nav__link">
+    更新 GRUB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    重启电脑
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    卸载操作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="linux">Linux 内核动手编译实用指南</h1>
+<p><img alt="" src="https://img.linux.net.cn/data/attachment/album/202310/04/115142ggqqhuclvxdxsb14.jpg" /></p>
+<blockquote>
+<p>一份让你深入体验最新 Linux 内核编译过程的实操指南。</p>
+</blockquote>
+<p>出于各种原因，自行编译 Linux 内核可能引起你的兴趣。这些原因可能包括但不限于：</p>
+<ul>
+<li>测试一个比你目前的 Linux 发行版更新的内核版本</li>
+<li>采用一组不同的配置选项、驱动来构建内核</li>
+<li>学习者的好奇心 :)</li>
+</ul>
+<p>此指南将一步步指导你如何亲自编译 Linux 内核，包括你该运行哪些命令，为什么运行这些命令以及这些命令的执行效果。本文篇幅较长，所以请做好准备！</p>
+<blockquote>
+<p>🚧 诸如 <a href="https://itsfoss.com/upgrade-linux-kernel-ubuntu/">Ubuntu 这样的发行版提供了更简单地安装主线 Linux 内核的方式</a>。但本教程目标是从源码手动完成所有工作。<strong>此教程需要你付出时间、耐心以及丰富的 Linux 命令行使用经验</strong>。本文更注重亲身实践的体验。不管怎么说，我仍建议你在虚拟机或备用系统中尝试此冒险，而非在你的主系统上进行。</p>
+</blockquote>
+<h3 id="_1">前置准备</h3>
+<p>在软件领域，构建任何事物都有两个基本要求：</p>
+<ol>
+<li>源代码</li>
+<li>构建依赖</li>
+</ol>
+<p>因此，作为预备环节，我们需要下载 Linux 内核的源码压缩包，并安装一些能让我们成功构建 Linux 内核的依赖项。</p>
+<h4 id="linux_1">Linux 版本导览</h4>
+<p>在任何时刻，<a href="https://en.wikipedia.org/wiki/History_of_Linux#Naming"><del>Freax</del></a> Linux 内核都有四种“版本”。</p>
+<p>Linux 的这些 “版本”，按照开发流程的顺序是：</p>
+<ol>
+<li><strong>linux-next 树：</strong> 所有准备合并到 Linux 代码库的代码首先被合并到 linux-next 树。它代表的是 Linux 内核最新也是“最不稳定”的状态。大多数 Linux 内核开发者和测试人员使用这个来提高代码质量，为 Linus Torvalds 的后续提取做准备。<strong>请谨慎使用！</strong></li>
+<li><strong>发布候选版（RC） / 主线版：</strong> Linus 从 linux-next 树抽取代码并创建一个初始发布版本。这个初始发布版本的测试版称为 RC（<ruby>发布候选<rt>Release Candidate</rt></ruby>）版本。一旦 RC 版本发布，Linus 只会接受对它的错误修复和性能退化相关的补丁。基础这些反馈，Linus 会每周发布一个 RC 内核，直到他对代码感到满意。RC 发行版本的标识是 <code>-rc</code> 后缀，后面跟一个数字。</li>
+<li><strong>稳定版：</strong> 当 Linus 觉得最新的 RC 版本已稳定时，他会发布最终的“公开”版本。稳定发布版将会维护几周时间。像 Arch Linux 和 Fedora Linux 这样的前沿 Linux 发行版会使用此类版本。<strong>我建议你在试用 linux-next 或任何 RC 版本之前，先试一试此版本。</strong></li>
+<li><strong>LTS 版本：</strong> 每年最后一个稳定版将会再维护 <a href="https://news.itsfoss.com/linux-kernel-support/">几年</a>。这通常是一个较旧的版本，但它会 <strong>会积极地维护并提供安全修复</strong>。Debian 的稳定版本会使用 Linux 内核的 LTS 版版本。</li>
+</ol>
+<p>若想了解更多此方面的知识，可参阅 <a href="https://www.kernel.org/category/releases.html">官方文档</a>。</p>
+<p>本文将以当前可用的最新稳定版为例，编写此文时的 Linux 内核版本是 <a href="https://lwn.net/Articles/945378/">6.5.5</a>。</p>
+<h3 id="_2">系统准备</h3>
+<p>由于 Linux 内核使用 C 语言编写，编译 Linux 内核至少需要一个 C 编译器。你的计算机上可能还需要其他一些依赖项，现在是安装它们的时候了。</p>
+<blockquote>
+<p>💡 这个指南主要聚焦于使用 GNU C 编译器（GCC）来编译 Linux 内核。但在未来的文章中（可能会深入介绍 Rust 的支持），我<strong>可能</strong>会介绍使用 LLVM 的 Clang 编译器作为 GCC 的替代品。</p>
+<p>不过，请注意，MSVC 并不适用。尽管如此，我仍期待有微软的员工为此发送修补程序集。我在瞎想啥？</p>
+</blockquote>
+<p>对于 Arch Linux 以及其衍生版本的用户，安装命令如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo pacman -S base-devel bc coreutils cpio gettext initramfs kmod libelf ncurses pahole perl python rsync tar xz
+</code></pre></div></td></tr></table></div>
+<p>对于 Debian 以及其衍生版本的用户，安装命令如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt install bc binutils bison dwarves flex gcc git gnupg2 gzip libelf-dev libncurses5-dev libssl-dev make openssl pahole perl-base rsync tar xz-utils
+</code></pre></div></td></tr></table></div>
+<p>对于 Fedora 以及其衍生版本的用户，安装命令如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo dnf install binutils ncurses-devel \
+    /usr/include/{libelf.h,openssl/pkcs7.h} \
+    /usr/bin/{bc,bison,flex,gcc,git,gpg2,gzip,make,openssl,pahole,perl,rsync,tar,xz,zstd}
+</code></pre></div></td></tr></table></div>
+<h4 id="linux_2">下载 Linux 内核源码</h4>
+<p>请访问 <a href="https://kernel.org/">kernel.org</a>，在页面中寻找第一个 <ruby>稳定<rt>Stable</rt></ruby> 版本。你不会找不到它，因为它是最显眼的黄色方框哦 ;)</p>
+<blockquote>
+<p><strong><a href="https://kernel.org/">点击访问 kernel.org</a></strong></p>
+</blockquote>
+<p><img alt="" src="https://itsfoss.com/content/images/2023/09/Screenshot-2023-09-24-at-2.21.00-PM.png" /></p>
+<p>通过点击黄色的方框，你就可以下载 Tar 文件。同时，也别忘了下载相匹配的 PGP 签名文件，稍后我们需要用到它来验证 Tar 文件。它的扩展名为 <code>.tar.sign</code>。</p>
+<h5 id="tar">校验 Tar 文件的完整性</h5>
+<p>你如何知道刚下载的 Tar 文件是否被损坏？对于个人来说，一个损坏的 Tar 文件只会浪费你的宝贵时间，如果你是在为一个组织工作，那么可能会危及到组织的安全（这时你可能还有更大的问题需要担忧，但我们并不想让所有人都产生创伤后应激障碍！）。</p>
+<p>为了验证我们的 Tar 文件的完整性，我们需要先解压它。目前，它是使用 XZ 压缩算法压缩的。因此，我将使用 <code>unxz</code> 工具（其实就是 <code>xz --decompress</code> 的别名）来解压 <code>.tar.xz</code> 格式的压缩文件。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>unxz --keep linux-*.tar.xz
+</code></pre></div></td></tr></table></div>
+<p>解压完成后，我们需要获取 Linus Torvalds 和 Greg KH 使用的 GPG 公开密钥。这些密钥用于对 Tar 文件进行签名。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>gpg2 --locate-keys torvalds@kernel.org gregkh@kernel.org
+</code></pre></div></td></tr></table></div>
+<p>你应该可以得到一个与我在我的电脑上看到的类似的结果：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code>$ gpg2 --locate-keys torvalds@kernel.org gregkh@kernel.org
+gpg: /home/pratham/.gnupg/trustdb.gpg: trustdb created
+gpg: key 38DBBDC86092693E: public key &quot;Greg Kroah-Hartman &lt;gregkh@kernel.org&gt;&quot; imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg: key 79BE3E4300411886: public key &quot;Linus Torvalds &lt;torvalds@kernel.org&gt;&quot; imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+pub   rsa4096 2011-09-23 [SC]
+      647F28654894E3BD457199BE38DBBDC86092693E
+uid           [ unknown] Greg Kroah-Hartman &lt;gregkh@kernel.org&gt;
+sub   rsa4096 2011-09-23 [E]
+
+pub   rsa2048 2011-09-20 [SC]
+      ABAF11C65A2970B130ABE3C479BE3E4300411886
+uid           [ unknown] Linus Torvalds &lt;torvalds@kernel.org&gt;
+sub   rsa2048 2011-09-20 [E]
+</code></pre></div></td></tr></table></div>
+<p>在导入 Greg 和 Linus 的密钥后，我们可以使用 <code>--verify</code> 标志来验证 Tar 的完整性，操作如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>gpg2 --verify linux-*.tar.sign
+</code></pre></div></td></tr></table></div>
+<p>如果验证成功，你应该会看到如下的输出信息：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>$ gpg2 --verify linux-*.tar.sign
+gpg: assuming signed data in &#39;linux-6.5.5.tar&#39;
+gpg: Signature made Saturday 23 September 2023 02:46:13 PM IST
+gpg:                using RSA key 647F28654894E3BD457199BE38DBBDC86092693E
+gpg: Good signature from &quot;Greg Kroah-Hartman &lt;gregkh@kernel.org&gt;&quot; [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 647F 2865 4894 E3BD 4571  99BE 38DB BDC8 6092 693E
+</code></pre></div></td></tr></table></div>
+<p><strong>务必查看是否存在 <code>gpg: Good signature</code> 的提示，然后再继续！</strong></p>
+<blockquote>
+<p>💡 你可以忽略以下警告：<code>WARNING: This key is not certified with a trusted signature! There is no indication that the signature belongs to the owner.</code>。</p>
+<p>我们已根据 Linus 和 Greg 的邮件地址获取了公开密钥，并无需对此警告感到担忧。</p>
+</blockquote>
+<h5 id="tar_1">解压 Tar 文件</h5>
+<p>如果你顺利的进行到这里，意味着你的 Tar 文件完整性检查已经成功完成。接下来，我们将从 Tar 文件中解压出 Linux 内核的源码。</p>
+<p><img alt="The &quot;TAR&quot; xkcd comic: https://xkcd.com/1168/" src="https://itsfoss.com/content/images/2023/09/tar_2x.png" /></p>
+<p>这个步骤十分简单，只需对 Tar 文件执行 <code>tar -xf</code> 命令，如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>tar -xf linux-*.tar
+</code></pre></div></td></tr></table></div>
+<p>在这里，<code>-x</code> 选项表示解压，<code>-f</code> 选项则用来告诉 Tar 文件的文件名。</p>
+<p>这个解压过程可能需要几分钟时间，你可以先放松，耐心等待一下。</p>
+<h3 id="linux_3">配置 Linux 内核</h3>
+<p>Linux 内核的构建过程会查找 <code>.config</code> 文件。顾名思义，这是一个配置文件，用于指定 Linux 内核的所有可能的配置选项。这是必需的文件。</p>
+<p>获取 Linux 内核的 <code>.config</code> 文件有两种方式：</p>
+<ol>
+<li>使用你的 Linux 发行版的配置作为基础（<strong>推荐做法</strong>）</li>
+<li>使用默认的，通用的配置</li>
+</ol>
+<blockquote>
+<p>💡 也有第三种方法，也就是从零开始，手动配置每一个选项，但注意，这需要配置超过 12,000 个选项。并不推荐这种方式，因为手动配置所有选项将花费大量的时间，并且你还需要理解每个启用和禁用选项的含义。</p>
+</blockquote>
+<h4 id="_3">使用发行版提供的配置</h4>
+<p><strong>使用你的 Linux 发行版提供的配置是一个安全的选择。</strong> 如果你只是跟随这个指南测试一个不是你的发行版提供的新内核，那么这就是推荐的方式。</p>
+<p>你的 Linux 发行版的 Linux 内核配置文件会在以下两个位置之一：</p>
+<ul>
+<li>大多数 Linux 发行版，如 Debian 和 Fedora 及其衍生版，将会把它存在 <code>/boot/config-$(uname -r)</code>。</li>
+<li>一些 Linux 发行版，比如 Arch Linux 将它整合在了 Linux 内核中。所以，可以在 <code>/proc/config.gz</code> 找到。</li>
+</ul>
+<blockquote>
+<p>💡 如果两者都有，建议使用 <code>/proc/config.gz</code>。这是因为它在只读文件系统中，所以是未被篡改的。</p>
+</blockquote>
+<p>进入含有已经解压出的 Tar 文件的目录。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>cd linux-*/
+</code></pre></div></td></tr></table></div>
+<p>接着，复制你的 Linux 发行版的配置文件：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>### Debian 和 Fedora 及其衍生版：
+$ cp /boot/config-&quot;$(uname -r)&quot; .config
+
+### Arch Linux 及其衍生版：
+$ zcat /proc/config.gz &gt; .config
+</code></pre></div></td></tr></table></div>
+<h5 id="_4">更新配置文件</h5>
+<p>一旦完成这些步骤，接下来就需要“更新”配置文件了。因为你的发行版提供的配置很可能比你正在构建的 Linux 内核版本要旧。</p>
+<blockquote>
+<p>💡 <strong>这同样适用于像 Arch Linux 和 Fedora 这样前沿的 Linux 发行版。</strong> 它们并不会因为有新版本可用就立刻发布更新。他们会进行一些质量控制工作，这必然会花费些时间。因此，即便是你的发行版提供的最新内核，相较于你在 kernel.org 上获取的版本也会滞后几个小版本。</p>
+</blockquote>
+<p>要更新一个已有的 <code>.config</code> 文件，我们使用 <code>make</code> 命令搭配 <code>olddefconfig</code> 参数。简单解释一下，这个命令的意思是使用 <em>旧的、默认的、配置</em>。</p>
+<p>这将使用“旧的配置文件”（当前保存为 <code>.config</code>，这是你发行版配置的一份直接副本），并检查从上一版本以来 Linux 代码库中新加的任何配置选项。如果找到任何新的、<em>未配置</em> 的选项，该选项的默认配置值会被使用，并会对 <code>.config</code> 文件进行更新。</p>
+<p>原来的 <code>.config</code> 文件将被重命名为 <code>.config.old</code> 进行备份，并将新的更改写入至 <code>.config</code> 文件。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>make olddefconfig
+</code></pre></div></td></tr></table></div>
+<p>以下是我机器上的输出：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code>$ file .config
+.config: Linux make config build file, ASCII text
+
+$ make olddefconfig
+    HOSTCC  scripts/basic/fixdep
+    HOSTCC  scripts/kconfig/conf.o
+    HOSTCC  scripts/kconfig/confdata.o
+    HOSTCC  scripts/kconfig/expr.o
+    LEX     scripts/kconfig/lexer.lex.c
+    YACC    scripts/kconfig/parser.tab.[ch]
+    HOSTCC  scripts/kconfig/lexer.lex.o
+    HOSTCC  scripts/kconfig/menu.o
+    HOSTCC  scripts/kconfig/parser.tab.o
+    HOSTCC  scripts/kconfig/preprocess.o
+    HOSTCC  scripts/kconfig/symbol.o
+    HOSTCC  scripts/kconfig/util.o
+    HOSTLD  scripts/kconfig/conf
+.config:8593:warning: symbol value &#39;m&#39; invalid for USB_FOTG210_HCD
+.config:8859:warning: symbol value &#39;m&#39; invalid for USB_FOTG210_UDC
+#
+# configuration written to .config
+#
+</code></pre></div></td></tr></table></div>
+<h5 id="debian">针对 Debian 及其衍生版用户</h5>
+<p>Debian 及其衍生版为内核模块使用一个签名证书。默认情况下，你的计算机并不包含这个证书。</p>
+<p>我推荐关闭启用模块签名的选项。具体如下所示：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>./scripts/config --file .config --set-str SYSTEM_TRUSTED_KEYS &#39;&#39;
+./scripts/config --file .config --set-str SYSTEM_REVOCATION_KEYS &#39;&#39;
+</code></pre></div></td></tr></table></div>
+<p><strong>如果你不这么做，在后面你进行 Linux 内核构建时，可能会导致构建失败。要注意这点。</strong></p>
+<h4 id="_5">使用自定义配置</h4>
+<p>如果你出于学习内核开发的目的学习如何构建 Linux 内核，那你应该这样做。</p>
+<blockquote>
+<p>🚧 <strong>请注意，偏离你的 Linux 发行版的配置可能无法在实体硬件上“正常”工作。</strong> 问题可能是特定硬件无法工作、Linux 内核无法启动等。</p>
+<p>因此，我们只建议在虚拟机中使用。</p>
+</blockquote>
+<p>你可以通过查看 <a href="https://www.kernel.org/doc/makehelp.txt">make help 的输出</a> 来查看 <em>所有</em> 可用的选项，但我们主要关注三个 <code>make</code> 目标：</p>
+<ul>
+<li><code>defconfig</code>: 默认配置。</li>
+<li><code>allmodconfig</code>: 根据当前系统状态，尽可能地把项目构建为可加载模块（而非内建）。</li>
+<li><code>tinyconfig</code>: 极简的 Linux 内核。</li>
+</ul>
+<p>由于 <code>tinyconfig</code> 目标只会构建少数项目，构建时间将会缩短。我个人选择它的原因主要有：</p>
+<ol>
+<li>检查我在代码/工具链中做的修改是否正确，以及代码是否可以编译。</li>
+<li>在虚拟机中只进行少数选项的测试。</li>
+</ol>
+<blockquote>
+<p>🚧 在为 ARM 或 RISC-V 机器构建 Linux 内核时，你可能需要 DTB（设备树的二进制文件）。<strong>使用 <code>tinyconfig</code> 目标将不会启用构建 DTB 的选项，你的内核很可能无法启动。</strong></p>
+<p>当然，你可以用 QEMU 在没有任何 DTB 的情况下启动 Linux 内核。但这篇文章并不会聚焦在此。或许你可以通过评论，让我在之后的时间里覆盖这个话题 ;)</p>
+</blockquote>
+<p><strong>除非你确切地知道自己在做什么，否则你应当使用 <code>defconfig</code> 目标。</strong> 以下是我在我的电脑上运行的效果：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code>$ make defconfig
+    HOSTCC  scripts/basic/fixdep
+    HOSTCC  scripts/kconfig/conf.o
+    HOSTCC  scripts/kconfig/confdata.o
+    HOSTCC  scripts/kconfig/expr.o
+    LEX     scripts/kconfig/lexer.lex.c
+    YACC    scripts/kconfig/parser.tab.[ch]
+    HOSTCC  scripts/kconfig/lexer.lex.o
+    HOSTCC  scripts/kconfig/menu.o
+    HOSTCC  scripts/kconfig/parser.tab.o
+    HOSTCC  scripts/kconfig/preprocess.o
+    HOSTCC  scripts/kconfig/symbol.o
+    HOSTCC  scripts/kconfig/util.o
+    HOSTLD  scripts/kconfig/conf
+*** Default configuration is based on &#39;defconfig&#39;
+#
+# configuration written to .config
+#
+</code></pre></div></td></tr></table></div>
+<h4 id="_6">修改配置</h4>
+<p>无论你是使用 Linux 发行版的配置并更新它，还是使用 <code>defconfig</code> 目标创建新的 <code>.config</code> 文件，你都可能希望熟悉如何修改这个配置文件。<strong>最可靠的修改方式是使用 <code>menuconfig</code> 或 <code>nconfig</code> 目标。</strong></p>
+<p>这两个目标的功能是相同的，只不过提供给你的界面有所不同。这是这两者间唯一的区别。我个人更偏向于使用 <code>menuconfig</code> 目标，但近来我发现 <code>nconfig</code> 在搜索选项时似乎更具直观性，所以我逐渐转向使用它。</p>
+<p>首先，带着 <code>menuconfig</code> 目标运行 <code>make</code> 命令：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>$ make menuconfig
+    HOSTCC  scripts/kconfig/mconf.o
+    HOSTCC  scripts/kconfig/lxdialog/checklist.o
+    HOSTCC  scripts/kconfig/lxdialog/inputbox.o
+    HOSTCC  scripts/kconfig/lxdialog/menubox.o
+    HOSTCC  scripts/kconfig/lxdialog/textbox.o
+    HOSTCC  scripts/kconfig/lxdialog/util.o
+    HOSTCC  scripts/kconfig/lxdialog/yesno.o
+    HOSTLD  scripts/kconfig/mconf
+</code></pre></div></td></tr></table></div>
+<p>在此界面，你可以根据各选项的类型来进行切换操作。</p>
+<p>有两类可切换选项：</p>
+<ul>
+<li>布尔状态选项：这类选项只能关闭（<code>[ ]</code>）或作为内建组件开启（<code>[*]</code>）。</li>
+<li>三态选项：这类选项可以关闭（<code>&lt; &gt;</code>）、内建（<code>&lt;*&gt;</code>），或作为可加载模块（<code>&lt;M&gt;</code>）进行构建。</li>
+</ul>
+<p>想要了解更多关于某个选项的信息，使用上/下箭头键导航至该选项，然后按 <code>&lt;TAB&gt;</code> 键，直至底部的 <code>&lt; Help &gt;</code> 选项被选中，然后按回车键进行选择。此时就会显示关于该配置选项的帮助信息。</p>
+<p><strong>在修改选项时请务必谨慎。</strong></p>
+<p>当你满意配置后，按 <code>&lt;TAB&gt;</code> 键直到底部的 <code>&lt; Save &gt;</code> 选项被选中。然后按回车键进行选择。然后再次按回车键（<strong>记住，此时不要更改文件名</strong>），就能将更新后的配置保存到 <code>.config</code> 文件中。</p>
+<h3 id="linux_4">构建 Linux 内核</h3>
+<p>构建 Linux 内核实际上十分简单。然而，在开始构建之前，让我们为自定义内核构建添加一个标签。我将使用字符串 <code>-pratham</code> 作为标签，并利用 <code>LOCALVERSION</code> 变量来实施。你可以使用以下命令实现配置：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>./scripts/config --file .config --set-str LOCALVERSION &quot;-pratham&quot;
+</code></pre></div></td></tr></table></div>
+<p>这一命令将 <code>.config</code> 文件中的 <code>CONFIG_LOCALVERSION</code> 配置选项设为我在结尾指定的字符串，即 <code>-pratham</code>。当然，你也不必非得使用我所用的名字哦 ;)</p>
+<p><code>LOCALVERSION</code> 选项可用于设置一个“本地”版本，它会被附加到通常的 <code>x.y.z</code> 版本方案之后，并在你运行 <code>uname -r</code> 命令时一并显示。</p>
+<p>由于我正在构建的是 6.5.5 版本内核，而 <code>LOCALVERSION</code> 字符串被设为 <code>-pratham</code>，因此，对我来说，最后的版本名将会是 <code>6.5.5-pratham</code>。这么做的目的是确保我所构建的自定义内核不会与发行版所提供的内核产生冲突。</p>
+<p>接下来，我们来真正地构建内核。可以用以下的命令完成此步骤：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>make -j$(nproc) 2&gt;&amp;1 | tee log
+</code></pre></div></td></tr></table></div>
+<p><strong>这对大部分（99%）用户来说已经足够了。</strong></p>
+<p>其中的 <code>-j</code> 选项用于指定并行编译任务的数量。而 <code>nproc</code> 命令用于返回可用处理单位（包括线程）的数量。因此，<code>-j$(nproc)</code> 其实意味着“使用我拥有的 CPU 线程数相同数量的并行编译任务”。</p>
+<p><code>2&gt;&amp;1</code> 会将 STDOUT 和 STDIN 重定向到相同的文件描述符，并通过管道传输给 <code>tee</code> 命令，这会将输出存储在一个名为 <code>log</code> 的文件，并且在控制台打印出完全相同的文本。如果你在构建时遇到错误，并希望回顾日志来检查出了什么问题，这将会十分有用。遇到那种情况，你只需要简单执行 <code>grep Error log</code> 命令就能找到线索。</p>
+<h4 id="make">自定义 make 目标</h4>
+<p>在 Linux 内核的源文件夹中，<code>make</code> 命令有一些自定义的目标可供执行各种操作。这些主要作为开发者的参考。如果你的唯一目标是安装一个比你当前发行版更新的 Linux 内核，那么你完全可以跳过这部分内容 ;)</p>
+<h5 id="_7">构建目标</h5>
+<p>作为一名开发者，你可能只想构建 Linux 内核，或者只想构建模块，或者只想构建设备树二进制（DTB）。在这种情况下，你可以指定一个构建目标，然后 <code>make</code> 命令只会构建指定的项目，而不会构建其他的。</p>
+<p>以下是一些构建目标：</p>
+<ul>
+<li><code>vmlinux</code>：纯粹的 Linux 内核。</li>
+<li><code>modules</code>：可加载模块。</li>
+<li><code>dtbs</code>：设备树二进制文件（主要用于 ARM 和 RISC-V 架构）。</li>
+<li><code>all</code>：构建所有被标记了星号 <code>*</code> 的项目（从 <code>make help</code> 的输出中可以查看）。</li>
+</ul>
+<p>通常情况下，你并不需要指定构建目标，因为它们都已经在构建列表中。所列出的目标是在你只想要测试某一个构建目标，而不是其他目标时的情况。</p>
+<p>依据你的 <a href="https://itsfoss.com/arm-aarch64-x86_64/">计算机架构</a>，构建完成的 Linux 内核镜像（存放在 <code>/boot</code> 目录）的名称会有所不同。</p>
+<p>对于 <code>x86_64</code>，Linux 内核的默认镜像名称是 <code>bzImage</code>。因此，如果你只需要构建引导所需的 Linux 内核，你可以像下面这样设定 <code>bzImage</code> 为目标：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>### 对于 x86_64
+$ make bzImage
+</code></pre></div></td></tr></table></div>
+<p>“那么如何在我的架构上找到用来调用 <code>make</code> 的目标名称呢？”</p>
+<p>有两种方法。要么你可以执行 <code>make help</code> 之后查找在 <code>Architecture specific targets</code> 下，第一个前面带有星号 <code>*</code> 的选项。</p>
+<p>或者，如果你希望自动完成，你可以利用 <code>image_name</code> 目标得到镜像的完全路径（相对路径），选择性地添加 <code>-s</code> 标志来获得有用的输出。</p>
+<p>以下是我拥有的三台电脑的输出，一台是 <code>x86_64</code>，另一台是 <code>AArch64</code>，还有一台是 <code>riscv</code> ：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>### x86_64
+$ make -s image_name
+arch/x86/boot/bzImage
+
+### AArch64
+$ make -s image_name
+arch/arm64/boot/Image.gz
+
+### RISC-V
+$ make -s image_name
+arch/riscv/boot/Image.gz
+</code></pre></div></td></tr></table></div>
+<p>现在，要只构建 Linux 内核镜像，你可以这样进行：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>make $(make -s image_name | awk -F &#39;/&#39; &#39;{print $4}&#39;)
+</code></pre></div></td></tr></table></div>
+<h5 id="_8">清理目标</h5>
+<p>如果你需要清理构建产生的文件，你可以用以下的目标来实现你的需求：</p>
+<ul>
+<li><code>clean</code>：除了 <code>.config</code> 文件外，删除几乎所有其他内容。</li>
+<li><code>mrproper</code>：执行了 <code>make clean</code> 的所有操作外，还会删除 <code>.config</code> 文件。</li>
+<li><code>distclean</code>：除了执行 <code>make mrproper</code> 的所有操作外，还会清理任何补丁文件。</li>
+</ul>
+<h3 id="_9">安装</h3>
+<p>一旦成功编译了 Linux 内核，接下来就是启动安装一些东西的时候了。“<em>一些</em> 东西？” 没错，我们至少构建了两种不同的东西，如果你使用的是 ARM 或 RISC-V 架构，那就有三种。我会在以下内容中详细解释。</p>
+<blockquote>
+<p>🚧 虽然我将告诉你不同的安装方式，尤其是关于如何改变默认安装路径的方法，但<strong>如果你不确定自己在做什么，那么我不建议你这么做！</strong> 请慎重考虑，如果你决定走自定义的路线，那你需要自己负责后果。默认设置之所以存在，是因为它们有其特殊的原因 ;)</p>
+</blockquote>
+<h4 id="_10">安装内核模块</h4>
+<p>Linux 内核有部分在系统启动时并非必需的。这些部分被构建为可加载模块，即在需要时才进行加载和卸载。</p>
+<p>所以，首先需要安装这些模块。这可以通过 <code>modules_install</code> 目标完成。<strong>必须使用 <code>sudo</code></strong>，因为模块会被安装在 <code>/lib/modules/&lt;kernel_release&gt;-&lt;localversion&gt;</code> 这个需要 <code>root</code> 权限的路径下。</p>
+<p>这个过程不仅会安装内核模块，还会对其进行签名，所以可能需要一些时间。好消息是你可以通过之前提到的 <code>-j$(nproc)</code> 选项来并行执行安装任务，这样会快一些。;)</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo make modules_install -j$(nproc)
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><strong>给开发者的提示：</strong> 你可以通过设定 <code>INSTALL_MOD_PATH</code> 变量来指定一个不同的路径存放 Linux 模块，而不用默认的 <code>/lib/modules/&lt;kernel_release&gt;-&lt;localversion&gt;</code>，具体如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>   sudo make modules_install INSTALL_MOD_PATH=&lt;path&gt;
+</code></pre></div></td></tr></table></div>
+<p><strong>另一个给开发者的提示：</strong> 你可以使用 <code>INSTALL_MOD_STRIP</code> 变量来决定是否需要剥离模块的调试符号。如果未设定该变量，调试符号<strong>不会被剥离</strong>。当设为 <code>1</code> 时，符号信息将会被使用 <code>--strip-debug</code> 选项剥离，随后该选项会传递给 <code>strip</code>（或者在使用 Clang 的时候传递给 <code>llvm-strip</code>）工具。</p>
+</blockquote>
+<h4 id="linux_5">（可选）安装 Linux 内核头文件</h4>
+<p>如果你打算使用这个内核来支持树外模块，比如 ZFS 或英伟达 DKMS，或者打算尝试自行编写模块，你可能会需要 Linux 内核提供的头文件。</p>
+<p>可以通过以下方式使用 <code>headers_install</code> 目标来安装 Linux 内核头文件：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo make headers_install
+</code></pre></div></td></tr></table></div>
+<p><strong>应使用 <code>sudo</code> 命令</strong>，因为这些头文件会被安装到 <code>/usr</code> 目录。同时还会在 <code>/usr</code> 目录内创建子目录 <code>include/linux</code>，然后将头文件安装到 <code>/usr/include/linux</code> 内。</p>
+<blockquote>
+<p><strong>给开发者的提示：</strong> 通过设定 <code>INSTALL_HDR_PATH</code> 变量，你可以修改 Linux 内核头文件的安装路径。</p>
+</blockquote>
+<h4 id="dtb-arm-risc-v">安装 DTB（只针对 ARM 和 RISC-V）</h4>
+<p><strong>如果你使用的是 x86_64 架构，那么你可以跳过此步骤！</strong></p>
+<p>如果你针对 ARM 或者 RISC-V 构建了内核，那么在运行 <code>make</code> 的过程中，设备树的二进制文件可能已经被编译出来了。你可以通过在 <code>arch/&lt;machine_architecture&gt;/boot/dts</code> 目录查找 <code>.dtb</code> 文件来确认这一点。</p>
+<p>这里提供了一个快速检查的技巧：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>### 对于 AArch32
+$ find arch/arm/boot/dts -name &quot;*.dtb&quot; -type f | head -n 1 &gt; /dev/null &amp;&amp; echo &quot;DTBs for ARM32 were built&quot;
+
+### 对于 AArch64
+$ find arch/arm64/boot/dts -name &quot;*.dtb&quot; -type f | head -n 1 &gt; /dev/null &amp;&amp; echo &quot;DTBs for ARM64 were built&quot;
+
+### 对于 RISC-V
+$ find arch/riscv/boot/dts -name &quot;*.dtb&quot; -type f | head -n 1 &gt; /dev/null &amp;&amp; echo &quot;DTBs for RISC-V were built&quot;
+</code></pre></div></td></tr></table></div>
+<p>如果你看到出现 <code>DTBs for &lt;arch&gt; were built</code> 的消息，那么你可以开始安装 DTB。这可以通过 <code>dtbs_install</code> 目标来实现。</p>
+<p><strong>需要使用 <code>sudo</code></strong>，因为它们会被安装在 <code>/boot/dtb-&lt;kernel_release&gt;-&lt;localversion&gt;</code> 中，而这个目录是由 <code>root</code> 所拥有的。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo make dtbs_install
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><strong>给开发者的提示：</strong> 就像安装模块一样，你可以使用 <code>INSTALL_DTBS_PATH</code> 变量指定一个自定义的路径来安装设备树二进制文件。</p>
+</blockquote>
+<h4 id="linux_6">安装 Linux 内核</h4>
+<p>最后，我们来安装 Linux 内核本身！这可以通过 <code>install</code> 目标来完成，就像这样：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo make install
+</code></pre></div></td></tr></table></div>
+<p><strong>在这里必须使用 <code>sudo</code></strong>，因为 Linux 内核将被安装在 <code>/boot</code> 目录，而这个目录不允许普通用户写入。</p>
+<blockquote>
+<p>💡 一般来讲，<code>install</code> 目标也会更新引导加载程序，但是如果它没有成功，那可能是不支持你使用的引导加载程序。如果你没有使用 GRUB 作为你的引导加载程序，请一定要阅读你引导加载程序的使用手册 ;)</p>
+<p><strong>给开发者的提示：</strong> 并不奇怪，<code>INSTALL_PATH</code> 变量被用来设定 Linux 内核的安装位置，而非默认的 <code>/boot</code> 目录。</p>
+</blockquote>
+<h4 id="arch-linux">针对 Arch Linux 用户的说明</h4>
+<p>如果你尝试执行了 <code>make install</code> 命令，可能已经注意到产生了错误。错误如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$ sudo make install
+    INSTALL /boot
+Cannot find LILO.
+</code></pre></div></td></tr></table></div>
+<p>要在 Arch Linux 上实际完成 Linux 内核的安装，我们需要手动复制 Linux 内核镜像文件。别担心，如果你使用的是 Arch Linux，手动操作应该是家常便饭了。( ͡° ͜ʖ ͡°)</p>
+<p>可以使用以下命令完成这个步骤：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo install -Dm644 &quot;$(make -s image_name)&quot; /boot/vmlinuz-&lt;kernel_release&gt;-&lt;localversion&gt;
+</code></pre></div></td></tr></table></div>
+<p>因为我编译的是 6.5.5 版本的内核，所以我将会执行下面这条命令，你可以根据你的实际情况进行适当调整：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo install -Dm644 &quot;$(make -s image_name)&quot; /boot/vmlinuz-6.5.5-pratham
+</code></pre></div></td></tr></table></div>
+<p>虽然不是必须的，但最好复制一份名为 <code>System.map</code> 的文件。既然你已经在操作了，一并也复制了 <code>.config</code> 文件吧 ;)</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo cp -vf System.map /boot/System.map-&lt;kernel_release&gt;-&lt;localversion&gt;
+sudo cp -vf .config /boot/config-&lt;kernel_release&gt;-&lt;localversion&gt;
+</code></pre></div></td></tr></table></div>
+<h5 id="ram">生成初始 RAM 磁盘</h5>
+<p>当你安装 Arch Linux 时，可能已经了解过 <code>mkinitcpio</code> 这个工具。现在，我们将使用它来创建初始的 RAM 磁盘。</p>
+<p>首先，我们需要创建一个预设文件。向 <code>/etc/mkinitcpio.d/linux-&lt;localversion&gt;.preset</code> 文件中添加以下内容，根据实际需要来替换 <code>&lt;kernel_release&gt;</code> 和 <code>&lt;localversion&gt;</code>。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>ALL_config=&quot;/etc/mkinitcpio.conf&quot;
+ALL_kver=&quot;/boot/vmlinuz-&lt;kernel_release&gt;-&lt;localversion&gt;&quot;
+
+PRESETS=(&#39;default&#39; &#39;fallback&#39;)
+
+default_image=&quot;/boot/initramfs-&lt;kernel_release&gt;-&lt;localversion&gt;.img&quot;
+fallback_options=&quot;-S autodetect&quot;
+</code></pre></div></td></tr></table></div>
+<p>配置完成后，执行下面的命令来生成初始 RAM 磁盘：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo mkinitcpio -p linux-&lt;localversion&gt;
+</code></pre></div></td></tr></table></div>
+<p>我自己的电脑上得到的输出如下，你的结果应该会类似！</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code>$ sudo mkinitcpio -p linux-pratham
+==&gt; Building image from preset: /etc/mkinitcpio.d/linux-pratham.preset: &#39;default&#39;
+==&gt; Using configuration file: &#39;/etc/mkinitcpio.conf&#39;
+    -&gt; -k /boot/vmlinuz-6.5.5-pratham -c /etc/mkinitcpio.conf -g /boot/initramfs-6.5.5-pratham.img
+==&gt; Starting build: &#39;6.5.5-pratham&#39;
+    -&gt; Running build hook: [base]
+    -&gt; Running build hook: [udev]
+    -&gt; Running build hook: [autodetect]
+    -&gt; Running build hook: [modconf]
+    -&gt; Running build hook: [kms]
+    -&gt; Running build hook: [keyboard]
+==&gt; WARNING: Possibly missing firmware for module: &#39;xhci_pci&#39;
+    -&gt; Running build hook: [keymap]
+    -&gt; Running build hook: [consolefont]
+==&gt; WARNING: consolefont: no font found in configuration
+    -&gt; Running build hook: [block]
+    -&gt; Running build hook: [filesystems]
+    -&gt; Running build hook: [fsck]
+==&gt; Generating module dependencies
+==&gt; Creating zstd-compressed initcpio image: &#39;/boot/initramfs-6.5.5-pratham.img&#39;
+==&gt; Image generation successful
+==&gt; Building image from preset: /etc/mkinitcpio.d/linux-pratham.preset: &#39;fallback&#39;
+==&gt; Using configuration file: &#39;/etc/mkinitcpio.conf&#39;
+==&gt; WARNING: No image or UKI specified. Skipping image &#39;fallback&#39;
+</code></pre></div></td></tr></table></div>
+<p>初始 RAM 磁盘已成功生成，现在我们可以进入下一步，更新引导加载器！</p>
+<h5 id="grub">更新 GRUB</h5>
+<p>一旦所有必要的文件已成功复制到其对应的位置，接下来，我们将进行 GRUB 的更新。</p>
+<p>使用以下命令对 GRUB 引导加载器进行更新：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p>💡 如果你使用的引导加载器不是 GRUB，请参看 Arch Wiki 中相关的引导加载器文档。</p>
+</blockquote>
+<p><strong>注意，更新 GRUB 并不会直接使新的内核版本设为默认启动选项。在引导时，请在启动菜单中手动选择新的内核版本。</strong></p>
+<p>你可以通过选择 <code>Advanced options for Arch Linux</code> 菜单，并在随后的菜单中选择 <code>Arch Linux, with Linux &lt;kernel_release&gt;-&lt;localversion&gt;</code> 来启用新版的 Linux 内核。</p>
+<h3 id="_11">重启电脑</h3>
+<p>恭喜你！你已经完成了获取 Linux 内核源代码、进行配置、构建以及安装等所有步骤。现在只需要通过重启电脑并进入新构建和安装的 Linux 内核，就可以开始享受你的努力成果了。</p>
+<p>启动时，请确保从引导加载器中选择正确的 Linux 内核版本。系统启动后，运行 <code>uname -r</code> 命令来确认你正在使用预期的 Linux 内核。</p>
+<p>以下是我自己的电脑输出的内容：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ uname -r
+6.5.5-pratham
+</code></pre></div></td></tr></table></div>
+<p><strong>是时候开始庆祝了！</strong> 🎉</p>
+<h3 id="_12">卸载操作</h3>
+<blockquote>
+<p>🚧 提示：在删除当前正在使用的内核版本之前，你应该首先切换至较旧的内核版本。</p>
+</blockquote>
+<p>可能你的 Linux 发行版所使用的 Linux 内核版本就是你手动编译的版本，或者你自行编译了新的内核并注意到应卸载旧的内核以节省空间，于是你开始想如何才能卸载。当然，虽然我们无法简单地运行 <code>make uninstall</code> 命令，但这并不代表没有其他的方法！</p>
+<p>我们清楚各个文件的安装位置，因此删除它们相对简单。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>### 删除内核模块
+$ rm -rf /lib/modules/&lt;kernel_release&gt;-&lt;localversion&gt;
+
+### 删除设备树二进制文件
+$ rm -rf /boot/dtb-&lt;kernel_release&gt;-&lt;localversion&gt;
+
+### 删除 Linux 内核本身
+$ rm -vf /boot/{config,System,vmlinuz}-&lt;kernel_release&gt;-&lt;localversion&gt;
+</code></pre></div></td></tr></table></div>
+<h3 id="_13">总结</h3>
+<p>这个过程不是一次简单的旅程，是吧？但是现在，我们终于抵达了终点。我们一起学习了手动编译 Linux 内核的全过程，包括安装依赖、获取和验证源码、解压源码、配置 Linux 内核、构建内核以及安装内核。</p>
+<p>如果你喜欢这个详细的步骤指南，请给我留言反馈。如果在操作过程中遇到问题，也欢迎提出，让我知道！</p>
+<p><em>（题图：MJ/853481c5-87e3-42aa-8ace-e9ddfa232f75）</em></p>
+<hr />
+<p>via: <a href="https://itsfoss.com/compile-linux-kernel/">https://itsfoss.com/compile-linux-kernel/</a></p>
+<p>作者：<a href="https://itsfoss.com/author/pratham/">Pratham Patel</a>
+选题：<a href="https://github.com/lujun9972">lujun9972</a>
+译者：<a href="https://linux.cn/lctt/ChatGPT">ChatGPT</a>
+校对：<a href="https://github.com/wxy">wxy</a></p>
+<p>本文由 <a href="https://github.com/LCTT/TranslateProject">LCTT</a> 原创编译，<a href="https://linux.cn/">Linux中国</a> 荣誉推出</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.94c44541.min.js"></script>
+      
+    
+  </body>
+</html>

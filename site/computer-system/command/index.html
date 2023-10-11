@@ -1,0 +1,5114 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="开发知识wiki">
+      
+      
+        <meta name="author" content="tink">
+      
+      
+        <link rel="canonical" href="https://docs.cyub.vip/dev-wiki/computer-system/command/">
+      
+      
+        <link rel="prev" href="../nptl/">
+      
+      
+        <link rel="next" href="../systemtap/">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.4">
+    
+    
+      
+        <title>常用命令 - 开发知识wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bd3936ea.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Sans";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linux" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="开发知识wiki" class="md-header__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            开发知识wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              常用命令
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  简介
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../io/" class="md-tabs__link">
+          
+  
+  操作系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../computer-network/tcp/" class="md-tabs__link">
+          
+  
+  计算机网络
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../database/mysql/%E7%AE%80%E4%BB%8B/" class="md-tabs__link">
+          
+  
+  数据库
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cache/" class="md-tabs__link">
+        
+  
+    
+  
+  缓存系统
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../container/install/" class="md-tabs__link">
+          
+  
+  容器
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../qa/redis/" class="md-tabs__link">
+          
+  
+  QA
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="开发知识wiki" class="md-nav__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+
+    </a>
+    开发知识wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    操作系统
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            操作系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../io/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    proc文件系统
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nptl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NPTL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    常用命令
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    常用命令
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 文件与目录操作
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 文件与目录操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#touch-" class="md-nav__link">
+    touch - 创建文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mv-" class="md-nav__link">
+    mv - 移动/重命名文件和目录
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdir-" class="md-nav__link">
+    mkdir - 创建目录
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cp-" class="md-nav__link">
+    cp - 复制文件和目录
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rm-" class="md-nav__link">
+    rm - 删除文件和目录
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ln-" class="md-nav__link">
+    ln - 创建链接
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stat-" class="md-nav__link">
+    stat - 显示文件的详细信息
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-io" class="md-nav__link">
+    2. I/O重定向
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 包管理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 权限与进程
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 权限与进程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    id – 显示用户身份号
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chmod-" class="md-nav__link">
+    chmod - 改变文件模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#umask-" class="md-nav__link">
+    umask - 设置默认权限
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#su-" class="md-nav__link">
+    su - 切换用户
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sudo-" class="md-nav__link">
+    sudo - 使用其他身份执行命令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chown-" class="md-nav__link">
+    chown - 更改文件所有者和用户组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password-" class="md-nav__link">
+    password - 更改用户密码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ps-" class="md-nav__link">
+    ps - 报告当前进程快照
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-" class="md-nav__link">
+    top - 动态查看进程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jobs" class="md-nav__link">
+    jobs – 列出任务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bg" class="md-nav__link">
+    bg – 把任务放到后台执行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fg" class="md-nav__link">
+    fg – 把任务放到前台执行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kill-" class="md-nav__link">
+    kill - 给进程发送信号
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#killall-" class="md-nav__link">
+    killall - 给多个进程发送信号
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pstree-" class="md-nav__link">
+    pstree - 显示树形结构进程列表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgrep-id" class="md-nav__link">
+    pgrep - 查看进程id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pmap" class="md-nav__link">
+    pmap
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 文件查找
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 文件查找">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#locate-" class="md-nav__link">
+    locate - 通过名字来查找文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whereis-" class="md-nav__link">
+    whereis - 搜索程序名
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which-" class="md-nav__link">
+    which - 查命令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    find – 强大的查找命令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grep-" class="md-nav__link">
+    grep - 根据文件内容查找文件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 归档与备份
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 归档与备份">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gzip" class="md-nav__link">
+    gzip – 压缩或者展开文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bzip2-" class="md-nav__link">
+    bzip2 - 压缩文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tar-" class="md-nav__link">
+    tar - 打包文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsync-" class="md-nav__link">
+    rsync - 同步目录和文件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7. 文本处理
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 文本处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cat-" class="md-nav__link">
+    cat - 连接文件并输出到标准输出
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sort-" class="md-nav__link">
+    sort - 文本排序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uniq-" class="md-nav__link">
+    uniq - 显示或省略重复行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cut-" class="md-nav__link">
+    cut - 从每行中删除文本区域
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diff-" class="md-nav__link">
+    diff - 逐行比较文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tr-" class="md-nav__link">
+    tr - 翻译或删除字符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sed-" class="md-nav__link">
+    sed - 文本的流编辑器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#awk-" class="md-nav__link">
+    awk - 文本分析工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#head-" class="md-nav__link">
+    head - 显示开头文字行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tail" class="md-nav__link">
+    tail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vim" class="md-nav__link">
+    vim
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xargs" class="md-nav__link">
+    xargs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wc-" class="md-nav__link">
+    wc - 统计行和字符的工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split-" class="md-nav__link">
+    split - 切割文件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8. 网络管理
+  </a>
+  
+    <nav class="md-nav" aria-label="8. 网络管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ping-icmp-echo_request" class="md-nav__link">
+    ping - 发送 ICMP ECHO_REQUEST 软件包到网络主机
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traceroute-" class="md-nav__link">
+    traceroute - 打印到一台网络主机的路由数据包
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netstat-" class="md-nav__link">
+    netstat - 网络查看工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ftp-" class="md-nav__link">
+    ftp - 因特网文件传输程序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wget-" class="md-nav__link">
+    wget - 非交互式网络下载器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-ssh" class="md-nav__link">
+    ssh - SSH 客户端
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nslookup-dns" class="md-nav__link">
+    nslookup - 查看dns解析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dig-dns" class="md-nav__link">
+    dig - 查看dns解析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#curl-" class="md-nav__link">
+    curl - 传输数据工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcpdump-" class="md-nav__link">
+    tcpdump - 网络流量监测工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firewall-cmd-" class="md-nav__link">
+    firewall-cmd - 防火墙管理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ifconfig" class="md-nav__link">
+    ifconfig
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sftp" class="md-nav__link">
+    sftp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scp" class="md-nav__link">
+    scp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nc-" class="md-nav__link">
+    nc - 网络工具中的瑞士军刀
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    9. 系统监控
+  </a>
+  
+    <nav class="md-nav" aria-label="9. 系统监控">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uptime" class="md-nav__link">
+    uptime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#htop" class="md-nav__link">
+    htop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iotop" class="md-nav__link">
+    iotop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmstat-" class="md-nav__link">
+    vmstat - 显示资源使用快照
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iostat-cpu" class="md-nav__link">
+    iostat - 监视系统输入输出设备和CPU的使用情况
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemctl-" class="md-nav__link">
+    systemctl - 系统服务管理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsof-" class="md-nav__link">
+    lsof - 一切皆文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#free" class="md-nav__link">
+    free
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#df" class="md-nav__link">
+    df
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shutdown-" class="md-nav__link">
+    shutdown - 系统关机
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watch-" class="md-nav__link">
+    watch - 定时监控命令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strace-" class="md-nav__link">
+    strace - 跟踪程序执行
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    10. 其他
+  </a>
+  
+    <nav class="md-nav" aria-label="10. 其他">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ulimit" class="md-nav__link">
+    ulimit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uname" class="md-nav__link">
+    uname
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timedatectl-" class="md-nav__link">
+    timedatectl - 查看和设置时间
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nice" class="md-nav__link">
+    nice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-keygen" class="md-nav__link">
+    ssh-keygen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openssl" class="md-nav__link">
+    openssl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date" class="md-nav__link">
+    date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    快捷键
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    11. 相关资源
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systemtap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systemtap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpu-arch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CPU架构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compiling-linux-kernel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    编译Linux内核
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    计算机网络
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            计算机网络
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-network/tcp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TCP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-network/http/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTTP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    数据库
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            数据库
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    mysql
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            mysql
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/mysql/%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    概览
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/mysql/%E4%BA%8B%E5%8A%A1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    事务
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/mysql/%E7%B4%A2%E5%BC%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    索引
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/mysql/FAQ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Elasticsearch
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Elasticsearch
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/elasticsearch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    概览
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/elasticsearch/memory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    内存占用
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/elasticsearch/performance_tuning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    性能调优
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/elasticsearch/production_configuring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    生产配置参考
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/elasticsearch/doc_values_and_fielddata/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    docs value与 field data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/redis/redis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cache/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    缓存系统
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    容器
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            容器
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    镜像
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/cgroup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cgroup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/namespace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    namespace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    QA
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            QA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/redis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    redis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/mysql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mysql
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/tcp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tcp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/http/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    http
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/cache/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    缓存
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/nginx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nginx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/queue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    消息队列
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/io/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/protobuf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    protobuf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/go/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    go
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/dist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    分布式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Elasticsearch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/ref/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    参考资料
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 文件与目录操作
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 文件与目录操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#touch-" class="md-nav__link">
+    touch - 创建文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mv-" class="md-nav__link">
+    mv - 移动/重命名文件和目录
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdir-" class="md-nav__link">
+    mkdir - 创建目录
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cp-" class="md-nav__link">
+    cp - 复制文件和目录
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rm-" class="md-nav__link">
+    rm - 删除文件和目录
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ln-" class="md-nav__link">
+    ln - 创建链接
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stat-" class="md-nav__link">
+    stat - 显示文件的详细信息
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-io" class="md-nav__link">
+    2. I/O重定向
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 包管理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 权限与进程
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 权限与进程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    id – 显示用户身份号
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chmod-" class="md-nav__link">
+    chmod - 改变文件模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#umask-" class="md-nav__link">
+    umask - 设置默认权限
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#su-" class="md-nav__link">
+    su - 切换用户
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sudo-" class="md-nav__link">
+    sudo - 使用其他身份执行命令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chown-" class="md-nav__link">
+    chown - 更改文件所有者和用户组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password-" class="md-nav__link">
+    password - 更改用户密码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ps-" class="md-nav__link">
+    ps - 报告当前进程快照
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-" class="md-nav__link">
+    top - 动态查看进程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jobs" class="md-nav__link">
+    jobs – 列出任务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bg" class="md-nav__link">
+    bg – 把任务放到后台执行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fg" class="md-nav__link">
+    fg – 把任务放到前台执行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kill-" class="md-nav__link">
+    kill - 给进程发送信号
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#killall-" class="md-nav__link">
+    killall - 给多个进程发送信号
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pstree-" class="md-nav__link">
+    pstree - 显示树形结构进程列表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgrep-id" class="md-nav__link">
+    pgrep - 查看进程id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pmap" class="md-nav__link">
+    pmap
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 文件查找
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 文件查找">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#locate-" class="md-nav__link">
+    locate - 通过名字来查找文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whereis-" class="md-nav__link">
+    whereis - 搜索程序名
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which-" class="md-nav__link">
+    which - 查命令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    find – 强大的查找命令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grep-" class="md-nav__link">
+    grep - 根据文件内容查找文件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 归档与备份
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 归档与备份">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gzip" class="md-nav__link">
+    gzip – 压缩或者展开文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bzip2-" class="md-nav__link">
+    bzip2 - 压缩文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tar-" class="md-nav__link">
+    tar - 打包文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsync-" class="md-nav__link">
+    rsync - 同步目录和文件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7. 文本处理
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 文本处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cat-" class="md-nav__link">
+    cat - 连接文件并输出到标准输出
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sort-" class="md-nav__link">
+    sort - 文本排序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uniq-" class="md-nav__link">
+    uniq - 显示或省略重复行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cut-" class="md-nav__link">
+    cut - 从每行中删除文本区域
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diff-" class="md-nav__link">
+    diff - 逐行比较文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tr-" class="md-nav__link">
+    tr - 翻译或删除字符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sed-" class="md-nav__link">
+    sed - 文本的流编辑器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#awk-" class="md-nav__link">
+    awk - 文本分析工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#head-" class="md-nav__link">
+    head - 显示开头文字行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tail" class="md-nav__link">
+    tail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vim" class="md-nav__link">
+    vim
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xargs" class="md-nav__link">
+    xargs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wc-" class="md-nav__link">
+    wc - 统计行和字符的工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split-" class="md-nav__link">
+    split - 切割文件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8. 网络管理
+  </a>
+  
+    <nav class="md-nav" aria-label="8. 网络管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ping-icmp-echo_request" class="md-nav__link">
+    ping - 发送 ICMP ECHO_REQUEST 软件包到网络主机
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traceroute-" class="md-nav__link">
+    traceroute - 打印到一台网络主机的路由数据包
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netstat-" class="md-nav__link">
+    netstat - 网络查看工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ftp-" class="md-nav__link">
+    ftp - 因特网文件传输程序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wget-" class="md-nav__link">
+    wget - 非交互式网络下载器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-ssh" class="md-nav__link">
+    ssh - SSH 客户端
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nslookup-dns" class="md-nav__link">
+    nslookup - 查看dns解析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dig-dns" class="md-nav__link">
+    dig - 查看dns解析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#curl-" class="md-nav__link">
+    curl - 传输数据工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcpdump-" class="md-nav__link">
+    tcpdump - 网络流量监测工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firewall-cmd-" class="md-nav__link">
+    firewall-cmd - 防火墙管理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ifconfig" class="md-nav__link">
+    ifconfig
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sftp" class="md-nav__link">
+    sftp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scp" class="md-nav__link">
+    scp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nc-" class="md-nav__link">
+    nc - 网络工具中的瑞士军刀
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    9. 系统监控
+  </a>
+  
+    <nav class="md-nav" aria-label="9. 系统监控">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uptime" class="md-nav__link">
+    uptime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#htop" class="md-nav__link">
+    htop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iotop" class="md-nav__link">
+    iotop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmstat-" class="md-nav__link">
+    vmstat - 显示资源使用快照
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iostat-cpu" class="md-nav__link">
+    iostat - 监视系统输入输出设备和CPU的使用情况
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemctl-" class="md-nav__link">
+    systemctl - 系统服务管理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsof-" class="md-nav__link">
+    lsof - 一切皆文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#free" class="md-nav__link">
+    free
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#df" class="md-nav__link">
+    df
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shutdown-" class="md-nav__link">
+    shutdown - 系统关机
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watch-" class="md-nav__link">
+    watch - 定时监控命令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strace-" class="md-nav__link">
+    strace - 跟踪程序执行
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    10. 其他
+  </a>
+  
+    <nav class="md-nav" aria-label="10. 其他">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ulimit" class="md-nav__link">
+    ulimit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uname" class="md-nav__link">
+    uname
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timedatectl-" class="md-nav__link">
+    timedatectl - 查看和设置时间
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nice" class="md-nav__link">
+    nice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-keygen" class="md-nav__link">
+    ssh-keygen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openssl" class="md-nav__link">
+    openssl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date" class="md-nav__link">
+    date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    快捷键
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    11. 相关资源
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="linux">Linux常用命令大全</h1>
+<h2 id="1">1. 文件与目录操作</h2>
+<h3 id="touch-">touch - 创建文件</h3>
+<p>若文件不存在则创建文件，若存在则修改文件的时间(存取时间和更改时间)</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>touch<span class="w"> </span>a.txt<span class="w"> </span><span class="c1"># 创建a.txt</span>
+touch<span class="w"> </span>-r<span class="w"> </span>a.txt<span class="w"> </span>b.txt<span class="w"> </span>//<span class="w"> </span>设置a.txt,b.txt时间一致
+</code></pre></div></td></tr></table></div>
+<h3 id="mv-">mv - 移动/重命名文件和目录</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>mv a.txt b.txt // 重命名a.txt为b.txt
+mv a.txt dir1/  // 将a.txt 移动到dir1目录下
+</code></pre></div></td></tr></table></div>
+<h3 id="mkdir-">mkdir - 创建目录</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdir dir1 // 创建目录dir1
+mkdir dir1 dir2 dir3 // 创建目录dir1,dir2,dir3
+mkdir -p a/b/ //若父目录不存在则先创建父目录
+</code></pre></div></td></tr></table></div>
+<h3 id="cp-">cp - 复制文件和目录</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>cp a.txt b.txt // 复制a.txt到b.txt，如果b.txt不存在，则创建，存在则覆盖
+cp -i a.txt b.txt // 如果b.txt存在，覆盖b.txt之前，会询问用户
+cp a.txt b.txt dir1/ // 复制a.txt, b.txt 到dir1目录
+cp *.txt dir1/ // 复制txt文件到dir1目录
+cp -r dir1/*.txt dir2/ // 递归地复制dir1目录下的txt文件到dir2目录下
+cp -u a.txt b.txt // 当b.txt不存在，或者a.txt新于b.txt时候才会复制
+</code></pre></div></td></tr></table></div>
+<h3 id="rm-">rm - 删除文件和目录</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>rm file1 // 删除file1
+rm -i file1 // 删除文件file1，询问用户确认
+rm -r dir1/ // 递归删除dir1以及目录下所有文件
+rm -rf dir1/ dir2/ // 递归删除dir1,dir2目录，即使目录dir2不存在也不会终止
+</code></pre></div></td></tr></table></div>
+<h3 id="ln-">ln - 创建链接</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ln -sf source_link target_link // 创建软连接target_link
+</code></pre></div></td></tr></table></div>
+<h3 id="stat-">stat - 显示文件的详细信息</h3>
+<p>stat查看文件时候，会显示三种类型时间：分别是Access time，Modify time，Change time。</p>
+<ol>
+<li>access time：表示我们最后一次访问（仅仅是访问，没有改动）文件的时间。比如more,less,cat,tail等命令都会更改atime</li>
+<li>modify time：表示我们最后一次修改文件的时间。touch会更改这三种类型时间</li>
+<li>change time：表示我们最后一次对文件属性改变的时间，包括权限，大小，属性等等。chmod,chown会更改此时间。</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>stat a.txt // 显示文件的mtime,atime,ctime
+ls -l a.txt // 列出文件的mtime
+ls -lc a.txt // 列出文件的ctime
+ls -lu a.txt // 列出文件的atime
+</code></pre></div></td></tr></table></div>
+<h2 id="2-io">2. I/O重定向</h2>
+<p>标准输入，输出和错误，在shell内部它们为文件描述符0，1和2
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>ls -l dir1/ &gt;&gt; ls-output.txt // 重定向ls命令输出的内容到ls-output.txt文件,&gt;等同于1&gt;
+ls -l /usr/bintmp 2&gt;ls-error.txt // 重定向标准错误输出到ls-error.txt
+ls -l /bin/usr &gt; ls-output.txt 2&gt;&amp;1 // 重定向标准输出和错误到同一个文件
+ls -l /usr /usr/bintmp 2&gt;ls-error.txt 1&gt;ls-output.txt // 错误重定向到ls-error.txt 输出重定向到ls-output.txt
+ls /usr/bin | tee -a ls.txt | grep zip //tee 从stdin读取数据，并同时输出到stdout和文件。tee命令相当于管道的一个T型接头, -a表示追加
+nginx -c nginx.conf &gt; /dev/null 2&gt;&amp;1// 屏蔽标准和错误输出
+</code></pre></div></td></tr></table></div></p>
+<h2 id="3">3. 包管理</h2>
+<p>不同的 Linux 发行版使用不同的打包系统。一般而言，大多数发行版分别属于两大包管理技术阵营： Debian 的”.deb”，和红帽的”.rpm”。也有一些重要的例外，比方说 Gentoo， Slackware，和 Foresight，但大多数会使用这两个基本系统中的一个。</p>
+<p>软件包管理系统通常由两种工具类型组成：<strong>底层工具用来处理这些任务，比方说安装和删除软件包文件</strong>， 和<strong>上层工具完成元数据搜索和依赖解析</strong>。</p>
+<p>表3.1主要的包管理系统家族</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">包管理系统</th>
+<th style="text-align: left;">发行版 (部分列表)</th>
+<th style="text-align: left;">上层工具</th>
+<th style="text-align: left;">底层工具</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Debian Style (.deb)</td>
+<td style="text-align: left;">Debian, Ubuntu, Xandros, Linspire</td>
+<td style="text-align: left;">apt-get, aptitude</td>
+<td style="text-align: left;">dpkg</td>
+</tr>
+<tr>
+<td style="text-align: left;">Red Hat Style (.rpm)</td>
+<td style="text-align: left;">Fedora, CentOS, Red Hat Enterprise Linux, OpenSUSE, Mandriva, PCLinuxOS</td>
+<td style="text-align: left;">yum</td>
+<td style="text-align: left;">rpm</td>
+</tr>
+</tbody>
+</table>
+<p>一个rpm包的名称分为包全名和包名，包全名如httpd-2.2.15-39.el6.centos.x86_64.rpm，包全名中各部分的意义如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">符号</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">httpd</td>
+<td style="text-align: left;">包名</td>
+</tr>
+<tr>
+<td style="text-align: left;">2.2.15</td>
+<td style="text-align: left;">版本号，版本号格式[ 主版本号.[ 次版本号.[ 修正号 ] ] ]</td>
+</tr>
+<tr>
+<td style="text-align: left;">39</td>
+<td style="text-align: left;">软件发布次数</td>
+</tr>
+<tr>
+<td style="text-align: left;">el6.centos</td>
+<td style="text-align: left;">适合的操作系统平台以及适合的操作系统版本</td>
+</tr>
+<tr>
+<td style="text-align: left;">x86_64</td>
+<td style="text-align: left;">适合的硬件平台，硬件平台根据cpu来决定，有i386、i586、i686、x86_64、noarch或者省略，noarch或省略表示不区分硬件平台</td>
+</tr>
+<tr>
+<td style="text-align: left;">rpm</td>
+<td style="text-align: left;">软件包后缀扩展名</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>// 检查是否安装过某软件包
+rpm -qa | grep &quot;软件或者包的名字&quot;
+dpkg -l | grep &quot;软件或者包的名字&quot;
+yum list installed | grep &quot;软件名或者包名&quot;
+</code></pre></div></td></tr></table></div>
+<h2 id="4">4. 权限与进程</h2>
+<h3 id="id">id – 显示用户身份号</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>id // 显示当前用户uid, gid, groups
+id -u // 显示当前用户uid
+id -g // 显示当前用户gid
+</code></pre></div></td></tr></table></div>
+<h3 id="chmod-">chmod - 改变文件模式</h3>
+<p>表4.1 chmod 命令符号表示法</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">符号</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">u</td>
+<td style="text-align: left;">"user"的简写，意思是文件或目录的所有者</td>
+</tr>
+<tr>
+<td style="text-align: left;">g</td>
+<td style="text-align: left;">用户组</td>
+</tr>
+<tr>
+<td style="text-align: left;">o</td>
+<td style="text-align: left;">"others"的简写，意思是其他所有的人</td>
+</tr>
+<tr>
+<td style="text-align: left;">a</td>
+<td style="text-align: left;">"all"的简写，是"u", "g"和“o”三者的联合</td>
+</tr>
+</tbody>
+</table>
+<p>如果没有指定字符，则假定使用”all”。执行的操作可能是一个“＋”字符，表示加上一个权限， 一个“－”，表示删掉一个权限，或者是一个“＝”，表示只有指定的权限可用，其它所有的权限被删除
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>chmod 755 a.txt // 将文件权限设置成755
+chmod a+x a.txt // 所用组都赋予x权限
+chmod u+x,go=rw a.txt //给文件拥有者执行权限并给组和其他人读和执行的权限。多种设定可以用逗号分开
+</code></pre></div></td></tr></table></div></p>
+<h3 id="umask-">umask - 设置默认权限</h3>
+<h3 id="su-">su - 切换用户</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>su // 切换成root用户，默认root用户
+su - // 切换成root用户，并切换环境
+su - tinker // 切换成tinker，并切换环境
+</code></pre></div></td></tr></table></div>
+<h3 id="sudo-">sudo - 使用其他身份执行命令</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo su - // 切换到root用户
+sudo nginx -s reload // 以root用户身份执行nginx配置重载
+sudo -u www-data top // 已指定用户身份(www-data)执行top命令
+</code></pre></div></td></tr></table></div>
+<h3 id="chown-">chown - 更改文件所有者和用户组</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>chown tinker a.txt // 将a.txt文件所有者改为tinker,文件用户组不变
+chown tinker:tony a.txt // 将a.txt文件所有者改为tinker,文件用户组改为tony
+chown :tony a.txt //将a.txt文件的用户组改为tony,所有者不变
+chown tinker: a.txt // 将a.txt文件所有者改成tinker，用户组改为tinker登录系统时候，所属的用户组
+chown -aG sudo tinker // 将用户加入sudo用户组
+</code></pre></div></td></tr></table></div>
+<h3 id="password-">password - 更改用户密码</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>passwd // 修改当前登录用户密码
+passwd tinker // 修改tinker账户密码
+</code></pre></div></td></tr></table></div>
+<h3 id="ps-">ps - 报告当前进程快照</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>ps aux // 查看当前允许进程
+ps -ef | more // 查看当前运行的所有进程（包含进程的父进程信息)
+ps -A --sort=-rss -o comm,pmem,pcpu | uniq -c |head -15 // 按进程内存占用大小，从大到小来排序。RSS表示实际分配的内存大小
+ps -eo comm,pmem,pcpu --sort=-%cpu  | head -10 // 按进程消耗cpu资源大小，从小大到大排序。--sort=-%cpu表示使用从大到小。-e和-A是一样的。
+ps -c nginx --no-header | wc -l // 统计nginx进程数量。--no-header表示不答应头部
+ps -axjf // 打印进程树
+ps -p 1924 -o lstart // 查看进程ID等于1924的进程创建时间
+ps -eLf | grep java | wc -l // 查看java线程数
+</code></pre></div></td></tr></table></div>
+<p><img alt="ps" src="https://static.cyub.vip/images/201904/ps.jpg" /></p>
+<p><strong>ps内容说明</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">项</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">%CPU</td>
+<td style="text-align: left;">进程的cpu占用率</td>
+</tr>
+<tr>
+<td style="text-align: left;">%MEM</td>
+<td style="text-align: left;">进程的内存占用率</td>
+</tr>
+<tr>
+<td style="text-align: left;">VSZ</td>
+<td style="text-align: left;">进程所使用的虚存的大小</td>
+</tr>
+<tr>
+<td style="text-align: left;">RSS</td>
+<td style="text-align: left;">进程使用的驻留集大小或者是实际内存的大小</td>
+</tr>
+<tr>
+<td style="text-align: left;">TTY</td>
+<td style="text-align: left;">与进程关联的终端（tty）</td>
+</tr>
+<tr>
+<td style="text-align: left;">STAT</td>
+<td style="text-align: left;">进程的状态</td>
+</tr>
+<tr>
+<td style="text-align: left;">START</td>
+<td style="text-align: left;">（进程启动时间和日期）</td>
+</tr>
+<tr>
+<td style="text-align: left;">TIME</td>
+<td style="text-align: left;">（进程使用的总cpu时间）</td>
+</tr>
+<tr>
+<td style="text-align: left;">COMMAND</td>
+<td style="text-align: left;">（正在执行的命令行命令）</td>
+</tr>
+<tr>
+<td style="text-align: left;">NI</td>
+<td style="text-align: left;">(nice)优先级</td>
+</tr>
+<tr>
+<td style="text-align: left;">PRI</td>
+<td style="text-align: left;">进程优先级编号</td>
+</tr>
+<tr>
+<td style="text-align: left;">PPID</td>
+<td style="text-align: left;">父进程的进程ID（parent process id）</td>
+</tr>
+<tr>
+<td style="text-align: left;">SID</td>
+<td style="text-align: left;">会话ID（session id）</td>
+</tr>
+<tr>
+<td style="text-align: left;">WCHAN</td>
+<td style="text-align: left;">进程正在睡眠的内核函数名称；该函数的名称是从/root/system.map文件中获得的</td>
+</tr>
+<tr>
+<td style="text-align: left;">FLAGS</td>
+<td style="text-align: left;">与进程相关的数字标识</td>
+</tr>
+</tbody>
+</table>
+<p>STAT值有：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">值</th>
+<th style="text-align: left;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">R</td>
+<td style="text-align: left;">running正在运行或准备运行</td>
+</tr>
+<tr>
+<td style="text-align: left;">S</td>
+<td style="text-align: left;">sleeping休眠</td>
+</tr>
+<tr>
+<td style="text-align: left;">I</td>
+<td style="text-align: left;">idle空闲</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z</td>
+<td style="text-align: left;">僵死</td>
+</tr>
+<tr>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">不可中断的睡眠，通常是I/O</td>
+</tr>
+<tr>
+<td style="text-align: left;">P</td>
+<td style="text-align: left;">等待交换页</td>
+</tr>
+<tr>
+<td style="text-align: left;">W</td>
+<td style="text-align: left;">换出,表示当前页面不在内存</td>
+</tr>
+<tr>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">低优先级任务</td>
+</tr>
+<tr>
+<td style="text-align: left;">T</td>
+<td style="text-align: left;">terminate终止</td>
+</tr>
+<tr>
+<td style="text-align: left;">W</td>
+<td style="text-align: left;">进入内存交换（从内核2.6开始无效）</td>
+</tr>
+<tr>
+<td style="text-align: left;">&lt;</td>
+<td style="text-align: left;">高优先级</td>
+</tr>
+<tr>
+<td style="text-align: left;">L</td>
+<td style="text-align: left;">有些页被锁进内存</td>
+</tr>
+<tr>
+<td style="text-align: left;">+</td>
+<td style="text-align: left;">位于后台的进程组</td>
+</tr>
+<tr>
+<td style="text-align: left;">l</td>
+<td style="text-align: left;">多线程，克隆线程</td>
+</tr>
+<tr>
+<td style="text-align: left;">s</td>
+<td style="text-align: left;">包含子进程</td>
+</tr>
+</tbody>
+</table>
+<h3 id="top-">top - 动态查看进程</h3>
+<p>top命令是常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>top // 查看进程，默认以CPU占有率排序
+</code></pre></div></td></tr></table></div>
+<p><strong>常见选项列表：</strong></p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-u user</td>
+<td>查看特定用户user的进程</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>显示完整命令</td>
+</tr>
+<tr>
+<td>-H</td>
+<td>以线程模式执行 top，等同于交互式命令 H。默认情况下以进程模式执行 top，进程模式下，一个进程下的所有线程归总后显示一行</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>不显示任何闲置（idle）或无用（zombie）的进程</td>
+</tr>
+<tr>
+<td>-p pid</td>
+<td>只显示指定进程 ID 的进程信息。可以指定多个 PID，最多为 20 个，格式为 -p PID1,PID2,PID3...。特别地，pid 为 0 表示 top 命令本身。如果想显示所有进程信息，无需关闭 top 命令，只需要执行交互式命令 =、u 或 U 即可。</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="top" src="https://static.cyub.vip/images/201904/top.jpg" /></p>
+<p><strong>上图说明：</strong></p>
+<p>第一行：时间相关和任务队列信息</p>
+<ul>
+<li>05:18:41 当前时间</li>
+<li>up 5 days, 14:23 运行时间，分钟</li>
+<li>1 user 当前等于用户数</li>
+<li>
+<p>load average: 0.03, 0.01, 0.00 当前系统负载，跟uptime命令一样，说明如下：</p>
+<p>三个值是系统在1分钟、5分钟、15分钟内平均负载。<strong>系统平均负载被定义为在特定时间间隔内运行队列中的平均进程数</strong>。</p>
+<p>对于系统负载，我们可以类比成高速公路上跑汽车情况。单核CPU服务器，满负载情况，也就是车几乎挨着车，但不堵塞，秩序正常，此时的负载值是1。如果多核CPU情况，满负载值就会是 n * 1，其中n为cpu核数。</p>
+</li>
+</ul>
+<p>第二行：进程信息统计数据</p>
+<ul>
+<li>138 total 总的进程数</li>
+<li>2 running 正在运行的进程数</li>
+<li>136 sleeping 休眠的进程数</li>
+<li>0 stopped 停止的进程数</li>
+<li>0 zombie 僵尸进程数</li>
+</ul>
+<p>第三行：CPU统计数据</p>
+<ul>
+<li>0.0 us 用户空间占用CPU百分比</li>
+<li>0.8 sy 内核空间占用CPU百分比</li>
+<li>0.0 ni 用户进程空间内改变过优先级的进程占用CPU百分比</li>
+<li>99.2 id 空闲CPU时间百分比，如果这个值过低，表明系统CPU存在瓶颈</li>
+<li>0.0 wa 等待I/O的CPU时间百分比，如果这个值过高，表明IO存在瓶颈</li>
+<li>0.0 hi 硬中断（Hardware IRQ）占用CPU百分比</li>
+<li>0.0 si 软中断（Software IRQ）占用CPU百分比</li>
+<li>0.0 st 虚拟机（虚拟化技术）占用百分比</li>
+</ul>
+<p>第四行：物理内存的统计数据</p>
+<ul>
+<li>1016076 total 物理内存总量</li>
+<li>146564 free 空闲内存总量</li>
+<li>482980 used 已使用的物理内存总量</li>
+<li>
+<p>386532 buff/cache 用作内核缓存的内存量</p>
+<p>注意：free 内存表示尚未被内核占用的空闲内存，但是被内核占用用于 buffer 和 cache 的内存，实际上是可以被进程使用的，内核并不把这些可被重新使用的内存算到 free 中，因此在 Linux 上 free 内存会越来越少，但不用为此担心</p>
+</li>
+</ul>
+<p>第五行： 交换分区（即虚拟内存）的统计数据</p>
+<ul>
+<li>1048572 total 交换区总量</li>
+<li>509624 free 空闲交换区总量</li>
+<li>538948 used 已使用的交换区总量</li>
+<li>332548 avail Mem 实际可用物理内存总量</li>
+</ul>
+<p>第六行为空行</p>
+<p>前面五行称为汇总区（Summary Area）。从第7行开始，显示各个进程的状态信息，称为任务区(Task Area)，各列含义如下：</p>
+<table>
+<thead>
+<tr>
+<th>列名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PID</td>
+<td>进程id</td>
+</tr>
+<tr>
+<td>USER</td>
+<td>进程所有者</td>
+</tr>
+<tr>
+<td>PR</td>
+<td>进程优先级，范围为0-31，数值越低，优先级越高</td>
+</tr>
+<tr>
+<td>NI</td>
+<td>nice值。范围-20到+19，用于调整进程优先级，新的进程优先级 PR(new)=PR(old)+nice，所以nice负值表示高优先级，正值表示低优先级</td>
+</tr>
+<tr>
+<td>VIRT</td>
+<td>进程使用的虚拟内存总量，单位 KB</td>
+</tr>
+<tr>
+<td>RES</td>
+<td>Resident Memory Size，进程使用的、未被换出的物理内存大小，单位 KB</td>
+</tr>
+<tr>
+<td>SHR</td>
+<td>共享内存大小，单位 KB</td>
+</tr>
+<tr>
+<td>S</td>
+<td>进程状态。D=不可中断的睡眠状态 R=运行 S=睡眠 T=停止 t=跟踪 Z=僵尸进程</td>
+</tr>
+<tr>
+<td>%CPU</td>
+<td>上次更新到现在的 CPU 时间占用百分比。注意，在多核或多 CPU 环境中，如果进程是多线程的，而 top 不是在线程模式下运行的，该值由多个核的值累加，可能会大于 100%</td>
+</tr>
+<tr>
+<td>%MEM</td>
+<td>进程使用的物理内存百分比</td>
+</tr>
+<tr>
+<td>TIME+</td>
+<td>进程使用的 CPU 时间总计，单位 1/100 秒</td>
+</tr>
+<tr>
+<td>COMMAND</td>
+<td>进程名称（命令名/命令行）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>交换模式下命令</strong></p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>P</b></td>
+<td>进程列表按CPU使用大小降序排序</td>
+</tr>
+<tr>
+<td><b>M</b></td>
+<td>进程列表按内存使用大小降序排序</td>
+</tr>
+<tr>
+<td>T</td>
+<td>进程列表按照累计时间大小降序排列</td>
+</tr>
+<tr>
+<td>N</td>
+<td>进程列表按照PID排序</td>
+</tr>
+<tr>
+<td>b</td>
+<td>进入高亮模式，行和列的背景高亮</td>
+</tr>
+<tr>
+<td><b>x</b></td>
+<td>高亮被选中排序的列，top命名默认使用cpu列表排序的，默认cpu列会高亮</td>
+</tr>
+<tr>
+<td><b>y</b></td>
+<td>高亮显示正在运行的任务，即某一行进程</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>右移选择排序列</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>左移选择排序列</td>
+</tr>
+<tr>
+<td>k</td>
+<td>终止一个进程。默认的终止的信号是15</td>
+</tr>
+<tr>
+<td>o</td>
+<td>根据列来过滤进程。 按下等号(=)会清除掉过滤条件</td>
+</tr>
+<tr>
+<td>E</td>
+<td>扩增（Extend）汇总区内存显示单位，从 KB、MB、GB、TB、PB 到 EB 循环切换</td>
+</tr>
+<tr>
+<td><b>e</b></td>
+<td>扩增（Extend）任务区内存显示单位，从 KB、MB、GB、TB、PB 到 EB 循环切换</td>
+</tr>
+<tr>
+<td>H</td>
+<td>以线程（tHread）模式展示任务区，每个线程单独显示一行。默认是进程模式</td>
+</tr>
+<tr>
+<td><b>u</b></td>
+<td>显示指定用户的进程</td>
+</tr>
+<tr>
+<td>c</td>
+<td>显示命令的绝对路径</td>
+</tr>
+<tr>
+<td>q</td>
+<td>退出top交换模式</td>
+</tr>
+<tr>
+<td>R</td>
+<td>反转排序</td>
+</tr>
+<tr>
+<td>m</td>
+<td>切换显示内存显示方式，以内存条占比形式显示</td>
+</tr>
+<tr>
+<td>k</td>
+<td>杀死（Kill）指定进程，默认信号为15（SIGTERM）</td>
+</tr>
+<tr>
+<td>1</td>
+<td>显示或隐藏每个 CPU 核心的使用信息，即影响第三行 CPU 信息显示方式</td>
+</tr>
+<tr>
+<td><b>L</b></td>
+<td>在进程列表中搜索字符串</td>
+</tr>
+<tr>
+<td>=</td>
+<td>显示所有进程信息。可用打破-p选项，交互命令o只显示部分进程，恢复默认进程列表</td>
+</tr>
+<tr>
+<td>f</td>
+<td>进入字段管理窗口管理显示的字段，前面带星号的字段是默认显示的</td>
+</tr>
+</tbody>
+</table>
+<p>交互命令o或O的筛选器格式：</p>
+<blockquote>
+<p>&lt;字段名&gt;&lt;运算符&gt;&lt;选择值&gt;</p>
+</blockquote>
+<p>运算符可以是=、&lt;、&gt;。具体示例比如COMMAND=nginx，表示筛选COMMAND是nginx的进程。%CPU&gt;3表示cpu负载大于3进程。%CPU&gt;0.0筛选cpu负载大于0的进行，注意是0.0，不能是0</p>
+<h3 id="jobs">jobs – 列出任务</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>ps aux &amp; // 将ps命令后台执行
+jobs -l // 列出进程的PID以及作业号
+jobs -r // 只列出运行中的作业
+jobs -s // 只列出已停止的作业
+</code></pre></div></td></tr></table></div>
+<h3 id="bg">bg – 把任务放到后台执行</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>bg 2 后台模式重启一个作业
+</code></pre></div></td></tr></table></div>
+<h3 id="fg">fg – 把任务放到前台执行</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>fg 2 前台重启一个作业
+</code></pre></div></td></tr></table></div>
+<h3 id="kill-">kill - 给进程发送信号</h3>
+<blockquote>
+<p>kill [-signal] PID...</p>
+</blockquote>
+<p>如果在命令行中没有指定信号，那么默认情况下，发送 TERM（终止）信号。</p>
+<p>表4.2 常用信号</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">编号</th>
+<th style="text-align: left;">名字</th>
+<th style="text-align: left;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">HUP</td>
+<td style="text-align: left;">挂起。许多守护进程也使用这个信号，来重新初始化。这意味着，当发送这个信号到一个守护进程后， 这个进程会重新启动，并且重新读取它的配置文件</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;">中断。实现和 Ctrl-c 一样的功能，由终端发送。通常，它会终止一个程序</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">QUIT</td>
+<td style="text-align: left;">退出</td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">KILL</td>
+<td style="text-align: left;">杀死。这个信号很特别。鉴于进程可能会选择不同的方式，来处理发送给它的信号，其中也包含忽略信号，这样呢，从不发送Kill信号到目标进程。而是内核立即终止 这个进程。当一个进程以这种方式终止的时候，它没有机会去做些“清理”工作，或者是保存劳动成果。 因为这个原因，把 KILL 信号看作杀手锏，当其它终止信号失败后，再使用它</td>
+</tr>
+<tr>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">SEGV</td>
+<td style="text-align: left;">段错误。如果一个程序非法使用内存，就会发送这个信号。也就是说， 程序试图写入内存，而这个内存空间是不允许此程序写入的</td>
+</tr>
+<tr>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">TERM</td>
+<td style="text-align: left;">终止。这是 kill 命令发送的默认信号。如果程序仍然“活着”，可以接受信号，那么这个信号终止</td>
+</tr>
+<tr>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">CONT</td>
+<td style="text-align: left;">继续。在停止一段时间后，进程恢复运行</td>
+</tr>
+<tr>
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">STOP</td>
+<td style="text-align: left;">停止。这个信号导致进程停止运行，而没有终止。像 KILL 信号，它不被 发送到目标进程，因此它不能被忽略</td>
+</tr>
+<tr>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">TSTP</td>
+<td style="text-align: left;">终端停止。当按下 Ctrl-z 组合键后，终端发送这个信号。不像 STOP 信号， TSTP 信号由目标进程接收，且可能被忽略</td>
+</tr>
+<tr>
+<td style="text-align: left;">28</td>
+<td style="text-align: left;">WINCH</td>
+<td style="text-align: left;">改变窗口大小。当改变窗口大小时，系统会发送这个信号。 一些程序，像 top 和 less 程序会响应这个信号，按照新窗口的尺寸，刷新显示的内容</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>kill -9 12345 // 终止进程12345
+kill -l // 查看信号列表
+</code></pre></div></td></tr></table></div>
+<p>按下ctrl+c组合键时产生SIGINT信号（中断信号), ctrl+\产生SIGQUIT信号(退出信号)，ctrl+d是默认的文件结束符</p>
+<h3 id="killall-">killall - 给多个进程发送信号</h3>
+<blockquote>
+<p>killall [-u user] [-signal] name...</p>
+</blockquote>
+<p>给匹配特定程序或用户名的多个进程发送信号</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>killall xlogo
+</code></pre></div></td></tr></table></div>
+<h3 id="pstree-">pstree - 显示树形结构进程列表</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pstree
+</code></pre></div></td></tr></table></div>
+<h3 id="pgrep-id">pgrep - 查看进程id</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pgrep nginx // 查看nginx进程id
+</code></pre></div></td></tr></table></div>
+<h3 id="pmap">pmap</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pmap PID // 查看进程内存状况
+</code></pre></div></td></tr></table></div>
+<h2 id="5">5. 文件查找</h2>
+<h3 id="locate-">locate - 通过名字来查找文件</h3>
+<p><code>locate</code>命令其实是“find -name”的另一种写法，但是要比后者快得多，<strong>原因在于它不搜索具体目录，而是搜索一个数据库（/var/lib/locatedb）</strong>，这个数据库中含有本地所有文件信息。Linux系统自动创建这个数据库，并且每天自动更新一次，所以使用locate命令查不到最新变动过的文件。为了避免这种情况，可以在使用locate之前，<strong>先使用updatedb命令，手动更新数据库</strong>。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>locate /etc/sh // 搜索etc目录下所有以sh开头的文件
+</code></pre></div></td></tr></table></div>
+<h3 id="whereis-">whereis - 搜索程序名</h3>
+<p>whereis命令只能用于程序名的搜索，而且只搜索二进制文件（参数-b）、man说明文件（参数-m）和源代码文件（参数-s）。如果省略参数，则返回所有信息。</p>
+<h3 id="which-">which - 查命令</h3>
+<p>which命令的作用是，在PATH变量指定的路径中，搜索某个系统命令的位置，并且返回第一个搜索结果。也就是说，使用which命令，就可以看到某个系统命令是否存在，以及执行的到底是哪一个位置的命令。</p>
+<h3 id="find">find – 强大的查找命令</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code>find ~ | wc -l // 统计家目录文件数
+find ~ -type d | wc -l // 统计家目录下目录数量
+find ~ -type f | wc -l // 统计家目录下文件数量
+find ~ -type f -name &quot;\*.JPG&quot; -size +1M | wc -l // 查找所有文件名匹配 通配符模式“*.JPG”和文件大小大于1M 的文件
+find ~ -type f -name &#39;*.BAK&#39; -delete // 删除扩展名为“.BAK”（这通常用来指定备份文件） 的文件
+find ~ -type f -name &#39;*.BAK&#39; -print // 查看找到的文件,find默认是-print,即找到的每一行一换行符结束，-print0找到的每一行以null字符(&#39;\0&#39;)结束
+find . -name &#39;index.php&#39;  -print0 | hd
+find . -name &#39;index.php&#39;  -print | hd // 比较print和print0区别
+find ~ -type f -name &#39;foo*&#39; -exec ls -l &#39;{}&#39; &#39;;&#39; // {}是当前路径名的符号表示，分号是要求的界定符 表明命令结束。
+find ~ -type f -name &#39;foo*&#39; -ok ls -l &#39;{}&#39; &#39;;&#39; // 使用 -ok 行为来代替 -exec，在执行每个指定的命令之前，会提示用户
+find ~ -type f -name &#39;foo*&#39; -exec ls -l &#39;{}&#39; +  // 把末尾的分号改为加号，就激活了find命令的一个功能，
+// 把搜索结果结合为一个参数列表， 然后执行一次所期望的命令
+find playground -type f -name &#39;file-A&#39; | wc -l // 查找名字为file-A的文件
+find playground \( -type f -not -perm 0600 \) -or \( -type d -not -perm 0700 \)
+find playground \( -type f -not -perm 0600 -exec chmod 0600 &#39;{}&#39; &#39;;&#39; \)
+-or \( -type d -not -perm 0711 -exec chmod 0700 &#39;{}&#39; &#39;;&#39; \)
+find ~ -empty // 查找home目录下的所有空文件
+find ~ -type f -size 0 // 跟上面一条命令功能一样
+find ~ -type d -empty // 查找所有空目录
+find ~ -iname &quot;hello.php&quot; // 查找hello.php文件
+find . -not -name &quot;.sh&quot; -maxdepth 1 // 查找所有非sh文件,-not可换成!
+find . -mtime 7 -type f // 搜索最近7天修改过的文件。
+//-atime:访问时间 (单位是天，分钟单位则是-amin, -mtime:修改时间（内容被修改）,-ctime:变化时间 （元数据或权限变化）
+</code></pre></div></td></tr></table></div>
+<h3 id="grep-">grep - 根据文件内容查找文件</h3>
+<p>grep选项：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">选项</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">-A</td>
+<td style="text-align: left;">输出当前匹配内容的后面几行内容</td>
+</tr>
+<tr>
+<td style="text-align: left;">-B</td>
+<td style="text-align: left;">输入出当前匹配内容的前面几行内容</td>
+</tr>
+<tr>
+<td style="text-align: left;">-C</td>
+<td style="text-align: left;">输出当前匹配内容的前后几行内容</td>
+</tr>
+<tr>
+<td style="text-align: left;">-r</td>
+<td style="text-align: left;">递归查找当前目录下的文件的匹配行</td>
+</tr>
+<tr>
+<td style="text-align: left;">-i</td>
+<td style="text-align: left;">不区分大小的查找当前文件内容</td>
+</tr>
+<tr>
+<td style="text-align: left;">-v</td>
+<td style="text-align: left;">查找不匹配内容的行</td>
+</tr>
+<tr>
+<td style="text-align: left;">--color</td>
+<td style="text-align: left;">是否高亮显示匹配的内容，auto-自动，alawys-每次，可以通过环境变量GREP_OPTIONS配置</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>grep -i &quot;hello&quot; hello.php // 在hello.php里面不区分大小写的查找hello
+grep -A 3 -i &quot;hello&quot; // 输出成功匹配的行，以及该行之后的三行，-B选项之前
+grep -r &quot;hello&quot; dir1/ // 递归查找dir1目录下文件的匹配行
+grep --color=always hello hello.php | more // 此时通过more管道时候也会高亮显示
+grep --color=always abc file.txt | less -R // 此时通过less管道是也会高亮显示
+grep -v php file.txt // 查找不包含php的行
+grep -v -e php -e golang file.txt // 查找不包含php和golang的行
+</code></pre></div></td></tr></table></div>
+<h2 id="6">6. 归档与备份</h2>
+<h3 id="gzip">gzip – 压缩或者展开文件</h3>
+<p>执行gzip命令时，则原始文件的压缩版会替代原始文件。相对应的gunzip程序被用来把压缩文件复原为没有被压缩的版本。</p>
+<p>表6.1 giz选项</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">选项</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">-c</td>
+<td style="text-align: left;">把输出写入到标准输出，并且保留原始文件。也有可能用--stdout 和--to-stdout 选项来指定</td>
+</tr>
+<tr>
+<td style="text-align: left;">-d</td>
+<td style="text-align: left;">解压缩。正如 gunzip 命令一样。也可以用--decompress 或者--uncompress 选项来指定</td>
+</tr>
+<tr>
+<td style="text-align: left;">-r</td>
+<td style="text-align: left;">若命令的一个或多个参数是目录，则递归地压缩目录中的文件。也可用--recursive 选项来指定</td>
+</tr>
+<tr>
+<td style="text-align: left;">-t</td>
+<td style="text-align: left;">测试压缩文件的完整性。也可用--test 选项来指定</td>
+</tr>
+<tr>
+<td style="text-align: left;">-v</td>
+<td style="text-align: left;">显示压缩过程中的信息。也可用--verbose 选项来指定</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>gzip foo.txt // 压缩foo.txt
+ls -l /etc | gzip &gt; foo.txt.gz // 创建了一个目录列表的压缩文件
+gzip -d foot.txt.gz // 解压*.gz文件
+gzip -tv foo.txt.gz // 测试文件的完整性
+gunzip -c foo.txt | less // 不必指定gz拓展名，默认就是
+</code></pre></div></td></tr></table></div>
+<h3 id="bzip2-">bzip2 - 压缩文件</h3>
+<p>由 Julian Seward 开发，与 gzip 程序相似，但是使用了不同的压缩算法， 舍弃了压缩速度，而实现了更高的压缩级别。在大多数情况下，它的工作模式等同于 gzip。 由 bzip2 压缩的文件，用扩展名 .bz2 来表示</p>
+<h3 id="tar-">tar - 打包文件</h3>
+<p>在类 Unix 的软件世界中，这个 tar 程序是用来归档文件的经典工具。它的名字，是 tape archive 的简称，揭示了它的根源，它是一款制作磁带备份的工具。而它仍然被用来完成传统任务， 它也同样适用于其它的存储设备。我们经常看到扩展名为 .tar 或者 .tgz 的文件，它们各自表示“普通” 的 tar 包和被 gzip 程序压缩过的 tar 包。一个tar包可以由一组独立的文件，一个或者多个目录，或者 两者混合体组成</p>
+<p>表6.2 tar操作模式</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">操作模式</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">-c</td>
+<td style="text-align: left;">为文件和／或目录列表创建归档文件</td>
+</tr>
+<tr>
+<td style="text-align: left;">-x</td>
+<td style="text-align: left;">抽取归档文件</td>
+</tr>
+<tr>
+<td style="text-align: left;">-r</td>
+<td style="text-align: left;">追加具体的路径到归档文件的末尾</td>
+</tr>
+<tr>
+<td style="text-align: left;">-t</td>
+<td style="text-align: left;">列出归档文件的内容</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>tar -cvf /path/to/foo.tar /path/to/foo/ // 创建一个包
+tar -xvf foo.tar // 抽取一个包
+tar -czvf /path/to/foo.tgz /path/to/foo/ // 创建.gz归档文件
+tar -xzvf /path/to/foo.tgz // 抽取.gz归档文件
+tar -ztvf /path/to/foo.tgz // 查看.gz文档文件的文件列表
+tar -cjvf /path/to/foo.tgz /path/to/foo/ // 创建.bz2归档文件
+tar -xjvf /path/to/foo.tgz // 抽取.bz2归档文件
+tar -jtvf /path/to/foo.tgz // 查看.bz2归档文件的文件列表
+</code></pre></div></td></tr></table></div>
+<h3 id="rsync-">rsync - 同步目录和文件</h3>
+<blockquote>
+<p>rsync options source destination</p>
+</blockquote>
+<p>这里 source 和 destination 是下列选项之一：
+* 一个本地文件或目录
+* 一个远端文件或目录，以[user@]host:path 的形式存在
+* 一个远端 rsync 服务器，由 rsync://[user@]host[:port]/path 指定</p>
+<p>注意 source 和 destination 两者之一必须是本地文件。rsync 不支持远端到远端的复制
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>rsync -av --delete /etc /home /usr/local /media/BigDisk/backup
+// 备份文件到backup目录。--delete来删除可能在备份设备中已经存在但却不再存在于源设备中的文件
+rsync -av --delete --rsh=ssh /etc /home /usr/local remote-sys:/backup
+// --rsh=ssh 选项，其指示rsync使用ssh程序作为它的远程 shell。
+rsync -avzP --progress ~/Documents/static_resource/static/* tinker@10.255.1.174:/wwwroot/static
+</code></pre></div></td></tr></table></div></p>
+<h2 id="7">7. 文本处理</h2>
+<h3 id="cat-">cat - 连接文件并输出到标准输出</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>cat a.txt // 输出a.txt内容
+cat -ns a.txt // -n:给文本行添加行号，-s:禁止输出多个空白行
+</code></pre></div></td></tr></table></div>
+<h3 id="sort-">sort - 文本排序</h3>
+<p>表7.1 sort常见选项</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">选项</th>
+<th style="text-align: left;">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">-b</td>
+<td style="text-align: left;">默认情况下，对整行进行排序，从每行的第一个字符开始。这个选项导致sort程序忽略 每行开头的空格，从第一个非空白字符开始排序</td>
+</tr>
+<tr>
+<td style="text-align: left;">-f</td>
+<td style="text-align: left;">让排序不区分大小写</td>
+</tr>
+<tr>
+<td style="text-align: left;">-n</td>
+<td style="text-align: left;">基于数字值大小进行排序，而不是字母值</td>
+</tr>
+<tr>
+<td style="text-align: left;">-r</td>
+<td style="text-align: left;">按相反顺序排序。结果按照降序排列，而不是升序</td>
+</tr>
+<tr>
+<td style="text-align: left;">-k</td>
+<td style="text-align: left;">-k=field1[,field2],对从field1到field2之间的字符排序，而不是整个文本行。看下面的讨论</td>
+</tr>
+<tr>
+<td style="text-align: left;">-m</td>
+<td style="text-align: left;">把每个参数看作是一个预先排好序的文件。把多个文件合并成一个排好序的文件，而没有执行额外的排序</td>
+</tr>
+<tr>
+<td style="text-align: left;">-o</td>
+<td style="text-align: left;">把排好序的输出结果发送到文件，而不是标准输出</td>
+</tr>
+<tr>
+<td style="text-align: left;">-t</td>
+<td style="text-align: left;">定义域分隔字符。默认情况下，域由空格或制表符分隔</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>sort &gt; foo.txt // 将标准输入内容排序好后存入到foo.txt文件
+ls -l /usr/bin | sort -nr -k 5 | head // 将/usr/bin目录下文件按大小排序
+sort file1.txt file2.txt file3.txt &gt; final_sorted_list.txt // 合并有序文件
+sort -k 1,1 -k 2n -k 3.7n foo.txt
+// 多字段排序，对第一个字段执行字母排序，第二个字段执行数值排序，第三个字段的第七个字符按数值排序
+sort -t &#39;:&#39; -k 7 /etc/passwd | head // passwd文件的分隔符是:, 按照第七个字段分割
+</code></pre></div></td></tr></table></div>
+<h3 id="uniq-">uniq - 显示或省略重复行</h3>
+<p>uniq 只会删除相邻的重复行，常常配合sort使用，排序后然后处理重复行</p>
+<p>表7.2 uniq常用选项</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">选项</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">-c</td>
+<td style="text-align: left;">输出所有的重复行，并且每行开头显示重复的次数</td>
+</tr>
+<tr>
+<td style="text-align: left;">-d</td>
+<td style="text-align: left;">只输出重复行，而不是特有的文本行</td>
+</tr>
+<tr>
+<td style="text-align: left;">-f  n</td>
+<td style="text-align: left;">忽略每行开头的 n 个字段，字段之间由空格分隔。不同于sort 程序，uniq 没有选项来设置备用的字段分隔符</td>
+</tr>
+<tr>
+<td style="text-align: left;">-i</td>
+<td style="text-align: left;">在比较文本行的时候忽略大小写</td>
+</tr>
+<tr>
+<td style="text-align: left;">-s n</td>
+<td style="text-align: left;">跳过（忽略）每行开头的 n 个字符</td>
+</tr>
+<tr>
+<td style="text-align: left;">-u</td>
+<td style="text-align: left;">只是输出独有的文本行。这是默认的</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cut-">cut - 从每行中删除文本区域</h3>
+<p>表7.3 cut常用选项</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">选项</th>
+<th style="text-align: center;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">-c char_list</td>
+<td style="text-align: center;">从文本行中抽取由 char_list 定义的文本。这个列表可能由一个或多个逗号 分隔开的数值区间组成</td>
+</tr>
+<tr>
+<td style="text-align: left;">-f field_list</td>
+<td style="text-align: center;">从文本行中抽取一个或多个由 field_list 定义的字段。这个列表可能 包括一个或多个字段，或由逗号分隔开的字段区间</td>
+</tr>
+<tr>
+<td style="text-align: left;">-d delim_char</td>
+<td style="text-align: center;">当指定-f 选项之后，使用 delim_char 做为字段分隔符。默认情况下， 字段之间必须由单个 tab 字符分隔开</td>
+</tr>
+<tr>
+<td style="text-align: left;">--complement</td>
+<td style="text-align: center;">抽取整个文本行，除了那些由-c 和／或-f 选项指定的文本</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>/* 例如文件a.txt内容格式如下：
+tinker:12/07/2017:complete task a
+jack:25/09/2017:complete task b
+*/
+cut -d: -f 2 a.txt | cut -c 7-10 // 输出年份
+</code></pre></div></td></tr></table></div>
+<h3 id="diff-">diff - 逐行比较文件</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>diff -Naur file1 file2 // 比较file2与file2
+</code></pre></div></td></tr></table></div>
+<h3 id="tr-">tr - 翻译或删除字符</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>echo &quot;lowercase letters&quot; | tr a-z A-Z // 小写转大写
+echo &quot;lowercase letters&quot; | tr [:lower:] [:upper:] // 小写转大写
+</code></pre></div></td></tr></table></div>
+<h3 id="sed-">sed - 文本的流编辑器</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>echo &quot;front&quot; | sed &#39;s/front/back/&#39; // 输出back
+sed -n &quot;/string/p&quot; logFile // 打印包含string的行
+sed -n &#39;5,10p&#39; /etc/passwd  // 查看文件5到10行
+sed -n &#39;3,5{=;p}&#39; logFile // 打印3到5行，并且打印行号
+sed &#39;/^$/d&#39; file // 删除空行
+sed -i &quot;s/原字符串/新字符串/g&quot; `grep 原字符串 -rl 所在目录` // 替换目录下字符串
+sed -n &#39;/script_filename =/{n;p}&#39;  www.log.slow // 获取匹配行的下一行内容
+</code></pre></div></td></tr></table></div>
+<h3 id="awk-">awk - 文本分析工具</h3>
+<p>awk是超强大的文本分析工具。不仅仅是linux系统中的一个命令，而且是一种编程语言</p>
+<p>awk指令是由模式，动作，或者模式和动作的组合组成。awk处理文件按照一行行来处理,默认每行按照空格进行分割</p>
+<p>awk使用方法：
+awk 'pattern  { action } '文件
+pattern即模式，用来筛选符合一定规则的行
+action即动作，用来做相应处理，通常是print</p>
+<p><img alt="awk" src="https://static.cyub.vip/images/201904/awk.jpg" /></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>awk &#39;{print $2,$5;}&#39; a.txt // 打印指定的2，5字段
+ps aux | grep mysql | grep -v grep |awk &#39;{print $2}&#39; | xargs kill -9 // 杀掉mysql进程
+awk &#39;{print $7}&#39; access.log  | uniq -c | sort -nr | head -n10 // 访问最多的10个url
+cat /proc/meminfo | awk &#39;/^MemTotal/{ers/{j=$0}/^Cached/{k=$0}END{printf(&quot;%s\n%s\n%s\n%s\n&quot;, h,i,j,k)}&#39; // 查看内存信息
+awk -F &#39;[][]&#39; &#39;{print $3}&#39; file // []作为分隔符
+awk &#39;$9 &gt; 500 {print $0}&#39; access.log | wc -l  // 统计nginx访问日志里面状态码大于等于500的行数
+awk -F\&quot; &#39;$2 ~ &quot;^GET /api&quot; {print $0}&#39; access.log // 打印nginx访问日志里面请求方法为GET，url已/api开头的记录
+awk &#39;{if(NR&gt;=10 &amp;&amp; NR&lt;=20) print $0}&#39; access.log // 打印10到20行
+awk &#39;/NR&gt;=10, NR&lt;=20/{print $0}&#39; access.log // 打印10到20行。基于范围模式匹配模式
+awk &#39;/script_filename =/{getline a;print a;}&#39;  www.log.slow // 获取匹配行的下一行内容。getline是读取下一行内容并复制给变量a，接着打印出来。其中变量a可以省略
+</code></pre></div></td></tr></table></div>
+<h3 id="head-">head - 显示开头文字行</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>head -n 5 a.txt // 显示头5行文字
+head -n -5 a.txt // 显示排除掉末尾5行的其他文字
+head -c 100 a.txt 显示最开始100个字符
+</code></pre></div></td></tr></table></div>
+<h3 id="tail">tail</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>tail -n 10 a.txt // 查看文件最后10行
+tail -f /var/log/messages // 不停得读取最新内容
+</code></pre></div></td></tr></table></div>
+<h3 id="vim">vim</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>vim +10 file1.txt // 打开文件并调到第10行
+vim +/search_term file2.txt // 打开文件并调到第一个匹配的行
+vim -R /etc/passwd // 只读模式打开文件
+</code></pre></div></td></tr></table></div>
+<p><strong>替换字符用法</strong></p>
+<p>语法：[addr]s/源字符串/目的字符串/[option]
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>:s/vivian/sky/ 替换当前行第一个 vivian 为 sky
+:s/vivian/sky/g 替换当前行所有 vivian 为 sky
+:n,$s/vivian/sky/g 替换第 n 行开始到最后一行中每一行所有 vivian 为 sky（n 为数字，若 n 为 .，表示从当前行开始到最后一行）
+:%s/vivian/sky/（等同于 :g/vivian/s//sky/）替换每一行的第一个 vivian 为 sky
+:%s/vivian/sky/g（等同于 :g/vivian/s//sky/g）替换每一行中所有 vivian 为 sky
+</code></pre></div></td></tr></table></div></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[addr]</td>
+<td style="text-align: left;">表示检索范围，省略时表示当前行。"1，20" ：表示从第1行到20行；"%"：表示整个文件，同"1,$"；". ,$" ：从当前行到文件尾；</td>
+</tr>
+<tr>
+<td style="text-align: left;">s</td>
+<td style="text-align: left;">表示替换操作</td>
+</tr>
+<tr>
+<td style="text-align: left;">[option]</td>
+<td style="text-align: left;">表示操作类型:g 表示全局替换;c 表示进行确认;p 表示替代结果逐行显示（Ctrl + L恢复屏幕);省略option时仅对每行第一个匹配串进行替换；如果在源字符串和目的字符串中出现特殊字符，需要用”\”转义</td>
+</tr>
+</tbody>
+</table>
+<h3 id="xargs">xargs</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>find . -name &#39;*.sh&#39; -maxdepth 1 | xargs -I {} ls &#39;{}&#39; // -I指定替换字符
+ls -al | xargs -n 10 rm // 每10做一个分组
+find . -name &quot;*.html&quot;  -print0 | xargs -0 rm -rf  // xargs 默认是以空白字符 (空格,tab,换行符) 做分割，-0表明是使用null字符(&#39;&#39;)进行分割，可以解决文件名称中出现空格的问题
+ls|grep {关键字} |  xargs -n 10 rm -fr
+</code></pre></div></td></tr></table></div>
+<h3 id="wc-">wc - 统计行和字符的工具</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>wc -l file // 统计行数
+wc -w file // 统计单词数
+wc -c file // 统计字符数
+</code></pre></div></td></tr></table></div>
+<h3 id="split-">split - 切割文件</h3>
+<p>split用于将文件切割成多个小文件</p>
+<p>表7.4 split选项</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">选项</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">b</td>
+<td style="text-align: left;">每一个新文件的大小，单位为byte</td>
+</tr>
+<tr>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">每一个文件单行的最大byte数</td>
+</tr>
+<tr>
+<td style="text-align: left;">d</td>
+<td style="text-align: left;">新文件名以数字作为后缀</td>
+</tr>
+<tr>
+<td style="text-align: left;">l</td>
+<td style="text-align: left;">每一个新文件的列数大小</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>split -b 10k date.file // 将文件分割成大小为10KB的小文件
+split -b 10k date.file -d -a 3 new_file_name // 将文件分割成大小为10KB的小文件, 新文件名以数字作为后缀
+split -l 10 date.file // 把文件分割成每个包含10行的小文件
+</code></pre></div></td></tr></table></div>
+<h2 id="8">8. 网络管理</h2>
+<h3 id="ping-icmp-echo_request">ping - 发送 ICMP ECHO_REQUEST 软件包到网络主机</h3>
+<p>ping 命令发送一个特殊的网络数据包，叫做IMCP ECHO_REQUEST，到 一台指定的主机。大多数接收这个包的网络设备将会回复它，来允许网络连接验证，反应连接速度。</p>
+<p>注意：大多数网络设备（包括 Linux 主机）都可以被配置为忽略这些数据包。通常，这样做是出于网络安全 原因，部分地遮蔽一台主机免受一个潜在攻击者地侵袭。配置防火墙来阻塞IMCP流量也很普遍。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>ping www.cyub.vip // 测试cyub.me网站
+ping -c 5 www.cyub.vip // 发送5个数据包
+</code></pre></div></td></tr></table></div>
+<h3 id="traceroute-">traceroute - 打印到一台网络主机的路由数据包</h3>
+<p>显示从本地到指定主机 要经过的所有路由</p>
+<p><code>traceroute www.cyub.vip</code></p>
+<h3 id="netstat-">netstat - 网络查看工具</h3>
+<p>表7.5 netstat常见选项</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">选项</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">a</td>
+<td style="text-align: left;">显示所有连线中的Socket</td>
+</tr>
+<tr>
+<td style="text-align: left;">l</td>
+<td style="text-align: left;">显示监控中的服务器的Socket</td>
+</tr>
+<tr>
+<td style="text-align: left;">n</td>
+<td style="text-align: left;">直接使用ip地址，而不通过域名服务器</td>
+</tr>
+<tr>
+<td style="text-align: left;">p</td>
+<td style="text-align: left;">显示正在使用Socket的程序识别码和程序名称</td>
+</tr>
+<tr>
+<td style="text-align: left;">r</td>
+<td style="text-align: left;">显示Routing Table</td>
+</tr>
+<tr>
+<td style="text-align: left;">t</td>
+<td style="text-align: left;">显示TCP传输协议的连线状况</td>
+</tr>
+<tr>
+<td style="text-align: left;">u</td>
+<td style="text-align: left;">显示UDP传输协议的连线状况</td>
+</tr>
+<tr>
+<td style="text-align: left;">e</td>
+<td style="text-align: left;">显示网络其他相关信息</td>
+</tr>
+<tr>
+<td style="text-align: left;">i</td>
+<td style="text-align: left;">显示网络界面信息表单</td>
+</tr>
+<tr>
+<td style="text-align: left;">o</td>
+<td style="text-align: left;">显示计时器</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>netstat -ie // 查看系统网络接口
+netstat -nr // 查看路由
+netstat -an|awk &#39;/^tcp/{++S[$NF]}END{for (a in S)print a,S[a]}&#39;   // 查看tcp链接数
+netstat -pant |grep &quot;:80&quot;|awk &#39;{print $5}&#39; | awk -F: &#39;{print $1}&#39;|sort|uniq -c|sort -nr  // 查看连接数最多的ip
+netstat -tunlp | grep 22 // 查看22端口情况
+sudo netstat -pnt | grep :80 | wc -l // 粗略估计访问80端口人数
+</code></pre></div></td></tr></table></div>
+<h3 id="ftp-">ftp - 因特网文件传输程序</h3>
+<h3 id="wget-">wget - 非交互式网络下载器</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>wget http://www.cyub.vip
+wget http://www.cyub.vip -O a.html
+</code></pre></div></td></tr></table></div>
+<h3 id="ssh-ssh">ssh - SSH 客户端</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">ssh</span><span class="w"> </span><span class="nx">test</span><span class="err">@</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 以test用户身份登录cyub.vip主机</span>
+<span class="nx">ssh</span><span class="w"> </span><span class="o">-</span><span class="nx">p</span><span class="w"> </span><span class="mf">2222</span><span class="w"> </span><span class="nx">test</span><span class="err">@</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="nslookup-dns">nslookup - 查看dns解析</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>nslookup www.cyub.vip
+</code></pre></div></td></tr></table></div>
+<h3 id="dig-dns">dig - 查看dns解析</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">dig</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="c1">// 查询域名的A记录，最后的a可省略</span>
+<span class="nx">dig</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="nx">mx</span><span class="w"> </span><span class="c1">// 查询域名的mx记录，其他类型的记录有MX，CNAME，NS，PTR等，默认a记录</span>
+<span class="nx">dig</span><span class="w"> </span><span class="err">@</span><span class="mf">10.255.1.174</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 指定dns服务器</span>
+<span class="nx">dig</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="nx">tcp</span><span class="w"> </span><span class="c1">// dig默认使用udp协议进行查询，+tcp参数则指定tcp方式查询</span>
+<span class="nx">dig</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="nx">trace</span><span class="w"> </span><span class="c1">// +trace参数将显示从根域逐级查询的过程</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="curl-">curl - 传输数据工具</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">curl</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 查看网页内容</span>
+<span class="nx">curl</span><span class="w"> </span><span class="o">-</span><span class="nx">s</span><span class="w"> </span><span class="o">-</span><span class="nx">o</span><span class="w"> </span><span class="nx">cyub</span><span class="p">.</span><span class="nx">me</span><span class="p">.</span><span class="nx">txt</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 保存网页内容, -s表示silent，不会显示下载进度</span>
+<span class="nx">curl</span><span class="w"> </span><span class="o">-</span><span class="nx">O</span><span class="w"> </span><span class="o">--</span><span class="nx">progress</span><span class="w"> </span><span class="o">-</span><span class="nx">C</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="o">/</span><span class="nx">file</span><span class="p">.</span><span class="nx">zip</span><span class="w"> </span><span class="c1">// 下载文件，本地文件名称与远程服务器文件名称一样。--progress显示进度条,-C继续断点下载</span>
+<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">head</span><span class="p">(</span><span class="nx">I</span><span class="p">)</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 查看网页响应头</span>
+<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">data</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;birthyear=1905&amp;press=%20OK%20&quot;</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 以Content-Type=application/x-www-form-urlencoded形式</span>
+<span class="c1">// POST数据，此时的数据需要urlencode处理好</span>
+<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">data</span><span class="o">-</span><span class="nx">urlencode</span><span class="w"> </span><span class="s2">&quot;name=I am Daniel&quot;</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 跟上一条命令类似，但数据不用预先编码处理</span>
+<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">form</span><span class="w"> </span><span class="nx">upload</span><span class="o">=</span><span class="err">@</span><span class="nx">localfilename</span><span class="w"> </span><span class="o">--</span><span class="nx">form</span><span class="w"> </span><span class="nx">press</span><span class="o">=</span><span class="nx">OK</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 文件上传，Content-Type是multipart/form-data</span>
+<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">proxy</span><span class="w"> </span><span class="nx">proxy</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="o">:</span><span class="mf">4321</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="o">/</span><span class="w"> </span><span class="c1">// 设置代理</span>
+<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">user</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="nx">password</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// Basic Authentication</span>
+<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">cookie</span><span class="w"> </span><span class="s2">&quot;name=tinker&quot;</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// cookie</span>
+<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">dump</span><span class="o">-</span><span class="nx">header</span><span class="w"> </span><span class="nx">headers_and_cookies</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span>
+<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">header</span><span class="p">(</span><span class="nx">H</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Content-Type: text/xml&quot;</span><span class="w">  </span><span class="o">--</span><span class="nx">request</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span>
+<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">request</span><span class="p">(</span><span class="nx">X</span><span class="p">)</span><span class="w"> </span><span class="nx">POST</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 指定请求方法</span>
+<span class="nx">curl</span><span class="w"> </span><span class="o">-</span><span class="nx">v</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 显示通信过程</span>
+<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">trace</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">txt</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 显示通信过程，内容比上一条命令详细</span>
+<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">trace</span><span class="o">-</span><span class="nx">ascii</span><span class="w"> </span><span class="nx">dump</span><span class="p">.</span><span class="nx">txt</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 显示通信过程</span>
+</code></pre></div></td></tr></table></div>
+<p>curl还可以通过设置-w选项的时间变量来查看具体传输请求时间，常用变量如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">选项</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">content_type</td>
+<td style="text-align: left;">请求文件的Content-Type</td>
+</tr>
+<tr>
+<td style="text-align: left;">http_code</td>
+<td style="text-align: left;">响应状态码</td>
+</tr>
+<tr>
+<td style="text-align: left;">http_version</td>
+<td style="text-align: left;">http版本</td>
+</tr>
+<tr>
+<td style="text-align: left;">local_ip</td>
+<td style="text-align: left;">local ip</td>
+</tr>
+<tr>
+<td style="text-align: left;">local_port</td>
+<td style="text-align: left;">local port</td>
+</tr>
+<tr>
+<td style="text-align: left;">redirect_url</td>
+<td style="text-align: left;">当请求没有指定-L, --location来保存重定向时候， 此变量显示重定向url</td>
+</tr>
+<tr>
+<td style="text-align: left;">remote_ip</td>
+<td style="text-align: left;">remote IP</td>
+</tr>
+<tr>
+<td style="text-align: left;">remote_port</td>
+<td style="text-align: left;">remote port</td>
+</tr>
+<tr>
+<td style="text-align: left;">scheme</td>
+<td style="text-align: left;">URL scheme</td>
+</tr>
+<tr>
+<td style="text-align: left;">size_download</td>
+<td style="text-align: left;">请求文件的大小(单位byte)</td>
+</tr>
+<tr>
+<td style="text-align: left;">size_header</td>
+<td style="text-align: left;">响应头的大小(单位byte)</td>
+</tr>
+<tr>
+<td style="text-align: left;">speed_download</td>
+<td style="text-align: left;">平均下载速度(单位byte/s)</td>
+</tr>
+<tr>
+<td style="text-align: left;">time_appconnect</td>
+<td style="text-align: left;">SSL/SSH 3次握手完成时间(单位s)</td>
+</tr>
+<tr>
+<td style="text-align: left;">time_connect</td>
+<td style="text-align: left;">与远程服务器建立连接完成时间(单位s)</td>
+</tr>
+<tr>
+<td style="text-align: left;">time_namelookup</td>
+<td style="text-align: left;">从请求开始到DNS解析完毕所用时间(单位s)</td>
+</tr>
+<tr>
+<td style="text-align: left;">time_starttransfer</td>
+<td style="text-align: left;">最初的网络请求被发起到从服务器接收到第一个字节前所花费时间，即TTFB(单位s)</td>
+</tr>
+<tr>
+<td style="text-align: left;">time_total</td>
+<td style="text-align: left;">完成请求总共时间（单位s)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意:</strong> 某些变量高版本curl才支持, 具体参见<a href="https://curl.haxx.se/docs/manpage.html">curl man page</a></p>
+<p>用法如下：
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>curl -o /dev/null -s -w %{http_code}:%{remote_ip}:%{time_total} http://www.cyub.vip
+// 把变量写入curl-format.txt文件里面
+curl -o /dev/null -s -w &quot;@curl-format.txt&quot; http://www.cyub.vip
+</code></pre></div></td></tr></table></div></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>// curl-format.txt
+     response_code: %{http_code} %{content_type}\n
+     client_server: %{local_ip}:%{local_port} =&gt; %{remote_ip}:%{remote_port}\n
+    dns_resolution: %{time_namelookup}s\n
+   tcp_established: %{time_connect}s\n
+ssl_handshake_done: %{time_appconnect}s\n
+              TTFB: %{time_starttransfer}s\n
+        time_total: %{time_total}s\n
+     size_download: %{size_download}bytes\n
+    speed_download: %{speed_download}byte/s\n
+</code></pre></div></td></tr></table></div>
+<h3 id="tcpdump-">tcpdump - 网络流量监测工具</h3>
+<p>tcpdump默认抓取68个字节。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>tcpdump -i eth0 not port 22 // 查看eth0接口非22端口的流量
+tcpdump -i eth0 -s 0 -w file.cap // 保存抓包信息到文件中
+Tcpdump -r file.pcap // 读取抓包文件
+tcpdump -A -r file.pcap // 以ascii吗形式显示包内容
+</code></pre></div></td></tr></table></div>
+<h3 id="firewall-cmd-">firewall-cmd - 防火墙管理</h3>
+<p><strong>FirewallD</strong> 是 <code>iptables</code> 的前端控制器，用于实现持久的网络流量规则。它提供命令行和图形界面</p>
+<p>防火墙启动与关闭
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>systemctl start firewalld // 启动防火墙
+systemctl enable firewalld // 设置开机启动
+systemctl stop firewalld // 关闭防火墙
+systemctl disable firewalld // 设置不开机启动
+</code></pre></div></td></tr></table></div></p>
+<p><code>firewall-cmd</code>用例
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>firewall-cmd<span class="w"> </span>--zone<span class="o">=</span>public<span class="w"> </span>--add-port<span class="o">=</span><span class="m">80</span>/tcp<span class="w"> </span>--permanent<span class="w"> </span>//<span class="w"> </span>开放80端口
+firewall-cmd<span class="w"> </span>--reload<span class="w"> </span>//<span class="w"> </span>重新加载防火墙配置
+firewall-cmd<span class="w"> </span>--state<span class="w">  </span>//<span class="w"> </span>查看防火墙状态
+firewall-cmd<span class="w"> </span>--get-zones<span class="w"> </span>//<span class="w"> </span>列出支持的zone
+firewall-cmd<span class="w"> </span>--get-services<span class="w"> </span>//<span class="w"> </span>列出支持的服务，在列表中的服务是放行的
+firewall-cmd<span class="w"> </span>--query-service<span class="w"> </span>ftp<span class="w"> </span>//<span class="w"> </span>查看ftp服务是否支持，返回yes或者no
+firewall-cmd<span class="w"> </span>--add-service<span class="o">=</span>ftp<span class="w">  </span>//<span class="w"> </span>临时开放ftp服务
+firewall-cmd<span class="w"> </span>--add-service<span class="o">=</span>ftp<span class="w"> </span>--permanent<span class="w">  </span>//<span class="w"> </span>永久开放ftp服务
+firewall-cmd<span class="w"> </span>--remove-service<span class="o">=</span>ftp<span class="w"> </span>--permanent<span class="w">  </span>//<span class="w"> </span>永久移除ftp服务
+</code></pre></div></td></tr></table></div></p>
+<h3 id="ifconfig">ifconfig</h3>
+<h3 id="sftp">sftp</h3>
+<h3 id="scp">scp</h3>
+<h3 id="nc-">nc - 网络工具中的瑞士军刀</h3>
+<p>nc是netcat命令别名</p>
+<p>表7.6 nc常见选项</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">选项</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">s</td>
+<td style="text-align: left;">本地源ip</td>
+</tr>
+<tr>
+<td style="text-align: left;">p</td>
+<td style="text-align: left;">进行远程连接的本地端口</td>
+</tr>
+<tr>
+<td style="text-align: left;">l</td>
+<td style="text-align: left;">监听模式</td>
+</tr>
+<tr>
+<td style="text-align: left;">u</td>
+<td style="text-align: left;">udp 模式</td>
+</tr>
+<tr>
+<td style="text-align: left;">v</td>
+<td style="text-align: left;">显示详细</td>
+</tr>
+<tr>
+<td style="text-align: left;">w</td>
+<td style="text-align: left;">超时时间</td>
+</tr>
+<tr>
+<td style="text-align: left;">z</td>
+<td style="text-align: left;">用于扫描的Zero-I/O模式</td>
+</tr>
+<tr>
+<td style="text-align: left;">n</td>
+<td style="text-align: left;">直接使用ip 不使用DNS反向查询IP地址的域名</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code>//<span class="w"> </span>扫描192.168.33.10的20至25的端口
+nc<span class="w"> </span>-nzv<span class="w"> </span><span class="m">192</span>.168.33.10<span class="w"> </span><span class="m">20</span>-25
+//<span class="w"> </span>使用10.1.2.3作为源地址，31337作为源端口，连接host.example.com的42端口，超时时间设为5秒
+nc<span class="w"> </span>-s<span class="w"> </span><span class="m">10</span>.1.2.3<span class="w"> </span>-p<span class="w"> </span><span class="m">31337</span><span class="w"> </span>-w<span class="w"> </span><span class="m">5</span><span class="w"> </span>host.example.com<span class="w"> </span><span class="m">42</span>
+//<span class="w"> </span>模拟http请求,<span class="w"> </span>注意最后面需要两个换行
+nc<span class="w"> </span>www.cyub.vip<span class="w"> </span><span class="m">80</span><span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">GET / HTTP/1.1</span>
+<span class="s1">Host: www.cyub.vip</span>
+<span class="s1">User-Agent: self-browser</span>
+
+
+<span class="s1">&#39;</span>
+或者
+nc<span class="w"> </span>www.cyub.vip<span class="w"> </span><span class="m">80</span><span class="w"> </span>&lt;<span class="w"> </span>request.text<span class="w"> </span>&gt;<span class="w"> </span>index.html
+//<span class="w"> </span>使用HTTP<span class="w"> </span>proxy代理10.2.3.4:8080连接host.example.com
+nc<span class="w"> </span>-x10.2.3.4:8080<span class="w"> </span>-Xconnect<span class="w"> </span>host.example.com<span class="w"> </span><span class="m">42</span>
+//<span class="w"> </span>创建和监听UNIX-domain<span class="w"> </span>stream<span class="w"> </span>socket
+nc<span class="w"> </span>-lU<span class="w"> </span>/var/tmp/dsocket
+</code></pre></div></td></tr></table></div>
+<h2 id="9">9. 系统监控</h2>
+<h3 id="uptime">uptime</h3>
+<h3 id="htop">htop</h3>
+<h3 id="iotop">iotop</h3>
+<h3 id="vmstat-">vmstat - 显示资源使用快照</h3>
+<p>显示资源快照,包括内存，交换分区和磁盘 I/O</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>vmstat 1 // 1秒内的资源快照
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0 488124 105284  96596 429796    0    1     4     6   23   12  0  0 99  0  0
+ 0  0 488124 105160  96596 429796    0    0     0     0  280  554  0  1 99  0  0
+ 0  0 488124 105160  96596 429804    0    0     0     0  260  544  1  0 99  0  0
+ 0  0 488124 105160  96596 429796    0    0     0     0  254  539  0  1 99  0  0
+ 0  0 488124 105160  96596 429804    0    0     0     0  268  550  0  1 99  0  0
+ 0  0 488124 105160  96600 429792    0    0     0    64  680 1456  2  3 95  0  0
+ 1  0 488112  96972  96608 429812    0    0     0    40  824 1393 31  4 65  0  0
+ 0  0 488112  96880  96608 429804    0    0     0     0  269  566  0  0 100  0  0
+</code></pre></div></td></tr></table></div>
+<p><strong>说明：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项</th>
+<th style="text-align:left">列</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td style="text-align:left" rowspan ="2">procs</td>
+    <td style="text-align:left">r</td>
+    <td style="text-align:left">运行队列中进程数量，如果长期大于1，说明cpu不足，需要增加cpu</td>
+</tr>
+<tr>
+    <td style="text-align:left">b</td>
+    <td style="text-align:left">等待IO的进程数量</td>
+</tr>
+
+<tr>
+    <td style="text-align:left" rowspan ="4">memory</td>
+    <td style="text-align:left">swpd</td>
+    <td style="text-align:left">使用虚拟内存大小，如果swpd的值不为0，但是SI，SO的值长期为0，这种情况不会影响系统性能</td>
+</tr>
+<tr>
+    <td style="text-align:left">free</td>
+    <td style="text-align:left">空闲物理内存大小(单位k)</td>
+</tr>
+<tr>
+    <td style="text-align:left">buff</td>
+    <td style="text-align:left">用作缓冲的内存大小</td>
+</tr>
+<tr>
+    <td style="text-align:left">cache</td>
+    <td style="text-align:left">用作缓存的内存大小，如果cache的值大的时候，说明cache处的文件数多，如果频繁访问到的文件都能被cache处，那么磁盘的读IO bi会非常小</td>
+</tr>
+
+<tr>
+    <td style="text-align:left" rowspan ="2">system</td>
+    <td style="text-align:left">in</td>
+    <td style="text-align:left">表示在某一时间间隔中观测到的每秒设备中断数</td>
+</tr>
+<tr>
+    <td style="text-align:left">cs</td>
+    <td style="text-align:left">表表示每秒产生的上下文切换次数，如当 cs 比磁盘 I/O 和网络信息包速率高得多，都应进行进一步调查</td>
+</tr>
+
+<tr>
+    <td style="text-align:left" rowspan ="2">swap</td>
+    <td style="text-align:left">si</td>
+    <td style="text-align:left">由内存进入内存交换区数量</td>
+</tr>
+<tr>
+    <td style="text-align:left">so</td>
+    <td style="text-align:left">由内存交换区进入内存数量</td>
+</tr>
+
+<tr>
+    <td style="text-align:left" rowspan ="2">io</td>
+    <td style="text-align:left">bi</td>
+    <td style="text-align:left">每秒读取的块数(默认块的大小为1kb)</td>
+</tr>
+<tr>
+    <td style="text-align:left">bo</td>
+    <td style="text-align:left">每秒写入的块数</td>
+</tr>
+
+<tr>
+    <td style="text-align:left" rowspan ="4">cpu</td>
+    <td style="text-align:left">us</td>
+    <td style="text-align:left">显示了用户方式下所花费 CPU 时间的百分比。us的值比较高时，说明用户进程消耗的cpu时间多，但是如果长期大于50%，需要考虑优化用户的程序</td>
+</tr>
+<tr>
+    <td style="text-align:left">sy</td>
+    <td style="text-align:left">显示了内核进程所花费的cpu时间的百分比。这里us + sy的参考值为80%，如果us+sy大于80%说明可能存在CPU不足</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">显示了cpu处在空闲状态的时间百分比</td>
+</tr>
+<tr>
+<td style="text-align:left">wa</td>
+<td style="text-align:left">显示了IO等待所占用的CPU时间的百分比。这里wa的参考值为30%，如果wa超过30%，说明IO等待严重，这可能是磁盘大量随机访问造成的，也可能磁盘或者磁盘访问控制器的带宽瓶颈造成的(主要是块操作)。</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="iostat-cpu">iostat - 监视系统输入输出设备和CPU的使用情况</h3>
+<p>常用选项：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">选项</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">-c</td>
+<td style="text-align: left;">仅显示CPU使用情况</td>
+</tr>
+<tr>
+<td style="text-align: left;">-d</td>
+<td style="text-align: left;">仅显示设备利用率</td>
+</tr>
+<tr>
+<td style="text-align: left;">-k</td>
+<td style="text-align: left;">显示状态以千字节每秒为单位，而不使用块每秒</td>
+</tr>
+<tr>
+<td style="text-align: left;">-m</td>
+<td style="text-align: left;">显示状态以兆字节每秒为单位</td>
+</tr>
+<tr>
+<td style="text-align: left;">-p</td>
+<td style="text-align: left;">仅显示块设备和所有被使用的其他分区的状态</td>
+</tr>
+<tr>
+<td style="text-align: left;">-t</td>
+<td style="text-align: left;">显示每个报告产生时的时间</td>
+</tr>
+<tr>
+<td style="text-align: left;">-x</td>
+<td style="text-align: left;">显示扩展状态</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code> iostat -x
+Linux 4.4.0-101-generic (vagrant)   02/10/2018  _x86_64_    (1 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.20    0.01    0.29    0.03    0.00   99.48
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.02     0.73    0.24    0.78     3.76     6.20    19.47     0.00    0.45    0.62    0.40   0.33   0.03
+dm-0              0.00     0.00    0.22    1.18     3.55     5.39    12.77     0.00    0.44    0.60    0.42   0.24   0.03
+dm-1              0.00     0.00    0.04    0.20     0.15     0.81     8.03     0.00    5.62    0.51    6.57   0.05   0.00
+</code></pre></div></td></tr></table></div>
+<p><strong>说明</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">标示</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Device</td>
+<td style="text-align: left;">监测设备名称</td>
+</tr>
+<tr>
+<td style="text-align: left;">rrqm/s</td>
+<td style="text-align: left;">每秒需要读取需求的数量</td>
+</tr>
+<tr>
+<td style="text-align: left;">wrqm/s</td>
+<td style="text-align: left;">每秒需要写入需求的数量</td>
+</tr>
+<tr>
+<td style="text-align: left;">r/s</td>
+<td style="text-align: left;">每秒实际读取需求的数量</td>
+</tr>
+<tr>
+<td style="text-align: left;">w/s</td>
+<td style="text-align: left;">每秒实际写入需求的数量</td>
+</tr>
+<tr>
+<td style="text-align: left;">rsec/s</td>
+<td style="text-align: left;">每秒读取区段的数量</td>
+</tr>
+<tr>
+<td style="text-align: left;">wsec/s</td>
+<td style="text-align: left;">每秒写入区段的数量</td>
+</tr>
+<tr>
+<td style="text-align: left;">rkB/s</td>
+<td style="text-align: left;">每秒实际读取的大小，单位为KB</td>
+</tr>
+<tr>
+<td style="text-align: left;">wkB/s</td>
+<td style="text-align: left;">每秒实际写入的大小，单位为KB</td>
+</tr>
+<tr>
+<td style="text-align: left;">avgrq-sz</td>
+<td style="text-align: left;">需求的平均大小区段</td>
+</tr>
+<tr>
+<td style="text-align: left;">avgqu-sz</td>
+<td style="text-align: left;">需求的平均队列长度</td>
+</tr>
+<tr>
+<td style="text-align: left;">await</td>
+<td style="text-align: left;">等待I/O平均的时间（milliseconds）</td>
+</tr>
+<tr>
+<td style="text-align: left;">svctm</td>
+<td style="text-align: left;">I/O需求完成的平均时间</td>
+</tr>
+<tr>
+<td style="text-align: left;">%util</td>
+<td style="text-align: left;">被I/O需求消耗的CPU百分比</td>
+</tr>
+</tbody>
+</table>
+<h3 id="systemctl-">systemctl - 系统服务管理</h3>
+<p><strong>systemctl</strong>是系统服务管理命令，它实际上将<code>service</code>和<code>chkconfig</code>这两个命令组合到一起。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">任务</th>
+<th style="text-align: left;">旧指令</th>
+<th style="text-align: left;">新指令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">使某服务自动启动</td>
+<td style="text-align: left;">chkconfig --level 3 httpd on</td>
+<td style="text-align: left;">systemctl enable httpd.service</td>
+</tr>
+<tr>
+<td style="text-align: left;">使某服务不自动启动</td>
+<td style="text-align: left;">chkconfig --level 3 httpd off</td>
+<td style="text-align: left;">systemctl disable httpd.service</td>
+</tr>
+<tr>
+<td style="text-align: left;">检查服务状态</td>
+<td style="text-align: left;">service httpd status</td>
+<td style="text-align: left;">systemctl status httpd.service 服务详细信息<br/> systemctl is-active httpd.service 仅显示是否Active</td>
+</tr>
+<tr>
+<td style="text-align: left;">显示所有已启动的服务</td>
+<td style="text-align: left;">chkconfig --list</td>
+<td style="text-align: left;">systemctl list-units --type=service</td>
+</tr>
+<tr>
+<td style="text-align: left;">启动某服务</td>
+<td style="text-align: left;">service httpd start</td>
+<td style="text-align: left;">systemctl start httpd.service</td>
+</tr>
+<tr>
+<td style="text-align: left;">停止某服务</td>
+<td style="text-align: left;">service httpd stop</td>
+<td style="text-align: left;">systemctl stop httpd.service</td>
+</tr>
+<tr>
+<td style="text-align: left;">重启某服务</td>
+<td style="text-align: left;">service httpd restart</td>
+<td style="text-align: left;">systemctl restart httpd.service</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>systemctl start nfs-server.service // 启动nfs服务
+systemctl enable nfs-server.service // 设置开机自启动
+systemctl disable nfs-server.service // 停止开机自启动
+systemctl status nfs-server.service // 查看服务当前状态
+systemctl restart nfs-server.service // 重新启动某服务
+systemctl list -units --type=service // 查看所有已启动的服务
+systemctl list-dependencies nfs-server // 列出服务的依赖
+</code></pre></div></td></tr></table></div>
+<h3 id="lsof-">lsof - 一切皆文件</h3>
+<p>lsof（list open files）是一个查看当前系统文件的工具。
+在linux环境下，任何事物都以文件的形式存在，通过文件不仅仅可以访问常规数据，还可以访问网络连接和硬件。
+如传输控制协议 (TCP) 和用户数据报协议 (UDP) 套接字等，系统在后台都为该应用程序分配了一个文件描述符，该文件描述符提供了大量关于这个应用程序本身的信息。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">lsof</span><span class="w"> </span><span class="o">/</span><span class="kd">var</span><span class="err">/log/nginx/access.log // 查看哪个进程打开access.log</span>
+<span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">p</span><span class="w"> </span><span class="sb">`pgrep redis`</span><span class="w">  </span><span class="c1">// 查看进程打开的文件，参数是pid</span>
+<span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">c</span><span class="w"> </span><span class="nx">php</span><span class="o">-</span><span class="nx">fpm7</span><span class="w"> </span><span class="c1">// 查看进程打开的文件，参数是进程名称</span>
+<span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">u</span><span class="w"> </span><span class="nx">vagrant</span><span class="w"> </span><span class="c1">// 查看用户打开的文件</span>
+<span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">i</span><span class="o">:</span><span class="mf">80</span><span class="w"> </span><span class="c1">// 查看哪个进程监听80端口</span>
+<span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">i4</span><span class="w"> </span><span class="c1">// 列出ipv4相关信息</span>
+<span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">d</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="c1">// 列出占用文件描述符1的进程</span>
+<span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">d</span><span class="w"> </span><span class="o">/</span><span class="nx">tmp</span><span class="w"> </span><span class="c1">// 列出/tmp目录下被打开的文件</span>
+<span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">D</span><span class="w"> </span><span class="o">/</span><span class="nx">tmp</span><span class="w"> </span><span class="c1">// 递归列出/tmp目录下被打开的文件</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="free">free</h3>
+<h3 id="df">df</h3>
+<h3 id="shutdown-">shutdown - 系统关机</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>shutdown -h now // 系统立即关机
+shutdown -h +10 // 10分钟后关机
+shutdown -r now // 重启
+</code></pre></div></td></tr></table></div>
+<h3 id="watch-">watch - 定时监控命令</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>watch -n 10 &#39;cat /proc/loadavg&#39; // 每隔10s输出系统平均负载
+</code></pre></div></td></tr></table></div>
+<h3 id="strace-">strace - 跟踪程序执行</h3>
+<p>strace命令是一个集诊断、调试、统计与一体的工具</p>
+<p>表9.1 strace常用选项</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">选项</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">-p</td>
+<td style="text-align: left;">指定跟踪进程的pid</td>
+</tr>
+<tr>
+<td style="text-align: left;">-c</td>
+<td style="text-align: left;">统计每一系统调用的所执行的时间,次数和出错的次数等</td>
+</tr>
+<tr>
+<td style="text-align: left;">-f</td>
+<td style="text-align: left;">跟踪由fork调用所产生的子进程</td>
+</tr>
+<tr>
+<td style="text-align: left;">-ff</td>
+<td style="text-align: left;">如果提供-o filename,则所有进程的跟踪结果输出到相应的filename.pid中,pid是各进程的进程号</td>
+</tr>
+<tr>
+<td style="text-align: left;">-t</td>
+<td style="text-align: left;">在输出中的每一行前加上时间信息. -tt 在输出中的每一行前加上时间信息,微秒级</td>
+</tr>
+<tr>
+<td style="text-align: left;">-T</td>
+<td style="text-align: left;">显示每一调用所耗的时间，每个调用的时间花销现在在调用行最右边的尖括号里面</td>
+</tr>
+<tr>
+<td style="text-align: left;">-o</td>
+<td style="text-align: left;">将strace的输出写入文件filename，如果不指定-o参数的话，默认的输出设备是STDERR</td>
+</tr>
+<tr>
+<td style="text-align: left;">-e</td>
+<td style="text-align: left;">指定一个表达式,用来控制如何跟踪。格式：[qualifier=][!]value1[,value2]... qualifier只能是trace,abbrev,verbose,raw,signal,read,write其中之一.value是用来限定的符号或数字.默认的 qualifier是 trace.感叹号是否定符号.例如:-eopen等价于 -e trace=open,表示只跟踪open调用.而-etrace!=open 表示跟踪除了open以外的其他调用.有两个特殊的符号 all 和 none. 注意有些shell使用!来执行历史记录里的命令,所以要使用\.</td>
+</tr>
+</tbody>
+</table>
+<p>-e选项常用正则如下：
+默认的为trace=all.
++ -e trace=file 只跟踪有关文件操作的系统调用.
++ -e trace=process 只跟踪有关进程控制的系统调用.
++ -e trace=network 跟踪与网络有关的所有系统调用.
++ -e strace=signal 跟踪所有与系统信号有关的系统调用
++ -e trace=ipc 跟踪所有与进程通讯有关的系统调用</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>strace -e open,access 2&gt;&amp;1 | grep your-filename // 查看打开文件情况
+strace -e open php 2&gt;&amp;1 | grep php.ini // 查看php加载php.ini信息
+strace -c &gt;/dev/null ls // 跟踪ls命令执行情况
+strace -f $(pidof php-fpm | sed &#39;s/\([0-9]*\)/\-p \1/g&#39;) // 查看php-fpm进程情况
+strace -f -tt -o /tmp/php.trace -s1024 -p `pidof php5-fpm | tr &#39; &#39; &#39;,&#39;` // 同上
+</code></pre></div></td></tr></table></div>
+<h2 id="10">10. 其他</h2>
+<h3 id="ulimit">ulimit</h3>
+<p>linux 默认值 open files 和 max user processes 为 1024
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>ulimit -n // 最多打开文件数
+ulimit -u // 最多处理用户进程数
+</code></pre></div></td></tr></table></div></p>
+<h3 id="uname">uname</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>uname -a // 查看系统信息
+</code></pre></div></td></tr></table></div>
+<h3 id="timedatectl-">timedatectl - 查看和设置时间</h3>
+<p>timedatectl是用来查询和修改系统时间和配置的Linux应用程序。它是systemd 系统服务管理的一部分，并且允许你检查和修改系统时钟的配置。
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>timedatectl<span class="w"> </span>//<span class="w"> </span>查看当前时间和时区
+timedatectl<span class="w"> </span>set-time<span class="w"> </span>YYYY-MM-DD<span class="w"> </span>//<span class="w"> </span>设置日期
+timedatectl<span class="w"> </span>set-time<span class="w"> </span>HH:MM:SS<span class="w"> </span>//<span class="w"> </span>设置时间
+timedatectl<span class="w"> </span>list-timezones<span class="w"> </span>//<span class="w"> </span>查看所有时区
+timedatectl<span class="w"> </span>set-timezone<span class="w"> </span><span class="s1">&#39;Asia/Shanghai&#39;</span><span class="w"> </span>//<span class="w"> </span>设置时区
+timedatectl<span class="w"> </span>set-ntp<span class="w"> </span>yes<span class="w"> </span>//<span class="w"> </span>设置NTP同步，使用“no”关闭NTP同步，使用“yes”开启
+</code></pre></div></td></tr></table></div></p>
+<h3 id="nice">nice</h3>
+<h3 id="ssh-keygen">ssh-keygen</h3>
+<h3 id="openssl">openssl</h3>
+<h3 id="date">date</h3>
+<h3 id="_1">快捷键</h3>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ctrl + u</td>
+<td>删除从开头到光标处的命令文本</td>
+</tr>
+<tr>
+<td>ctrl + k</td>
+<td>删除从光标到结尾处的命令文本</td>
+</tr>
+<tr>
+<td>ctrl + a</td>
+<td>光标移动到命令开头</td>
+</tr>
+<tr>
+<td>ctrl + e</td>
+<td>光标移动到命令结尾</td>
+</tr>
+<tr>
+<td>ctrl + w</td>
+<td>删除一个词（以空格隔开的字符串）</td>
+</tr>
+<tr>
+<td>ctrl + c</td>
+<td>中断程序执行(产生SIGINT信号)</td>
+</tr>
+<tr>
+<td>ctrl + \</td>
+<td>退出程序执行(产生SIGQUIT信号)</td>
+</tr>
+<tr>
+<td>ctrl + d</td>
+<td>默认的文件结束符</td>
+</tr>
+<tr>
+<td>ctrl + insert</td>
+<td>复制</td>
+</tr>
+<tr>
+<td>shift + insert</td>
+<td>黏贴</td>
+</tr>
+<tr>
+<td>ctrl + s</td>
+<td>冻结屏幕</td>
+</tr>
+<tr>
+<td>ctrl + q</td>
+<td>退出冻结屏幕</td>
+</tr>
+</tbody>
+</table>
+<h2 id="11">11. 相关资源</h2>
+<ul>
+<li><a href="https://www.kancloud.cn/thinkphp/linux-command-line">The Linux Command Line 中文版</a></li>
+<li><a href="http://linuxtools-rst.readthedocs.io/zh_CN/latest/index.html">Linux工具快速教程</a></li>
+<li><a href="http://cb.vu/unixtoolbox_zh_CN.xhtml">UNIX TOOLBOX 中文版</a></li>
+<li><a href="http://linux.vbird.org/">鸟哥的Linux 私房菜</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/29718871">搞定Linux Shell文本处理工具，看完这篇集锦就够了</a></li>
+<li><a href="http://man.linuxde.net/">Linux命令大全</a></li>
+<li><a href="https://curl.haxx.se/docs/httpscripting.html">Using curl to automate HTTP jobs</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html">Systemd 入门教程：命令篇</a></li>
+<li><a href="https://linux.cn/article-8098-1-rel.html">CentOS 上的 FirewallD 简明指南</a></li>
+<li><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/index">Redhat-system administrator's guide</a></li>
+<li><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/performance_tuning_guide/index">Redhat-performance tuning guide</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1525282">top 命令</a></li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.94c44541.min.js"></script>
+      
+    
+  </body>
+</html>
