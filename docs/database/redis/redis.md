@@ -3,12 +3,15 @@
 ## redis架构
 
 - 纯内存操作
-- 单线程避免了多线程频繁的上小文切换问题
+- 单线程避免了多线程因为同步导致的频繁的上下文切换问题
 - 高效的数据结构
-- 核心是基于非阻塞的IO多路复用
+- 核心是基于非阻塞的IO多路复用(epoll)
 
 ## 应用场景
 
+![](https://static.cyub.vip/images/202406/redis-case.jpg)
+
+- 缓存
 - 队列
 - 排行榜
 - 自动补全
@@ -251,6 +254,66 @@ info commandstats
 info keyspace
 ```
 
+## 基于Redis实现分布式锁的几种方案
+
+基于Redis实现分布式锁的缺点：
+
+1. 超时时间不好设置
+
+    当线程A获取到锁之后，可能业务还没有执行完成，锁就过期了
+
+2. 锁可能无法永远无法释放
+3. 锁可靠性问题
+
+    1. 对于redis cluster集群，当线程A刚获取到锁后，此时锁所在Master节点恰好挂了，数据还没同步到Slave节点，而Slave节点恰好升级为主节点，导致B线程可以获取到锁。此时A、B线程同时在执行业务
+
+    2. 线程A执行完成任务后，去释放锁，可能是否释放掉了其他线程持有的锁（比如线程A执行完成时候，锁早已过期，线程B获取到了锁）
+
+### SETNX + EXPIRE
+
+如果执行完setnx加锁，正要执行expire设置过期时间时，进程crash或redis挂掉了，会到锁永远无法释放。
+
+### SETNX + value值是(系统时间+过期时间)
+
+可以把过期时间放到setnx的value值里面。如果加锁成功，再拿出value值校验一下是否过期即可。
+
+### 使用Lua脚本(包含SETNX + EXPIRE两条指令)
+
+### SET的扩展命令（SET EX PX NX）
+
+> SET key value[EX seconds][PX milliseconds][NX|XX]
+
+- NX :表示key不存在的时候，才能set成功，也即保证只有第一个客户端请求才能获得锁，而其他客户端请求只能等其释放锁，才能获取。
+- EX seconds :设定key的过期时间，时间单位是秒。
+- PX milliseconds: 设定key的过期时间，单位为毫秒
+- XX: 仅当key存在时设置值
+
+XX可以设置当前线程关联的值，当要释放锁时候，判断当前所锁的关联的值是否是当前线程关联的值，如果是才允许释放，这解决了3.b问题。可以通过Lua脚本保证这个过程的原子性：
+
+```lua
+if redis.call('get',KEYS[1]) == ARGV[1] then 
+   return redis.call('del',KEYS[1]) 
+else
+   return 0
+end;
+```
+
+### Redisson
+
+给获得锁的线程，开启一个定时守护线程，每隔一段时间检查锁是否还存在，存在则对锁的过期时间延长，防止锁过期提前释放。这解决了问题1。
+
+当前开源框架Redisson解决了这个问题。Redisson底层原理如下：
+
+![](https://static.cyub.vip/images/202406/redisson.webp)
+
+### Redlock
+
+对于3.a问题，Redis作者 antirez提出一种高级的分布式锁算法：Redlock。Redlock核心思想如下：
+
+> 当一个客户端要获取红锁时，它会尝试在多个 Redis 节点上分别执行 SETNX（SET if Not eXists）命令，如果大多数（N/2+1）加锁成功了，则认为获取锁成功。
+
+
 ## 资料
 
 - [Redis---持久化方式RDB、AOF](https://blog.csdn.net/zhangpower1993/article/details/89034941)
+- [七种方案！探讨Redis分布式锁的正确使用姿势](https://juejin.cn/post/6936956908007850014)

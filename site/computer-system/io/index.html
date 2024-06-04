@@ -633,6 +633,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#epoll" class="md-nav__link">
+    Epoll模式
+  </a>
+  
+    <nav class="md-nav" aria-label="Epoll模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#epoll_1" class="md-nav__link">
+    Epoll支持的两种操作模式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     资料
   </a>
@@ -1844,6 +1864,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#epoll" class="md-nav__link">
+    Epoll模式
+  </a>
+  
+    <nav class="md-nav" aria-label="Epoll模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#epoll_1" class="md-nav__link">
+    Epoll支持的两种操作模式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     资料
   </a>
@@ -1972,14 +2012,19 @@ $ dd if=/dev/urandom of=sync.txt bs=64M count=16 iflag=fullblock oflag=sync
 <p>补充：地址空间就是一个非负整数地址的有序集合。如{0,1,2...}。</p>
 <h3 id="12">1.2 进程上下文切换（进程切换）</h3>
 <p>为了控制进程的执行，内核必须有能力挂起正在CPU上运行的进程，并恢复以前挂起的某个进程的执行。这种行为被称为进程切换（也叫调度）。因此可以说，任何进程都是在操作系统内核的支持下运行的，是与内核紧密相关的。</p>
-<p>从一个进程的运行转到另一个进程上运行，这个过程中经过下面这些变化：
-1. 保存当前进程A的上下文。</p>
-<p>上下文就是内核再次唤醒当前进程时所需要的状态，由一些对象（程序计数器、状态寄存器、用户栈等各种内核数据结构）的值组成。</p>
-<p>这些值包括描绘地址空间的页表、包含进程相关信息的进程表、文件表等。
-　　
-2. 切换页全局目录以安装一个新的地址空间。</p>
+<p>从一个进程的运行转到另一个进程上运行，这个过程中经过下面这些变化：</p>
 <ol>
-<li>恢复进程B的上下文。</li>
+<li>
+<p>保存当前进程A的上下文</p>
+<p>上下文就是内核再次唤醒当前进程时所需要的状态，由一些对象（程序计数器、状态寄存器、用户栈等各种内核数据结构）的值组成。</p>
+<p>这些值包括描绘地址空间的页表、包含进程相关信息的进程表、文件表等。</p>
+</li>
+<li>
+<p>切换页全局目录以安装一个新的地址空间。</p>
+</li>
+<li>
+<p>恢复进程B的上下文。</p>
+</li>
 </ol>
 <p>可以理解成一个比较耗资源的过程。
 　　</p>
@@ -1998,12 +2043,14 @@ $ dd if=/dev/urandom of=sync.txt bs=64M count=16 iflag=fullblock oflag=sync
 <p>对于一次IO访问（这回以read举例），数据会先被拷贝到操作系统内核的缓冲区中，然后才会从操作系统内核的缓冲区拷贝到应用程序的缓冲区，最后交给进程。所以说，当一个read操作发生时，它会经历两个阶段：
 1. 等待数据准备 (Waiting for the data to be ready)
 2. 将数据从内核拷贝到进程中 (Copying the data from the kernel to the process)</p>
-<p>正式因为这两个阶段，linux系统产生了下面五种网络模式的方案：
-- 阻塞 I/O（blocking IO）
-- 非阻塞 I/O（nonblocking IO）
-- I/O 多路复用（ IO multiplexing）
-- 信号驱动 I/O（ signal driven IO）
-- 异步 I/O（asynchronous IO）</p>
+<p>正式因为这两个阶段，linux系统产生了下面五种网络模式的方案：</p>
+<ul>
+<li>阻塞 I/O（blocking IO）</li>
+<li>非阻塞 I/O（nonblocking IO）</li>
+<li>I/O 多路复用（ IO multiplexing）</li>
+<li>信号驱动 I/O（ signal driven IO）</li>
+<li>异步 I/O（asynchronous IO）</li>
+</ul>
 <h3 id="block-ioio">block I/O模型（阻塞I/O）</h3>
 <p>阻塞I/O模型示意图：</p>
 <p><img alt="" src="https://static.cyub.vip/images/202012/block-io.png" /></p>
@@ -2119,6 +2166,21 @@ $ dd if=/dev/urandom of=sync.txt bs=64M count=16 iflag=fullblock oflag=sync
 <p>而asynchronous IO则完全不同。它就像是用户进程将整个IO操作交给了他人（kernel）完成，然后他人做完后发信号通知。在此期间，用户进程不需要去检查IO操作的状态，也不需要主动的去拷贝数据。</p>
 </li>
 </ul>
+<h2 id="epoll">Epoll模式</h2>
+<h3 id="epoll_1">Epoll支持的两种操作模式</h3>
+<p>epoll对文件描述符有两种操作模式</p>
+<ul>
+<li>
+<p>LT（Level Trigger水平模式）</p>
+<p>LT是epoll的默认操作模式，当epoll_wait函数检测到有事件发生并将通知应用程序，而应用程序不一定必须立即进行处理，这样epoll_wait函数再次检测到此事件的时候还会通知应用程序，直到事件被处理。LT支持阻塞的套接字和非阻塞的套接字。</p>
+</li>
+<li>
+<p>ET（Edge Trigger边缘模式）</p>
+<p>ET模式下，只要epoll_wait函数检测到事件发生，通知应用程序立即进行处理，后续的epoll_wait函数将不再检测此事件。因此ET模式在很大程度上降低了同一个事件被epoll触发的次数，因此效率比LT模式高。ET只支持非阻塞的套接字。</p>
+</li>
+</ul>
+<p><strong>ET是状态变化的通知，即从没有数据转到有数据会通知，LT是数据变化的通知，即有数据就通知，没数据就不通知</strong>。对于ET模式，当接收到通知后，应该一直read循环读取，直到返回EWOULDBLOCK或EAGAIN，这样内部状态才会从有数据再次转为无数据，从而为下一次数据的到来做准备，否则只有对端再次发送数据时候，才会再次触发可读事件。</p>
+<p>对于ET状态应该注意防止恶意请求连接，防止其一直请求，造成其他请求饿死。</p>
 <h2 id="_3">资料</h2>
 <ul>
 <li><a href="https://blog.csdn.net/tjiyu/article/details/52959418">5种IO模型、阻塞IO和非阻塞IO、同步IO和异步IO</a>

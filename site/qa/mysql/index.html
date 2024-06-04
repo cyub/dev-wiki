@@ -1638,6 +1638,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    更多资料
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2306,6 +2313,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    更多资料
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2650,33 +2664,40 @@ InnoDB MVCC的实现基于undo log，通过回滚指针来构建需要的版本�
 <h3 id="slow-log">slow log</h3>
 <p>slow log用来记录慢查询</p>
 <h2 id="wherejionlimitgroup-byhaving">查询语句不同元素（where、jion、limit、group by、having等等）执行先后顺序？</h2>
-<p>where字句在聚合前先筛选记录，也就是说作用在group by和having字句前。而 having子句在聚合后对组记录进行筛选。</p>
+<p>where在聚合前先筛选记录，也就是说作用在group by和having之前。而 having子句在聚合后对组记录进行筛选。</p>
 <h2 id="innodb_1">Innodb为什么一定需要一个主键，且必须自增列作为主键？</h2>
 <p>如果我们定义了主键(PRIMARY KEY)，那么InnoDB会选择主键作为聚集索引。如果没有显式定义主键，则InnoDB会选择第一个不包含有NULL值的唯一索引作为主键索引。如果也没有这样的唯一索引，则InnoDB会选择内置6字节长的ROWID作为隐含的聚集索引(ROWID随着行记录的写入而主键递增，这个ROWID不像ORACLE的ROWID那样可引用，是隐含的)。</p>
 <p>总之Innodb一定需要一个主键。</p>
 <ol>
 <li>这是因为数据记录本身被存于主索引（一颗B+Tree）的叶子节点上，这就要求同一个叶子节点内（大小为一个内存页或磁盘页）的各条数据记录按主键顺序存放</li>
-<li>如果表使用自增主键，那么每次插入新的记录，记录就会顺序添加到当前索引节点的后续位置，当一页写满，就会自动开辟一个新的页（这样的页称为叶子页)</li>
+<li>如果表使用自增主键，那么每次插入新的记录，记录就会顺序添加到当前索引节点的后续位置，当一页写满，就会自动开辟一个新的页(这样的页称为叶子页)</li>
 <li>如果使用非自增主键（如果身份证号或学号等），由于每次插入主键的值近似于随机，因此每次新记录都要被插到现有索引页得中间某个位置</li>
 </ol>
 <h2 id="mvcc_1">在MVCC并发控制中，读操作可以分成哪两类?</h2>
-<p>快照读 (snapshot read)：读取的是记录的可见版本 (有可能是历史版本)，不用加锁（共享读锁s锁也不加，所以不会阻塞其他事务的写）。</p>
-<p>当前读 (current read)：读取的是记录的最新版本，并且，当前读返回的记录，都会加上锁，保证其他事务不会再并发修改这条记录。</p>
+<p><strong>快照读 (snapshot read)</strong>：读取的是记录的可见版本 (有可能是历史版本)，不用加锁（共享读锁s锁也不加，所以不会阻塞其他事务的写）。</p>
+<p><strong>当前读 (current read)</strong>：读取的是记录的最新版本，并且，当前读返回的记录，都会加上锁，保证其他事务不会再并发修改这条记录。</p>
 <h2 id="mysqldatatimetimestap">Mysql中DATATIME和TIMESTAP的区别？</h2>
 <p>datetime、timestamp精确度都是秒，datetime与时区无关，存储的范围广(1001-9999)，占空间8个字节，timestamp与时区有关，查询时候会转换成相应时区显示，存储的范围小(1970-2038)，占用空间4个字节。</p>
 <h2 id="mysql_9">MySQL是如何解决幻读的？</h2>
 <ul>
 <li>事务隔离级别设置为SERIALIZABLE 串行化</li>
 <li>
-<p>MVCC + Next-Key Lock
-    Next-Key Lock是Gap Lock（间隙锁）和Record Lock（行锁）的结合版，都属于Innodb的锁机制。</p>
-<p>比如：select * from tb where id&gt;100 for update：
-1. 主键索引 id 会给 id=100 的记录加上 record行锁
-2. 索引 id 上会加上 gap 锁，锁住 id(100,+无穷大）这个范围，其他事务对  id&gt;100 范围的记录读和写操作都将被阻塞。插入 id=1000的记录时候会命中索引上加的锁会报出事务异常；</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Next-Key Lock会确定一段范围，然后对这个范围加锁，保证A在where的条件下读到的数据是一致的，因为在where这个范围其他事务根本插不了也删不了数据，都被Next-Key Lock锁堵在一边阻塞掉了。
-</code></pre></div></td></tr></table></div>
+<p>MVCC + Next-Key Lock</p>
+<p>Next-Key Lock(临键锁) 是Gap Lock（间隙锁）和Record Lock（记录锁，属于行锁）的结合版，都属于Innodb的锁机制。 比如：select * from tb where id&gt;100 for update：</p>
+<ol>
+<li>主键索引 id 会给 id=100 的记录加上 record行锁</li>
+<li>
+<p>索引 id 上会加上 gap 锁，锁住 id(100,+无穷大）这个范围，其他事务对  id&gt;100 范围的记录读和写操作都将被阻塞。插入 id=1000的记录时候会命中索引上加的锁会报出事务异常；</p>
+</li>
+<li>
+<p>Next-Key Lock会确定一段范围，然后对这个范围加锁，保证A在where的条件下读到的数据是一致的，因为在where这个范围其他事务根本插不了也删不了数据，都被Next-Key Lock锁堵在一边阻塞掉了。</p>
+</li>
+</ol>
 </li>
 </ul>
+<blockquote>
+<p>记录锁是行级别的锁（row-level locks），当InnoDB 对索引进行搜索或扫描时，会在索引对应的记录上设置共享或排他的记录锁。</p>
+</blockquote>
 <h2 id="mysqlgap-locknextkey-lock">Mysql什么时候会取得gap lock或nextkey lock?</h2>
 <ul>
 <li>只在REPEATABLE READ或以上的隔离级别下的特定操作才会有可能取得gap lock或nextkey lock</li>
@@ -2887,22 +2908,24 @@ by other sessions into the gaps covered by the range.</p>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>idx(a, b, c)  HIT  where a = x and b = x
-idx(a, b, c)  HIT  where a &gt; x
-idx(a, b, c)  Not HIT  where b &gt; x
-idx(a, b, c)  Not HIT  where a &gt; x and b = x
-idx(a, b, c)  Not HIT  where a = x and c = x
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">idx</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">)</span><span class="w">  </span><span class="n">HIT</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span>
+<span class="n">idx</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">)</span><span class="w">  </span><span class="n">HIT</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span>
+<span class="n">idx</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">)</span><span class="w">  </span><span class="k">Not</span><span class="w"> </span><span class="n">HIT</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span>
+<span class="n">idx</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">)</span><span class="w">  </span><span class="k">Not</span><span class="w"> </span><span class="n">HIT</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span>
+<span class="n">idx</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">)</span><span class="w">  </span><span class="k">Not</span><span class="w"> </span><span class="n">HIT</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span>
 
-idx(a, b, c)  HIT  where a = x order by b
-idx(a, b, c)  HIT  where a &gt; x order by a
-idx(a, b, c)  HIT  where a = x and b &gt; x order by a
-idx(a, b, c)  Not HIT  where a &gt; x order by b
-idx(a, b, c)  HIT  where a = x group by a, b
-idx(a, b, c)  Not HIT  where a = x group by b
+<span class="n">idx</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">)</span><span class="w">  </span><span class="n">HIT</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">b</span>
+<span class="n">idx</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">)</span><span class="w">  </span><span class="n">HIT</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">a</span>
+<span class="n">idx</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">)</span><span class="w">  </span><span class="n">HIT</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">a</span>
+<span class="n">idx</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">)</span><span class="w">  </span><span class="k">Not</span><span class="w"> </span><span class="n">HIT</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">b</span>
+<span class="n">idx</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">)</span><span class="w">  </span><span class="n">HIT</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span>
+<span class="n">idx</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">)</span><span class="w">  </span><span class="k">Not</span><span class="w"> </span><span class="n">HIT</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">b</span>
 </code></pre></div></td></tr></table></div>
-<p>mysql建立多列索引（联合索引）有最左前缀的原则，即最左优先，如：
-- 如果有一个2列的索引(col1,col2),则已经对(col1)、(col1,col2)上建立了索引；
-- 如果有一个3列索引(col1,col2,col3)，则已经对(col1)、(col1,col2)、(col1,col2,col3)上建立了索引；</p>
+<p>mysql建立多列索引（联合索引）有最左前缀的原则，即最左优先，如：</p>
+<ul>
+<li>如果有一个2列的索引(col1,col2)，则已经对(col1)、(col1,col2)上建立了索引；</li>
+<li>如果有一个3列索引(col1,col2,col3)，则已经对(col1)、(col1,col2)、(col1,col2,col3)上建立了索引；</li>
+</ul>
 <p>最左前缀索引：</p>
 <p>mysql会一直向右匹配直到遇到范围查询(&gt;、&lt;、between、like)就停止匹配，比如a = 1 and b = 2 and c &gt; 3 and d = 4 如果建立(a,b,c,d)顺序的索引，d是用不到索引的，如果建立(a,b,d,c)的索引则都可以用到，a,b,d的顺序可以任意调整。</p>
 <p>如where a&gt;10 order by b ,索引a_b 无法排序
@@ -2913,6 +2936,10 @@ idx(a, b, c)  Not HIT  where a = x group by b
 <p><img alt="" src="https://static.cyub.vip/images/202107/mysql-for-update.jpg" /></p>
 <h2 id="mysql_15">mysql中悲观锁、乐观锁、共享锁、排他锁有什么区别？</h2>
 <p><img alt="" src="https://static.cyub.vip/images/202107/mysql-lock.jpg" /></p>
+<h2 id="_9">更多资料</h2>
+<ul>
+<li><a href="https://blog.csdn.net/yzx3105/article/details/129675468">MySQL记录锁、间隙锁、临键锁（Next-Key Locks）详解</a></li>
+</ul>
 
 
 

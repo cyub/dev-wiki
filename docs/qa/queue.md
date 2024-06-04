@@ -26,7 +26,7 @@ Kafka是高吞吐低延迟的高并发、高性能的消息中间件，配置良
 自 Kafka 2.4 之后，Kafka 提供了有限度的读写分离，也就是说，Follower 副本能够对外提供读服务。
 
 1. 业务场景不适用。读写分离适用于那种读负载很大，而写操作相对不频繁的场景，可 Kafka 不属于这样的场景。
-2. 同步机制。Kafka 采用 PULL 方式实现 Follower 的同步，因此，Follower 与 Leader 存 在不一致性窗口。如果允许读 Follower 副本，就势必要处理消息滞后(Lagging)的问题。
+2. 同步机制。Kafka 采用 PULL 方式实现 Follower 的同步，因此Follower 与 Leader 存 在不一致性窗口。如果允许读 Follower 副本，就势必要处理消息滞后(Lagging)的问题。
 
 
 ## 如何解决kafka消息重复消费问题？
@@ -36,7 +36,7 @@ Kafka是高吞吐低延迟的高并发、高性能的消息中间件，配置良
 
 ## Kafka消息是采用Pull模式，还是Push模式？
 
-kafka遵循了一种大部分消息系统共同的传统的设计：producer将消息推送到broker，consumer从broker拉取消息。同redis的bpop命令类似，Kafka有个参数可以让consumer阻塞知道新消息到达，可以防止consumer不断在循环中轮询。
+kafka遵循了一种大部分消息系统共同的传统的设计：producer将消息推送(push)到broker，consumer从broker拉取(pull)消息。同redis的bpop命令类似，Kafka有个参数可以让consumer阻塞知道新消息到达，可以防止consumer不断在循环中轮询。
 
 ## kafka中如何防止消息丢失？
 
@@ -45,9 +45,11 @@ Kafka消息发送有两种方式：同步（sync）和异步（async），默认
 - 0
 
     表示producer不等待来自broker同步完成的确认继续发送下一条消息；
+
 - 1
 
     表示producer在leader已成功收到的数据并得到确认后发送下一条message，默认状态
+
 - -1
 
     表示producer在header,follower副本确认接收到数据后才算一次发送完成；
@@ -107,23 +109,21 @@ Kafka 副本当前分为领导者副本和追随者副本。只有 Leader 副本
 
 message delivery semantic 也就是消息传递语义。通用的概念，也就是消息传递过程中消息传递的保证性。分为三种：
 
-- 最多一次（at most once）
+- **最多一次（at most once）**
 
-    消息可能丢失也可能被处理，但最多只会被处理一次。
+    消息可能丢失也可能被处理，但最多只会被处理一次。可能丢失，不会重复。
 
-    可能丢失 不会重复
+    **只管发送，不管对方收没收到。**
 
-- 至少一次（at least once）
+- **至少一次（at least once）**
 
-    消息不会丢失，但可能被处理多次。
+    消息不会丢失，但可能被处理多次。可能重复 不会丢失。
 
-    可能重复 不会丢失
+    **发送之后，会等待对方确认之后才会停止发送。**
 
-- 精确传递一次（exactly once）
+- **精确传递一次（exactly once）**
 
-    消息被处理且只会被处理一次。
-
-    不丢失 不重复 就一次
+    消息被处理且只会被处理一次。不丢失，不重复，就一次。
 
 ## 介绍一下beanstalk?
 

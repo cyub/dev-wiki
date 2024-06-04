@@ -297,7 +297,7 @@ slow log用来记录慢查询
 
 ## 查询语句不同元素（where、jion、limit、group by、having等等）执行先后顺序？
 
-where字句在聚合前先筛选记录，也就是说作用在group by和having字句前。而 having子句在聚合后对组记录进行筛选。
+where在聚合前先筛选记录，也就是说作用在group by和having之前。而 having子句在聚合后对组记录进行筛选。
 
 ## Innodb为什么一定需要一个主键，且必须自增列作为主键？
 
@@ -306,14 +306,14 @@ where字句在聚合前先筛选记录，也就是说作用在group by和having�
 总之Innodb一定需要一个主键。
 
 1. 这是因为数据记录本身被存于主索引（一颗B+Tree）的叶子节点上，这就要求同一个叶子节点内（大小为一个内存页或磁盘页）的各条数据记录按主键顺序存放
-2. 如果表使用自增主键，那么每次插入新的记录，记录就会顺序添加到当前索引节点的后续位置，当一页写满，就会自动开辟一个新的页（这样的页称为叶子页)
+2. 如果表使用自增主键，那么每次插入新的记录，记录就会顺序添加到当前索引节点的后续位置，当一页写满，就会自动开辟一个新的页(这样的页称为叶子页)
 3. 如果使用非自增主键（如果身份证号或学号等），由于每次插入主键的值近似于随机，因此每次新记录都要被插到现有索引页得中间某个位置
 
 ## 在MVCC并发控制中，读操作可以分成哪两类?
 
-快照读 (snapshot read)：读取的是记录的可见版本 (有可能是历史版本)，不用加锁（共享读锁s锁也不加，所以不会阻塞其他事务的写）。
+**快照读 (snapshot read)**：读取的是记录的可见版本 (有可能是历史版本)，不用加锁（共享读锁s锁也不加，所以不会阻塞其他事务的写）。
 
-当前读 (current read)：读取的是记录的最新版本，并且，当前读返回的记录，都会加上锁，保证其他事务不会再并发修改这条记录。
+**当前读 (current read)**：读取的是记录的最新版本，并且，当前读返回的记录，都会加上锁，保证其他事务不会再并发修改这条记录。
 
 ## Mysql中DATATIME和TIMESTAP的区别？
 
@@ -323,13 +323,15 @@ datetime、timestamp精确度都是秒，datetime与时区无关，存储的范�
 
 - 事务隔离级别设置为SERIALIZABLE 串行化
 - MVCC + Next-Key Lock
-    Next-Key Lock是Gap Lock（间隙锁）和Record Lock（行锁）的结合版，都属于Innodb的锁机制。
 
-    比如：select * from tb where id>100 for update：
+    Next-Key Lock(临键锁) 是Gap Lock（间隙锁）和Record Lock（记录锁，属于行锁）的结合版，都属于Innodb的锁机制。 比如：select * from tb where id>100 for update：
+
     1. 主键索引 id 会给 id=100 的记录加上 record行锁
     2. 索引 id 上会加上 gap 锁，锁住 id(100,+无穷大）这个范围，其他事务对  id>100 范围的记录读和写操作都将被阻塞。插入 id=1000的记录时候会命中索引上加的锁会报出事务异常；
 
-        Next-Key Lock会确定一段范围，然后对这个范围加锁，保证A在where的条件下读到的数据是一致的，因为在where这个范围其他事务根本插不了也删不了数据，都被Next-Key Lock锁堵在一边阻塞掉了。
+    3. Next-Key Lock会确定一段范围，然后对这个范围加锁，保证A在where的条件下读到的数据是一致的，因为在where这个范围其他事务根本插不了也删不了数据，都被Next-Key Lock锁堵在一边阻塞掉了。
+
+> 记录锁是行级别的锁（row-level locks），当InnoDB 对索引进行搜索或扫描时，会在索引对应的记录上设置共享或排他的记录锁。
 
 
 ## Mysql什么时候会取得gap lock或nextkey lock?
@@ -504,7 +506,7 @@ KEY分区跟HASH分区类似，分区字段可以是除text和BLOB外的所有�
 
 ## 索引名字规则
 
-```
+```sql
 idx(a, b, c)  HIT  where a = x and b = x
 idx(a, b, c)  HIT  where a > x
 idx(a, b, c)  Not HIT  where b > x
@@ -520,7 +522,8 @@ idx(a, b, c)  Not HIT  where a = x group by b
 ```
 
 mysql建立多列索引（联合索引）有最左前缀的原则，即最左优先，如：
-- 如果有一个2列的索引(col1,col2),则已经对(col1)、(col1,col2)上建立了索引；
+
+- 如果有一个2列的索引(col1,col2)，则已经对(col1)、(col1,col2)上建立了索引；
 - 如果有一个3列索引(col1,col2,col3)，则已经对(col1)、(col1,col2)、(col1,col2,col3)上建立了索引；
 
 
@@ -543,3 +546,7 @@ b+ 树的数据项是复合的数据结构，比如 (name,age,sex) 的时候，b
 ## mysql中悲观锁、乐观锁、共享锁、排他锁有什么区别？
 
 ![](https://static.cyub.vip/images/202107/mysql-lock.jpg)
+
+## 更多资料
+
+- [MySQL记录锁、间隙锁、临键锁（Next-Key Locks）详解](https://blog.csdn.net/yzx3105/article/details/129675468)
