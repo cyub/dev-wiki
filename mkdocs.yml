@@ -116,6 +116,9 @@ theme:
   icon:
     logo: logo
 
+plugins:
+  - search:
+      separator: '[\s\u200b\-]'
 
 # Additional configuration
 extra:
