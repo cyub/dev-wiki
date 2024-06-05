@@ -21,7 +21,7 @@
         <link rel="next" href="../proc/">
       
       
-      <link rel="icon" href="../../favicon.ico">
+      <link rel="icon" href="../../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.4">
     
     
@@ -47,14 +47,24 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Fira Sans";--md-code-font:"Fira Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Code";--md-code-font:"Fira Code"}</style>
       
     
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config",""),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -69,7 +79,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     
@@ -98,7 +108,12 @@
     <a href="../.." title="开发知识wiki" class="md-header__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -128,20 +143,30 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_3" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
     
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_3">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
       </label>
     
   
@@ -167,11 +192,18 @@
       </label>
       <nav class="md-search__options" aria-label="查找">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -231,6 +263,8 @@
         <a href="./" class="md-tabs__link">
           
   
+    
+  
   操作系统
 
         </a>
@@ -248,6 +282,8 @@
       <li class="md-tabs__item">
         <a href="../../computer-network/tcp/" class="md-tabs__link">
           
+  
+    
   
   计算机网络
 
@@ -272,6 +308,8 @@
       <li class="md-tabs__item">
         <a href="../../database/mysql/%E7%AE%80%E4%BB%8B/" class="md-tabs__link">
           
+  
+    
   
   数据库
 
@@ -311,7 +349,29 @@
         <a href="../../container/install/" class="md-tabs__link">
           
   
+    
+  
   容器
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../language/Go/" class="md-tabs__link">
+          
+  
+    
+  
+  语言
 
         </a>
       </li>
@@ -328,6 +388,8 @@
       <li class="md-tabs__item">
         <a href="../../qa/redis/" class="md-tabs__link">
           
+  
+    
   
   QA
 
@@ -362,7 +424,12 @@
     <a href="../.." title="开发知识wiki" class="md-nav__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
 
     </a>
     开发知识wiki
@@ -397,6 +464,22 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -802,6 +885,16 @@
   
     
     
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
     
     
     
@@ -816,16 +909,24 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../computer-network/tcp/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     计算机网络
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
@@ -834,24 +935,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../computer-network/tcp/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    TCP
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -887,6 +970,14 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -927,10 +1018,23 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -938,7 +1042,7 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1051,10 +1155,27 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1062,16 +1183,24 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../database/elasticsearch/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Elasticsearch
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
@@ -1080,24 +1209,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../database/elasticsearch/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    概览
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -1241,6 +1352,16 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
     
@@ -1367,6 +1488,10 @@
   
     
     
+      
+        
+      
+    
     
     
     
@@ -1385,7 +1510,7 @@
             
   
   <span class="md-ellipsis">
-    QA
+    语言
   </span>
   
 
@@ -1394,6 +1519,102 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            语言
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/Go/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Go
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    QA
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             QA
           </label>
@@ -1905,8 +2126,8 @@
                   
 
 
-<h1 id="io">IO</h1>
-<h2 id="page-cache">Page Cache</h2>
+<h1 id="io">IO<a class="headerlink" href="#io" title="Permanent link">&para;</a></h1>
+<h2 id="page-cache">Page Cache<a class="headerlink" href="#page-cache" title="Permanent link">&para;</a></h2>
 <p>在现代计算机系统中，CPU，RAM，DISK的速度不相同，按速度高低排列 为：CPU&gt;RAM&gt;DISK。CPU与RAM之间、RAM与DISK之间的速度差异常常是指数级。同时，它们之间的处理容量也不相同，其差异也是指数级。</p>
 <p>为了在速度和容量上折中，<strong>在CPU与RAM之间使用CPU cache以提高访存速度</strong>，<strong>在RAM与磁盘之间，操作系统使用page cache提高系统对文件的访问速度</strong>。</p>
 <p><strong>Page cache是通过将磁盘中的数据缓存到内存中，从而减少磁盘I/O操作，从而提高性能</strong>。此外还要确保在page cache中的数据更改时能够被同步到磁盘上，后者被称为page回写（page writeback）。page回写往往不会立即执行，这样好处是可以减少磁盘的回写次数，提高吞吐量，不足之处就死机器挂掉，page cache中数据就会丢失。一个inode关联一个page cahce, 一个page cache对象包含多个物理page。</p>
@@ -1926,26 +2147,19 @@
 <p><img alt="" src="https://static.cyub.vip/images/202012/page-cache.jpg" /></p>
 <p>从硬盘读取文件时，同样不是直接把硬盘上文件内容读取到用户态内存，而是先拷贝到内核的page cache，然后再“拷贝”到用户态内存，这样用户就可以访问该文件。因为涉及到硬盘操作，所以第一次读取一个文件时，不会有性能提升；不过，如果一个文件已经存在page cache中，再次读取该文件时就可以直接从page cache中命中读取不涉及硬盘操作，这时性能就会有很大提高。</p>
 <p>下面用dd比较下异步（缺省模式）和同步写硬盘的速度差别：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>$ dd if=/dev/urandom of=async.txt bs=64M count=16 iflag=fullblock
-16+0 records in
-16+0 records out
-1073741824 bytes (1.1 GB, 1.0 GiB) copied, 7.618 s, 141 MB/s
-$ dd if=/dev/urandom of=sync.txt bs=64M count=16 iflag=fullblock oflag=sync
-16+0 records in
-16+0 records out
-1073741824 bytes (1.1 GB, 1.0 GiB) copied, 13.2175 s, 81.2 MB/s
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ dd if=/dev/urandom of=async.txt bs=64M count=16 iflag=fullblock
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>16+0 records in
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>16+0 records out
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>1073741824 bytes (1.1 GB, 1.0 GiB) copied, 7.618 s, 141 MB/s
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>$ dd if=/dev/urandom of=sync.txt bs=64M count=16 iflag=fullblock oflag=sync
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>16+0 records in
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>16+0 records out
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>1073741824 bytes (1.1 GB, 1.0 GiB) copied, 13.2175 s, 81.2 MB/s
+</span></code></pre></div>
 <p><strong>如何查看一个文件占用page cache情况?</strong></p>
 <p>我们可以借助<a href="https://hoytech.com/vmtouch/">vmtouch</a>工具</p>
-<h2 id="cache">Cache同步方式</h2>
-<p>Cache的同步方式有两种，即<strong>Write Through（写穿）</strong> 和 <strong>Write back（写回）</strong> 。</p>
+<h2 id="cache">Cache同步方式<a class="headerlink" href="#cache" title="Permanent link">&para;</a></h2>
+<p>Cache的同步方式有两种，即**Write Through（写穿）** 和 <strong>Write back（写回）</strong> 。</p>
 <p>对应到Linux的Page Cache上所谓Write Through就是指write(2)操作将数据拷贝到Page Cache后立即和下层进行同步的写操作，完成下层的更新后才返回，可以理解为写穿透page cache直抵磁盘。</p>
 <p>而Write back正好相反，指的是写完Page Cache就可以返回了，可以理解为写到page cache就返回了。Page Cache到下层的更新操作是异步进行的。</p>
 <p>Linux下Buffered IO默认使用的是Write back机制，即文件操作的写只写到Page Cache就返回，之后Page Cache到磁盘的更新操作是异步进行的。Page Cache中被修改的内存页称之为脏页（<code>Dirty Page</code>），脏页在特定的时候被一个叫做<code>pdflush</code>(Page Dirty Flush)的内核线程写入磁盘，写入的时机和条件如下：</p>
@@ -1956,17 +2170,17 @@ $ dd if=/dev/urandom of=sync.txt bs=64M count=16 iflag=fullblock oflag=sync
 <p>如果OS没有crash或者重启的话，仅仅是写数据的程序crash，那么已经成功写入到page cache中的dirty pages是会被pdflush在合适的时机被写回到硬盘，不会丢失数据； 如果OS也crash或者重启的话，因为page cache存放在内存中，一旦断电就丢失了，那么就会丢失数据。</p>
 <p><strong>那么如何避免因为系统重启或者机器突然断电，导致数据丢失问题呢？</strong></p>
 <p>可以借助于WAL（Write-Ahead Log）技术。WAL技术在数据库系统中比较常见，在数据库中一般又称之为redo log，Linux 文件系统ext3/ext4称之为journaling。WAL作用是：写数据库或者文件系统前，先把相关的metadata和文件内容写入到WAL日志中，然后才真正写数据库或者文件系统。WAL日志是append模式，所以，对WAL日志的操作要比对数据库或者文件系统的操作轻量级得多。如果对WAL日志采用同步写模式，那么WAL日志写成功，即使写数据库或者文件系统失败，可以用WAL日志来恢复数据库或者文件系统里的文件。</p>
-<h2 id="mmap-memory-map">mmap - Memory Map</h2>
+<h2 id="mmap-memory-map">mmap - Memory Map<a class="headerlink" href="#mmap-memory-map" title="Permanent link">&para;</a></h2>
 <p>同一块文件数据，在内存中保存了两份(内核必须将页面缓存的内容复制到用户缓冲区中），这既占用了不必要的内存空间、冗余的拷贝、以及造成的CPU cache利用率不高。针对此问题，操作系统提供了内存映射机制（linux中mmap、windows中Filemapping）。如下图：</p>
 <p><img alt="mmap" src="https://static.cyub.vip/images/202009/mmap.gif?ynotemdtimestamp=1601743305233" /></p>
-<p>当使用文件映射时，内核将程序的虚拟页面直接映射到页面缓存中。在使用mmap调用时，系统并不是马上为其分配内存空间，而仅仅是添加一个VMA到该进程中，当程序访问到目标空间时，产生<strong>缺页中断</strong>。在缺页中断中，从page caches中查找要访问的文件块，若未命中，则启动磁盘I/O从磁盘中加载到page caches。然后将文件块在page caches中的物理页映射到进程mmap地址空间。</p>
+<p>当使用文件映射时，内核将程序的虚拟页面直接映射到页面缓存中。在使用mmap调用时，系统并不是马上为其分配内存空间，而仅仅是添加一个VMA到该进程中，当程序访问到目标空间时，产生**缺页中断**。在缺页中断中，从page caches中查找要访问的文件块，若未命中，则启动磁盘I/O从磁盘中加载到page caches。然后将文件块在page caches中的物理页映射到进程mmap地址空间。</p>
 <p><strong>当程序退出或关闭文件时，系统是否会马上清除page caches中的相应页面呢？</strong></p>
 <p>答案是否定的。由于该文件可能被其他进程访问，或该进程一段时间后会重新访问，因此，在物理内存足够的情况下，系统总是将其保持在page caches中，这样可以提高系统的整体性能(提高page caches的命中率，尽量少的访问磁盘)。只有当系统物理内存不足时，内核才会主动清理page caches。</p>
 <p>当进程调用write修改文件时，由于page cache的存在，修改并不是马上更新到磁盘，而只是暂时更新到page caches中，同时mark 目标page为dirty，当内核主动释放page caches时，才将更新写入磁盘(主动调用sync时，也会更新到磁盘)。</p>
 <p>内存映射文件的写入不一定是对磁盘文件的即时（同步）写入。有的操作系统定期检查文件的内存映射页面是否已被修改，以便选择是否更新到物理文件。当关闭文件时，所有内存映射的数据会写到磁盘，并从进程虚拟内存中删除。</p>
 <p><strong>多个进程可以允许并发地内存映射同一文件，以便允许数据共享</strong>。任何一个进程的写入会修改虚拟内存的数据，并且其他映射同一文件部分的进程都可看到。</p>
 <p>虚拟映射只支持文件。我们可以通过<code>/proc/&lt;pid&gt;/maps</code>查看进行pid的mmap文件。</p>
-<h2 id="zero-copy">Zero Copy</h2>
+<h2 id="zero-copy">Zero Copy<a class="headerlink" href="#zero-copy" title="Permanent link">&para;</a></h2>
 <p><strong>零拷贝(Zero Copy)技术是直接从内核空间（DMA的）到内核空间（Socket的)、然后发送网卡</strong>。</p>
 <p>传统的网络I/O操作流程，大体上分为以下4步：</p>
 <ol>
@@ -1982,7 +2196,7 @@ $ dd if=/dev/urandom of=sync.txt bs=64M count=16 iflag=fullblock oflag=sync
 <p><img alt="" src="https://static.cyub.vip/images/202009/sendfile.png" /></p>
 <p><img alt="" src="https://static.cyub.vip/images/202009/sendfile2.webp" /></p>
 <p>从上图可以看出，通过sendfile 系统调用，提供了零拷贝。磁盘数据通过 DMA 拷贝到内核态 Buffer 后，直接通过 DMA 拷贝到 NIC Buffer(socket buffer)，无需 CPU 拷贝，所以称为零拷贝。除了减少数据拷贝外，因为整个读文件 - 网络发送由一个 sendfile 调用完成，整个过程只有两次上下文切换，因此大大提高了性能。</p>
-<h3 id="_1">零拷贝应用场景</h3>
+<h3 id="_1">零拷贝应用场景<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>如Tomcat、Nginx、Apache等web服务器返回静态资源等，将数据用网络发送出去，都运用了sendfile</p>
@@ -1991,7 +2205,7 @@ $ dd if=/dev/urandom of=sync.txt bs=64M count=16 iflag=fullblock oflag=sync
 <p>Kafka中的Consumer从broker中获取消息时候，broker使用到了sendfile</p>
 </li>
 </ol>
-<h3 id="mmap-sendfile">mmap 和 sendfile比较</h3>
+<h3 id="mmap-sendfile">mmap 和 sendfile比较<a class="headerlink" href="#mmap-sendfile" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>都是Linux内核提供、实现零拷贝的API</p>
@@ -2005,12 +2219,12 @@ $ dd if=/dev/urandom of=sync.txt bs=64M count=16 iflag=fullblock oflag=sync
 </ol>
 <p><strong>什么是DMA？</strong></p>
 <p>本质上，DMA技术就是我们在主板上放⼀块独立的芯片。在进行内存和I/O设备的数据传输的时候，我们不再通过CPU来控制数据传输，而直接通过 DMA控制器（DMA?Controller，简称DMAC）。这块芯片，我们可以认为它其实就是一个协处理器（Co-Processor）)</p>
-<h2 id="io_1">IO模式</h2>
-<h3 id="11">1.1 用户空间和内核空间</h3>
+<h2 id="io_1">IO模式<a class="headerlink" href="#io_1" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 用户空间和内核空间<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
 <p>现在操作系统都采用虚拟寻址，处理器先产生一个虚拟地址，通过地址翻译成物理地址（内存的地址），再通过总线的传递，最后处理器拿到某个物理地址返回的字节。</p>
 <p>对32位操作系统而言，它的寻址空间（虚拟存储空间）为4G（2的32次方）。操作系统的核心是内核，独立于普通的应用程序，可以访问受保护的内存空间，也有访问底层硬件设备的所有权限。为了保证用户进程不能直接操作内核（kernel），保证内核的安全，操心系统将虚拟空间划分为两部分，一部分为内核空间，一部分为用户空间。针对linux操作系统而言，将最高的1G字节（从虚拟地址0xC0000000到0xFFFFFFFF），供内核使用，称为内核空间，而将较低的3G字节（从虚拟地址0x00000000到0xBFFFFFFF），供各个进程使用，称为用户空间。</p>
 <p>补充：地址空间就是一个非负整数地址的有序集合。如{0,1,2...}。</p>
-<h3 id="12">1.2 进程上下文切换（进程切换）</h3>
+<h3 id="12">1.2 进程上下文切换（进程切换）<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
 <p>为了控制进程的执行，内核必须有能力挂起正在CPU上运行的进程，并恢复以前挂起的某个进程的执行。这种行为被称为进程切换（也叫调度）。因此可以说，任何进程都是在操作系统内核的支持下运行的，是与内核紧密相关的。</p>
 <p>从一个进程的运行转到另一个进程上运行，这个过程中经过下面这些变化：</p>
 <ol>
@@ -2028,18 +2242,18 @@ $ dd if=/dev/urandom of=sync.txt bs=64M count=16 iflag=fullblock oflag=sync
 </ol>
 <p>可以理解成一个比较耗资源的过程。
 　　</p>
-<h3 id="13">1.3 进程的阻塞</h3>
+<h3 id="13">1.3 进程的阻塞<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
 <p>正在执行的进程，由于期待的某些事件未发生，如请求系统资源失败、等待某种操作的完成、新数据尚未到达或无新工作做等，则由系统自动执行阻塞原语(Block)，使自己由运行状态变为阻塞状态。可见，进程的阻塞是进程自身的一种主动行为，也因此只有处于运行态的进程（获得CPU），才可能将其转为阻塞状态。当进程进入阻塞状态，是不占用CPU资源的。</p>
-<h3 id="14">1.4 文件描述符</h3>
+<h3 id="14">1.4 文件描述符<a class="headerlink" href="#14" title="Permanent link">&para;</a></h3>
 <p>文件描述符（File descriptor）是计算机科学中的一个术语，是一个用于表述指向文件的引用的抽象化概念。</p>
 <p>文件描述符在形式上是一个非负整数。实际上，它是一个索引值，指向内核为每一个进程所维护的该进程打开文件的记录表。当程序打开一个现有文件或者创建一个新文件时，内核向进程返回一个文件描述符。在程序设计中，一些涉及底层的程序编写往往会围绕着文件描述符展开。但是文件描述符这一概念往往只适用于UNIX、Linux这样的操作系统。</p>
-<h3 id="15-ioio">1.5 直接I/O和缓存I/O</h3>
+<h3 id="15-ioio">1.5 直接I/O和缓存I/O<a class="headerlink" href="#15-ioio" title="Permanent link">&para;</a></h3>
 <p><strong>缓存I/O</strong> 又被称作标准 I/O，大多数文件系统的默认 I/O 操作都是缓存 I/O。在 Linux 的缓存 I/O 机制中，以write为例，数据会先被拷贝进程缓冲区，在拷贝到操作系统内核的缓冲区中，然后才会写到存储设备中。</p>
 <p><img alt="" src="http://static.cyub.vip/images/201811/cache-io.png" /></p>
 <p>直接I/O的write：（少了拷贝到进程缓冲区这一步）</p>
 <p><img alt="" src="http://static.cyub.vip/images/201811/non-cache-io.png" /></p>
 <p>write过程中会有很多次拷贝，直到数据全部写到磁盘。</p>
-<h2 id="io_2">I/O模式</h2>
+<h2 id="io_2">I/O模式<a class="headerlink" href="#io_2" title="Permanent link">&para;</a></h2>
 <p>对于一次IO访问（这回以read举例），数据会先被拷贝到操作系统内核的缓冲区中，然后才会从操作系统内核的缓冲区拷贝到应用程序的缓冲区，最后交给进程。所以说，当一个read操作发生时，它会经历两个阶段：
 1. 等待数据准备 (Waiting for the data to be ready)
 2. 将数据从内核拷贝到进程中 (Copying the data from the kernel to the process)</p>
@@ -2051,7 +2265,7 @@ $ dd if=/dev/urandom of=sync.txt bs=64M count=16 iflag=fullblock oflag=sync
 <li>信号驱动 I/O（ signal driven IO）</li>
 <li>异步 I/O（asynchronous IO）</li>
 </ul>
-<h3 id="block-ioio">block I/O模型（阻塞I/O）</h3>
+<h3 id="block-ioio">block I/O模型（阻塞I/O）<a class="headerlink" href="#block-ioio" title="Permanent link">&para;</a></h3>
 <p>阻塞I/O模型示意图：</p>
 <p><img alt="" src="https://static.cyub.vip/images/202012/block-io.png" /></p>
 <!-- ![](https://static.cyub.vip/images/201811/block-io.png) -->
@@ -2062,7 +2276,7 @@ $ dd if=/dev/urandom of=sync.txt bs=64M count=16 iflag=fullblock oflag=sync
 <p>（3）与此同时，进程阻塞（进程是自己选择阻塞与否），等待数据ing；</p>
 <p>（4）直到数据从内核拷贝到了用户空间，内核返回结果，进程解除阻塞。</p>
 <p>也就是说，内核准备数据和数据从内核拷贝到进程内存地址这两个过程都是阻塞的。</p>
-<h3 id="22-non-blockio">2.2 non-block（非阻塞I/O模型）</h3>
+<h3 id="22-non-blockio">2.2 non-block（非阻塞I/O模型）<a class="headerlink" href="#22-non-blockio" title="Permanent link">&para;</a></h3>
 <p>可以通过设置socket使其变为non-blocking。当对一个non-blocking socket执行读操作时，流程是这个样子：</p>
 <p><img alt="" src="https://static.cyub.vip/images/202012/noblock-io.png" /></p>
 <!-- ![](https://static.cyub.vip/images/201811/non-block-io.jpg) -->
@@ -2082,7 +2296,7 @@ $ dd if=/dev/urandom of=sync.txt bs=64M count=16 iflag=fullblock oflag=sync
 </li>
 </ol>
 <p>所以，nonblocking IO的特点是用户进程在内核准备数据的阶段需要不断的主动询问数据好了没有。</p>
-<h3 id="23-io">2.3 I/O多路复用</h3>
+<h3 id="23-io">2.3 I/O多路复用<a class="headerlink" href="#23-io" title="Permanent link">&para;</a></h3>
 <p>I/O多路复用实际上就是用select, poll, epoll监听多个io对象，当io对象有变化（有数据）的时候就通知用户进程。好处就是单个进程可以处理多个socket。当然具体区别我们后面再讨论，现在先来看下I/O多路复用的流程：</p>
 <p><img alt="" src="https://static.cyub.vip/images/202012/io-mux.png" /></p>
 <!-- ![](https://static.cyub.vip/images/201811/io-mux.png) -->
@@ -2114,14 +2328,14 @@ $ dd if=/dev/urandom of=sync.txt bs=64M count=16 iflag=fullblock oflag=sync
 </li>
 <li>
 <p><strong>select 能监听的文件描述符数量有限，默认是1024</strong>； epoll 能支持的fd数量是最大可以打开文件的数目，具体数目可以在/proc/sys/fs/file-max查看
-<strong>select , poll 在函数返回后需要查看所有监听的fd，看哪些就绪</strong>，而<strong>epoll只返回就绪的描述符</strong>，所以应用程序只需要就绪fd的命中率是百分百。</p>
+<strong>select , poll 在函数返回后需要查看所有监听的fd，看哪些就绪</strong>，而**epoll只返回就绪的描述符**，所以应用程序只需要就绪fd的命中率是百分百。</p>
 </li>
 </ol>
-<h3 id="24-io">2.4 信号驱动IO</h3>
+<h3 id="24-io">2.4 信号驱动IO<a class="headerlink" href="#24-io" title="Permanent link">&para;</a></h3>
 <p>当进程发起一个IO操作，会向内核注册一个信号处理函数，然后进程返回不阻塞；当内核数据就绪时会发送一个信号给进程，进程便在信号处理函数中调用IO读取数据。</p>
 <p><img alt="" src="https://static.cyub.vip/images/202012/signal-io.png" /></p>
 <p>异步 I/O 与信号驱动 I/O 的区别在于，<strong>异步 I/O 的信号是通知应用进程 I/O 完成，而信号驱动 I/O 的信号是通知应用进程可以开始 I/O</strong>。</p>
-<h3 id="25-asynchronous-io-io">2.5 asynchronous I/O（异步 I/O）</h3>
+<h3 id="25-asynchronous-io-io">2.5 asynchronous I/O（异步 I/O）<a class="headerlink" href="#25-asynchronous-io-io" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="https://static.cyub.vip/images/202012/async-io.png" /></p>
 <!-- ![](https://static.cyub.vip/images/201811/asynchronous-io-2.png) -->
 
@@ -2136,7 +2350,7 @@ $ dd if=/dev/urandom of=sync.txt bs=64M count=16 iflag=fullblock oflag=sync
 <p>然后，kernel会等待数据准备完成，然后将数据拷贝到用户内存，当这一切都完成之后，kernel会给用户进程发送一个signal，告诉它read操作完成了。</p>
 </li>
 </ol>
-<h3 id="_2">小结</h3>
+<h3 id="_2">小结<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
 <li>blocking和non-blocking的区别</li>
 </ol>
@@ -2166,8 +2380,8 @@ $ dd if=/dev/urandom of=sync.txt bs=64M count=16 iflag=fullblock oflag=sync
 <p>而asynchronous IO则完全不同。它就像是用户进程将整个IO操作交给了他人（kernel）完成，然后他人做完后发信号通知。在此期间，用户进程不需要去检查IO操作的状态，也不需要主动的去拷贝数据。</p>
 </li>
 </ul>
-<h2 id="epoll">Epoll模式</h2>
-<h3 id="epoll_1">Epoll支持的两种操作模式</h3>
+<h2 id="epoll">Epoll模式<a class="headerlink" href="#epoll" title="Permanent link">&para;</a></h2>
+<h3 id="epoll_1">Epoll支持的两种操作模式<a class="headerlink" href="#epoll_1" title="Permanent link">&para;</a></h3>
 <p>epoll对文件描述符有两种操作模式</p>
 <ul>
 <li>
@@ -2181,13 +2395,15 @@ $ dd if=/dev/urandom of=sync.txt bs=64M count=16 iflag=fullblock oflag=sync
 </ul>
 <p><strong>ET是状态变化的通知，即从没有数据转到有数据会通知，LT是数据变化的通知，即有数据就通知，没数据就不通知</strong>。对于ET模式，当接收到通知后，应该一直read循环读取，直到返回EWOULDBLOCK或EAGAIN，这样内部状态才会从有数据再次转为无数据，从而为下一次数据的到来做准备，否则只有对端再次发送数据时候，才会再次触发可读事件。</p>
 <p>对于ET状态应该注意防止恶意请求连接，防止其一直请求，造成其他请求饿死。</p>
-<h2 id="_3">资料</h2>
+<h2 id="_3">资料<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://blog.csdn.net/tjiyu/article/details/52959418">5种IO模型、阻塞IO和非阻塞IO、同步IO和异步IO</a>
 　　
 　　</li>
 </ul>
 
+
+  
 
 
 
@@ -2199,18 +2415,129 @@ $ dd if=/dev/urandom of=sync.txt bs=64M count=16 iflag=fullblock oflag=sync
           
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
       </main>
       
         <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="上一页: 简介">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                简介
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../proc/" class="md-footer__link md-footer__link--next" aria-label="下一页: proc文件系统">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                proc文件系统
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 - 2024 Tink
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
       Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/squidfunk" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://hub.docker.com/r/squidfunk/mkdocs-material/" target="_blank" rel="noopener" title="hub.docker.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://pypi.org/project/mkdocs-material/" target="_blank" rel="noopener" title="pypi.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"/></svg>
+    </a>
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/squidfunk" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
     </a>
   
 </div>
@@ -2225,7 +2552,7 @@ $ dd if=/dev/urandom of=sync.txt bs=64M count=16 iflag=fullblock oflag=sync
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.94c44541.min.js"></script>

@@ -21,7 +21,7 @@
         <link rel="next" href="../../computer-network/tcp/">
       
       
-      <link rel="icon" href="../../favicon.ico">
+      <link rel="icon" href="../../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.4">
     
     
@@ -47,14 +47,24 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Fira Sans";--md-code-font:"Fira Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Code";--md-code-font:"Fira Code"}</style>
       
     
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config",""),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -69,7 +79,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     
@@ -98,7 +108,12 @@
     <a href="../.." title="开发知识wiki" class="md-header__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -128,20 +143,30 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_3" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
     
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_3">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
       </label>
     
   
@@ -167,11 +192,18 @@
       </label>
       <nav class="md-search__options" aria-label="查找">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -231,6 +263,8 @@
         <a href="../io/" class="md-tabs__link">
           
   
+    
+  
   操作系统
 
         </a>
@@ -248,6 +282,8 @@
       <li class="md-tabs__item">
         <a href="../../computer-network/tcp/" class="md-tabs__link">
           
+  
+    
   
   计算机网络
 
@@ -272,6 +308,8 @@
       <li class="md-tabs__item">
         <a href="../../database/mysql/%E7%AE%80%E4%BB%8B/" class="md-tabs__link">
           
+  
+    
   
   数据库
 
@@ -311,7 +349,29 @@
         <a href="../../container/install/" class="md-tabs__link">
           
   
+    
+  
   容器
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../language/Go/" class="md-tabs__link">
+          
+  
+    
+  
+  语言
 
         </a>
       </li>
@@ -328,6 +388,8 @@
       <li class="md-tabs__item">
         <a href="../../qa/redis/" class="md-tabs__link">
           
+  
+    
   
   QA
 
@@ -362,7 +424,12 @@
     <a href="../.." title="开发知识wiki" class="md-nav__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
 
     </a>
     开发知识wiki
@@ -397,6 +464,22 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -867,6 +950,16 @@
   
     
     
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
     
     
     
@@ -881,16 +974,24 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../computer-network/tcp/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     计算机网络
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
@@ -899,24 +1000,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../computer-network/tcp/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    TCP
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -952,6 +1035,14 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -992,10 +1083,23 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1003,7 +1107,7 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1116,10 +1220,27 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1127,16 +1248,24 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../database/elasticsearch/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Elasticsearch
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
@@ -1145,24 +1274,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../database/elasticsearch/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    概览
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -1306,6 +1417,16 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
     
@@ -1432,6 +1553,10 @@
   
     
     
+      
+        
+      
+    
     
     
     
@@ -1450,7 +1575,7 @@
             
   
   <span class="md-ellipsis">
-    QA
+    语言
   </span>
   
 
@@ -1459,6 +1584,102 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            语言
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/Go/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Go
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    QA
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             QA
           </label>
@@ -2035,7 +2256,7 @@
                   
 
 
-<h1 id="linux">Linux 内核动手编译实用指南</h1>
+<h1 id="linux">Linux 内核动手编译实用指南<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h1>
 <p><img alt="" src="https://img.linux.net.cn/data/attachment/album/202310/04/115142ggqqhuclvxdxsb14.jpg" /></p>
 <blockquote>
 <p>一份让你深入体验最新 Linux 内核编译过程的实操指南。</p>
@@ -2050,14 +2271,14 @@
 <blockquote>
 <p>🚧 诸如 <a href="https://itsfoss.com/upgrade-linux-kernel-ubuntu/">Ubuntu 这样的发行版提供了更简单地安装主线 Linux 内核的方式</a>。但本教程目标是从源码手动完成所有工作。<strong>此教程需要你付出时间、耐心以及丰富的 Linux 命令行使用经验</strong>。本文更注重亲身实践的体验。不管怎么说，我仍建议你在虚拟机或备用系统中尝试此冒险，而非在你的主系统上进行。</p>
 </blockquote>
-<h3 id="_1">前置准备</h3>
+<h3 id="_1">前置准备<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>在软件领域，构建任何事物都有两个基本要求：</p>
 <ol>
 <li>源代码</li>
 <li>构建依赖</li>
 </ol>
 <p>因此，作为预备环节，我们需要下载 Linux 内核的源码压缩包，并安装一些能让我们成功构建 Linux 内核的依赖项。</p>
-<h4 id="linux_1">Linux 版本导览</h4>
+<h4 id="linux_1">Linux 版本导览<a class="headerlink" href="#linux_1" title="Permanent link">&para;</a></h4>
 <p>在任何时刻，<a href="https://en.wikipedia.org/wiki/History_of_Linux#Naming"><del>Freax</del></a> Linux 内核都有四种“版本”。</p>
 <p>Linux 的这些 “版本”，按照开发流程的顺序是：</p>
 <ol>
@@ -2068,109 +2289,84 @@
 </ol>
 <p>若想了解更多此方面的知识，可参阅 <a href="https://www.kernel.org/category/releases.html">官方文档</a>。</p>
 <p>本文将以当前可用的最新稳定版为例，编写此文时的 Linux 内核版本是 <a href="https://lwn.net/Articles/945378/">6.5.5</a>。</p>
-<h3 id="_2">系统准备</h3>
+<h3 id="_2">系统准备<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>由于 Linux 内核使用 C 语言编写，编译 Linux 内核至少需要一个 C 编译器。你的计算机上可能还需要其他一些依赖项，现在是安装它们的时候了。</p>
 <blockquote>
-<p>💡 这个指南主要聚焦于使用 GNU C 编译器（GCC）来编译 Linux 内核。但在未来的文章中（可能会深入介绍 Rust 的支持），我<strong>可能</strong>会介绍使用 LLVM 的 Clang 编译器作为 GCC 的替代品。</p>
+<p>💡 这个指南主要聚焦于使用 GNU C 编译器（GCC）来编译 Linux 内核。但在未来的文章中（可能会深入介绍 Rust 的支持），我**可能**会介绍使用 LLVM 的 Clang 编译器作为 GCC 的替代品。</p>
 <p>不过，请注意，MSVC 并不适用。尽管如此，我仍期待有微软的员工为此发送修补程序集。我在瞎想啥？</p>
 </blockquote>
 <p>对于 Arch Linux 以及其衍生版本的用户，安装命令如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo pacman -S base-devel bc coreutils cpio gettext initramfs kmod libelf ncurses pahole perl python rsync tar xz
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo pacman -S base-devel bc coreutils cpio gettext initramfs kmod libelf ncurses pahole perl python rsync tar xz
+</span></code></pre></div>
 <p>对于 Debian 以及其衍生版本的用户，安装命令如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt install bc binutils bison dwarves flex gcc git gnupg2 gzip libelf-dev libncurses5-dev libssl-dev make openssl pahole perl-base rsync tar xz-utils
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo apt install bc binutils bison dwarves flex gcc git gnupg2 gzip libelf-dev libncurses5-dev libssl-dev make openssl pahole perl-base rsync tar xz-utils
+</span></code></pre></div>
 <p>对于 Fedora 以及其衍生版本的用户，安装命令如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo dnf install binutils ncurses-devel \
-    /usr/include/{libelf.h,openssl/pkcs7.h} \
-    /usr/bin/{bc,bison,flex,gcc,git,gpg2,gzip,make,openssl,pahole,perl,rsync,tar,xz,zstd}
-</code></pre></div></td></tr></table></div>
-<h4 id="linux_2">下载 Linux 内核源码</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo dnf install binutils ncurses-devel \
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    /usr/include/{libelf.h,openssl/pkcs7.h} \
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    /usr/bin/{bc,bison,flex,gcc,git,gpg2,gzip,make,openssl,pahole,perl,rsync,tar,xz,zstd}
+</span></code></pre></div>
+<h4 id="linux_2">下载 Linux 内核源码<a class="headerlink" href="#linux_2" title="Permanent link">&para;</a></h4>
 <p>请访问 <a href="https://kernel.org/">kernel.org</a>，在页面中寻找第一个 <ruby>稳定<rt>Stable</rt></ruby> 版本。你不会找不到它，因为它是最显眼的黄色方框哦 ;)</p>
 <blockquote>
 <p><strong><a href="https://kernel.org/">点击访问 kernel.org</a></strong></p>
 </blockquote>
 <p><img alt="" src="https://itsfoss.com/content/images/2023/09/Screenshot-2023-09-24-at-2.21.00-PM.png" /></p>
 <p>通过点击黄色的方框，你就可以下载 Tar 文件。同时，也别忘了下载相匹配的 PGP 签名文件，稍后我们需要用到它来验证 Tar 文件。它的扩展名为 <code>.tar.sign</code>。</p>
-<h5 id="tar">校验 Tar 文件的完整性</h5>
+<h5 id="tar">校验 Tar 文件的完整性<a class="headerlink" href="#tar" title="Permanent link">&para;</a></h5>
 <p>你如何知道刚下载的 Tar 文件是否被损坏？对于个人来说，一个损坏的 Tar 文件只会浪费你的宝贵时间，如果你是在为一个组织工作，那么可能会危及到组织的安全（这时你可能还有更大的问题需要担忧，但我们并不想让所有人都产生创伤后应激障碍！）。</p>
 <p>为了验证我们的 Tar 文件的完整性，我们需要先解压它。目前，它是使用 XZ 压缩算法压缩的。因此，我将使用 <code>unxz</code> 工具（其实就是 <code>xz --decompress</code> 的别名）来解压 <code>.tar.xz</code> 格式的压缩文件。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>unxz --keep linux-*.tar.xz
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>unxz --keep linux-*.tar.xz
+</span></code></pre></div>
 <p>解压完成后，我们需要获取 Linus Torvalds 和 Greg KH 使用的 GPG 公开密钥。这些密钥用于对 Tar 文件进行签名。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>gpg2 --locate-keys torvalds@kernel.org gregkh@kernel.org
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>gpg2 --locate-keys torvalds@kernel.org gregkh@kernel.org
+</span></code></pre></div>
 <p>你应该可以得到一个与我在我的电脑上看到的类似的结果：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code>$ gpg2 --locate-keys torvalds@kernel.org gregkh@kernel.org
-gpg: /home/pratham/.gnupg/trustdb.gpg: trustdb created
-gpg: key 38DBBDC86092693E: public key &quot;Greg Kroah-Hartman &lt;gregkh@kernel.org&gt;&quot; imported
-gpg: Total number processed: 1
-gpg:               imported: 1
-gpg: key 79BE3E4300411886: public key &quot;Linus Torvalds &lt;torvalds@kernel.org&gt;&quot; imported
-gpg: Total number processed: 1
-gpg:               imported: 1
-pub   rsa4096 2011-09-23 [SC]
-      647F28654894E3BD457199BE38DBBDC86092693E
-uid           [ unknown] Greg Kroah-Hartman &lt;gregkh@kernel.org&gt;
-sub   rsa4096 2011-09-23 [E]
-
-pub   rsa2048 2011-09-20 [SC]
-      ABAF11C65A2970B130ABE3C479BE3E4300411886
-uid           [ unknown] Linus Torvalds &lt;torvalds@kernel.org&gt;
-sub   rsa2048 2011-09-20 [E]
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ gpg2 --locate-keys torvalds@kernel.org gregkh@kernel.org
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>gpg: /home/pratham/.gnupg/trustdb.gpg: trustdb created
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>gpg: key 38DBBDC86092693E: public key &quot;Greg Kroah-Hartman &lt;gregkh@kernel.org&gt;&quot; imported
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>gpg: Total number processed: 1
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>gpg:               imported: 1
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>gpg: key 79BE3E4300411886: public key &quot;Linus Torvalds &lt;torvalds@kernel.org&gt;&quot; imported
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>gpg: Total number processed: 1
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>gpg:               imported: 1
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>pub   rsa4096 2011-09-23 [SC]
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>      647F28654894E3BD457199BE38DBBDC86092693E
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>uid           [ unknown] Greg Kroah-Hartman &lt;gregkh@kernel.org&gt;
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>sub   rsa4096 2011-09-23 [E]
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>pub   rsa2048 2011-09-20 [SC]
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>      ABAF11C65A2970B130ABE3C479BE3E4300411886
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>uid           [ unknown] Linus Torvalds &lt;torvalds@kernel.org&gt;
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>sub   rsa2048 2011-09-20 [E]
+</span></code></pre></div>
 <p>在导入 Greg 和 Linus 的密钥后，我们可以使用 <code>--verify</code> 标志来验证 Tar 的完整性，操作如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>gpg2 --verify linux-*.tar.sign
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>gpg2 --verify linux-*.tar.sign
+</span></code></pre></div>
 <p>如果验证成功，你应该会看到如下的输出信息：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>$ gpg2 --verify linux-*.tar.sign
-gpg: assuming signed data in &#39;linux-6.5.5.tar&#39;
-gpg: Signature made Saturday 23 September 2023 02:46:13 PM IST
-gpg:                using RSA key 647F28654894E3BD457199BE38DBBDC86092693E
-gpg: Good signature from &quot;Greg Kroah-Hartman &lt;gregkh@kernel.org&gt;&quot; [unknown]
-gpg: WARNING: This key is not certified with a trusted signature!
-gpg:          There is no indication that the signature belongs to the owner.
-Primary key fingerprint: 647F 2865 4894 E3BD 4571  99BE 38DB BDC8 6092 693E
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$ gpg2 --verify linux-*.tar.sign
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>gpg: assuming signed data in &#39;linux-6.5.5.tar&#39;
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>gpg: Signature made Saturday 23 September 2023 02:46:13 PM IST
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>gpg:                using RSA key 647F28654894E3BD457199BE38DBBDC86092693E
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>gpg: Good signature from &quot;Greg Kroah-Hartman &lt;gregkh@kernel.org&gt;&quot; [unknown]
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>gpg: WARNING: This key is not certified with a trusted signature!
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>gpg:          There is no indication that the signature belongs to the owner.
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>Primary key fingerprint: 647F 2865 4894 E3BD 4571  99BE 38DB BDC8 6092 693E
+</span></code></pre></div>
 <p><strong>务必查看是否存在 <code>gpg: Good signature</code> 的提示，然后再继续！</strong></p>
 <blockquote>
 <p>💡 你可以忽略以下警告：<code>WARNING: This key is not certified with a trusted signature! There is no indication that the signature belongs to the owner.</code>。</p>
 <p>我们已根据 Linus 和 Greg 的邮件地址获取了公开密钥，并无需对此警告感到担忧。</p>
 </blockquote>
-<h5 id="tar_1">解压 Tar 文件</h5>
+<h5 id="tar_1">解压 Tar 文件<a class="headerlink" href="#tar_1" title="Permanent link">&para;</a></h5>
 <p>如果你顺利的进行到这里，意味着你的 Tar 文件完整性检查已经成功完成。接下来，我们将从 Tar 文件中解压出 Linux 内核的源码。</p>
 <p><img alt="The &quot;TAR&quot; xkcd comic: https://xkcd.com/1168/" src="https://itsfoss.com/content/images/2023/09/tar_2x.png" /></p>
 <p>这个步骤十分简单，只需对 Tar 文件执行 <code>tar -xf</code> 命令，如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>tar -xf linux-*.tar
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>tar -xf linux-*.tar
+</span></code></pre></div>
 <p>在这里，<code>-x</code> 选项表示解压，<code>-f</code> 选项则用来告诉 Tar 文件的文件名。</p>
 <p>这个解压过程可能需要几分钟时间，你可以先放松，耐心等待一下。</p>
-<h3 id="linux_3">配置 Linux 内核</h3>
+<h3 id="linux_3">配置 Linux 内核<a class="headerlink" href="#linux_3" title="Permanent link">&para;</a></h3>
 <p>Linux 内核的构建过程会查找 <code>.config</code> 文件。顾名思义，这是一个配置文件，用于指定 Linux 内核的所有可能的配置选项。这是必需的文件。</p>
 <p>获取 Linux 内核的 <code>.config</code> 文件有两种方式：</p>
 <ol>
@@ -2180,7 +2376,7 @@ Primary key fingerprint: 647F 2865 4894 E3BD 4571  99BE 38DB BDC8 6092 693E
 <blockquote>
 <p>💡 也有第三种方法，也就是从零开始，手动配置每一个选项，但注意，这需要配置超过 12,000 个选项。并不推荐这种方式，因为手动配置所有选项将花费大量的时间，并且你还需要理解每个启用和禁用选项的含义。</p>
 </blockquote>
-<h4 id="_3">使用发行版提供的配置</h4>
+<h4 id="_3">使用发行版提供的配置<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <p><strong>使用你的 Linux 发行版提供的配置是一个安全的选择。</strong> 如果你只是跟随这个指南测试一个不是你的发行版提供的新内核，那么这就是推荐的方式。</p>
 <p>你的 Linux 发行版的 Linux 内核配置文件会在以下两个位置之一：</p>
 <ul>
@@ -2191,20 +2387,16 @@ Primary key fingerprint: 647F 2865 4894 E3BD 4571  99BE 38DB BDC8 6092 693E
 <p>💡 如果两者都有，建议使用 <code>/proc/config.gz</code>。这是因为它在只读文件系统中，所以是未被篡改的。</p>
 </blockquote>
 <p>进入含有已经解压出的 Tar 文件的目录。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>cd linux-*/
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>cd linux-*/
+</span></code></pre></div>
 <p>接着，复制你的 Linux 发行版的配置文件：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>### Debian 和 Fedora 及其衍生版：
-$ cp /boot/config-&quot;$(uname -r)&quot; .config
-
-### Arch Linux 及其衍生版：
-$ zcat /proc/config.gz &gt; .config
-</code></pre></div></td></tr></table></div>
-<h5 id="_4">更新配置文件</h5>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>### Debian 和 Fedora 及其衍生版：
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>$ cp /boot/config-&quot;$(uname -r)&quot; .config
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>### Arch Linux 及其衍生版：
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>$ zcat /proc/config.gz &gt; .config
+</span></code></pre></div>
+<h5 id="_4">更新配置文件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h5>
 <p>一旦完成这些步骤，接下来就需要“更新”配置文件了。因为你的发行版提供的配置很可能比你正在构建的 Linux 内核版本要旧。</p>
 <blockquote>
 <p>💡 <strong>这同样适用于像 Arch Linux 和 Fedora 这样前沿的 Linux 发行版。</strong> 它们并不会因为有新版本可用就立刻发布更新。他们会进行一些质量控制工作，这必然会花费些时间。因此，即便是你的发行版提供的最新内核，相较于你在 kernel.org 上获取的版本也会滞后几个小版本。</p>
@@ -2212,62 +2404,40 @@ $ zcat /proc/config.gz &gt; .config
 <p>要更新一个已有的 <code>.config</code> 文件，我们使用 <code>make</code> 命令搭配 <code>olddefconfig</code> 参数。简单解释一下，这个命令的意思是使用 <em>旧的、默认的、配置</em>。</p>
 <p>这将使用“旧的配置文件”（当前保存为 <code>.config</code>，这是你发行版配置的一份直接副本），并检查从上一版本以来 Linux 代码库中新加的任何配置选项。如果找到任何新的、<em>未配置</em> 的选项，该选项的默认配置值会被使用，并会对 <code>.config</code> 文件进行更新。</p>
 <p>原来的 <code>.config</code> 文件将被重命名为 <code>.config.old</code> 进行备份，并将新的更改写入至 <code>.config</code> 文件。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>make olddefconfig
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>make olddefconfig
+</span></code></pre></div>
 <p>以下是我机器上的输出：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code>$ file .config
-.config: Linux make config build file, ASCII text
-
-$ make olddefconfig
-    HOSTCC  scripts/basic/fixdep
-    HOSTCC  scripts/kconfig/conf.o
-    HOSTCC  scripts/kconfig/confdata.o
-    HOSTCC  scripts/kconfig/expr.o
-    LEX     scripts/kconfig/lexer.lex.c
-    YACC    scripts/kconfig/parser.tab.[ch]
-    HOSTCC  scripts/kconfig/lexer.lex.o
-    HOSTCC  scripts/kconfig/menu.o
-    HOSTCC  scripts/kconfig/parser.tab.o
-    HOSTCC  scripts/kconfig/preprocess.o
-    HOSTCC  scripts/kconfig/symbol.o
-    HOSTCC  scripts/kconfig/util.o
-    HOSTLD  scripts/kconfig/conf
-.config:8593:warning: symbol value &#39;m&#39; invalid for USB_FOTG210_HCD
-.config:8859:warning: symbol value &#39;m&#39; invalid for USB_FOTG210_UDC
-#
-# configuration written to .config
-#
-</code></pre></div></td></tr></table></div>
-<h5 id="debian">针对 Debian 及其衍生版用户</h5>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$ file .config
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>.config: Linux make config build file, ASCII text
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>$ make olddefconfig
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    HOSTCC  scripts/basic/fixdep
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    HOSTCC  scripts/kconfig/conf.o
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    HOSTCC  scripts/kconfig/confdata.o
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>    HOSTCC  scripts/kconfig/expr.o
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    LEX     scripts/kconfig/lexer.lex.c
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>    YACC    scripts/kconfig/parser.tab.[ch]
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>    HOSTCC  scripts/kconfig/lexer.lex.o
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>    HOSTCC  scripts/kconfig/menu.o
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>    HOSTCC  scripts/kconfig/parser.tab.o
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>    HOSTCC  scripts/kconfig/preprocess.o
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>    HOSTCC  scripts/kconfig/symbol.o
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>    HOSTCC  scripts/kconfig/util.o
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>    HOSTLD  scripts/kconfig/conf
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>.config:8593:warning: symbol value &#39;m&#39; invalid for USB_FOTG210_HCD
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>.config:8859:warning: symbol value &#39;m&#39; invalid for USB_FOTG210_UDC
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>#
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a># configuration written to .config
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>#
+</span></code></pre></div>
+<h5 id="debian">针对 Debian 及其衍生版用户<a class="headerlink" href="#debian" title="Permanent link">&para;</a></h5>
 <p>Debian 及其衍生版为内核模块使用一个签名证书。默认情况下，你的计算机并不包含这个证书。</p>
 <p>我推荐关闭启用模块签名的选项。具体如下所示：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>./scripts/config --file .config --set-str SYSTEM_TRUSTED_KEYS &#39;&#39;
-./scripts/config --file .config --set-str SYSTEM_REVOCATION_KEYS &#39;&#39;
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>./scripts/config --file .config --set-str SYSTEM_TRUSTED_KEYS &#39;&#39;
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>./scripts/config --file .config --set-str SYSTEM_REVOCATION_KEYS &#39;&#39;
+</span></code></pre></div>
 <p><strong>如果你不这么做，在后面你进行 Linux 内核构建时，可能会导致构建失败。要注意这点。</strong></p>
-<h4 id="_5">使用自定义配置</h4>
+<h4 id="_5">使用自定义配置<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <p>如果你出于学习内核开发的目的学习如何构建 Linux 内核，那你应该这样做。</p>
 <blockquote>
 <p>🚧 <strong>请注意，偏离你的 Linux 发行版的配置可能无法在实体硬件上“正常”工作。</strong> 问题可能是特定硬件无法工作、Linux 内核无法启动等。</p>
@@ -2289,64 +2459,39 @@ $ make olddefconfig
 <p>当然，你可以用 QEMU 在没有任何 DTB 的情况下启动 Linux 内核。但这篇文章并不会聚焦在此。或许你可以通过评论，让我在之后的时间里覆盖这个话题 ;)</p>
 </blockquote>
 <p><strong>除非你确切地知道自己在做什么，否则你应当使用 <code>defconfig</code> 目标。</strong> 以下是我在我的电脑上运行的效果：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code>$ make defconfig
-    HOSTCC  scripts/basic/fixdep
-    HOSTCC  scripts/kconfig/conf.o
-    HOSTCC  scripts/kconfig/confdata.o
-    HOSTCC  scripts/kconfig/expr.o
-    LEX     scripts/kconfig/lexer.lex.c
-    YACC    scripts/kconfig/parser.tab.[ch]
-    HOSTCC  scripts/kconfig/lexer.lex.o
-    HOSTCC  scripts/kconfig/menu.o
-    HOSTCC  scripts/kconfig/parser.tab.o
-    HOSTCC  scripts/kconfig/preprocess.o
-    HOSTCC  scripts/kconfig/symbol.o
-    HOSTCC  scripts/kconfig/util.o
-    HOSTLD  scripts/kconfig/conf
-*** Default configuration is based on &#39;defconfig&#39;
-#
-# configuration written to .config
-#
-</code></pre></div></td></tr></table></div>
-<h4 id="_6">修改配置</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$ make defconfig
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    HOSTCC  scripts/basic/fixdep
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    HOSTCC  scripts/kconfig/conf.o
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    HOSTCC  scripts/kconfig/confdata.o
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    HOSTCC  scripts/kconfig/expr.o
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>    LEX     scripts/kconfig/lexer.lex.c
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>    YACC    scripts/kconfig/parser.tab.[ch]
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>    HOSTCC  scripts/kconfig/lexer.lex.o
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>    HOSTCC  scripts/kconfig/menu.o
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>    HOSTCC  scripts/kconfig/parser.tab.o
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>    HOSTCC  scripts/kconfig/preprocess.o
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>    HOSTCC  scripts/kconfig/symbol.o
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>    HOSTCC  scripts/kconfig/util.o
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>    HOSTLD  scripts/kconfig/conf
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>*** Default configuration is based on &#39;defconfig&#39;
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>#
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a># configuration written to .config
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>#
+</span></code></pre></div>
+<h4 id="_6">修改配置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <p>无论你是使用 Linux 发行版的配置并更新它，还是使用 <code>defconfig</code> 目标创建新的 <code>.config</code> 文件，你都可能希望熟悉如何修改这个配置文件。<strong>最可靠的修改方式是使用 <code>menuconfig</code> 或 <code>nconfig</code> 目标。</strong></p>
 <p>这两个目标的功能是相同的，只不过提供给你的界面有所不同。这是这两者间唯一的区别。我个人更偏向于使用 <code>menuconfig</code> 目标，但近来我发现 <code>nconfig</code> 在搜索选项时似乎更具直观性，所以我逐渐转向使用它。</p>
 <p>首先，带着 <code>menuconfig</code> 目标运行 <code>make</code> 命令：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>$ make menuconfig
-    HOSTCC  scripts/kconfig/mconf.o
-    HOSTCC  scripts/kconfig/lxdialog/checklist.o
-    HOSTCC  scripts/kconfig/lxdialog/inputbox.o
-    HOSTCC  scripts/kconfig/lxdialog/menubox.o
-    HOSTCC  scripts/kconfig/lxdialog/textbox.o
-    HOSTCC  scripts/kconfig/lxdialog/util.o
-    HOSTCC  scripts/kconfig/lxdialog/yesno.o
-    HOSTLD  scripts/kconfig/mconf
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$ make menuconfig
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    HOSTCC  scripts/kconfig/mconf.o
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    HOSTCC  scripts/kconfig/lxdialog/checklist.o
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    HOSTCC  scripts/kconfig/lxdialog/inputbox.o
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    HOSTCC  scripts/kconfig/lxdialog/menubox.o
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>    HOSTCC  scripts/kconfig/lxdialog/textbox.o
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>    HOSTCC  scripts/kconfig/lxdialog/util.o
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>    HOSTCC  scripts/kconfig/lxdialog/yesno.o
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>    HOSTLD  scripts/kconfig/mconf
+</span></code></pre></div>
 <p>在此界面，你可以根据各选项的类型来进行切换操作。</p>
 <p>有两类可切换选项：</p>
 <ul>
@@ -2356,22 +2501,22 @@ $ make olddefconfig
 <p>想要了解更多关于某个选项的信息，使用上/下箭头键导航至该选项，然后按 <code>&lt;TAB&gt;</code> 键，直至底部的 <code>&lt; Help &gt;</code> 选项被选中，然后按回车键进行选择。此时就会显示关于该配置选项的帮助信息。</p>
 <p><strong>在修改选项时请务必谨慎。</strong></p>
 <p>当你满意配置后，按 <code>&lt;TAB&gt;</code> 键直到底部的 <code>&lt; Save &gt;</code> 选项被选中。然后按回车键进行选择。然后再次按回车键（<strong>记住，此时不要更改文件名</strong>），就能将更新后的配置保存到 <code>.config</code> 文件中。</p>
-<h3 id="linux_4">构建 Linux 内核</h3>
+<h3 id="linux_4">构建 Linux 内核<a class="headerlink" href="#linux_4" title="Permanent link">&para;</a></h3>
 <p>构建 Linux 内核实际上十分简单。然而，在开始构建之前，让我们为自定义内核构建添加一个标签。我将使用字符串 <code>-pratham</code> 作为标签，并利用 <code>LOCALVERSION</code> 变量来实施。你可以使用以下命令实现配置：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>./scripts/config --file .config --set-str LOCALVERSION &quot;-pratham&quot;
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>./scripts/config --file .config --set-str LOCALVERSION &quot;-pratham&quot;
+</span></code></pre></div>
 <p>这一命令将 <code>.config</code> 文件中的 <code>CONFIG_LOCALVERSION</code> 配置选项设为我在结尾指定的字符串，即 <code>-pratham</code>。当然，你也不必非得使用我所用的名字哦 ;)</p>
 <p><code>LOCALVERSION</code> 选项可用于设置一个“本地”版本，它会被附加到通常的 <code>x.y.z</code> 版本方案之后，并在你运行 <code>uname -r</code> 命令时一并显示。</p>
 <p>由于我正在构建的是 6.5.5 版本内核，而 <code>LOCALVERSION</code> 字符串被设为 <code>-pratham</code>，因此，对我来说，最后的版本名将会是 <code>6.5.5-pratham</code>。这么做的目的是确保我所构建的自定义内核不会与发行版所提供的内核产生冲突。</p>
 <p>接下来，我们来真正地构建内核。可以用以下的命令完成此步骤：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>make -j$(nproc) 2&gt;&amp;1 | tee log
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>make -j$(nproc) 2&gt;&amp;1 | tee log
+</span></code></pre></div>
 <p><strong>这对大部分（99%）用户来说已经足够了。</strong></p>
 <p>其中的 <code>-j</code> 选项用于指定并行编译任务的数量。而 <code>nproc</code> 命令用于返回可用处理单位（包括线程）的数量。因此，<code>-j$(nproc)</code> 其实意味着“使用我拥有的 CPU 线程数相同数量的并行编译任务”。</p>
 <p><code>2&gt;&amp;1</code> 会将 STDOUT 和 STDIN 重定向到相同的文件描述符，并通过管道传输给 <code>tee</code> 命令，这会将输出存储在一个名为 <code>log</code> 的文件，并且在控制台打印出完全相同的文本。如果你在构建时遇到错误，并希望回顾日志来检查出了什么问题，这将会十分有用。遇到那种情况，你只需要简单执行 <code>grep Error log</code> 命令就能找到线索。</p>
-<h4 id="make">自定义 make 目标</h4>
+<h4 id="make">自定义 make 目标<a class="headerlink" href="#make" title="Permanent link">&para;</a></h4>
 <p>在 Linux 内核的源文件夹中，<code>make</code> 命令有一些自定义的目标可供执行各种操作。这些主要作为开发者的参考。如果你的唯一目标是安装一个比你当前发行版更新的 Linux 内核，那么你完全可以跳过这部分内容 ;)</p>
-<h5 id="_7">构建目标</h5>
+<h5 id="_7">构建目标<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h5>
 <p>作为一名开发者，你可能只想构建 Linux 内核，或者只想构建模块，或者只想构建设备树二进制（DTB）。在这种情况下，你可以指定一个构建目标，然后 <code>make</code> 命令只会构建指定的项目，而不会构建其他的。</p>
 <p>以下是一些构建目标：</p>
 <ul>
@@ -2383,240 +2528,182 @@ $ make olddefconfig
 <p>通常情况下，你并不需要指定构建目标，因为它们都已经在构建列表中。所列出的目标是在你只想要测试某一个构建目标，而不是其他目标时的情况。</p>
 <p>依据你的 <a href="https://itsfoss.com/arm-aarch64-x86_64/">计算机架构</a>，构建完成的 Linux 内核镜像（存放在 <code>/boot</code> 目录）的名称会有所不同。</p>
 <p>对于 <code>x86_64</code>，Linux 内核的默认镜像名称是 <code>bzImage</code>。因此，如果你只需要构建引导所需的 Linux 内核，你可以像下面这样设定 <code>bzImage</code> 为目标：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>### 对于 x86_64
-$ make bzImage
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>### 对于 x86_64
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>$ make bzImage
+</span></code></pre></div>
 <p>“那么如何在我的架构上找到用来调用 <code>make</code> 的目标名称呢？”</p>
 <p>有两种方法。要么你可以执行 <code>make help</code> 之后查找在 <code>Architecture specific targets</code> 下，第一个前面带有星号 <code>*</code> 的选项。</p>
 <p>或者，如果你希望自动完成，你可以利用 <code>image_name</code> 目标得到镜像的完全路径（相对路径），选择性地添加 <code>-s</code> 标志来获得有用的输出。</p>
 <p>以下是我拥有的三台电脑的输出，一台是 <code>x86_64</code>，另一台是 <code>AArch64</code>，还有一台是 <code>riscv</code> ：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>### x86_64
-$ make -s image_name
-arch/x86/boot/bzImage
-
-### AArch64
-$ make -s image_name
-arch/arm64/boot/Image.gz
-
-### RISC-V
-$ make -s image_name
-arch/riscv/boot/Image.gz
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>### x86_64
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>$ make -s image_name
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>arch/x86/boot/bzImage
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>### AArch64
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>$ make -s image_name
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>arch/arm64/boot/Image.gz
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>### RISC-V
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>$ make -s image_name
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>arch/riscv/boot/Image.gz
+</span></code></pre></div>
 <p>现在，要只构建 Linux 内核镜像，你可以这样进行：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>make $(make -s image_name | awk -F &#39;/&#39; &#39;{print $4}&#39;)
-</code></pre></div></td></tr></table></div>
-<h5 id="_8">清理目标</h5>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>make $(make -s image_name | awk -F &#39;/&#39; &#39;{print $4}&#39;)
+</span></code></pre></div>
+<h5 id="_8">清理目标<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h5>
 <p>如果你需要清理构建产生的文件，你可以用以下的目标来实现你的需求：</p>
 <ul>
 <li><code>clean</code>：除了 <code>.config</code> 文件外，删除几乎所有其他内容。</li>
 <li><code>mrproper</code>：执行了 <code>make clean</code> 的所有操作外，还会删除 <code>.config</code> 文件。</li>
 <li><code>distclean</code>：除了执行 <code>make mrproper</code> 的所有操作外，还会清理任何补丁文件。</li>
 </ul>
-<h3 id="_9">安装</h3>
+<h3 id="_9">安装<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>一旦成功编译了 Linux 内核，接下来就是启动安装一些东西的时候了。“<em>一些</em> 东西？” 没错，我们至少构建了两种不同的东西，如果你使用的是 ARM 或 RISC-V 架构，那就有三种。我会在以下内容中详细解释。</p>
 <blockquote>
-<p>🚧 虽然我将告诉你不同的安装方式，尤其是关于如何改变默认安装路径的方法，但<strong>如果你不确定自己在做什么，那么我不建议你这么做！</strong> 请慎重考虑，如果你决定走自定义的路线，那你需要自己负责后果。默认设置之所以存在，是因为它们有其特殊的原因 ;)</p>
+<p>🚧 虽然我将告诉你不同的安装方式，尤其是关于如何改变默认安装路径的方法，但**如果你不确定自己在做什么，那么我不建议你这么做！** 请慎重考虑，如果你决定走自定义的路线，那你需要自己负责后果。默认设置之所以存在，是因为它们有其特殊的原因 ;)</p>
 </blockquote>
-<h4 id="_10">安装内核模块</h4>
+<h4 id="_10">安装内核模块<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <p>Linux 内核有部分在系统启动时并非必需的。这些部分被构建为可加载模块，即在需要时才进行加载和卸载。</p>
 <p>所以，首先需要安装这些模块。这可以通过 <code>modules_install</code> 目标完成。<strong>必须使用 <code>sudo</code></strong>，因为模块会被安装在 <code>/lib/modules/&lt;kernel_release&gt;-&lt;localversion&gt;</code> 这个需要 <code>root</code> 权限的路径下。</p>
 <p>这个过程不仅会安装内核模块，还会对其进行签名，所以可能需要一些时间。好消息是你可以通过之前提到的 <code>-j$(nproc)</code> 选项来并行执行安装任务，这样会快一些。;)</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo make modules_install -j$(nproc)
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>sudo make modules_install -j$(nproc)
+</span></code></pre></div>
 <blockquote>
 <p><strong>给开发者的提示：</strong> 你可以通过设定 <code>INSTALL_MOD_PATH</code> 变量来指定一个不同的路径存放 Linux 模块，而不用默认的 <code>/lib/modules/&lt;kernel_release&gt;-&lt;localversion&gt;</code>，具体如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>   sudo make modules_install INSTALL_MOD_PATH=&lt;path&gt;
-</code></pre></div></td></tr></table></div>
-<p><strong>另一个给开发者的提示：</strong> 你可以使用 <code>INSTALL_MOD_STRIP</code> 变量来决定是否需要剥离模块的调试符号。如果未设定该变量，调试符号<strong>不会被剥离</strong>。当设为 <code>1</code> 时，符号信息将会被使用 <code>--strip-debug</code> 选项剥离，随后该选项会传递给 <code>strip</code>（或者在使用 Clang 的时候传递给 <code>llvm-strip</code>）工具。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>   sudo make modules_install INSTALL_MOD_PATH=&lt;path&gt;
+</span></code></pre></div>
+<p><strong>另一个给开发者的提示：</strong> 你可以使用 <code>INSTALL_MOD_STRIP</code> 变量来决定是否需要剥离模块的调试符号。如果未设定该变量，调试符号**不会被剥离**。当设为 <code>1</code> 时，符号信息将会被使用 <code>--strip-debug</code> 选项剥离，随后该选项会传递给 <code>strip</code>（或者在使用 Clang 的时候传递给 <code>llvm-strip</code>）工具。</p>
 </blockquote>
-<h4 id="linux_5">（可选）安装 Linux 内核头文件</h4>
+<h4 id="linux_5">（可选）安装 Linux 内核头文件<a class="headerlink" href="#linux_5" title="Permanent link">&para;</a></h4>
 <p>如果你打算使用这个内核来支持树外模块，比如 ZFS 或英伟达 DKMS，或者打算尝试自行编写模块，你可能会需要 Linux 内核提供的头文件。</p>
 <p>可以通过以下方式使用 <code>headers_install</code> 目标来安装 Linux 内核头文件：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo make headers_install
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>sudo make headers_install
+</span></code></pre></div>
 <p><strong>应使用 <code>sudo</code> 命令</strong>，因为这些头文件会被安装到 <code>/usr</code> 目录。同时还会在 <code>/usr</code> 目录内创建子目录 <code>include/linux</code>，然后将头文件安装到 <code>/usr/include/linux</code> 内。</p>
 <blockquote>
 <p><strong>给开发者的提示：</strong> 通过设定 <code>INSTALL_HDR_PATH</code> 变量，你可以修改 Linux 内核头文件的安装路径。</p>
 </blockquote>
-<h4 id="dtb-arm-risc-v">安装 DTB（只针对 ARM 和 RISC-V）</h4>
+<h4 id="dtb-arm-risc-v">安装 DTB（只针对 ARM 和 RISC-V）<a class="headerlink" href="#dtb-arm-risc-v" title="Permanent link">&para;</a></h4>
 <p><strong>如果你使用的是 x86_64 架构，那么你可以跳过此步骤！</strong></p>
 <p>如果你针对 ARM 或者 RISC-V 构建了内核，那么在运行 <code>make</code> 的过程中，设备树的二进制文件可能已经被编译出来了。你可以通过在 <code>arch/&lt;machine_architecture&gt;/boot/dts</code> 目录查找 <code>.dtb</code> 文件来确认这一点。</p>
 <p>这里提供了一个快速检查的技巧：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>### 对于 AArch32
-$ find arch/arm/boot/dts -name &quot;*.dtb&quot; -type f | head -n 1 &gt; /dev/null &amp;&amp; echo &quot;DTBs for ARM32 were built&quot;
-
-### 对于 AArch64
-$ find arch/arm64/boot/dts -name &quot;*.dtb&quot; -type f | head -n 1 &gt; /dev/null &amp;&amp; echo &quot;DTBs for ARM64 were built&quot;
-
-### 对于 RISC-V
-$ find arch/riscv/boot/dts -name &quot;*.dtb&quot; -type f | head -n 1 &gt; /dev/null &amp;&amp; echo &quot;DTBs for RISC-V were built&quot;
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>### 对于 AArch32
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>$ find arch/arm/boot/dts -name &quot;*.dtb&quot; -type f | head -n 1 &gt; /dev/null &amp;&amp; echo &quot;DTBs for ARM32 were built&quot;
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>### 对于 AArch64
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>$ find arch/arm64/boot/dts -name &quot;*.dtb&quot; -type f | head -n 1 &gt; /dev/null &amp;&amp; echo &quot;DTBs for ARM64 were built&quot;
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>### 对于 RISC-V
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>$ find arch/riscv/boot/dts -name &quot;*.dtb&quot; -type f | head -n 1 &gt; /dev/null &amp;&amp; echo &quot;DTBs for RISC-V were built&quot;
+</span></code></pre></div>
 <p>如果你看到出现 <code>DTBs for &lt;arch&gt; were built</code> 的消息，那么你可以开始安装 DTB。这可以通过 <code>dtbs_install</code> 目标来实现。</p>
 <p><strong>需要使用 <code>sudo</code></strong>，因为它们会被安装在 <code>/boot/dtb-&lt;kernel_release&gt;-&lt;localversion&gt;</code> 中，而这个目录是由 <code>root</code> 所拥有的。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo make dtbs_install
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>sudo make dtbs_install
+</span></code></pre></div>
 <blockquote>
 <p><strong>给开发者的提示：</strong> 就像安装模块一样，你可以使用 <code>INSTALL_DTBS_PATH</code> 变量指定一个自定义的路径来安装设备树二进制文件。</p>
 </blockquote>
-<h4 id="linux_6">安装 Linux 内核</h4>
+<h4 id="linux_6">安装 Linux 内核<a class="headerlink" href="#linux_6" title="Permanent link">&para;</a></h4>
 <p>最后，我们来安装 Linux 内核本身！这可以通过 <code>install</code> 目标来完成，就像这样：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo make install
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>sudo make install
+</span></code></pre></div>
 <p><strong>在这里必须使用 <code>sudo</code></strong>，因为 Linux 内核将被安装在 <code>/boot</code> 目录，而这个目录不允许普通用户写入。</p>
 <blockquote>
 <p>💡 一般来讲，<code>install</code> 目标也会更新引导加载程序，但是如果它没有成功，那可能是不支持你使用的引导加载程序。如果你没有使用 GRUB 作为你的引导加载程序，请一定要阅读你引导加载程序的使用手册 ;)</p>
 <p><strong>给开发者的提示：</strong> 并不奇怪，<code>INSTALL_PATH</code> 变量被用来设定 Linux 内核的安装位置，而非默认的 <code>/boot</code> 目录。</p>
 </blockquote>
-<h4 id="arch-linux">针对 Arch Linux 用户的说明</h4>
+<h4 id="arch-linux">针对 Arch Linux 用户的说明<a class="headerlink" href="#arch-linux" title="Permanent link">&para;</a></h4>
 <p>如果你尝试执行了 <code>make install</code> 命令，可能已经注意到产生了错误。错误如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$ sudo make install
-    INSTALL /boot
-Cannot find LILO.
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>$ sudo make install
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>    INSTALL /boot
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>Cannot find LILO.
+</span></code></pre></div>
 <p>要在 Arch Linux 上实际完成 Linux 内核的安装，我们需要手动复制 Linux 内核镜像文件。别担心，如果你使用的是 Arch Linux，手动操作应该是家常便饭了。( ͡° ͜ʖ ͡°)</p>
 <p>可以使用以下命令完成这个步骤：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo install -Dm644 &quot;$(make -s image_name)&quot; /boot/vmlinuz-&lt;kernel_release&gt;-&lt;localversion&gt;
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>sudo install -Dm644 &quot;$(make -s image_name)&quot; /boot/vmlinuz-&lt;kernel_release&gt;-&lt;localversion&gt;
+</span></code></pre></div>
 <p>因为我编译的是 6.5.5 版本的内核，所以我将会执行下面这条命令，你可以根据你的实际情况进行适当调整：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo install -Dm644 &quot;$(make -s image_name)&quot; /boot/vmlinuz-6.5.5-pratham
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>sudo install -Dm644 &quot;$(make -s image_name)&quot; /boot/vmlinuz-6.5.5-pratham
+</span></code></pre></div>
 <p>虽然不是必须的，但最好复制一份名为 <code>System.map</code> 的文件。既然你已经在操作了，一并也复制了 <code>.config</code> 文件吧 ;)</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo cp -vf System.map /boot/System.map-&lt;kernel_release&gt;-&lt;localversion&gt;
-sudo cp -vf .config /boot/config-&lt;kernel_release&gt;-&lt;localversion&gt;
-</code></pre></div></td></tr></table></div>
-<h5 id="ram">生成初始 RAM 磁盘</h5>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>sudo cp -vf System.map /boot/System.map-&lt;kernel_release&gt;-&lt;localversion&gt;
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>sudo cp -vf .config /boot/config-&lt;kernel_release&gt;-&lt;localversion&gt;
+</span></code></pre></div>
+<h5 id="ram">生成初始 RAM 磁盘<a class="headerlink" href="#ram" title="Permanent link">&para;</a></h5>
 <p>当你安装 Arch Linux 时，可能已经了解过 <code>mkinitcpio</code> 这个工具。现在，我们将使用它来创建初始的 RAM 磁盘。</p>
 <p>首先，我们需要创建一个预设文件。向 <code>/etc/mkinitcpio.d/linux-&lt;localversion&gt;.preset</code> 文件中添加以下内容，根据实际需要来替换 <code>&lt;kernel_release&gt;</code> 和 <code>&lt;localversion&gt;</code>。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>ALL_config=&quot;/etc/mkinitcpio.conf&quot;
-ALL_kver=&quot;/boot/vmlinuz-&lt;kernel_release&gt;-&lt;localversion&gt;&quot;
-
-PRESETS=(&#39;default&#39; &#39;fallback&#39;)
-
-default_image=&quot;/boot/initramfs-&lt;kernel_release&gt;-&lt;localversion&gt;.img&quot;
-fallback_options=&quot;-S autodetect&quot;
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>ALL_config=&quot;/etc/mkinitcpio.conf&quot;
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>ALL_kver=&quot;/boot/vmlinuz-&lt;kernel_release&gt;-&lt;localversion&gt;&quot;
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>PRESETS=(&#39;default&#39; &#39;fallback&#39;)
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>default_image=&quot;/boot/initramfs-&lt;kernel_release&gt;-&lt;localversion&gt;.img&quot;
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>fallback_options=&quot;-S autodetect&quot;
+</span></code></pre></div>
 <p>配置完成后，执行下面的命令来生成初始 RAM 磁盘：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo mkinitcpio -p linux-&lt;localversion&gt;
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>sudo mkinitcpio -p linux-&lt;localversion&gt;
+</span></code></pre></div>
 <p>我自己的电脑上得到的输出如下，你的结果应该会类似！</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code>$ sudo mkinitcpio -p linux-pratham
-==&gt; Building image from preset: /etc/mkinitcpio.d/linux-pratham.preset: &#39;default&#39;
-==&gt; Using configuration file: &#39;/etc/mkinitcpio.conf&#39;
-    -&gt; -k /boot/vmlinuz-6.5.5-pratham -c /etc/mkinitcpio.conf -g /boot/initramfs-6.5.5-pratham.img
-==&gt; Starting build: &#39;6.5.5-pratham&#39;
-    -&gt; Running build hook: [base]
-    -&gt; Running build hook: [udev]
-    -&gt; Running build hook: [autodetect]
-    -&gt; Running build hook: [modconf]
-    -&gt; Running build hook: [kms]
-    -&gt; Running build hook: [keyboard]
-==&gt; WARNING: Possibly missing firmware for module: &#39;xhci_pci&#39;
-    -&gt; Running build hook: [keymap]
-    -&gt; Running build hook: [consolefont]
-==&gt; WARNING: consolefont: no font found in configuration
-    -&gt; Running build hook: [block]
-    -&gt; Running build hook: [filesystems]
-    -&gt; Running build hook: [fsck]
-==&gt; Generating module dependencies
-==&gt; Creating zstd-compressed initcpio image: &#39;/boot/initramfs-6.5.5-pratham.img&#39;
-==&gt; Image generation successful
-==&gt; Building image from preset: /etc/mkinitcpio.d/linux-pratham.preset: &#39;fallback&#39;
-==&gt; Using configuration file: &#39;/etc/mkinitcpio.conf&#39;
-==&gt; WARNING: No image or UKI specified. Skipping image &#39;fallback&#39;
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>$ sudo mkinitcpio -p linux-pratham
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>==&gt; Building image from preset: /etc/mkinitcpio.d/linux-pratham.preset: &#39;default&#39;
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>==&gt; Using configuration file: &#39;/etc/mkinitcpio.conf&#39;
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>    -&gt; -k /boot/vmlinuz-6.5.5-pratham -c /etc/mkinitcpio.conf -g /boot/initramfs-6.5.5-pratham.img
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>==&gt; Starting build: &#39;6.5.5-pratham&#39;
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>    -&gt; Running build hook: [base]
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>    -&gt; Running build hook: [udev]
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>    -&gt; Running build hook: [autodetect]
+</span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>    -&gt; Running build hook: [modconf]
+</span><span id="__span-33-10"><a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a>    -&gt; Running build hook: [kms]
+</span><span id="__span-33-11"><a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a>    -&gt; Running build hook: [keyboard]
+</span><span id="__span-33-12"><a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a>==&gt; WARNING: Possibly missing firmware for module: &#39;xhci_pci&#39;
+</span><span id="__span-33-13"><a id="__codelineno-33-13" name="__codelineno-33-13" href="#__codelineno-33-13"></a>    -&gt; Running build hook: [keymap]
+</span><span id="__span-33-14"><a id="__codelineno-33-14" name="__codelineno-33-14" href="#__codelineno-33-14"></a>    -&gt; Running build hook: [consolefont]
+</span><span id="__span-33-15"><a id="__codelineno-33-15" name="__codelineno-33-15" href="#__codelineno-33-15"></a>==&gt; WARNING: consolefont: no font found in configuration
+</span><span id="__span-33-16"><a id="__codelineno-33-16" name="__codelineno-33-16" href="#__codelineno-33-16"></a>    -&gt; Running build hook: [block]
+</span><span id="__span-33-17"><a id="__codelineno-33-17" name="__codelineno-33-17" href="#__codelineno-33-17"></a>    -&gt; Running build hook: [filesystems]
+</span><span id="__span-33-18"><a id="__codelineno-33-18" name="__codelineno-33-18" href="#__codelineno-33-18"></a>    -&gt; Running build hook: [fsck]
+</span><span id="__span-33-19"><a id="__codelineno-33-19" name="__codelineno-33-19" href="#__codelineno-33-19"></a>==&gt; Generating module dependencies
+</span><span id="__span-33-20"><a id="__codelineno-33-20" name="__codelineno-33-20" href="#__codelineno-33-20"></a>==&gt; Creating zstd-compressed initcpio image: &#39;/boot/initramfs-6.5.5-pratham.img&#39;
+</span><span id="__span-33-21"><a id="__codelineno-33-21" name="__codelineno-33-21" href="#__codelineno-33-21"></a>==&gt; Image generation successful
+</span><span id="__span-33-22"><a id="__codelineno-33-22" name="__codelineno-33-22" href="#__codelineno-33-22"></a>==&gt; Building image from preset: /etc/mkinitcpio.d/linux-pratham.preset: &#39;fallback&#39;
+</span><span id="__span-33-23"><a id="__codelineno-33-23" name="__codelineno-33-23" href="#__codelineno-33-23"></a>==&gt; Using configuration file: &#39;/etc/mkinitcpio.conf&#39;
+</span><span id="__span-33-24"><a id="__codelineno-33-24" name="__codelineno-33-24" href="#__codelineno-33-24"></a>==&gt; WARNING: No image or UKI specified. Skipping image &#39;fallback&#39;
+</span></code></pre></div>
 <p>初始 RAM 磁盘已成功生成，现在我们可以进入下一步，更新引导加载器！</p>
-<h5 id="grub">更新 GRUB</h5>
+<h5 id="grub">更新 GRUB<a class="headerlink" href="#grub" title="Permanent link">&para;</a></h5>
 <p>一旦所有必要的文件已成功复制到其对应的位置，接下来，我们将进行 GRUB 的更新。</p>
 <p>使用以下命令对 GRUB 引导加载器进行更新：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo grub-mkconfig -o /boot/grub/grub.cfg
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>sudo grub-mkconfig -o /boot/grub/grub.cfg
+</span></code></pre></div>
 <blockquote>
 <p>💡 如果你使用的引导加载器不是 GRUB，请参看 Arch Wiki 中相关的引导加载器文档。</p>
 </blockquote>
 <p><strong>注意，更新 GRUB 并不会直接使新的内核版本设为默认启动选项。在引导时，请在启动菜单中手动选择新的内核版本。</strong></p>
 <p>你可以通过选择 <code>Advanced options for Arch Linux</code> 菜单，并在随后的菜单中选择 <code>Arch Linux, with Linux &lt;kernel_release&gt;-&lt;localversion&gt;</code> 来启用新版的 Linux 内核。</p>
-<h3 id="_11">重启电脑</h3>
+<h3 id="_11">重启电脑<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>恭喜你！你已经完成了获取 Linux 内核源代码、进行配置、构建以及安装等所有步骤。现在只需要通过重启电脑并进入新构建和安装的 Linux 内核，就可以开始享受你的努力成果了。</p>
 <p>启动时，请确保从引导加载器中选择正确的 Linux 内核版本。系统启动后，运行 <code>uname -r</code> 命令来确认你正在使用预期的 Linux 内核。</p>
 <p>以下是我自己的电脑输出的内容：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>$ uname -r
-6.5.5-pratham
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>$ uname -r
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>6.5.5-pratham
+</span></code></pre></div>
 <p><strong>是时候开始庆祝了！</strong> 🎉</p>
-<h3 id="_12">卸载操作</h3>
+<h3 id="_12">卸载操作<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>🚧 提示：在删除当前正在使用的内核版本之前，你应该首先切换至较旧的内核版本。</p>
 </blockquote>
 <p>可能你的 Linux 发行版所使用的 Linux 内核版本就是你手动编译的版本，或者你自行编译了新的内核并注意到应卸载旧的内核以节省空间，于是你开始想如何才能卸载。当然，虽然我们无法简单地运行 <code>make uninstall</code> 命令，但这并不代表没有其他的方法！</p>
 <p>我们清楚各个文件的安装位置，因此删除它们相对简单。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>### 删除内核模块
-$ rm -rf /lib/modules/&lt;kernel_release&gt;-&lt;localversion&gt;
-
-### 删除设备树二进制文件
-$ rm -rf /boot/dtb-&lt;kernel_release&gt;-&lt;localversion&gt;
-
-### 删除 Linux 内核本身
-$ rm -vf /boot/{config,System,vmlinuz}-&lt;kernel_release&gt;-&lt;localversion&gt;
-</code></pre></div></td></tr></table></div>
-<h3 id="_13">总结</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>### 删除内核模块
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>$ rm -rf /lib/modules/&lt;kernel_release&gt;-&lt;localversion&gt;
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>### 删除设备树二进制文件
+</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>$ rm -rf /boot/dtb-&lt;kernel_release&gt;-&lt;localversion&gt;
+</span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>
+</span><span id="__span-36-7"><a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a>### 删除 Linux 内核本身
+</span><span id="__span-36-8"><a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a>$ rm -vf /boot/{config,System,vmlinuz}-&lt;kernel_release&gt;-&lt;localversion&gt;
+</span></code></pre></div>
+<h3 id="_13">总结<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <p>这个过程不是一次简单的旅程，是吧？但是现在，我们终于抵达了终点。我们一起学习了手动编译 Linux 内核的全过程，包括安装依赖、获取和验证源码、解压源码、配置 Linux 内核、构建内核以及安装内核。</p>
 <p>如果你喜欢这个详细的步骤指南，请给我留言反馈。如果在操作过程中遇到问题，也欢迎提出，让我知道！</p>
 <p><em>（题图：MJ/853481c5-87e3-42aa-8ace-e9ddfa232f75）</em></p>
@@ -2629,6 +2716,8 @@ $ rm -vf /boot/{config,System,vmlinuz}-&lt;kernel_release&gt;-&lt;localversion&g
 <p>本文由 <a href="https://github.com/LCTT/TranslateProject">LCTT</a> 原创编译，<a href="https://linux.cn/">Linux中国</a> 荣誉推出</p>
 
 
+  
+
 
 
 
@@ -2639,18 +2728,129 @@ $ rm -vf /boot/{config,System,vmlinuz}-&lt;kernel_release&gt;-&lt;localversion&g
           
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
       </main>
       
         <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../cpu-arch/" class="md-footer__link md-footer__link--prev" aria-label="上一页: CPU架构">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                CPU架构
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../computer-network/tcp/" class="md-footer__link md-footer__link--next" aria-label="下一页: TCP">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                TCP
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 - 2024 Tink
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
       Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/squidfunk" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://hub.docker.com/r/squidfunk/mkdocs-material/" target="_blank" rel="noopener" title="hub.docker.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://pypi.org/project/mkdocs-material/" target="_blank" rel="noopener" title="pypi.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"/></svg>
+    </a>
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/squidfunk" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
     </a>
   
 </div>
@@ -2665,7 +2865,7 @@ $ rm -vf /boot/{config,System,vmlinuz}-&lt;kernel_release&gt;-&lt;localversion&g
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.94c44541.min.js"></script>

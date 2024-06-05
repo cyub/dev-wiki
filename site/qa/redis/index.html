@@ -15,13 +15,13 @@
         <link rel="canonical" href="https://docs.cyub.vip/dev-wiki/qa/redis/">
       
       
-        <link rel="prev" href="../../container/namespace/">
+        <link rel="prev" href="../../language/Go/">
       
       
         <link rel="next" href="../mysql/">
       
       
-      <link rel="icon" href="../../favicon.ico">
+      <link rel="icon" href="../../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.4">
     
     
@@ -47,14 +47,24 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Fira Sans";--md-code-font:"Fira Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Code";--md-code-font:"Fira Code"}</style>
       
     
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config",""),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -69,7 +79,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     
@@ -98,7 +108,12 @@
     <a href="../.." title="开发知识wiki" class="md-header__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -128,20 +143,30 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_3" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
     
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_3">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
       </label>
     
   
@@ -167,11 +192,18 @@
       </label>
       <nav class="md-search__options" aria-label="查找">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -229,6 +261,8 @@
         <a href="../../computer-system/io/" class="md-tabs__link">
           
   
+    
+  
   操作系统
 
         </a>
@@ -246,6 +280,8 @@
       <li class="md-tabs__item">
         <a href="../../computer-network/tcp/" class="md-tabs__link">
           
+  
+    
   
   计算机网络
 
@@ -270,6 +306,8 @@
       <li class="md-tabs__item">
         <a href="../../database/mysql/%E7%AE%80%E4%BB%8B/" class="md-tabs__link">
           
+  
+    
   
   数据库
 
@@ -309,7 +347,29 @@
         <a href="../../container/install/" class="md-tabs__link">
           
   
+    
+  
   容器
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../language/Go/" class="md-tabs__link">
+          
+  
+    
+  
+  语言
 
         </a>
       </li>
@@ -328,6 +388,8 @@
       <li class="md-tabs__item md-tabs__item--active">
         <a href="./" class="md-tabs__link">
           
+  
+    
   
   QA
 
@@ -362,7 +424,12 @@
     <a href="../.." title="开发知识wiki" class="md-nav__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
 
     </a>
     开发知识wiki
@@ -395,6 +462,22 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -582,6 +665,16 @@
   
     
     
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
     
     
     
@@ -596,16 +689,24 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../computer-network/tcp/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     计算机网络
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
@@ -614,24 +715,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../computer-network/tcp/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    TCP
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -667,6 +750,14 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -707,10 +798,23 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -718,7 +822,7 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -831,10 +935,27 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -842,16 +963,24 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../database/elasticsearch/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Elasticsearch
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
@@ -860,24 +989,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../database/elasticsearch/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    概览
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -1021,6 +1132,16 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
     
@@ -1144,10 +1265,110 @@
       
   
   
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    语言
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            语言
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/Go/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Go
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1160,10 +1381,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1174,8 +1395,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             QA
           </label>
@@ -1881,15 +2102,15 @@
                   
 
 
-<h1 id="redis">redis</h1>
-<h2 id="redis_1">redis为什么高效？</h2>
+<h1 id="redis">redis<a class="headerlink" href="#redis" title="Permanent link">&para;</a></h1>
+<h2 id="redis_1">redis为什么高效？<a class="headerlink" href="#redis_1" title="Permanent link">&para;</a></h2>
 <ol>
 <li>纯内存缓存数据库</li>
 <li>使用单线程，避免了多线程带来的频繁的上下文切换</li>
 <li>使用了高效的数据结构体</li>
 <li>客户端和服务端使用了非阻塞的IO多路复用模型</li>
 </ol>
-<h2 id="redis_2">redis支持哪些数据结构？</h2>
+<h2 id="redis_2">redis支持哪些数据结构？<a class="headerlink" href="#redis_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li>字符串 string</li>
 <li>列表 list</li>
@@ -1898,7 +2119,7 @@
 <li>有序集合 Sorted Set</li>
 </ol>
 <p>高级数据结构有：HyperLogLog/BitMap/BloomFilter/GeoHash</p>
-<h2 id="redis_3">redis典型使用场景有哪些？</h2>
+<h2 id="redis_3">redis典型使用场景有哪些？<a class="headerlink" href="#redis_3" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>队列</p>
@@ -1932,36 +2153,22 @@
 <li>
 <p>UV统计</p>
 <p>使用HyperLogLog数据结构实现：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code>redis 127.0.0.1:6379&gt; PFADD runoobkey &quot;redis&quot;
-
-1) (integer) 1
-
-redis 127.0.0.1:6379&gt; PFADD runoobkey &quot;mongodb&quot;
-
-1) (integer) 1
-
-redis 127.0.0.1:6379&gt; PFADD runoobkey &quot;mysql&quot;
-
-1) (integer) 1
-
-redis 127.0.0.1:6379&gt; PFCOUNT runoobkey
-
-(integer) 3
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>redis 127.0.0.1:6379&gt; PFADD runoobkey &quot;redis&quot;
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>1) (integer) 1
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>redis 127.0.0.1:6379&gt; PFADD runoobkey &quot;mongodb&quot;
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>1) (integer) 1
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>redis 127.0.0.1:6379&gt; PFADD runoobkey &quot;mysql&quot;
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>1) (integer) 1
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>redis 127.0.0.1:6379&gt; PFCOUNT runoobkey
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>(integer) 3
+</span></code></pre></div>
 </li>
 <li>
 <p>去重过滤</p>
@@ -1975,7 +2182,7 @@ redis 127.0.0.1:6379&gt; PFCOUNT runoobkey
 <p>基于位图bitmap实现</p>
 </li>
 </ol>
-<h2 id="rediskey">redis中key有哪些过期策略？</h2>
+<h2 id="rediskey">redis中key有哪些过期策略？<a class="headerlink" href="#rediskey" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>惰性删除策略</p>
@@ -1997,7 +2204,7 @@ redis 127.0.0.1:6379&gt; PFCOUNT runoobkey
 </ol>
 </li>
 </ol>
-<h2 id="redis_4">redis中最大内存策略有哪些？</h2>
+<h2 id="redis_4">redis中最大内存策略有哪些？<a class="headerlink" href="#redis_4" title="Permanent link">&para;</a></h2>
 <p>redis中最大内存是由maxmemory参数配置的，当内存使用达到设置的最大内存上限时候，会执行最大内存策略：</p>
 <ol>
 <li>
@@ -2029,17 +2236,14 @@ redis 127.0.0.1:6379&gt; PFCOUNT runoobkey
 </ul>
 </li>
 </ol>
-<h2 id="redis_5">redis中持久化方式有哪些？</h2>
-<h3 id="rdb">RDB</h3>
+<h2 id="redis_5">redis中持久化方式有哪些？<a class="headerlink" href="#redis_5" title="Permanent link">&para;</a></h2>
+<h3 id="rdb">RDB<a class="headerlink" href="#rdb" title="Permanent link">&para;</a></h3>
 <p>RDB是Snapshot快照存储，是redis默认的持久化方式，即按照一定的策略周期性的将数据保存到磁盘上。配置文件中的save参数来定义快照的周期。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code># RDB持久化策略 默认三种方式，[900秒内有1次修改],[300秒内有10次修改],[60秒内有10000次修改]即触发RDB持久化，我们可以手动修改该参数或新增策略
-save 900 1
-save 300 10
-save 60 10000
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># RDB持久化策略 默认三种方式，[900秒内有1次修改],[300秒内有10次修改],[60秒内有10000次修改]即触发RDB持久化，我们可以手动修改该参数或新增策略
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>save 900 1
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>save 300 10
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>save 60 10000
+</span></code></pre></div>
 <p>优点：</p>
 <ol>
 <li>压缩的二进制文件，非常适合备份和灾难恢复</li>
@@ -2049,7 +2253,7 @@ save 60 10000
 <li>备份操作需要fork一个进程（使用bgsave命令）属于重操作</li>
 <li>不能最大限度避免丢失数据</li>
 </ol>
-<h3 id="aof">AOF</h3>
+<h3 id="aof">AOF<a class="headerlink" href="#aof" title="Permanent link">&para;</a></h3>
 <p>AOF(Append-Only File)，Redis会将每一个收到的写命令都通过Write函数追加到文件中（默认appendonly.aof）。</p>
 <p>优点：</p>
 <ol>
@@ -2062,8 +2266,8 @@ save 60 10000
 <li>相比rdb，aof恢复数据较慢</li>
 </ol>
 <p>AOF支持三种同步策略：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>appendfsync always # 默认alawys
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>appendfsync always # 默认alawys
+</span></code></pre></div>
 <ol>
 <li>
 <p>always</p>
@@ -2079,62 +2283,39 @@ save 60 10000
 </li>
 </ol>
 <p>Redis重启的时候优先加载AOF文件，如果AOF文件不存在再去加载RDB文件。 如果AOF文件和RDB文件都不存在，那么直接启动。 不论加载AOF文件还是RDB文件，只要发生错误都会打印错误信息，并且启动失败。</p>
-<h2 id="redis_6">redis键的数据结构是什么样的？</h2>
+<h2 id="redis_6">redis键的数据结构是什么样的？<a class="headerlink" href="#redis_6" title="Permanent link">&para;</a></h2>
 <p>整个Redis 数据库的所有key 和value 也组成了一个全局字典，还有带过期时间的key 集合也是一个字典。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">RedisDb</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">dict</span><span class="w">    </span><span class="o">*</span><span class="w"> </span><span class="n">dict</span><span class="p">;</span><span class="w">         </span><span class="cm">/* all keys key=&gt;value */</span>
-<span class="w">    </span><span class="n">dict</span><span class="w">    </span><span class="o">*</span><span class="w"> </span><span class="n">expires</span><span class="p">;</span><span class="w">      </span><span class="cm">/* all expired keys key=&gt;long(timestamp) */</span>
-<span class="w">    </span><span class="p">...</span>
-<span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<h2 id="zset">zset底层数据结构是什么样的？</h2>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">RedisDb</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="n">dict</span><span class="w">    </span><span class="o">*</span><span class="w"> </span><span class="n">dict</span><span class="p">;</span><span class="w">         </span><span class="cm">/* all keys key=&gt;value */</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">dict</span><span class="w">    </span><span class="o">*</span><span class="w"> </span><span class="n">expires</span><span class="p">;</span><span class="w">      </span><span class="cm">/* all expired keys key=&gt;long(timestamp) */</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="zset">zset底层数据结构是什么样的？<a class="headerlink" href="#zset" title="Permanent link">&para;</a></h2>
 <p>Redis 的zset 是一个复合结构，一方面它需要一个hash结构（字典）来存储value（成员) 和score 的对应关系，
 另一方面需要提供按照score 来排序的功能，还需要能够指定score 的范围来获取value 列表的功能，这个时候通过跳跃列表实现。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">zset</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">dict</span><span class="w"> </span><span class="o">*</span><span class="n">dict</span><span class="p">;</span><span class="w"> </span><span class="c1">// 字典</span>
-<span class="w">    </span><span class="n">zskiplist</span><span class="w"> </span><span class="o">*</span><span class="n">zsl</span><span class="p">;</span><span class="w"> </span><span class="c1">// 跳表</span>
-<span class="p">}</span><span class="w"> </span><span class="n">zset</span><span class="p">;</span>
-
-<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">zskiplist</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">zskiplistNode</span><span class="w"> </span><span class="o">*</span><span class="n">header</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">tail</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">length</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="n">zskiplist</span><span class="p">;</span>
-
-<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">zskiplistNode</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">sds</span><span class="w"> </span><span class="n">ele</span><span class="p">;</span><span class="w"> </span><span class="c1">// 节点存储的具体值 </span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">score</span><span class="p">;</span><span class="w"> </span><span class="c1">// 节点对应的分值</span>
-<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">zskiplistNode</span><span class="w"> </span><span class="o">*</span><span class="n">backward</span><span class="p">;</span><span class="w"> </span><span class="c1">// 后退指针</span>
-<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">zskiplistLevel</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">struct</span><span class="w"> </span><span class="nc">zskiplistNode</span><span class="w"> </span><span class="o">*</span><span class="n">forward</span><span class="p">;</span><span class="w"> </span><span class="c1">// //前进指针</span>
-<span class="w">        </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">span</span><span class="p">;</span><span class="w"> </span><span class="c1">// 到下一个节点的跨度 </span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">level</span><span class="p">[];</span>
-<span class="p">}</span><span class="w"> </span><span class="n">zskiplistNode</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
-<h2 id="set">set底层数据结构是什么样的？</h2>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">zset</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="n">dict</span><span class="w"> </span><span class="o">*</span><span class="n">dict</span><span class="p">;</span><span class="w"> </span><span class="c1">// 字典</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="n">zskiplist</span><span class="w"> </span><span class="o">*</span><span class="n">zsl</span><span class="p">;</span><span class="w"> </span><span class="c1">// 跳表</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">}</span><span class="w"> </span><span class="n">zset</span><span class="p">;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">zskiplist</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">zskiplistNode</span><span class="w"> </span><span class="o">*</span><span class="n">header</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">tail</span><span class="p">;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">length</span><span class="p">;</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">;</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="p">}</span><span class="w"> </span><span class="n">zskiplist</span><span class="p">;</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">zskiplistNode</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="n">sds</span><span class="w"> </span><span class="n">ele</span><span class="p">;</span><span class="w"> </span><span class="c1">// 节点存储的具体值 </span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">score</span><span class="p">;</span><span class="w"> </span><span class="c1">// 节点对应的分值</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">zskiplistNode</span><span class="w"> </span><span class="o">*</span><span class="n">backward</span><span class="p">;</span><span class="w"> </span><span class="c1">// 后退指针</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">zskiplistLevel</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">        </span><span class="k">struct</span><span class="w"> </span><span class="nc">zskiplistNode</span><span class="w"> </span><span class="o">*</span><span class="n">forward</span><span class="p">;</span><span class="w"> </span><span class="c1">// //前进指针</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">        </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">span</span><span class="p">;</span><span class="w"> </span><span class="c1">// 到下一个节点的跨度 </span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">level</span><span class="p">[];</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="p">}</span><span class="w"> </span><span class="n">zskiplistNode</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="set">set底层数据结构是什么样的？<a class="headerlink" href="#set" title="Permanent link">&para;</a></h2>
 <p>set底层数据结构有两种，即intset和dict。当满足以下条件时候，使用intset，否则使用dict：</p>
 <ol>
 <li>结合对象保存的所有元素都是整数值</li>
@@ -2142,44 +2323,34 @@ save 60 10000
 </ol>
 <p>当使用dict时候，即hashTable，哈希表的key值是set集合元素，value值是nil。</p>
 <p>资料：<a href="https://juejin.cn/post/6844904198019137550">https://juejin.cn/post/6844904198019137550</a></p>
-<h2 id="zrankologn">Zrank的复杂度是O(log(n))，为什么？</h2>
+<h2 id="zrankologn">Zrank的复杂度是O(log(n))，为什么？<a class="headerlink" href="#zrankologn" title="Permanent link">&para;</a></h2>
 <p>Redis 在skiplist 的forward 指针上进行了优化，给每一个forward 指针都增加了span 属性，span 是「跨度」的意思， 表示从前一个节点沿着当前层的forward 指针跳到当前这个节点中间会跳过多少个节点 这样计算一个元素的排名时，只需要将「搜索路径」上的经过的所有节点的跨度span 值进行叠加就可以算出元素的最终rank 值。</p>
-<h2 id="zrange-olognm-n-m">zrange 的复杂度是 O(log(N)+M)， N 为有序集的基数，而 M 为结果集的基数。为什么是这个复杂度呢？</h2>
+<h2 id="zrange-olognm-n-m">zrange 的复杂度是 O(log(N)+M)， N 为有序集的基数，而 M 为结果集的基数。为什么是这个复杂度呢？<a class="headerlink" href="#zrange-olognm-n-m" title="Permanent link">&para;</a></h2>
 <p>ZRANGE key start stop [WITHSCORES]，zrange 就是返回有序集 key 中，指定区间内的成员，而跳表中的元素最下面的一层是有序的(上面的几层就是跳表的索引)，按照分数排序，我们只要找出 start 代表的元素，然后向前或者向后遍历 M 次拉出所有数据即可，而找出 start 代表的元素，其实就是在跳表中找一个元素的时间复杂度。<strong>跳表中每个节点每一层都会保存到下一个节点的跨度，在寻找过程中可以根据跨度和来求当前的排名</strong>，所以查找过程是 O(log(N) 过程，加上遍历 M 个元素，就是 O(log(N)+M)，所以 redis 的 zrange 不会像 mysql 的 offset 有比较严重的性能问题。</p>
-<h2 id="redison">redis中哪些操作时间复杂度O(n)?</h2>
-<h3 id="key">Key</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>keys *
-</code></pre></div></td></tr></table></div>
-<h3 id="list">List</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>lindex // n为列表长度
-lset
-linsert
-</code></pre></div></td></tr></table></div>
-<h3 id="hash">Hash</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>hgetall // n为哈希表大小
-hkeys
-hvals
-</code></pre></div></td></tr></table></div>
-<h3 id="set_1">Set</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>smembers // 返回所有集合成员，n为集合成员元素
-sunion/sunionstore // 并集， N 是所有给定集合的成员数量之和
-sinter/sinterstore // 交集，O(N * M)， N 为给定集合当中基数最小的集合， M 为给定集合的个数
-sdiff/sdiffstore // 差集， N 是所有给定集合的成员数量之和
-Sorted Set：
-
-zrange/zrevrange/zrangebyscore/zrevrangebyscore/zremrangebyrank/zremrangebyscore // O(m) + O(log(n)) // N 为有序集的基数，而 M 为结果集的基数
-</code></pre></div></td></tr></table></div>
-<h2 id="redis_7">redis哨兵模式介绍？</h2>
+<h2 id="redison">redis中哪些操作时间复杂度O(n)?<a class="headerlink" href="#redison" title="Permanent link">&para;</a></h2>
+<h3 id="key">Key<a class="headerlink" href="#key" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>keys *
+</span></code></pre></div>
+<h3 id="list">List<a class="headerlink" href="#list" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>lindex // n为列表长度
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>lset
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>linsert
+</span></code></pre></div>
+<h3 id="hash">Hash<a class="headerlink" href="#hash" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>hgetall // n为哈希表大小
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>hkeys
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>hvals
+</span></code></pre></div>
+<h3 id="set_1">Set<a class="headerlink" href="#set_1" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>smembers // 返回所有集合成员，n为集合成员元素
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>sunion/sunionstore // 并集， N 是所有给定集合的成员数量之和
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>sinter/sinterstore // 交集，O(N * M)， N 为给定集合当中基数最小的集合， M 为给定集合的个数
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>sdiff/sdiffstore // 差集， N 是所有给定集合的成员数量之和
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>Sorted Set：
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>zrange/zrevrange/zrangebyscore/zrevrangebyscore/zremrangebyrank/zremrangebyscore // O(m) + O(log(n)) // N 为有序集的基数，而 M 为结果集的基数
+</span></code></pre></div>
+<h2 id="redis_7">redis哨兵模式介绍？<a class="headerlink" href="#redis_7" title="Permanent link">&para;</a></h2>
 <p>redis的哨兵模式（sentinel）<strong>为了保证redis主从的高可用</strong>。主要功能：</p>
 <ol>
 <li>监控：它会监听主服务器和从服务器之间是否在正常工作。</li>
@@ -2187,16 +2358,18 @@ zrange/zrevrange/zrangebyscore/zrevrangebyscore/zremrangebyrank/zremrangebyscore
 </ol>
 <p>从从节点选出一个主节点流程是：
 1. 首先去掉所有断线或下线的节点，获取所有监控节点
-2. 然后选择<strong>复制偏移量</strong>最大的节点，复制偏移量代表其从主节点成功复制了多少数据，越大说明越与主节点最接近同步。
+2. 然后选择**复制偏移量**最大的节点，复制偏移量代表其从主节点成功复制了多少数据，越大说明越与主节点最接近同步。
 3. 若步骤选出了多个节点，那比较每个节点的唯一标识uid，选择最小的那个。</p>
 <p>将从节点变成主节点操作时候，需要哨兵来操作，由于为了保证哨兵高可用性，哨兵存在多个，那就需要选主出来一个哨兵头领来处理这个操作，这个过程涉及到Raft算法。</p>
-<h2 id="redis-cluster">redis cluster分片原理？</h2>
+<h2 id="redis-cluster">redis cluster分片原理？<a class="headerlink" href="#redis-cluster" title="Permanent link">&para;</a></h2>
 <p>采用虚拟槽进行数据分片，总共2<sup>14个虚拟槽，有几个节点就把2</sup>14分成几个范围，按照crc16(key)%2^14确定key在哪个槽，每个节点保存了集群中的槽对应的节点信息，如果一个请求过来发现key不在这个节点上，这个节点会回复一个mov的消息指向新节点，彼此节点间定时通过ping来检测故障。</p>
-<h2 id="redis-rehash">redis rehash过程？</h2>
+<h2 id="redis-rehash">redis rehash过程？<a class="headerlink" href="#redis-rehash" title="Permanent link">&para;</a></h2>
 <p>redis采用渐进式hash方式。redis会同时维持两个hash表：ht[0] 和 ht[1] 两个哈希表。 要在字典里面查找一个键的话， 程序会先在 ht[0] 里面进行查找， 如果没找到的话， 就会继续到 ht[1] 里面进行查找， 诸如此类。在渐进式 rehash 执行期间， 新添加到字典的键值对一律会被保存到 ht[1] 里面， 而 ht[0] 则不再进行任何添加操作</p>
-<h2 id="redis_8">redis底层数据结构？</h2>
+<h2 id="redis_8">redis底层数据结构？<a class="headerlink" href="#redis_8" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="https://static.cyub.vip/images/202107/redis-inner.png" /></p>
 
+
+  
 
 
 
@@ -2208,18 +2381,129 @@ zrange/zrevrange/zrangebyscore/zrevrangebyscore/zremrangebyrank/zremrangebyscore
           
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
       </main>
       
         <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../../language/Go/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Go">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Go
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../mysql/" class="md-footer__link md-footer__link--next" aria-label="下一页: mysql">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                mysql
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 - 2024 Tink
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
       Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/squidfunk" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://hub.docker.com/r/squidfunk/mkdocs-material/" target="_blank" rel="noopener" title="hub.docker.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://pypi.org/project/mkdocs-material/" target="_blank" rel="noopener" title="pypi.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"/></svg>
+    </a>
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/squidfunk" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
     </a>
   
 </div>
@@ -2234,7 +2518,7 @@ zrange/zrevrange/zrangebyscore/zrevrangebyscore/zremrangebyrank/zremrangebyscore
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.94c44541.min.js"></script>

@@ -21,7 +21,7 @@
         <link rel="next" href="../namespace/">
       
       
-      <link rel="icon" href="../../favicon.ico">
+      <link rel="icon" href="../../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.4">
     
     
@@ -47,14 +47,24 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Fira Sans";--md-code-font:"Fira Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Code";--md-code-font:"Fira Code"}</style>
       
     
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config",""),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -69,7 +79,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     
@@ -98,7 +108,12 @@
     <a href="../.." title="开发知识wiki" class="md-header__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -128,20 +143,30 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_3" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
     
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_3">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
       </label>
     
   
@@ -167,11 +192,18 @@
       </label>
       <nav class="md-search__options" aria-label="查找">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -229,6 +261,8 @@
         <a href="../../computer-system/io/" class="md-tabs__link">
           
   
+    
+  
   操作系统
 
         </a>
@@ -246,6 +280,8 @@
       <li class="md-tabs__item">
         <a href="../../computer-network/tcp/" class="md-tabs__link">
           
+  
+    
   
   计算机网络
 
@@ -270,6 +306,8 @@
       <li class="md-tabs__item">
         <a href="../../database/mysql/%E7%AE%80%E4%BB%8B/" class="md-tabs__link">
           
+  
+    
   
   数据库
 
@@ -311,7 +349,29 @@
         <a href="../install/" class="md-tabs__link">
           
   
+    
+  
   容器
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../language/Go/" class="md-tabs__link">
+          
+  
+    
+  
+  语言
 
         </a>
       </li>
@@ -328,6 +388,8 @@
       <li class="md-tabs__item">
         <a href="../../qa/redis/" class="md-tabs__link">
           
+  
+    
   
   QA
 
@@ -362,7 +424,12 @@
     <a href="../.." title="开发知识wiki" class="md-nav__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
 
     </a>
     开发知识wiki
@@ -395,6 +462,22 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -582,6 +665,16 @@
   
     
     
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
     
     
     
@@ -596,16 +689,24 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../computer-network/tcp/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     计算机网络
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
@@ -614,24 +715,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../computer-network/tcp/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    TCP
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -667,6 +750,14 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -707,10 +798,23 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -718,7 +822,7 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -831,10 +935,27 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -842,16 +963,24 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../database/elasticsearch/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Elasticsearch
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
@@ -860,24 +989,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../database/elasticsearch/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    概览
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -1022,6 +1133,16 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1373,6 +1494,10 @@
   
     
     
+      
+        
+      
+    
     
     
     
@@ -1391,7 +1516,7 @@
             
   
   <span class="md-ellipsis">
-    QA
+    语言
   </span>
   
 
@@ -1400,6 +1525,102 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            语言
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/Go/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Go
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    QA
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             QA
           </label>
@@ -1917,10 +2138,10 @@
                   
 
 
-<h1 id="docker-cgroups">Docker 容器使用 cgroups 限制资源使用</h1>
-<h2 id="linux-control-groups">Linux control groups</h2>
+<h1 id="docker-cgroups">Docker 容器使用 cgroups 限制资源使用<a class="headerlink" href="#docker-cgroups" title="Permanent link">&para;</a></h1>
+<h2 id="linux-control-groups">Linux control groups<a class="headerlink" href="#linux-control-groups" title="Permanent link">&para;</a></h2>
 <p>Linux Cgroups(Control Groups) 可​​​让​​​您​​​为​​​系​​​统​​​中​​​所​​​运​​​行​​​任​​​务​​​（进​​​程​​​）的​​​用​​​户​​​定​​​义​​​组​​​群​​​分​​​配​​​资​​​源​​​ — 比​​​如​​​ CPU 时​​​间​​​、​​​系​​​统​​​内​​​存​​​、​​​网​​​络​​​带​​​宽​​​或​​​者​​​这​​​些​​​资​​​源​​​的​​​组​​​合​​​。​​​您​​​可​​​以​​​监​​​控​​​您​​​配​​​置​​​的​​​ cgroup，拒​​​绝​​​ cgroup 访​​​问​​​某​​​些​​​资​​​源​​​，甚​​​至​​​在​​​运​​​行​​​的​​​系​​​统​​​中​​​动​​​态​​​配​​​置​​​您​​​的​​​ cgroup。所以，可以将 controll groups 理解为 controller （system resource） （for） （process）groups，也就是是说它以一组进程为目标进行系统资源分配和控制。
-Linux Cgroups(Control Groups) 提供了<strong>对一组进程及将来的子进程的资源的限制</strong>，控制和统计的能力，这些资源包括<strong>CPU，内存，存储，网络</strong>等。通过Cgroups，可以方便的限制某个进程的资源占用，并且可以实时的监控进程的监控和统计信息。</p>
+Linux Cgroups(Control Groups) 提供了**对一组进程及将来的子进程的资源的限制**，控制和统计的能力，这些资源包括**CPU，内存，存储，网络**等。通过Cgroups，可以方便的限制某个进程的资源占用，并且可以实时的监控进程的监控和统计信息。</p>
 <p>它主要提供了如下功能： </p>
 <ul>
 <li>Resource limitation: 限制资源使用，比如内存使用上限以及文件系统的缓存限制。</li>
@@ -1937,134 +2158,75 @@ Linux Cgroups(Control Groups) 提供了<strong>对一组进程及将来的子进
 <li>限制访问某些设备（通过设置设备的白名单）</li>
 </ul>
 <p>查看 linux 内核中是否启用了 cgroup：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code>vagrant@vagrant:~$ uname -r
-4.4.0-101-generic
-vagrant@vagrant:~$ cat /boot/config-4.4.0-101-generic | grep CGROUP
-CONFIG_CGROUPS=y
-# CONFIG_CGROUP_DEBUG is not set
-CONFIG_CGROUP_FREEZER=y
-CONFIG_CGROUP_PIDS=y
-CONFIG_CGROUP_DEVICE=y
-CONFIG_CGROUP_CPUACCT=y
-CONFIG_CGROUP_HUGETLB=y
-CONFIG_CGROUP_PERF=y
-CONFIG_CGROUP_SCHED=y
-CONFIG_BLK_CGROUP=y
-# CONFIG_DEBUG_BLK_CGROUP is not set
-CONFIG_CGROUP_WRITEBACK=y
-CONFIG_NETFILTER_XT_MATCH_CGROUP=m
-CONFIG_NET_CLS_CGROUP=m
-CONFIG_CGROUP_NET_PRIO=y
-CONFIG_CGROUP_NET_CLASSID=y
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>vagrant@vagrant:~$ uname -r
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>4.4.0-101-generic
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>vagrant@vagrant:~$ cat /boot/config-4.4.0-101-generic | grep CGROUP
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>CONFIG_CGROUPS=y
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a># CONFIG_CGROUP_DEBUG is not set
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>CONFIG_CGROUP_FREEZER=y
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>CONFIG_CGROUP_PIDS=y
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>CONFIG_CGROUP_DEVICE=y
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>CONFIG_CGROUP_CPUACCT=y
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>CONFIG_CGROUP_HUGETLB=y
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>CONFIG_CGROUP_PERF=y
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>CONFIG_CGROUP_SCHED=y
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>CONFIG_BLK_CGROUP=y
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a># CONFIG_DEBUG_BLK_CGROUP is not set
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>CONFIG_CGROUP_WRITEBACK=y
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>CONFIG_NETFILTER_XT_MATCH_CGROUP=m
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>CONFIG_NET_CLS_CGROUP=m
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>CONFIG_CGROUP_NET_PRIO=y
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>CONFIG_CGROUP_NET_CLASSID=y
+</span></code></pre></div>
 <p>对应的 cgroup 的配置值如果是 'y'，则表示已经被启用了。</p>
 <p>Linux 系统中，一切皆文件。Linux 也将 cgroups 实现成了文件系统，方便用户使用:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code>vagrant@vagrant:~$ mount -t cgroup
-cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/lib/systemd/systemd-cgroups-agent,name=systemd)
-cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)
-cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)
-cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls,net_prio)
-cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)
-cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,hugetlb)
-cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)
-cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,pids)
-cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
-cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)
-cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
-
-vagrant@vagrant:~$ lssubsys -m
-cpuset /sys/fs/cgroup/cpuset
-cpu,cpuacct /sys/fs/cgroup/cpu,cpuacct
-blkio /sys/fs/cgroup/blkio
-memory /sys/fs/cgroup/memory
-devices /sys/fs/cgroup/devices
-freezer /sys/fs/cgroup/freezer
-net_cls,net_prio /sys/fs/cgroup/net_cls,net_prio
-perf_event /sys/fs/cgroup/perf_event
-hugetlb /sys/fs/cgroup/hugetlb
-pids /sys/fs/cgroup/pids
-
-vagrant@vagrant:~$ ls -l /sys/fs/cgroup/
-total 0
-dr-xr-xr-x 6 root root  0 Jun 30 09:35 blkio
-lrwxrwxrwx 1 root root 11 Jun 22 23:10 cpu -&gt; cpu,cpuacct
-lrwxrwxrwx 1 root root 11 Jun 22 23:10 cpuacct -&gt; cpu,cpuacct
-dr-xr-xr-x 6 root root  0 Jun 30 09:35 cpu,cpuacct
-dr-xr-xr-x 3 root root  0 Jun 30 09:35 cpuset
-dr-xr-xr-x 6 root root  0 Jun 30 09:35 devices
-dr-xr-xr-x 3 root root  0 Jun 30 09:35 freezer
-dr-xr-xr-x 3 root root  0 Jun 30 09:35 hugetlb
-dr-xr-xr-x 6 root root  0 Jun 30 09:35 memory
-lrwxrwxrwx 1 root root 16 Jun 22 23:10 net_cls -&gt; net_cls,net_prio
-dr-xr-xr-x 3 root root  0 Jun 30 09:35 net_cls,net_prio
-lrwxrwxrwx 1 root root 16 Jun 22 23:10 net_prio -&gt; net_cls,net_prio
-dr-xr-xr-x 3 root root  0 Jun 30 09:35 perf_event
-dr-xr-xr-x 6 root root  0 Jun 30 09:35 pids
-dr-xr-xr-x 6 root root  0 Jun 30 09:35 systemd
-</code></pre></div></td></tr></table></div>
-<h2 id="cgroups">Cgroups中的三个组件</h2>
-<h3 id="cgroup">cgroup</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>vagrant@vagrant:~$ mount -t cgroup
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/lib/systemd/systemd-cgroups-agent,name=systemd)
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls,net_prio)
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,hugetlb)
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,pids)
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>vagrant@vagrant:~$ lssubsys -m
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>cpuset /sys/fs/cgroup/cpuset
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>cpu,cpuacct /sys/fs/cgroup/cpu,cpuacct
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>blkio /sys/fs/cgroup/blkio
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>memory /sys/fs/cgroup/memory
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>devices /sys/fs/cgroup/devices
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>freezer /sys/fs/cgroup/freezer
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>net_cls,net_prio /sys/fs/cgroup/net_cls,net_prio
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>perf_event /sys/fs/cgroup/perf_event
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>hugetlb /sys/fs/cgroup/hugetlb
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>pids /sys/fs/cgroup/pids
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>vagrant@vagrant:~$ ls -l /sys/fs/cgroup/
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>total 0
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>dr-xr-xr-x 6 root root  0 Jun 30 09:35 blkio
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>lrwxrwxrwx 1 root root 11 Jun 22 23:10 cpu -&gt; cpu,cpuacct
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>lrwxrwxrwx 1 root root 11 Jun 22 23:10 cpuacct -&gt; cpu,cpuacct
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>dr-xr-xr-x 6 root root  0 Jun 30 09:35 cpu,cpuacct
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>dr-xr-xr-x 3 root root  0 Jun 30 09:35 cpuset
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>dr-xr-xr-x 6 root root  0 Jun 30 09:35 devices
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>dr-xr-xr-x 3 root root  0 Jun 30 09:35 freezer
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>dr-xr-xr-x 3 root root  0 Jun 30 09:35 hugetlb
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>dr-xr-xr-x 6 root root  0 Jun 30 09:35 memory
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>lrwxrwxrwx 1 root root 16 Jun 22 23:10 net_cls -&gt; net_cls,net_prio
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>dr-xr-xr-x 3 root root  0 Jun 30 09:35 net_cls,net_prio
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>lrwxrwxrwx 1 root root 16 Jun 22 23:10 net_prio -&gt; net_cls,net_prio
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>dr-xr-xr-x 3 root root  0 Jun 30 09:35 perf_event
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>dr-xr-xr-x 6 root root  0 Jun 30 09:35 pids
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>dr-xr-xr-x 6 root root  0 Jun 30 09:35 systemd
+</span></code></pre></div>
+<h2 id="cgroups">Cgroups中的三个组件<a class="headerlink" href="#cgroups" title="Permanent link">&para;</a></h2>
+<h3 id="cgroup">cgroup<a class="headerlink" href="#cgroup" title="Permanent link">&para;</a></h3>
 <p>cgroup 是对进程分组管理的一种机制，一个cgroup包含一组进程，并可以在这个cgroup上增加Linux subsystem的各种参数的配置，将一组进程和一组subsystem的系统参数关联起来。</p>
-<h3 id="subsystem">subsystem</h3>
+<h3 id="subsystem">subsystem<a class="headerlink" href="#subsystem" title="Permanent link">&para;</a></h3>
 <p>subsystem 是一组资源控制的模块，一般包含有：</p>
 <ul>
 <li>blkio 设置对块设备（比如硬盘）的输入输出的访问控制</li>
@@ -2080,9 +2242,9 @@ dr-xr-xr-x 6 root root  0 Jun 30 09:35 systemd
 </ul>
 <p>net_cls 和 tc 一起使用可用于限制进程发出的网络包所使用的网络带宽。当使用 cgroups network controll net_cls 后，指定进程发出的所有网络包都会被加一个 tag，然后就可以使用其他工具比如 iptables 或者 traffic controller （TC）来根据网络包上的 tag 进行流量控制。关于 TC 的文档，网上很多，这里不再赘述。</p>
 <p>每个subsystem会关联到定义了相应限制的cgroup上，并对这个cgroup中的进程做相应的限制和控制，这些subsystem是逐步合并到内核中的，如何看到当前的内核支持哪些subsystem呢？可以安装cgroup的命令行工具(apt-get install cgroup-bin)，然后通过lssubsys看到kernel支持的subsystem。 </p>
-<h3 id="hierarchy">hierarchy</h3>
+<h3 id="hierarchy">hierarchy<a class="headerlink" href="#hierarchy" title="Permanent link">&para;</a></h3>
 <p>hierarchy 的功能是把一组cgroup串成一个树状的结构，一个这样的树便是一个hierarchy，通过这种树状的结构，Cgroups可以做到继承。比如我的系统对一组定时的任务进程通过cgroup1限制了CPU的使用率，然后其中有一个定时dump日志的进程还需要限制磁盘IO，为了避免限制了影响到其他进程，就可以创建cgroup2继承于cgroup1并限制磁盘的IO，这样cgroup2便继承了cgroup1中的CPU的限制，并且又增加了磁盘IO的限制而不影响到cgroup1中的其他进程。</p>
-<h3 id="_1">三个组件相互的关系</h3>
+<h3 id="_1">三个组件相互的关系<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>Cgroups的是靠这三个组件的相互协作实现的，那么这三个组件是什么关系呢？ </p>
 <ul>
 <li>系统在创建新的hierarchy之后，系统中所有的进程都会加入到这个hierarchy的根cgroup节点中，这个cgroup根节点是hierarchy默认创建，后面在这个hierarchy中创建cgroup都是这个根cgroup节点的子节点。</li>
@@ -2092,316 +2254,211 @@ dr-xr-xr-x 6 root root  0 Jun 30 09:35 systemd
 <li>一个进程fork出子进程的时候，子进程是和父进程在同一个cgroup中的，也可以根据需要将其移动到其他的cgroup中。</li>
 </ul>
 <p>Cgroups中的hierarchy是一种树状的组织结构，Kernel为了让对Cgroups的配置更直观，Cgroups通过一个虚拟的树状文件系统去做配置的，通过层级的目录虚拟出cgroup树。</p>
-<h3 id="_2">术语</h3>
+<h3 id="_2">术语<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>任务（Tasks）：就是系统的一个进程。</li>
 <li>控制组（Control Group）：一组按照某种标准划分的进程，比如官方文档中的Professor和Student，或是WWW和System之类的，其表示了某进程组。Cgroups中的资源控制都是以控制组为单位实现。一个进程可以加入到某个控制组。而资源的限制是定义在这个组上，就像上面示例中我用的 hello 一样。简单点说，cgroup的呈现就是一个目录带一系列的可配置文件。</li>
 <li>层级（Hierarchy）：控制组可以组织成hierarchical的形式，既一颗控制组的树（目录结构）。控制组树上的子节点继承父结点的属性。简单点说，hierarchy就是在一个或多个子系统上的cgroups目录树。</li>
 <li>子系统（Subsystem）：一个子系统就是一个资源控制器，比如CPU子系统就是控制CPU时间分配的一个控制器。子系统必须附加到一个层级上才能起作用，一个子系统附加到某个层级以后，这个层级上的所有控制族群都受到这个子系统的控制。Cgroup的子系统可以有很多，也在不断增加中。</li>
 </ul>
-<h2 id="_3">实验</h2>
-<h3 id="cgroups-cpu">通过 cgroups 限制进程的 CPU</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">    </span><span class="k">for</span><span class="p">(;;)</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+<h2 id="_3">实验<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="cgroups-cpu">通过 cgroups 限制进程的 CPU<a class="headerlink" href="#cgroups-cpu" title="Permanent link">&para;</a></h3>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="k">for</span><span class="p">(;;)</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>运行之后，发现cpu占用几乎100%：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>top - 16:06:57 up 7 days, 16:53,  2 users,  load average: 0.82, 0.27, 0.10
-Tasks:   1 total,   1 running,   0 sleeping,   0 stopped,   0 zombie
-%Cpu(s):100.0 us,  0.0 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-KiB Mem :  4046588 total,   594524 free,   537964 used,  2914100 buff/cache
-KiB Swap:  1048572 total,  1048480 free,       92 used.  3070952 avail Mem
-
-  PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND
-31208 vagrant   20   0    4220    724    656 R 99.3  0.0   1:06.14 a.out
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>top - 16:06:57 up 7 days, 16:53,  2 users,  load average: 0.82, 0.27, 0.10
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Tasks:   1 total,   1 running,   0 sleeping,   0 stopped,   0 zombie
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>%Cpu(s):100.0 us,  0.0 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>KiB Mem :  4046588 total,   594524 free,   537964 used,  2914100 buff/cache
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>KiB Swap:  1048572 total,  1048480 free,       92 used.  3070952 avail Mem
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>31208 vagrant   20   0    4220    724    656 R 99.3  0.0   1:06.14 a.out
+</span></code></pre></div>
 <p>接下来配置cgroup:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdir<span class="w"> </span>/sys/fs/cgroup/cpu/hello
-<span class="nb">cd</span><span class="w"> </span>/sys/fs/cgroup/cpu/hello
-cat<span class="w"> </span>cpu.cfs_quota_us<span class="w"> </span>//<span class="w"> </span>默认创建hello目录之后，自动创建cfs相关文件
-<span class="nb">echo</span><span class="w"> </span><span class="m">20000</span><span class="w"> </span>&gt;<span class="w"> </span>cpu.cfs_quota_us<span class="w"> </span>//<span class="w"> </span>若非root用户，需sudo<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;echo 20000 &gt; cpu.cfs_quota_us&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="m">31208</span><span class="w"> </span>&gt;<span class="w"> </span>tasks<span class="w"> </span>//<span class="w"> </span>31208为上面c程序进程id
-</code></pre></div></td></tr></table></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mkdir<span class="w"> </span>/sys/fs/cgroup/cpu/hello
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">cd</span><span class="w"> </span>/sys/fs/cgroup/cpu/hello
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>cat<span class="w"> </span>cpu.cfs_quota_us<span class="w"> </span>//<span class="w"> </span>默认创建hello目录之后，自动创建cfs相关文件
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nb">echo</span><span class="w"> </span><span class="m">20000</span><span class="w"> </span>&gt;<span class="w"> </span>cpu.cfs_quota_us<span class="w"> </span>//<span class="w"> </span>若非root用户，需sudo<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;echo 20000 &gt; cpu.cfs_quota_us&quot;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nb">echo</span><span class="w"> </span><span class="m">31208</span><span class="w"> </span>&gt;<span class="w"> </span>tasks<span class="w"> </span>//<span class="w"> </span>31208为上面c程序进程id
+</span></code></pre></div>
 <p>然后再来看看这个进程的 CPU 占用情况:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Tasks: 152 total,   2 running, 150 sleeping,   0 stopped,   0 zombie
-%Cpu(s): 17.1 us,  0.0 sy,  0.0 ni, 82.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-KiB Mem :  4046588 total,   592952 free,   539276 used,  2914360 buff/cache
-KiB Swap:  1048572 total,  1048480 free,       92 used.  3069628 avail Mem
-
-  PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND
-31208 vagrant   20   0    4220    724    656 R 19.9  0.0   6:02.71 a.out
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Tasks: 152 total,   2 running, 150 sleeping,   0 stopped,   0 zombie
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>%Cpu(s): 17.1 us,  0.0 sy,  0.0 ni, 82.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>KiB Mem :  4046588 total,   592952 free,   539276 used,  2914360 buff/cache
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>KiB Swap:  1048572 total,  1048480 free,       92 used.  3069628 avail Mem
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>  PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>31208 vagrant   20   0    4220    724    656 R 19.9  0.0   6:02.71 a.out
+</span></code></pre></div>
 <p>它占用的 CPU 几乎就是 20%，也就是我们预设的阈值。这说明我们通过上面的步骤，成功地将这个进程运行所占用的 CPU 资源限制在某个阈值之内了。</p>
-<p>如果此时再启动另一个进程并将其 id 加入 tasks 文件(sudo sh -c "echo 31618 &gt;&gt; tasks)，则<strong>两个进程会共享设定的 CPU 限制</strong>，即每个进程各占10%的cpu资源：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>top - 16:17:51 up 7 days, 17:04,  4 users,  load average: 1.39, 1.24, 0.71
-Tasks: 158 total,   3 running, 155 sleeping,   0 stopped,   0 zombie
-%Cpu(s): 18.6 us,  0.3 sy,  0.0 ni, 81.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-KiB Mem :  4046588 total,   578088 free,   550312 used,  2918188 buff/cache
-KiB Swap:  1048572 total,  1048480 free,       92 used.  3058200 avail Mem
-
-  PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND
-31618 vagrant   20   0    4220    648    580 R 10.0  0.0   2:43.16 a.out
-31208 vagrant   20   0    4220    724    656 R  9.6  0.0   7:04.75 a.out
-</code></pre></div></td></tr></table></div>
-<h3 id="cgroups-memory">通过 cgroups 限制进程的 Memory</h3>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>vagrant@vagrant:~$ cd /sys/fs/cgroup/memory
-vagrant@vagrant:/sys/fs/cgroup/memory$ sudo mkdir hello
-vagrant@vagrant:/sys/fs/cgroup/memory$ cd hello/
-vagrant@vagrant:/sys/fs/cgroup/memory/hello$ cat memory.limit_in_bytes
-9223372036854771712
-vagrant@vagrant:/sys/fs/cgroup/memory/hello$ sudo sh -c &quot;echo 64k &gt; memory.limit_in_bytes&quot;
-vagrant@vagrant:/sys/fs/cgroup/memory/hello$ cat memory.limit_in_bytes
-65536
-vagrant@vagrant:/sys/fs/cgroup/memory/hello$ sudo sh -c &quot;echo 31208 &gt; tasks&quot; // 将进程31208加入到task文件中
-</code></pre></div></td></tr></table></div>
+<p>如果此时再启动另一个进程并将其 id 加入 tasks 文件(sudo sh -c "echo 31618 &gt;&gt; tasks)，则**两个进程会共享设定的 CPU 限制**，即每个进程各占10%的cpu资源：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>top - 16:17:51 up 7 days, 17:04,  4 users,  load average: 1.39, 1.24, 0.71
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Tasks: 158 total,   3 running, 155 sleeping,   0 stopped,   0 zombie
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>%Cpu(s): 18.6 us,  0.3 sy,  0.0 ni, 81.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>KiB Mem :  4046588 total,   578088 free,   550312 used,  2918188 buff/cache
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>KiB Swap:  1048572 total,  1048480 free,       92 used.  3058200 avail Mem
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>  PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>31618 vagrant   20   0    4220    648    580 R 10.0  0.0   2:43.16 a.out
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>31208 vagrant   20   0    4220    724    656 R  9.6  0.0   7:04.75 a.out
+</span></code></pre></div>
+<h3 id="cgroups-memory">通过 cgroups 限制进程的 Memory<a class="headerlink" href="#cgroups-memory" title="Permanent link">&para;</a></h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>vagrant@vagrant:~$ cd /sys/fs/cgroup/memory
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>vagrant@vagrant:/sys/fs/cgroup/memory$ sudo mkdir hello
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>vagrant@vagrant:/sys/fs/cgroup/memory$ cd hello/
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>vagrant@vagrant:/sys/fs/cgroup/memory/hello$ cat memory.limit_in_bytes
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>9223372036854771712
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>vagrant@vagrant:/sys/fs/cgroup/memory/hello$ sudo sh -c &quot;echo 64k &gt; memory.limit_in_bytes&quot;
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>vagrant@vagrant:/sys/fs/cgroup/memory/hello$ cat memory.limit_in_bytes
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>65536
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>vagrant@vagrant:/sys/fs/cgroup/memory/hello$ sudo sh -c &quot;echo 31208 &gt; tasks&quot; // 将进程31208加入到task文件中
+</span></code></pre></div>
 进程31208占用的内存阈值设置为 64K。超过的话，它会被杀掉。</p>
-<h3 id="io">限制进程的 I/O</h3>
+<h3 id="io">限制进程的 I/O<a class="headerlink" href="#io" title="Permanent link">&para;</a></h3>
 <p>查看io速度：</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>vagrant@vagrant:~$ sudo dd if=/dev/sda1 of=/dev/null
-997376+0 records in
-997376+0 records out
-510656512 bytes (511 MB, 487 MiB) copied, 0.497896 s, 1.0 GB/s
-</code></pre></div></td></tr></table></div>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>vagrant@vagrant:~$ sudo dd if=/dev/sda1 of=/dev/null
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>997376+0 records in
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>997376+0 records out
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>510656512 bytes (511 MB, 487 MiB) copied, 0.497896 s, 1.0 GB/s
+</span></code></pre></div>
 然后通过 iotop 命令观察 IO</p>
 <p>接着做下面的操作：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdir /sys/fs/cgroup/blkio/io
-cd /sys/fs/cgroup/blkio/io
-ls -l /dev/sda1
-brw-rw---- 1 root disk 8, 1 Jun 22 23:10 /dev/sda1
-
-echo &#39;8:0 1048576&#39;  &gt; /sys/fs/cgroup/blkio/io/blkio.throttle.read_bps_device
-echo 2725 &gt; /sys/fs/cgroup/blkio/io/tasks
-</code></pre></div></td></tr></table></div>
-<h2 id="docker-cgroups_1">Docker 对 cgroups 的使用</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>mkdir /sys/fs/cgroup/blkio/io
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>cd /sys/fs/cgroup/blkio/io
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>ls -l /dev/sda1
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>brw-rw---- 1 root disk 8, 1 Jun 22 23:10 /dev/sda1
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>echo &#39;8:0 1048576&#39;  &gt; /sys/fs/cgroup/blkio/io/blkio.throttle.read_bps_device
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>echo 2725 &gt; /sys/fs/cgroup/blkio/io/tasks
+</span></code></pre></div>
+<h2 id="docker-cgroups_1">Docker 对 cgroups 的使用<a class="headerlink" href="#docker-cgroups_1" title="Permanent link">&para;</a></h2>
 <p>默认情况下，Docker 启动一个容器后，会在 /sys/fs/cgroup 目录下的各个资源目录下生成以容器 ID 为名字的目录（group），比如：</p>
 <blockquote>
 <p>/sys/fs/cgroup/cpu/docker/da577b6b5bc89ae28080778bf8e3d7560b32d1efaf499cff7f414ca2ca7d4ca5</p>
 </blockquote>
 <p>此时 cpu.cfs_quota_us 的内容为 -1，表示默认情况下并没有限制容器的 CPU 使用。在容器被 stopped 后，该目录被删除。</p>
-<h3 id="cpu">限制容器可用的 CPU</h3>
-<h4 id="cpu_1">限制可用的 CPU 个数</h4>
+<h3 id="cpu">限制容器可用的 CPU<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h3>
+<h4 id="cpu_1">限制可用的 CPU 个数<a class="headerlink" href="#cpu_1" title="Permanent link">&para;</a></h4>
 <p>docker 1.13 及更高的版本上，能够很容易的限制容器可以使用的主机 CPU 个数。只需要通过 --cpus 选项指定容器可以使用的 CPU 个数就可以了，并且还可以指定如 1.5 之类的小数。</p>
 <p>创建测试镜像(docker build -t mystress:latest .)：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>FROM ubuntu:latest
-
-RUN apt-get update &amp;&amp; apt-get install -y stress
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>FROM ubuntu:latest
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>RUN apt-get update &amp;&amp; apt-get install -y stress
+</span></code></pre></div>
 <p>指定使用2个CPU：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>docker run -it --rm --cpus=2 mystress:latest /bin/bash
-
-stress -c 4
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>docker run -it --rm --cpus=2 mystress:latest /bin/bash
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>stress -c 4
+</span></code></pre></div>
 <p>通过docker stats命令可以查看到大概占用2个cpu：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>CONTAINER ID   NAME               CPU %     MEM USAGE / LIMIT     MEM %     NET I/O         BLOCK I/O   PIDS
-6f2d12f0183e   inspiring_spence   200.89%   2.199MiB / 7.771GiB   0.03%     1.03kB / 138B   0B / 0B     6
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>CONTAINER ID   NAME               CPU %     MEM USAGE / LIMIT     MEM %     NET I/O         BLOCK I/O   PIDS
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>6f2d12f0183e   inspiring_spence   200.89%   2.199MiB / 7.771GiB   0.03%     1.03kB / 138B   0B / 0B     6
+</span></code></pre></div>
 <p>需要注意的是对于进程来说是没有 CPU 个数这一概念的，内核只能通过进程消耗的 CPU 时间片来统计出进程占用 CPU 的百分比。上面CPU%为200.11%，说明该进程占用2个CPU。对于4核心的系统，但这不意味着有2个cpu使用100%，另外两个使用0%。实际上是每个CPU都会使用，即每个核心使用了50%:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>top - 17:55:34 up 7 min,  2 users,  load average: 0.21, 0.20, 0.11
-Tasks: 179 total,   5 running, 174 sleeping,   0 stopped,   0 zombie
-%Cpu0  : 50.7 us,  0.0 sy,  0.0 ni, 49.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-%Cpu1  : 50.5 us,  0.0 sy,  0.0 ni, 49.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-%Cpu2  : 50.5 us,  0.0 sy,  0.0 ni, 49.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-%Cpu3  : 48.3 us,  0.7 sy,  0.0 ni, 51.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>top - 17:55:34 up 7 min,  2 users,  load average: 0.21, 0.20, 0.11
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Tasks: 179 total,   5 running, 174 sleeping,   0 stopped,   0 zombie
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>%Cpu0  : 50.7 us,  0.0 sy,  0.0 ni, 49.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>%Cpu1  : 50.5 us,  0.0 sy,  0.0 ni, 49.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>%Cpu2  : 50.5 us,  0.0 sy,  0.0 ni, 49.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>%Cpu3  : 48.3 us,  0.7 sy,  0.0 ni, 51.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+</span></code></pre></div>
 <p>更早的版本完成同样的功能我们需要配合使用两个选项：--cpu-period 和 --cpu-quota(1.13 及之后的版本仍然支持这两个选项)。下面的命令实现相同的结果：</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ocker run -it --rm --cpu-period=100000 --cpu-quota=200000 mystress:latest /bin/bash
-</code></pre></div></td></tr></table></div>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>ocker run -it --rm --cpu-period=100000 --cpu-quota=200000 mystress:latest /bin/bash
+</span></code></pre></div>
 cpu-period, cpu-quota它们的单位是微秒，100000 表示 100 毫秒，200000 表示 200 毫秒。它们在这里的含义是：在每 100 毫秒的时间里，运行进程使用的 CPU 时间最多为 200 毫秒(需要两个 CPU 各执行 100 毫秒，需要两个 CPU 各执行 100 毫秒)。这两个参数含义参考<a href="https://www.kernel.org/doc/Documentation/scheduler/sched-bwc.txt">CFS BandWith Control</a></p>
-<h4 id="cpu_2">指定固定的 CPU</h4>
+<h4 id="cpu_2">指定固定的 CPU<a class="headerlink" href="#cpu_2" title="Permanent link">&para;</a></h4>
 <p>通过 --cpus 选项我们无法让容器始终在一个或某几个 CPU 上运行，但是通过 --cpuset-cpus 选项却可以做到！这是非常有意义的，因为现在的多核系统中每个核心都有自己的缓存，如果频繁的调度进程在不同的核心上执行势必会带来缓存失效等开销。下面我们就演示如何设置容器使用固定的 CPU，下面的命令为容器设置了 --cpuset-cpus 选项，指定运行容器的 CPU 编号为 1</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>docker run -it --rm --cpuset-cpus=&quot;1&quot; mystress:latest /bin/bash
-stress -c 4 // 指定并发运行进程个数
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>docker run -it --rm --cpuset-cpus=&quot;1&quot; mystress:latest /bin/bash
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>stress -c 4 // 指定并发运行进程个数
+</span></code></pre></div>
 <p>查看CPU负载情况：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>top - 17:56:58 up 9 min,  2 users,  load average: 1.30, 0.60, 0.26
-Tasks: 182 total,   5 running, 177 sleeping,   0 stopped,   0 zombie
-%Cpu0  :  0.3 us,  0.0 sy,  0.0 ni, 98.0 id,  0.0 wa,  0.0 hi,  1.6 si,  0.0 st
-%Cpu1  :100.0 us,  0.0 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-%Cpu2  :  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-%Cpu3  :  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>top - 17:56:58 up 9 min,  2 users,  load average: 1.30, 0.60, 0.26
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>Tasks: 182 total,   5 running, 177 sleeping,   0 stopped,   0 zombie
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>%Cpu0  :  0.3 us,  0.0 sy,  0.0 ni, 98.0 id,  0.0 wa,  0.0 hi,  1.6 si,  0.0 st
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>%Cpu1  :100.0 us,  0.0 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>%Cpu2  :  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>%Cpu3  :  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+</span></code></pre></div>
 <p>这次只有 Cpu1 达到了 100%，其它的 CPU 并未被容器使用。我们还可以反复的执行 stress -c 4 命令，但是始终都是 Cpu1 在干活。再看看容器的 CPU 负载，也是只有 100%：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>CONTAINER ID   NAME               CPU %     MEM USAGE / LIMIT     MEM %     NET I/O       BLOCK I/O   PIDS
-20431b28c268   trusting_haslett   99.64%    1.746MiB / 7.771GiB   0.02%     1.02kB / 0B   0B / 0B     6
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>CONTAINER ID   NAME               CPU %     MEM USAGE / LIMIT     MEM %     NET I/O       BLOCK I/O   PIDS
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>20431b28c268   trusting_haslett   99.64%    1.746MiB / 7.771GiB   0.02%     1.02kB / 0B   0B / 0B     6
+</span></code></pre></div>
 <p>--cpuset-cpus 选项还可以一次指定多个 CPU：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>docker run -it --rm --cpuset-cpus=&quot;1,3&quot; mystress:latest /bin/bash
-stress -c 4
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>docker run -it --rm --cpuset-cpus=&quot;1,3&quot; mystress:latest /bin/bash
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>stress -c 4
+</span></code></pre></div>
 <p>观察CPU负载：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>top - 18:02:19 up 14 min,  2 users,  load average: 1.72, 1.30, 0.72
-Tasks: 177 total,   5 running, 172 sleeping,   0 stopped,   0 zombie
-%Cpu0  :  0.3 us,  0.0 sy,  0.0 ni, 99.3 id,  0.0 wa,  0.0 hi,  0.3 si,  0.0 st
-%Cpu1  :100.0 us,  0.0 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-%Cpu2  :  0.3 us,  0.0 sy,  0.0 ni, 99.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-%Cpu3  :100.0 us,  0.0 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem :   7957.8 total,   6286.8 free,    303.3 used,   1367.7 buff/cache
-MiB Swap:      0.0 total,      0.0 free,      0.0 used.   7397.6 avail Mem
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-   5990 root      20   0    3864    100      0 R  52.8   0.0   0:13.81 stress
-   5992 root      20   0    3864    100      0 R  51.2   0.0   0:13.68 stress
-   5989 root      20   0    3864    100      0 R  47.8   0.0   0:13.98 stress
-   5991 root      20   0    3864    100      0 R  47.5   0.0   0:13.57 stress
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>top - 18:02:19 up 14 min,  2 users,  load average: 1.72, 1.30, 0.72
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>Tasks: 177 total,   5 running, 172 sleeping,   0 stopped,   0 zombie
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>%Cpu0  :  0.3 us,  0.0 sy,  0.0 ni, 99.3 id,  0.0 wa,  0.0 hi,  0.3 si,  0.0 st
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>%Cpu1  :100.0 us,  0.0 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>%Cpu2  :  0.3 us,  0.0 sy,  0.0 ni, 99.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>%Cpu3  :100.0 us,  0.0 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>MiB Mem :   7957.8 total,   6286.8 free,    303.3 used,   1367.7 buff/cache
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>MiB Swap:      0.0 total,      0.0 free,      0.0 used.   7397.6 avail Mem
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>   5990 root      20   0    3864    100      0 R  52.8   0.0   0:13.81 stress
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>   5992 root      20   0    3864    100      0 R  51.2   0.0   0:13.68 stress
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>   5989 root      20   0    3864    100      0 R  47.8   0.0   0:13.98 stress
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>   5991 root      20   0    3864    100      0 R  47.5   0.0   0:13.57 stress
+</span></code></pre></div>
 <p>Cpu1 和 Cpu3 的负载都达到了 100%。容器的 CPU 负载也达到了 200%：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>CONTAINER ID   NAME            CPU %     MEM USAGE / LIMIT     MEM %     NET I/O       BLOCK I/O   PIDS
-5d1c1df38895   epic_einstein   200.29%   2.188MiB / 7.771GiB   0.03%     1.09kB / 0B   0B / 0B     6
-</code></pre></div></td></tr></table></div>
-<h4 id="cpu_3">设置使用 CPU 的权重</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>CONTAINER ID   NAME            CPU %     MEM USAGE / LIMIT     MEM %     NET I/O       BLOCK I/O   PIDS
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>5d1c1df38895   epic_einstein   200.29%   2.188MiB / 7.771GiB   0.03%     1.09kB / 0B   0B / 0B     6
+</span></code></pre></div>
+<h4 id="cpu_3">设置使用 CPU 的权重<a class="headerlink" href="#cpu_3" title="Permanent link">&para;</a></h4>
 <p>当 CPU 资源充足时，设置 CPU 的权重是没有意义的。只有在容器争用 CPU 资源的情况下， CPU 的权重才能让不同的容器分到不同的 CPU 用量。--cpu-shares 选项用来设置 CPU 权重，它的默认值为 1024。我们可以把它设置为 2 表示很低的权重，但是设置为 0 表示使用默认值 1024。</p>
 <p>分别运行两个容器，指定它们都使用 Cpu0，并分别设置 --cpu-shares 为 512 和 1024：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>docker run -it --rm --cpuset-cpus=&quot;0&quot; --cpu-shares=512 mystress:latest /bin/bash
-docker run -it --rm --cpuset-cpus=&quot;0&quot; --cpu-shares=1024 mystress:latest /bin/bash
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>docker run -it --rm --cpuset-cpus=&quot;0&quot; --cpu-shares=512 mystress:latest /bin/bash
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>docker run -it --rm --cpuset-cpus=&quot;0&quot; --cpu-shares=1024 mystress:latest /bin/bash
+</span></code></pre></div>
 <p>此时主机 Cpu0 的负载为 100%：</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code>top - 18:07:51 up 20 min,  3 users,  load average: 7.01, 4.08, 2.04
-Tasks: 189 total,   9 running, 180 sleeping,   0 stopped,   0 zombie
-%Cpu0  :100.0 us,  0.0 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-%Cpu1  :  0.0 us,  0.0 sy,  0.0 ni, 98.4 id,  0.0 wa,  0.0 hi,  1.6 si,  0.0 st
-%Cpu2  :  0.3 us,  0.0 sy,  0.0 ni, 99.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-%Cpu3  :  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem :   7957.8 total,   6247.2 free,    341.5 used,   1369.1 buff/cache
-MiB Swap:      0.0 total,      0.0 free,      0.0 used.   7363.8 avail Mem
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-   6450 root      20   0    3864    100      0 R  15.9   0.0   0:05.70 stress
-   6451 root      20   0    3864    100      0 R  15.9   0.0   0:05.70 stress
-   6452 root      20   0    3864    100      0 R  15.9   0.0   0:05.70 stress
-   6453 root      20   0    3864    100      0 R  15.9   0.0   0:05.70 stress
-   6302 root      20   0    3864    104      0 R   9.3   0.0   0:20.40 stress
-   6304 root      20   0    3864    104      0 R   9.3   0.0   0:20.40 stress
-   6301 root      20   0    3864    104      0 R   9.0   0.0   0:20.39 stress
-   6303 root      20   0    3864    104      0 R   9.0   0.0   0:20.39 stress
-</code></pre></div></td></tr></table></div>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>top - 18:07:51 up 20 min,  3 users,  load average: 7.01, 4.08, 2.04
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>Tasks: 189 total,   9 running, 180 sleeping,   0 stopped,   0 zombie
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>%Cpu0  :100.0 us,  0.0 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>%Cpu1  :  0.0 us,  0.0 sy,  0.0 ni, 98.4 id,  0.0 wa,  0.0 hi,  1.6 si,  0.0 st
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>%Cpu2  :  0.3 us,  0.0 sy,  0.0 ni, 99.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>%Cpu3  :  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>MiB Mem :   7957.8 total,   6247.2 free,    341.5 used,   1369.1 buff/cache
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>MiB Swap:      0.0 total,      0.0 free,      0.0 used.   7363.8 avail Mem
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>   6450 root      20   0    3864    100      0 R  15.9   0.0   0:05.70 stress
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>   6451 root      20   0    3864    100      0 R  15.9   0.0   0:05.70 stress
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>   6452 root      20   0    3864    100      0 R  15.9   0.0   0:05.70 stress
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>   6453 root      20   0    3864    100      0 R  15.9   0.0   0:05.70 stress
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>   6302 root      20   0    3864    104      0 R   9.3   0.0   0:20.40 stress
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>   6304 root      20   0    3864    104      0 R   9.3   0.0   0:20.40 stress
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>   6301 root      20   0    3864    104      0 R   9.0   0.0   0:20.39 stress
+</span><span id="__span-22-18"><a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a>   6303 root      20   0    3864    104      0 R   9.0   0.0   0:20.39 stress
+</span></code></pre></div>
 容器中 CPU 的负载为：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O       BLOCK I/O   PIDS
-31d1800d6a7d   brave_shannon    36.16%    1.699MiB / 7.771GiB   0.02%     1.02kB / 0B   0B / 0B     6
-c325fadb8d2c   nervous_edison   62.92%    1.816MiB / 7.771GiB   0.02%     586B / 0B     0B / 0B     6
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O       BLOCK I/O   PIDS
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>31d1800d6a7d   brave_shannon    36.16%    1.699MiB / 7.771GiB   0.02%     1.02kB / 0B   0B / 0B     6
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>c325fadb8d2c   nervous_edison   62.92%    1.816MiB / 7.771GiB   0.02%     586B / 0B     0B / 0B     6
+</span></code></pre></div>
 <p>两个容器分享一个 CPU，所以总量应该是 100%。具体每个容器分得的负载则取决于 --cpu-shares 选项的设置！我们的设置分别是 512 和 1024，则它们分得的比例为 1:2。在本例中如果想让两个容器各占 50%，只要把 --cpu-shares 选项设为相同的值就可以了。</p>
 <p>需要注意： <strong>cgroup 只能限制 CPU 的使用，而不能保证CPU的使用</strong>。也就是说， 使用 cpuset-cpus，可以让容器在指定的CPU或者核上运行，但是不能确保它独占这些CPU；<strong>cpu-shares 是个相对值，只有在CPU不够用的时候才其作用</strong>。也就是说，当CPU够用的时候，每个容器会分到足够的CPU；不够用的时候，会按照指定的比重在多个容器之间分配CPU</p>
-<h3 id="_4">限制容器可用的内存</h3>
-<h4 id="_5">为什么要限制容器对内存的使用？</h4>
+<h3 id="_4">限制容器可用的内存<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h4 id="_5">为什么要限制容器对内存的使用？<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <p>限制容器不能过多的使用主机的内存是非常重要的。对于 linux 主机来说，一旦内核检测到没有足够的内存可以分配，就会扔出 OOME(Out Of Memmory Exception)，并开始杀死一些进程用于释放内存空间。糟糕的是任何进程都可能成为内核猎杀的对象，包括 docker daemon 和其它一些重要的程序。更危险的是如果某个支持系统运行的重要进程被干掉了，整个系统也就宕掉了！这里我们考虑一个比较常见的场景，大量的容器把主机的内存消耗殆尽，OOME 被触发后系统内核立即开始杀进程释放内存。如果内核杀死的第一个进程就是 docker daemon 会怎么样？结果是没有办法管理运行中的容器了，这是不能接受的！
 针对这个问题，docker 尝试通过调整 docker daemon 的 OOM 优先级来进行缓解。内核在选择要杀死的进程时会对所有的进程打分，直接杀死得分最高的进程，接着是下一个。当 docker daemon 的 OOM 优先级被降低后(注意容器进程的 OOM 优先级并没有被调整)，docker daemon 进程的得分不仅会低于容器进程的得分，还会低于其它一些进程的得分。这样 docker daemon 进程就安全多了。
 我们可以通过下面的脚本直观的看一下当前系统中所有进程的得分情况：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="k">for</span><span class="w"> </span>proc<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>/proc<span class="w"> </span>-maxdepth<span class="w"> </span><span class="m">1</span><span class="w"> </span>-regex<span class="w"> </span><span class="s1">&#39;/proc/[0-9]+&#39;</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">    </span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;%2d %5d %s\n&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span><span class="nv">$proc</span>/oom_score<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span><span class="s2">&quot;</span><span class="k">$(</span>basename<span class="w"> </span><span class="nv">$proc</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span><span class="nv">$proc</span>/cmdline<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">&#39;\0&#39;</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-c<span class="w"> </span><span class="m">50</span><span class="k">)</span><span class="s2">&quot;</span>
-<span class="k">done</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-nr<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">40</span>
-</code></pre></div></td></tr></table></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="ch">#!/bin/bash</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="k">for</span><span class="w"> </span>proc<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>/proc<span class="w"> </span>-maxdepth<span class="w"> </span><span class="m">1</span><span class="w"> </span>-regex<span class="w"> </span><span class="s1">&#39;/proc/[0-9]+&#39;</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">    </span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;%2d %5d %s\n&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">        </span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span><span class="nv">$proc</span>/oom_score<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">        </span><span class="s2">&quot;</span><span class="k">$(</span>basename<span class="w"> </span><span class="nv">$proc</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">        </span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span><span class="nv">$proc</span>/cmdline<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">&#39;\0&#39;</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-c<span class="w"> </span><span class="m">50</span><span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="k">done</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-nr<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">40</span>
+</span></code></pre></div>
 <p>有了上面的机制后是否就可以高枕无忧了呢！不是的，docker 的官方文档中一直强调这只是一种缓解的方案，并且为我们提供了一些降低风险的建议：</p>
 <ul>
 <li>通过测试掌握应用对内存的需求</li>
@@ -2409,138 +2466,82 @@ c325fadb8d2c   nervous_edison   62.92%    1.816MiB / 7.771GiB   0.02%     586B /
 <li>限制容器可以使用的内存</li>
 <li>为主机配置 swap</li>
 </ul>
-<h4 id="_6">限制内存使用上限</h4>
+<h4 id="_6">限制内存使用上限<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <p>-m(--memory=) 选项可以完成限制内存使用上限的配置：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>docker run -it -m 300M --memory-swap -1 --name test1 mystress /bin/bash
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>docker run -it -m 300M --memory-swap -1 --name test1 mystress /bin/bash
+</span></code></pre></div>
 <p>stress 命令会创建一个进程并通过 malloc 函数分配内存：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>stress --vm 1 --vm-bytes 500M
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>stress --vm 1 --vm-bytes 500M
+</span></code></pre></div>
 <p>通过 docker stats 命令查看实际情况：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O       BLOCK I/O   PIDS
-5a2eff8a21d0   test1     0.00%     1.758MiB / 300MiB   0.59%     1.02kB / 0B   0B / 0B     1
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O       BLOCK I/O   PIDS
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>5a2eff8a21d0   test1     0.00%     1.758MiB / 300MiB   0.59%     1.02kB / 0B   0B / 0B     1
+</span></code></pre></div>
 <p>上面的 docker run 命令中通过 -m 选项限制容器使用的内存上限为 300M。同时设置 memory-swap 值为 -1，它表示容器程序使用内存的受限，而可以使用的 swap 空间使用不受限制(宿主机有多少 swap 容器就可以使用多少)。
 下面我们通过 top 命令来查看 stress 进程内存的实际情况:</p>
 <p>上面的截图中先通过 pgrep 命令查询 stress 命令相关的进程，进程号比较大的那个是用来消耗内存的进程，我们就查看它的内存信息。VIRT 是进程虚拟内存的大小，所以它应该是 500M。RES 为实际分配的物理内存数量，我们看到这个值就在 300M 上下浮动。看样子我们已经成功的限制了容器能够使用的物理内存数量。</p>
-<h4 id="swap">限制可用的 swap 大小</h4>
+<h4 id="swap">限制可用的 swap 大小<a class="headerlink" href="#swap" title="Permanent link">&para;</a></h4>
 <p>强调一下 --memory-swap 是必须要与 --memory 一起使用的。正常情况下， --memory-swap 的值包含容器可用内存和可用 swap。所以 --memory="300m" --memory-swap="1g" 的含义为：</p>
 <p>容器可以使用 300M 的物理内存，并且可以使用 700M(1G -300M) 的 swap。--memory-swap 居然是容器可以使用的物理内存和可以使用的 swap 之和！把 --memory-swap 设置为 0 和不设置是一样的，此时如果设置了 --memory，容器可以使用的 swap 大小为 --memory 值的两倍。</p>
-<h3 id="gocgroup">go语言实现通过cgroup限制容器的资源</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="s">&quot;os/exec&quot;</span>
-<span class="w">    </span><span class="s">&quot;path&quot;</span>
-<span class="w">    </span><span class="s">&quot;os&quot;</span>
-<span class="w">    </span><span class="s">&quot;fmt&quot;</span>
-<span class="w">    </span><span class="s">&quot;io/ioutil&quot;</span>
-<span class="w">    </span><span class="s">&quot;syscall&quot;</span>
-<span class="w">    </span><span class="s">&quot;strconv&quot;</span>
-<span class="p">)</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">cgroupMemoryHierarchyMount</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;/sys/fs/cgroup/memory&quot;</span>
-
-<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;/proc/self/exe&quot;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">//容器进程</span>
-<span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;current pid %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">syscall</span><span class="p">.</span><span class="nx">Getpid</span><span class="p">())</span>
-<span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">()</span>
-<span class="w">        </span><span class="nx">cmd</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">exec</span><span class="p">.</span><span class="nx">Command</span><span class="p">(</span><span class="s">&quot;sh&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-c&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">`stress --vm-bytes 200m --vm-keep -m 1`</span><span class="p">)</span>
-<span class="w">        </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">SysProcAttr</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">syscall</span><span class="p">.</span><span class="nx">SysProcAttr</span><span class="p">{</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Stdin</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Stdin</span>
-<span class="w">        </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Stdout</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Stdout</span>
-<span class="w">        </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Stderr</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Stderr</span>
-
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Run</span><span class="p">();</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-<span class="w">            </span><span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="nx">cmd</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">exec</span><span class="p">.</span><span class="nx">Command</span><span class="p">(</span><span class="s">&quot;/proc/self/exe&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">SysProcAttr</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">syscall</span><span class="p">.</span><span class="nx">SysProcAttr</span><span class="p">{</span>
-<span class="w">        </span><span class="nx">Cloneflags</span><span class="p">:</span><span class="w"> </span><span class="nx">syscall</span><span class="p">.</span><span class="nx">CLONE_NEWUTS</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">syscall</span><span class="p">.</span><span class="nx">CLONE_NEWPID</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">syscall</span><span class="p">.</span><span class="nx">CLONE_NEWNS</span><span class="p">,</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Stdin</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Stdin</span>
-<span class="w">    </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Stdout</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Stdout</span>
-<span class="w">    </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Stderr</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Stderr</span>
-
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Start</span><span class="p">();</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;ERROR&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
-<span class="w">        </span><span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">//得到fork出来进程映射在外部命名空间的pid</span>
-<span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%v&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Process</span><span class="p">.</span><span class="nx">Pid</span><span class="p">)</span>
-
-<span class="w">        </span><span class="c1">// 在系统默认创建挂载了memory subsystem的Hierarchy上创建cgroup</span>
-<span class="w">        </span><span class="nx">os</span><span class="p">.</span><span class="nx">Mkdir</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">Join</span><span class="p">(</span><span class="nx">cgroupMemoryHierarchyMount</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;testmemorylimit&quot;</span><span class="p">),</span><span class="w"> </span><span class="mo">0755</span><span class="p">)</span>
-<span class="w">        </span><span class="c1">// 将容器进程加入到这个cgroup中</span>
-<span class="w">        </span><span class="nx">ioutil</span><span class="p">.</span><span class="nx">WriteFile</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">Join</span><span class="p">(</span><span class="nx">cgroupMemoryHierarchyMount</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;testmemorylimit&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tasks&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">strconv</span><span class="p">.</span><span class="nx">Itoa</span><span class="p">(</span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Process</span><span class="p">.</span><span class="nx">Pid</span><span class="p">)),</span><span class="w"> </span><span class="mo">0644</span><span class="p">)</span>
-<span class="w">        </span><span class="c1">// 限制cgroup进程使用</span>
-<span class="w">        </span><span class="nx">ioutil</span><span class="p">.</span><span class="nx">WriteFile</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">Join</span><span class="p">(</span><span class="nx">cgroupMemoryHierarchyMount</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;testmemorylimit&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;memory.limit_in_bytes&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;100m&quot;</span><span class="p">),</span><span class="w"> </span><span class="mo">0644</span><span class="p">)</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Process</span><span class="p">.</span><span class="nx">Wait</span><span class="p">()</span>
-<span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<h2 id="_7">资料</h2>
+<h3 id="gocgroup">go语言实现通过cgroup限制容器的资源<a class="headerlink" href="#gocgroup" title="Permanent link">&para;</a></h3>
+<div class="language-go highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="w">    </span><span class="s">&quot;os/exec&quot;</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="w">    </span><span class="s">&quot;path&quot;</span>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="w">    </span><span class="s">&quot;os&quot;</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="w">    </span><span class="s">&quot;io/ioutil&quot;</span>
+</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="w">    </span><span class="s">&quot;syscall&quot;</span>
+</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="w">    </span><span class="s">&quot;strconv&quot;</span>
+</span><span id="__span-28-11"><a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="p">)</span>
+</span><span id="__span-28-12"><a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a>
+</span><span id="__span-28-13"><a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a><span class="kd">const</span><span class="w"> </span><span class="nx">cgroupMemoryHierarchyMount</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;/sys/fs/cgroup/memory&quot;</span>
+</span><span id="__span-28-14"><a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a>
+</span><span id="__span-28-15"><a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-28-16"><a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;/proc/self/exe&quot;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-28-17"><a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a><span class="w">        </span><span class="c1">//容器进程</span>
+</span><span id="__span-28-18"><a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;current pid %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">syscall</span><span class="p">.</span><span class="nx">Getpid</span><span class="p">())</span>
+</span><span id="__span-28-19"><a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">()</span>
+</span><span id="__span-28-20"><a id="__codelineno-28-20" name="__codelineno-28-20" href="#__codelineno-28-20"></a><span class="w">        </span><span class="nx">cmd</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">exec</span><span class="p">.</span><span class="nx">Command</span><span class="p">(</span><span class="s">&quot;sh&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-c&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">`stress --vm-bytes 200m --vm-keep -m 1`</span><span class="p">)</span>
+</span><span id="__span-28-21"><a id="__codelineno-28-21" name="__codelineno-28-21" href="#__codelineno-28-21"></a><span class="w">        </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">SysProcAttr</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">syscall</span><span class="p">.</span><span class="nx">SysProcAttr</span><span class="p">{</span>
+</span><span id="__span-28-22"><a id="__codelineno-28-22" name="__codelineno-28-22" href="#__codelineno-28-22"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-28-23"><a id="__codelineno-28-23" name="__codelineno-28-23" href="#__codelineno-28-23"></a><span class="w">        </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Stdin</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Stdin</span>
+</span><span id="__span-28-24"><a id="__codelineno-28-24" name="__codelineno-28-24" href="#__codelineno-28-24"></a><span class="w">        </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Stdout</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Stdout</span>
+</span><span id="__span-28-25"><a id="__codelineno-28-25" name="__codelineno-28-25" href="#__codelineno-28-25"></a><span class="w">        </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Stderr</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Stderr</span>
+</span><span id="__span-28-26"><a id="__codelineno-28-26" name="__codelineno-28-26" href="#__codelineno-28-26"></a>
+</span><span id="__span-28-27"><a id="__codelineno-28-27" name="__codelineno-28-27" href="#__codelineno-28-27"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Run</span><span class="p">();</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-28-28"><a id="__codelineno-28-28" name="__codelineno-28-28" href="#__codelineno-28-28"></a><span class="w">            </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span><span id="__span-28-29"><a id="__codelineno-28-29" name="__codelineno-28-29" href="#__codelineno-28-29"></a><span class="w">            </span><span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-28-30"><a id="__codelineno-28-30" name="__codelineno-28-30" href="#__codelineno-28-30"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-28-31"><a id="__codelineno-28-31" name="__codelineno-28-31" href="#__codelineno-28-31"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-28-32"><a id="__codelineno-28-32" name="__codelineno-28-32" href="#__codelineno-28-32"></a>
+</span><span id="__span-28-33"><a id="__codelineno-28-33" name="__codelineno-28-33" href="#__codelineno-28-33"></a><span class="w">    </span><span class="nx">cmd</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">exec</span><span class="p">.</span><span class="nx">Command</span><span class="p">(</span><span class="s">&quot;/proc/self/exe&quot;</span><span class="p">)</span>
+</span><span id="__span-28-34"><a id="__codelineno-28-34" name="__codelineno-28-34" href="#__codelineno-28-34"></a><span class="w">    </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">SysProcAttr</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">syscall</span><span class="p">.</span><span class="nx">SysProcAttr</span><span class="p">{</span>
+</span><span id="__span-28-35"><a id="__codelineno-28-35" name="__codelineno-28-35" href="#__codelineno-28-35"></a><span class="w">        </span><span class="nx">Cloneflags</span><span class="p">:</span><span class="w"> </span><span class="nx">syscall</span><span class="p">.</span><span class="nx">CLONE_NEWUTS</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">syscall</span><span class="p">.</span><span class="nx">CLONE_NEWPID</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">syscall</span><span class="p">.</span><span class="nx">CLONE_NEWNS</span><span class="p">,</span>
+</span><span id="__span-28-36"><a id="__codelineno-28-36" name="__codelineno-28-36" href="#__codelineno-28-36"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-28-37"><a id="__codelineno-28-37" name="__codelineno-28-37" href="#__codelineno-28-37"></a><span class="w">    </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Stdin</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Stdin</span>
+</span><span id="__span-28-38"><a id="__codelineno-28-38" name="__codelineno-28-38" href="#__codelineno-28-38"></a><span class="w">    </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Stdout</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Stdout</span>
+</span><span id="__span-28-39"><a id="__codelineno-28-39" name="__codelineno-28-39" href="#__codelineno-28-39"></a><span class="w">    </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Stderr</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Stderr</span>
+</span><span id="__span-28-40"><a id="__codelineno-28-40" name="__codelineno-28-40" href="#__codelineno-28-40"></a>
+</span><span id="__span-28-41"><a id="__codelineno-28-41" name="__codelineno-28-41" href="#__codelineno-28-41"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Start</span><span class="p">();</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-28-42"><a id="__codelineno-28-42" name="__codelineno-28-42" href="#__codelineno-28-42"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;ERROR&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+</span><span id="__span-28-43"><a id="__codelineno-28-43" name="__codelineno-28-43" href="#__codelineno-28-43"></a><span class="w">        </span><span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-28-44"><a id="__codelineno-28-44" name="__codelineno-28-44" href="#__codelineno-28-44"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-28-45"><a id="__codelineno-28-45" name="__codelineno-28-45" href="#__codelineno-28-45"></a><span class="w">        </span><span class="c1">//得到fork出来进程映射在外部命名空间的pid</span>
+</span><span id="__span-28-46"><a id="__codelineno-28-46" name="__codelineno-28-46" href="#__codelineno-28-46"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%v&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Process</span><span class="p">.</span><span class="nx">Pid</span><span class="p">)</span>
+</span><span id="__span-28-47"><a id="__codelineno-28-47" name="__codelineno-28-47" href="#__codelineno-28-47"></a>
+</span><span id="__span-28-48"><a id="__codelineno-28-48" name="__codelineno-28-48" href="#__codelineno-28-48"></a><span class="w">        </span><span class="c1">// 在系统默认创建挂载了memory subsystem的Hierarchy上创建cgroup</span>
+</span><span id="__span-28-49"><a id="__codelineno-28-49" name="__codelineno-28-49" href="#__codelineno-28-49"></a><span class="w">        </span><span class="nx">os</span><span class="p">.</span><span class="nx">Mkdir</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">Join</span><span class="p">(</span><span class="nx">cgroupMemoryHierarchyMount</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;testmemorylimit&quot;</span><span class="p">),</span><span class="w"> </span><span class="mo">0755</span><span class="p">)</span>
+</span><span id="__span-28-50"><a id="__codelineno-28-50" name="__codelineno-28-50" href="#__codelineno-28-50"></a><span class="w">        </span><span class="c1">// 将容器进程加入到这个cgroup中</span>
+</span><span id="__span-28-51"><a id="__codelineno-28-51" name="__codelineno-28-51" href="#__codelineno-28-51"></a><span class="w">        </span><span class="nx">ioutil</span><span class="p">.</span><span class="nx">WriteFile</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">Join</span><span class="p">(</span><span class="nx">cgroupMemoryHierarchyMount</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;testmemorylimit&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tasks&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">strconv</span><span class="p">.</span><span class="nx">Itoa</span><span class="p">(</span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Process</span><span class="p">.</span><span class="nx">Pid</span><span class="p">)),</span><span class="w"> </span><span class="mo">0644</span><span class="p">)</span>
+</span><span id="__span-28-52"><a id="__codelineno-28-52" name="__codelineno-28-52" href="#__codelineno-28-52"></a><span class="w">        </span><span class="c1">// 限制cgroup进程使用</span>
+</span><span id="__span-28-53"><a id="__codelineno-28-53" name="__codelineno-28-53" href="#__codelineno-28-53"></a><span class="w">        </span><span class="nx">ioutil</span><span class="p">.</span><span class="nx">WriteFile</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">Join</span><span class="p">(</span><span class="nx">cgroupMemoryHierarchyMount</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;testmemorylimit&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;memory.limit_in_bytes&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;100m&quot;</span><span class="p">),</span><span class="w"> </span><span class="mo">0644</span><span class="p">)</span>
+</span><span id="__span-28-54"><a id="__codelineno-28-54" name="__codelineno-28-54" href="#__codelineno-28-54"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-28-55"><a id="__codelineno-28-55" name="__codelineno-28-55" href="#__codelineno-28-55"></a><span class="w">    </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Process</span><span class="p">.</span><span class="nx">Wait</span><span class="p">()</span>
+</span><span id="__span-28-56"><a id="__codelineno-28-56" name="__codelineno-28-56" href="#__codelineno-28-56"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="_7">资料<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.cnblogs.com/sparkdev/p/8052522.html">Docker: 限制容器可用的 CPU</a></li>
 <li><a href="https://www.cnblogs.com/sparkdev/p/8032330.html">Docker: 限制容器可用的内存</a></li>
@@ -2549,6 +2550,8 @@ c325fadb8d2c   nervous_edison   62.92%    1.816MiB / 7.771GiB   0.02%     586B /
 <li><a href="https://blog.csdn.net/weixin_34149796/article/details/90587655">《自己动手写Docker》书摘之二： Linux Cgroups</a></li>
 </ul>
 
+
+  
 
 
 
@@ -2560,18 +2563,129 @@ c325fadb8d2c   nervous_edison   62.92%    1.816MiB / 7.771GiB   0.02%     586B /
           
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
       </main>
       
         <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../image/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 镜像">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                镜像
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../namespace/" class="md-footer__link md-footer__link--next" aria-label="下一页: namespace">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                namespace
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 - 2024 Tink
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
       Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/squidfunk" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://hub.docker.com/r/squidfunk/mkdocs-material/" target="_blank" rel="noopener" title="hub.docker.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://pypi.org/project/mkdocs-material/" target="_blank" rel="noopener" title="pypi.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"/></svg>
+    </a>
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/squidfunk" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
     </a>
   
 </div>
@@ -2586,7 +2700,7 @@ c325fadb8d2c   nervous_edison   62.92%    1.816MiB / 7.771GiB   0.02%     586B /
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.94c44541.min.js"></script>

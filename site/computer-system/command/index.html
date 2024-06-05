@@ -21,7 +21,7 @@
         <link rel="next" href="../systemtap/">
       
       
-      <link rel="icon" href="../../favicon.ico">
+      <link rel="icon" href="../../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.4">
     
     
@@ -47,14 +47,24 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Fira Sans";--md-code-font:"Fira Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Code";--md-code-font:"Fira Code"}</style>
       
     
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config",""),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -69,7 +79,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     
@@ -98,7 +108,12 @@
     <a href="../.." title="开发知识wiki" class="md-header__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -128,20 +143,30 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_3" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
     
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_3">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
       </label>
     
   
@@ -167,11 +192,18 @@
       </label>
       <nav class="md-search__options" aria-label="查找">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -231,6 +263,8 @@
         <a href="../io/" class="md-tabs__link">
           
   
+    
+  
   操作系统
 
         </a>
@@ -248,6 +282,8 @@
       <li class="md-tabs__item">
         <a href="../../computer-network/tcp/" class="md-tabs__link">
           
+  
+    
   
   计算机网络
 
@@ -272,6 +308,8 @@
       <li class="md-tabs__item">
         <a href="../../database/mysql/%E7%AE%80%E4%BB%8B/" class="md-tabs__link">
           
+  
+    
   
   数据库
 
@@ -311,7 +349,29 @@
         <a href="../../container/install/" class="md-tabs__link">
           
   
+    
+  
   容器
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../language/Go/" class="md-tabs__link">
+          
+  
+    
+  
+  语言
 
         </a>
       </li>
@@ -328,6 +388,8 @@
       <li class="md-tabs__item">
         <a href="../../qa/redis/" class="md-tabs__link">
           
+  
+    
   
   QA
 
@@ -362,7 +424,12 @@
     <a href="../.." title="开发知识wiki" class="md-nav__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
 
     </a>
     开发知识wiki
@@ -397,6 +464,22 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1323,6 +1406,16 @@
   
     
     
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
     
     
     
@@ -1337,16 +1430,24 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../computer-network/tcp/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     计算机网络
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
@@ -1355,24 +1456,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../computer-network/tcp/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    TCP
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -1408,6 +1491,14 @@
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1448,10 +1539,23 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1459,7 +1563,7 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1572,10 +1676,27 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1583,16 +1704,24 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../database/elasticsearch/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Elasticsearch
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
@@ -1601,24 +1730,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../database/elasticsearch/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    概览
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -1762,6 +1873,16 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
     
@@ -1888,6 +2009,10 @@
   
     
     
+      
+        
+      
+    
     
     
     
@@ -1906,7 +2031,7 @@
             
   
   <span class="md-ellipsis">
-    QA
+    语言
   </span>
   
 
@@ -1915,6 +2040,102 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            语言
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/Go/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Go
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    QA
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             QA
           </label>
@@ -2947,83 +3168,63 @@
                   
 
 
-<h1 id="linux">Linux常用命令大全</h1>
-<h2 id="1">1. 文件与目录操作</h2>
-<h3 id="touch-">touch - 创建文件</h3>
+<h1 id="linux">Linux常用命令大全<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h1>
+<h2 id="1">1. 文件与目录操作<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="touch-">touch - 创建文件<a class="headerlink" href="#touch-" title="Permanent link">&para;</a></h3>
 <p>若文件不存在则创建文件，若存在则修改文件的时间(存取时间和更改时间)</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>touch<span class="w"> </span>a.txt<span class="w"> </span><span class="c1"># 创建a.txt</span>
-touch<span class="w"> </span>-r<span class="w"> </span>a.txt<span class="w"> </span>b.txt<span class="w"> </span>//<span class="w"> </span>设置a.txt,b.txt时间一致
-</code></pre></div></td></tr></table></div>
-<h3 id="mv-">mv - 移动/重命名文件和目录</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>mv a.txt b.txt // 重命名a.txt为b.txt
-mv a.txt dir1/  // 将a.txt 移动到dir1目录下
-</code></pre></div></td></tr></table></div>
-<h3 id="mkdir-">mkdir - 创建目录</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdir dir1 // 创建目录dir1
-mkdir dir1 dir2 dir3 // 创建目录dir1,dir2,dir3
-mkdir -p a/b/ //若父目录不存在则先创建父目录
-</code></pre></div></td></tr></table></div>
-<h3 id="cp-">cp - 复制文件和目录</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>cp a.txt b.txt // 复制a.txt到b.txt，如果b.txt不存在，则创建，存在则覆盖
-cp -i a.txt b.txt // 如果b.txt存在，覆盖b.txt之前，会询问用户
-cp a.txt b.txt dir1/ // 复制a.txt, b.txt 到dir1目录
-cp *.txt dir1/ // 复制txt文件到dir1目录
-cp -r dir1/*.txt dir2/ // 递归地复制dir1目录下的txt文件到dir2目录下
-cp -u a.txt b.txt // 当b.txt不存在，或者a.txt新于b.txt时候才会复制
-</code></pre></div></td></tr></table></div>
-<h3 id="rm-">rm - 删除文件和目录</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>rm file1 // 删除file1
-rm -i file1 // 删除文件file1，询问用户确认
-rm -r dir1/ // 递归删除dir1以及目录下所有文件
-rm -rf dir1/ dir2/ // 递归删除dir1,dir2目录，即使目录dir2不存在也不会终止
-</code></pre></div></td></tr></table></div>
-<h3 id="ln-">ln - 创建链接</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ln -sf source_link target_link // 创建软连接target_link
-</code></pre></div></td></tr></table></div>
-<h3 id="stat-">stat - 显示文件的详细信息</h3>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>touch<span class="w"> </span>a.txt<span class="w"> </span><span class="c1"># 创建a.txt</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>touch<span class="w"> </span>-r<span class="w"> </span>a.txt<span class="w"> </span>b.txt<span class="w"> </span>//<span class="w"> </span>设置a.txt,b.txt时间一致
+</span></code></pre></div>
+<h3 id="mv-">mv - 移动/重命名文件和目录<a class="headerlink" href="#mv-" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mv a.txt b.txt // 重命名a.txt为b.txt
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>mv a.txt dir1/  // 将a.txt 移动到dir1目录下
+</span></code></pre></div>
+<h3 id="mkdir-">mkdir - 创建目录<a class="headerlink" href="#mkdir-" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdir dir1 // 创建目录dir1
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>mkdir dir1 dir2 dir3 // 创建目录dir1,dir2,dir3
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>mkdir -p a/b/ //若父目录不存在则先创建父目录
+</span></code></pre></div>
+<h3 id="cp-">cp - 复制文件和目录<a class="headerlink" href="#cp-" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cp a.txt b.txt // 复制a.txt到b.txt，如果b.txt不存在，则创建，存在则覆盖
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>cp -i a.txt b.txt // 如果b.txt存在，覆盖b.txt之前，会询问用户
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>cp a.txt b.txt dir1/ // 复制a.txt, b.txt 到dir1目录
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>cp *.txt dir1/ // 复制txt文件到dir1目录
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>cp -r dir1/*.txt dir2/ // 递归地复制dir1目录下的txt文件到dir2目录下
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>cp -u a.txt b.txt // 当b.txt不存在，或者a.txt新于b.txt时候才会复制
+</span></code></pre></div>
+<h3 id="rm-">rm - 删除文件和目录<a class="headerlink" href="#rm-" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>rm file1 // 删除file1
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>rm -i file1 // 删除文件file1，询问用户确认
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>rm -r dir1/ // 递归删除dir1以及目录下所有文件
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>rm -rf dir1/ dir2/ // 递归删除dir1,dir2目录，即使目录dir2不存在也不会终止
+</span></code></pre></div>
+<h3 id="ln-">ln - 创建链接<a class="headerlink" href="#ln-" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ln -sf source_link target_link // 创建软连接target_link
+</span></code></pre></div>
+<h3 id="stat-">stat - 显示文件的详细信息<a class="headerlink" href="#stat-" title="Permanent link">&para;</a></h3>
 <p>stat查看文件时候，会显示三种类型时间：分别是Access time，Modify time，Change time。</p>
 <ol>
 <li>access time：表示我们最后一次访问（仅仅是访问，没有改动）文件的时间。比如more,less,cat,tail等命令都会更改atime</li>
 <li>modify time：表示我们最后一次修改文件的时间。touch会更改这三种类型时间</li>
 <li>change time：表示我们最后一次对文件属性改变的时间，包括权限，大小，属性等等。chmod,chown会更改此时间。</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>stat a.txt // 显示文件的mtime,atime,ctime
-ls -l a.txt // 列出文件的mtime
-ls -lc a.txt // 列出文件的ctime
-ls -lu a.txt // 列出文件的atime
-</code></pre></div></td></tr></table></div>
-<h2 id="2-io">2. I/O重定向</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>stat a.txt // 显示文件的mtime,atime,ctime
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>ls -l a.txt // 列出文件的mtime
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>ls -lc a.txt // 列出文件的ctime
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>ls -lu a.txt // 列出文件的atime
+</span></code></pre></div>
+<h2 id="2-io">2. I/O重定向<a class="headerlink" href="#2-io" title="Permanent link">&para;</a></h2>
 <p>标准输入，输出和错误，在shell内部它们为文件描述符0，1和2
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>ls -l dir1/ &gt;&gt; ls-output.txt // 重定向ls命令输出的内容到ls-output.txt文件,&gt;等同于1&gt;
-ls -l /usr/bintmp 2&gt;ls-error.txt // 重定向标准错误输出到ls-error.txt
-ls -l /bin/usr &gt; ls-output.txt 2&gt;&amp;1 // 重定向标准输出和错误到同一个文件
-ls -l /usr /usr/bintmp 2&gt;ls-error.txt 1&gt;ls-output.txt // 错误重定向到ls-error.txt 输出重定向到ls-output.txt
-ls /usr/bin | tee -a ls.txt | grep zip //tee 从stdin读取数据，并同时输出到stdout和文件。tee命令相当于管道的一个T型接头, -a表示追加
-nginx -c nginx.conf &gt; /dev/null 2&gt;&amp;1// 屏蔽标准和错误输出
-</code></pre></div></td></tr></table></div></p>
-<h2 id="3">3. 包管理</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ls -l dir1/ &gt;&gt; ls-output.txt // 重定向ls命令输出的内容到ls-output.txt文件,&gt;等同于1&gt;
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>ls -l /usr/bintmp 2&gt;ls-error.txt // 重定向标准错误输出到ls-error.txt
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>ls -l /bin/usr &gt; ls-output.txt 2&gt;&amp;1 // 重定向标准输出和错误到同一个文件
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>ls -l /usr /usr/bintmp 2&gt;ls-error.txt 1&gt;ls-output.txt // 错误重定向到ls-error.txt 输出重定向到ls-output.txt
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>ls /usr/bin | tee -a ls.txt | grep zip //tee 从stdin读取数据，并同时输出到stdout和文件。tee命令相当于管道的一个T型接头, -a表示追加
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>nginx -c nginx.conf &gt; /dev/null 2&gt;&amp;1// 屏蔽标准和错误输出
+</span></code></pre></div></p>
+<h2 id="3">3. 包管理<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>不同的 Linux 发行版使用不同的打包系统。一般而言，大多数发行版分别属于两大包管理技术阵营： Debian 的”.deb”，和红帽的”.rpm”。也有一些重要的例外，比方说 Gentoo， Slackware，和 Foresight，但大多数会使用这两个基本系统中的一个。</p>
-<p>软件包管理系统通常由两种工具类型组成：<strong>底层工具用来处理这些任务，比方说安装和删除软件包文件</strong>， 和<strong>上层工具完成元数据搜索和依赖解析</strong>。</p>
+<p>软件包管理系统通常由两种工具类型组成：<strong>底层工具用来处理这些任务，比方说安装和删除软件包文件</strong>， 和**上层工具完成元数据搜索和依赖解析**。</p>
 <p>表3.1主要的包管理系统家族</p>
 <table>
 <thead>
@@ -3084,23 +3285,18 @@ nginx -c nginx.conf &gt; /dev/null 2&gt;&amp;1// 屏蔽标准和错误输出
 </tr>
 </tbody>
 </table>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>// 检查是否安装过某软件包
-rpm -qa | grep &quot;软件或者包的名字&quot;
-dpkg -l | grep &quot;软件或者包的名字&quot;
-yum list installed | grep &quot;软件名或者包名&quot;
-</code></pre></div></td></tr></table></div>
-<h2 id="4">4. 权限与进程</h2>
-<h3 id="id">id – 显示用户身份号</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>id // 显示当前用户uid, gid, groups
-id -u // 显示当前用户uid
-id -g // 显示当前用户gid
-</code></pre></div></td></tr></table></div>
-<h3 id="chmod-">chmod - 改变文件模式</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>// 检查是否安装过某软件包
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>rpm -qa | grep &quot;软件或者包的名字&quot;
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>dpkg -l | grep &quot;软件或者包的名字&quot;
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>yum list installed | grep &quot;软件名或者包名&quot;
+</span></code></pre></div>
+<h2 id="4">4. 权限与进程<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h3 id="id">id – 显示用户身份号<a class="headerlink" href="#id" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>id // 显示当前用户uid, gid, groups
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>id -u // 显示当前用户uid
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>id -g // 显示当前用户gid
+</span></code></pre></div>
+<h3 id="chmod-">chmod - 改变文件模式<a class="headerlink" href="#chmod-" title="Permanent link">&para;</a></h3>
 <p>表4.1 chmod 命令符号表示法</p>
 <table>
 <thead>
@@ -3129,60 +3325,42 @@ id -g // 显示当前用户gid
 </tbody>
 </table>
 <p>如果没有指定字符，则假定使用”all”。执行的操作可能是一个“＋”字符，表示加上一个权限， 一个“－”，表示删掉一个权限，或者是一个“＝”，表示只有指定的权限可用，其它所有的权限被删除
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>chmod 755 a.txt // 将文件权限设置成755
-chmod a+x a.txt // 所用组都赋予x权限
-chmod u+x,go=rw a.txt //给文件拥有者执行权限并给组和其他人读和执行的权限。多种设定可以用逗号分开
-</code></pre></div></td></tr></table></div></p>
-<h3 id="umask-">umask - 设置默认权限</h3>
-<h3 id="su-">su - 切换用户</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>su // 切换成root用户，默认root用户
-su - // 切换成root用户，并切换环境
-su - tinker // 切换成tinker，并切换环境
-</code></pre></div></td></tr></table></div>
-<h3 id="sudo-">sudo - 使用其他身份执行命令</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo su - // 切换到root用户
-sudo nginx -s reload // 以root用户身份执行nginx配置重载
-sudo -u www-data top // 已指定用户身份(www-data)执行top命令
-</code></pre></div></td></tr></table></div>
-<h3 id="chown-">chown - 更改文件所有者和用户组</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>chown tinker a.txt // 将a.txt文件所有者改为tinker,文件用户组不变
-chown tinker:tony a.txt // 将a.txt文件所有者改为tinker,文件用户组改为tony
-chown :tony a.txt //将a.txt文件的用户组改为tony,所有者不变
-chown tinker: a.txt // 将a.txt文件所有者改成tinker，用户组改为tinker登录系统时候，所属的用户组
-chown -aG sudo tinker // 将用户加入sudo用户组
-</code></pre></div></td></tr></table></div>
-<h3 id="password-">password - 更改用户密码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>passwd // 修改当前登录用户密码
-passwd tinker // 修改tinker账户密码
-</code></pre></div></td></tr></table></div>
-<h3 id="ps-">ps - 报告当前进程快照</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>ps aux // 查看当前允许进程
-ps -ef | more // 查看当前运行的所有进程（包含进程的父进程信息)
-ps -A --sort=-rss -o comm,pmem,pcpu | uniq -c |head -15 // 按进程内存占用大小，从大到小来排序。RSS表示实际分配的内存大小
-ps -eo comm,pmem,pcpu --sort=-%cpu  | head -10 // 按进程消耗cpu资源大小，从小大到大排序。--sort=-%cpu表示使用从大到小。-e和-A是一样的。
-ps -c nginx --no-header | wc -l // 统计nginx进程数量。--no-header表示不答应头部
-ps -axjf // 打印进程树
-ps -p 1924 -o lstart // 查看进程ID等于1924的进程创建时间
-ps -eLf | grep java | wc -l // 查看java线程数
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>chmod 755 a.txt // 将文件权限设置成755
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>chmod a+x a.txt // 所用组都赋予x权限
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>chmod u+x,go=rw a.txt //给文件拥有者执行权限并给组和其他人读和执行的权限。多种设定可以用逗号分开
+</span></code></pre></div></p>
+<h3 id="umask-">umask - 设置默认权限<a class="headerlink" href="#umask-" title="Permanent link">&para;</a></h3>
+<h3 id="su-">su - 切换用户<a class="headerlink" href="#su-" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>su // 切换成root用户，默认root用户
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>su - // 切换成root用户，并切换环境
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>su - tinker // 切换成tinker，并切换环境
+</span></code></pre></div>
+<h3 id="sudo-">sudo - 使用其他身份执行命令<a class="headerlink" href="#sudo-" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo su - // 切换到root用户
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>sudo nginx -s reload // 以root用户身份执行nginx配置重载
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>sudo -u www-data top // 已指定用户身份(www-data)执行top命令
+</span></code></pre></div>
+<h3 id="chown-">chown - 更改文件所有者和用户组<a class="headerlink" href="#chown-" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>chown tinker a.txt // 将a.txt文件所有者改为tinker,文件用户组不变
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>chown tinker:tony a.txt // 将a.txt文件所有者改为tinker,文件用户组改为tony
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>chown :tony a.txt //将a.txt文件的用户组改为tony,所有者不变
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>chown tinker: a.txt // 将a.txt文件所有者改成tinker，用户组改为tinker登录系统时候，所属的用户组
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>chown -aG sudo tinker // 将用户加入sudo用户组
+</span></code></pre></div>
+<h3 id="password-">password - 更改用户密码<a class="headerlink" href="#password-" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>passwd // 修改当前登录用户密码
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>passwd tinker // 修改tinker账户密码
+</span></code></pre></div>
+<h3 id="ps-">ps - 报告当前进程快照<a class="headerlink" href="#ps-" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>ps aux // 查看当前允许进程
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>ps -ef | more // 查看当前运行的所有进程（包含进程的父进程信息)
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>ps -A --sort=-rss -o comm,pmem,pcpu | uniq -c |head -15 // 按进程内存占用大小，从大到小来排序。RSS表示实际分配的内存大小
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>ps -eo comm,pmem,pcpu --sort=-%cpu  | head -10 // 按进程消耗cpu资源大小，从小大到大排序。--sort=-%cpu表示使用从大到小。-e和-A是一样的。
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>ps -c nginx --no-header | wc -l // 统计nginx进程数量。--no-header表示不答应头部
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>ps -axjf // 打印进程树
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>ps -p 1924 -o lstart // 查看进程ID等于1924的进程创建时间
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>ps -eLf | grep java | wc -l // 查看java线程数
+</span></code></pre></div>
 <p><img alt="ps" src="https://static.cyub.vip/images/201904/ps.jpg" /></p>
 <p><strong>ps内容说明</strong></p>
 <table>
@@ -3326,10 +3504,10 @@ ps -eLf | grep java | wc -l // 查看java线程数
 </tr>
 </tbody>
 </table>
-<h3 id="top-">top - 动态查看进程</h3>
+<h3 id="top-">top - 动态查看进程<a class="headerlink" href="#top-" title="Permanent link">&para;</a></h3>
 <p>top命令是常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>top // 查看进程，默认以CPU占有率排序
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>top // 查看进程，默认以CPU占有率排序
+</span></code></pre></div>
 <p><strong>常见选项列表：</strong></p>
 <table>
 <thead>
@@ -3582,22 +3760,19 @@ ps -eLf | grep java | wc -l // 查看java线程数
 <p>&lt;字段名&gt;&lt;运算符&gt;&lt;选择值&gt;</p>
 </blockquote>
 <p>运算符可以是=、&lt;、&gt;。具体示例比如COMMAND=nginx，表示筛选COMMAND是nginx的进程。%CPU&gt;3表示cpu负载大于3进程。%CPU&gt;0.0筛选cpu负载大于0的进行，注意是0.0，不能是0</p>
-<h3 id="jobs">jobs – 列出任务</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>ps aux &amp; // 将ps命令后台执行
-jobs -l // 列出进程的PID以及作业号
-jobs -r // 只列出运行中的作业
-jobs -s // 只列出已停止的作业
-</code></pre></div></td></tr></table></div>
-<h3 id="bg">bg – 把任务放到后台执行</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>bg 2 后台模式重启一个作业
-</code></pre></div></td></tr></table></div>
-<h3 id="fg">fg – 把任务放到前台执行</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>fg 2 前台重启一个作业
-</code></pre></div></td></tr></table></div>
-<h3 id="kill-">kill - 给进程发送信号</h3>
+<h3 id="jobs">jobs – 列出任务<a class="headerlink" href="#jobs" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>ps aux &amp; // 将ps命令后台执行
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>jobs -l // 列出进程的PID以及作业号
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>jobs -r // 只列出运行中的作业
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>jobs -s // 只列出已停止的作业
+</span></code></pre></div>
+<h3 id="bg">bg – 把任务放到后台执行<a class="headerlink" href="#bg" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>bg 2 后台模式重启一个作业
+</span></code></pre></div>
+<h3 id="fg">fg – 把任务放到前台执行<a class="headerlink" href="#fg" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>fg 2 前台重启一个作业
+</span></code></pre></div>
+<h3 id="kill-">kill - 给进程发送信号<a class="headerlink" href="#kill-" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>kill [-signal] PID...</p>
 </blockquote>
@@ -3664,84 +3839,61 @@ jobs -s // 只列出已停止的作业
 </tr>
 </tbody>
 </table>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>kill -9 12345 // 终止进程12345
-kill -l // 查看信号列表
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>kill -9 12345 // 终止进程12345
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>kill -l // 查看信号列表
+</span></code></pre></div>
 <p>按下ctrl+c组合键时产生SIGINT信号（中断信号), ctrl+\产生SIGQUIT信号(退出信号)，ctrl+d是默认的文件结束符</p>
-<h3 id="killall-">killall - 给多个进程发送信号</h3>
+<h3 id="killall-">killall - 给多个进程发送信号<a class="headerlink" href="#killall-" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>killall [-u user] [-signal] name...</p>
 </blockquote>
 <p>给匹配特定程序或用户名的多个进程发送信号</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>killall xlogo
-</code></pre></div></td></tr></table></div>
-<h3 id="pstree-">pstree - 显示树形结构进程列表</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pstree
-</code></pre></div></td></tr></table></div>
-<h3 id="pgrep-id">pgrep - 查看进程id</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pgrep nginx // 查看nginx进程id
-</code></pre></div></td></tr></table></div>
-<h3 id="pmap">pmap</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pmap PID // 查看进程内存状况
-</code></pre></div></td></tr></table></div>
-<h2 id="5">5. 文件查找</h2>
-<h3 id="locate-">locate - 通过名字来查找文件</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>killall xlogo
+</span></code></pre></div>
+<h3 id="pstree-">pstree - 显示树形结构进程列表<a class="headerlink" href="#pstree-" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>pstree
+</span></code></pre></div>
+<h3 id="pgrep-id">pgrep - 查看进程id<a class="headerlink" href="#pgrep-id" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>pgrep nginx // 查看nginx进程id
+</span></code></pre></div>
+<h3 id="pmap">pmap<a class="headerlink" href="#pmap" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>pmap PID // 查看进程内存状况
+</span></code></pre></div>
+<h2 id="5">5. 文件查找<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h3 id="locate-">locate - 通过名字来查找文件<a class="headerlink" href="#locate-" title="Permanent link">&para;</a></h3>
 <p><code>locate</code>命令其实是“find -name”的另一种写法，但是要比后者快得多，<strong>原因在于它不搜索具体目录，而是搜索一个数据库（/var/lib/locatedb）</strong>，这个数据库中含有本地所有文件信息。Linux系统自动创建这个数据库，并且每天自动更新一次，所以使用locate命令查不到最新变动过的文件。为了避免这种情况，可以在使用locate之前，<strong>先使用updatedb命令，手动更新数据库</strong>。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>locate /etc/sh // 搜索etc目录下所有以sh开头的文件
-</code></pre></div></td></tr></table></div>
-<h3 id="whereis-">whereis - 搜索程序名</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>locate /etc/sh // 搜索etc目录下所有以sh开头的文件
+</span></code></pre></div>
+<h3 id="whereis-">whereis - 搜索程序名<a class="headerlink" href="#whereis-" title="Permanent link">&para;</a></h3>
 <p>whereis命令只能用于程序名的搜索，而且只搜索二进制文件（参数-b）、man说明文件（参数-m）和源代码文件（参数-s）。如果省略参数，则返回所有信息。</p>
-<h3 id="which-">which - 查命令</h3>
+<h3 id="which-">which - 查命令<a class="headerlink" href="#which-" title="Permanent link">&para;</a></h3>
 <p>which命令的作用是，在PATH变量指定的路径中，搜索某个系统命令的位置，并且返回第一个搜索结果。也就是说，使用which命令，就可以看到某个系统命令是否存在，以及执行的到底是哪一个位置的命令。</p>
-<h3 id="find">find – 强大的查找命令</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code>find ~ | wc -l // 统计家目录文件数
-find ~ -type d | wc -l // 统计家目录下目录数量
-find ~ -type f | wc -l // 统计家目录下文件数量
-find ~ -type f -name &quot;\*.JPG&quot; -size +1M | wc -l // 查找所有文件名匹配 通配符模式“*.JPG”和文件大小大于1M 的文件
-find ~ -type f -name &#39;*.BAK&#39; -delete // 删除扩展名为“.BAK”（这通常用来指定备份文件） 的文件
-find ~ -type f -name &#39;*.BAK&#39; -print // 查看找到的文件,find默认是-print,即找到的每一行一换行符结束，-print0找到的每一行以null字符(&#39;\0&#39;)结束
-find . -name &#39;index.php&#39;  -print0 | hd
-find . -name &#39;index.php&#39;  -print | hd // 比较print和print0区别
-find ~ -type f -name &#39;foo*&#39; -exec ls -l &#39;{}&#39; &#39;;&#39; // {}是当前路径名的符号表示，分号是要求的界定符 表明命令结束。
-find ~ -type f -name &#39;foo*&#39; -ok ls -l &#39;{}&#39; &#39;;&#39; // 使用 -ok 行为来代替 -exec，在执行每个指定的命令之前，会提示用户
-find ~ -type f -name &#39;foo*&#39; -exec ls -l &#39;{}&#39; +  // 把末尾的分号改为加号，就激活了find命令的一个功能，
-// 把搜索结果结合为一个参数列表， 然后执行一次所期望的命令
-find playground -type f -name &#39;file-A&#39; | wc -l // 查找名字为file-A的文件
-find playground \( -type f -not -perm 0600 \) -or \( -type d -not -perm 0700 \)
-find playground \( -type f -not -perm 0600 -exec chmod 0600 &#39;{}&#39; &#39;;&#39; \)
--or \( -type d -not -perm 0711 -exec chmod 0700 &#39;{}&#39; &#39;;&#39; \)
-find ~ -empty // 查找home目录下的所有空文件
-find ~ -type f -size 0 // 跟上面一条命令功能一样
-find ~ -type d -empty // 查找所有空目录
-find ~ -iname &quot;hello.php&quot; // 查找hello.php文件
-find . -not -name &quot;.sh&quot; -maxdepth 1 // 查找所有非sh文件,-not可换成!
-find . -mtime 7 -type f // 搜索最近7天修改过的文件。
-//-atime:访问时间 (单位是天，分钟单位则是-amin, -mtime:修改时间（内容被修改）,-ctime:变化时间 （元数据或权限变化）
-</code></pre></div></td></tr></table></div>
-<h3 id="grep-">grep - 根据文件内容查找文件</h3>
+<h3 id="find">find – 强大的查找命令<a class="headerlink" href="#find" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>find ~ | wc -l // 统计家目录文件数
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>find ~ -type d | wc -l // 统计家目录下目录数量
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>find ~ -type f | wc -l // 统计家目录下文件数量
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>find ~ -type f -name &quot;\*.JPG&quot; -size +1M | wc -l // 查找所有文件名匹配 通配符模式“*.JPG”和文件大小大于1M 的文件
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>find ~ -type f -name &#39;*.BAK&#39; -delete // 删除扩展名为“.BAK”（这通常用来指定备份文件） 的文件
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>find ~ -type f -name &#39;*.BAK&#39; -print // 查看找到的文件,find默认是-print,即找到的每一行一换行符结束，-print0找到的每一行以null字符(&#39;\0&#39;)结束
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>find . -name &#39;index.php&#39;  -print0 | hd
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>find . -name &#39;index.php&#39;  -print | hd // 比较print和print0区别
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>find ~ -type f -name &#39;foo*&#39; -exec ls -l &#39;{}&#39; &#39;;&#39; // {}是当前路径名的符号表示，分号是要求的界定符 表明命令结束。
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>find ~ -type f -name &#39;foo*&#39; -ok ls -l &#39;{}&#39; &#39;;&#39; // 使用 -ok 行为来代替 -exec，在执行每个指定的命令之前，会提示用户
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>find ~ -type f -name &#39;foo*&#39; -exec ls -l &#39;{}&#39; +  // 把末尾的分号改为加号，就激活了find命令的一个功能，
+</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>// 把搜索结果结合为一个参数列表， 然后执行一次所期望的命令
+</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>find playground -type f -name &#39;file-A&#39; | wc -l // 查找名字为file-A的文件
+</span><span id="__span-26-14"><a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a>find playground \( -type f -not -perm 0600 \) -or \( -type d -not -perm 0700 \)
+</span><span id="__span-26-15"><a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>find playground \( -type f -not -perm 0600 -exec chmod 0600 &#39;{}&#39; &#39;;&#39; \)
+</span><span id="__span-26-16"><a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>-or \( -type d -not -perm 0711 -exec chmod 0700 &#39;{}&#39; &#39;;&#39; \)
+</span><span id="__span-26-17"><a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a>find ~ -empty // 查找home目录下的所有空文件
+</span><span id="__span-26-18"><a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a>find ~ -type f -size 0 // 跟上面一条命令功能一样
+</span><span id="__span-26-19"><a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a>find ~ -type d -empty // 查找所有空目录
+</span><span id="__span-26-20"><a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a>find ~ -iname &quot;hello.php&quot; // 查找hello.php文件
+</span><span id="__span-26-21"><a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a>find . -not -name &quot;.sh&quot; -maxdepth 1 // 查找所有非sh文件,-not可换成!
+</span><span id="__span-26-22"><a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a>find . -mtime 7 -type f // 搜索最近7天修改过的文件。
+</span><span id="__span-26-23"><a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a>//-atime:访问时间 (单位是天，分钟单位则是-amin, -mtime:修改时间（内容被修改）,-ctime:变化时间 （元数据或权限变化）
+</span></code></pre></div>
+<h3 id="grep-">grep - 根据文件内容查找文件<a class="headerlink" href="#grep-" title="Permanent link">&para;</a></h3>
 <p>grep选项：</p>
 <table>
 <thead>
@@ -3781,22 +3933,16 @@ find . -mtime 7 -type f // 搜索最近7天修改过的文件。
 </tr>
 </tbody>
 </table>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>grep -i &quot;hello&quot; hello.php // 在hello.php里面不区分大小写的查找hello
-grep -A 3 -i &quot;hello&quot; // 输出成功匹配的行，以及该行之后的三行，-B选项之前
-grep -r &quot;hello&quot; dir1/ // 递归查找dir1目录下文件的匹配行
-grep --color=always hello hello.php | more // 此时通过more管道时候也会高亮显示
-grep --color=always abc file.txt | less -R // 此时通过less管道是也会高亮显示
-grep -v php file.txt // 查找不包含php的行
-grep -v -e php -e golang file.txt // 查找不包含php和golang的行
-</code></pre></div></td></tr></table></div>
-<h2 id="6">6. 归档与备份</h2>
-<h3 id="gzip">gzip – 压缩或者展开文件</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>grep -i &quot;hello&quot; hello.php // 在hello.php里面不区分大小写的查找hello
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>grep -A 3 -i &quot;hello&quot; // 输出成功匹配的行，以及该行之后的三行，-B选项之前
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>grep -r &quot;hello&quot; dir1/ // 递归查找dir1目录下文件的匹配行
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>grep --color=always hello hello.php | more // 此时通过more管道时候也会高亮显示
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>grep --color=always abc file.txt | less -R // 此时通过less管道是也会高亮显示
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>grep -v php file.txt // 查找不包含php的行
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>grep -v -e php -e golang file.txt // 查找不包含php和golang的行
+</span></code></pre></div>
+<h2 id="6">6. 归档与备份<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="gzip">gzip – 压缩或者展开文件<a class="headerlink" href="#gzip" title="Permanent link">&para;</a></h3>
 <p>执行gzip命令时，则原始文件的压缩版会替代原始文件。相对应的gunzip程序被用来把压缩文件复原为没有被压缩的版本。</p>
 <p>表6.1 giz选项</p>
 <table>
@@ -3829,19 +3975,15 @@ grep -v -e php -e golang file.txt // 查找不包含php和golang的行
 </tr>
 </tbody>
 </table>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>gzip foo.txt // 压缩foo.txt
-ls -l /etc | gzip &gt; foo.txt.gz // 创建了一个目录列表的压缩文件
-gzip -d foot.txt.gz // 解压*.gz文件
-gzip -tv foo.txt.gz // 测试文件的完整性
-gunzip -c foo.txt | less // 不必指定gz拓展名，默认就是
-</code></pre></div></td></tr></table></div>
-<h3 id="bzip2-">bzip2 - 压缩文件</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>gzip foo.txt // 压缩foo.txt
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>ls -l /etc | gzip &gt; foo.txt.gz // 创建了一个目录列表的压缩文件
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>gzip -d foot.txt.gz // 解压*.gz文件
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>gzip -tv foo.txt.gz // 测试文件的完整性
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>gunzip -c foo.txt | less // 不必指定gz拓展名，默认就是
+</span></code></pre></div>
+<h3 id="bzip2-">bzip2 - 压缩文件<a class="headerlink" href="#bzip2-" title="Permanent link">&para;</a></h3>
 <p>由 Julian Seward 开发，与 gzip 程序相似，但是使用了不同的压缩算法， 舍弃了压缩速度，而实现了更高的压缩级别。在大多数情况下，它的工作模式等同于 gzip。 由 bzip2 压缩的文件，用扩展名 .bz2 来表示</p>
-<h3 id="tar-">tar - 打包文件</h3>
+<h3 id="tar-">tar - 打包文件<a class="headerlink" href="#tar-" title="Permanent link">&para;</a></h3>
 <p>在类 Unix 的软件世界中，这个 tar 程序是用来归档文件的经典工具。它的名字，是 tape archive 的简称，揭示了它的根源，它是一款制作磁带备份的工具。而它仍然被用来完成传统任务， 它也同样适用于其它的存储设备。我们经常看到扩展名为 .tar 或者 .tgz 的文件，它们各自表示“普通” 的 tar 包和被 gzip 程序压缩过的 tar 包。一个tar包可以由一组独立的文件，一个或者多个目录，或者 两者混合体组成</p>
 <p>表6.2 tar操作模式</p>
 <table>
@@ -3870,23 +4012,16 @@ gunzip -c foo.txt | less // 不必指定gz拓展名，默认就是
 </tr>
 </tbody>
 </table>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>tar -cvf /path/to/foo.tar /path/to/foo/ // 创建一个包
-tar -xvf foo.tar // 抽取一个包
-tar -czvf /path/to/foo.tgz /path/to/foo/ // 创建.gz归档文件
-tar -xzvf /path/to/foo.tgz // 抽取.gz归档文件
-tar -ztvf /path/to/foo.tgz // 查看.gz文档文件的文件列表
-tar -cjvf /path/to/foo.tgz /path/to/foo/ // 创建.bz2归档文件
-tar -xjvf /path/to/foo.tgz // 抽取.bz2归档文件
-tar -jtvf /path/to/foo.tgz // 查看.bz2归档文件的文件列表
-</code></pre></div></td></tr></table></div>
-<h3 id="rsync-">rsync - 同步目录和文件</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>tar -cvf /path/to/foo.tar /path/to/foo/ // 创建一个包
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>tar -xvf foo.tar // 抽取一个包
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>tar -czvf /path/to/foo.tgz /path/to/foo/ // 创建.gz归档文件
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>tar -xzvf /path/to/foo.tgz // 抽取.gz归档文件
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>tar -ztvf /path/to/foo.tgz // 查看.gz文档文件的文件列表
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>tar -cjvf /path/to/foo.tgz /path/to/foo/ // 创建.bz2归档文件
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>tar -xjvf /path/to/foo.tgz // 抽取.bz2归档文件
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>tar -jtvf /path/to/foo.tgz // 查看.bz2归档文件的文件列表
+</span></code></pre></div>
+<h3 id="rsync-">rsync - 同步目录和文件<a class="headerlink" href="#rsync-" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>rsync options source destination</p>
 </blockquote>
@@ -3895,23 +4030,18 @@ tar -jtvf /path/to/foo.tgz // 查看.bz2归档文件的文件列表
 * 一个远端文件或目录，以[user@]host:path 的形式存在
 * 一个远端 rsync 服务器，由 rsync://[user@]host[:port]/path 指定</p>
 <p>注意 source 和 destination 两者之一必须是本地文件。rsync 不支持远端到远端的复制
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>rsync -av --delete /etc /home /usr/local /media/BigDisk/backup
-// 备份文件到backup目录。--delete来删除可能在备份设备中已经存在但却不再存在于源设备中的文件
-rsync -av --delete --rsh=ssh /etc /home /usr/local remote-sys:/backup
-// --rsh=ssh 选项，其指示rsync使用ssh程序作为它的远程 shell。
-rsync -avzP --progress ~/Documents/static_resource/static/* tinker@10.255.1.174:/wwwroot/static
-</code></pre></div></td></tr></table></div></p>
-<h2 id="7">7. 文本处理</h2>
-<h3 id="cat-">cat - 连接文件并输出到标准输出</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>cat a.txt // 输出a.txt内容
-cat -ns a.txt // -n:给文本行添加行号，-s:禁止输出多个空白行
-</code></pre></div></td></tr></table></div>
-<h3 id="sort-">sort - 文本排序</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>rsync -av --delete /etc /home /usr/local /media/BigDisk/backup
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>// 备份文件到backup目录。--delete来删除可能在备份设备中已经存在但却不再存在于源设备中的文件
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>rsync -av --delete --rsh=ssh /etc /home /usr/local remote-sys:/backup
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>// --rsh=ssh 选项，其指示rsync使用ssh程序作为它的远程 shell。
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>rsync -avzP --progress ~/Documents/static_resource/static/* tinker@10.255.1.174:/wwwroot/static
+</span></code></pre></div></p>
+<h2 id="7">7. 文本处理<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<h3 id="cat-">cat - 连接文件并输出到标准输出<a class="headerlink" href="#cat-" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>cat a.txt // 输出a.txt内容
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>cat -ns a.txt // -n:给文本行添加行号，-s:禁止输出多个空白行
+</span></code></pre></div>
+<h3 id="sort-">sort - 文本排序<a class="headerlink" href="#sort-" title="Permanent link">&para;</a></h3>
 <p>表7.1 sort常见选项</p>
 <table>
 <thead>
@@ -3955,19 +4085,14 @@ cat -ns a.txt // -n:给文本行添加行号，-s:禁止输出多个空白行
 </tr>
 </tbody>
 </table>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>sort &gt; foo.txt // 将标准输入内容排序好后存入到foo.txt文件
-ls -l /usr/bin | sort -nr -k 5 | head // 将/usr/bin目录下文件按大小排序
-sort file1.txt file2.txt file3.txt &gt; final_sorted_list.txt // 合并有序文件
-sort -k 1,1 -k 2n -k 3.7n foo.txt
-// 多字段排序，对第一个字段执行字母排序，第二个字段执行数值排序，第三个字段的第七个字符按数值排序
-sort -t &#39;:&#39; -k 7 /etc/passwd | head // passwd文件的分隔符是:, 按照第七个字段分割
-</code></pre></div></td></tr></table></div>
-<h3 id="uniq-">uniq - 显示或省略重复行</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>sort &gt; foo.txt // 将标准输入内容排序好后存入到foo.txt文件
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>ls -l /usr/bin | sort -nr -k 5 | head // 将/usr/bin目录下文件按大小排序
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>sort file1.txt file2.txt file3.txt &gt; final_sorted_list.txt // 合并有序文件
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>sort -k 1,1 -k 2n -k 3.7n foo.txt
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>// 多字段排序，对第一个字段执行字母排序，第二个字段执行数值排序，第三个字段的第七个字符按数值排序
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>sort -t &#39;:&#39; -k 7 /etc/passwd | head // passwd文件的分隔符是:, 按照第七个字段分割
+</span></code></pre></div>
+<h3 id="uniq-">uniq - 显示或省略重复行<a class="headerlink" href="#uniq-" title="Permanent link">&para;</a></h3>
 <p>uniq 只会删除相邻的重复行，常常配合sort使用，排序后然后处理重复行</p>
 <p>表7.2 uniq常用选项</p>
 <table>
@@ -4004,7 +4129,7 @@ sort -t &#39;:&#39; -k 7 /etc/passwd | head // passwd文件的分隔符是:, 按
 </tr>
 </tbody>
 </table>
-<h3 id="cut-">cut - 从每行中删除文本区域</h3>
+<h3 id="cut-">cut - 从每行中删除文本区域<a class="headerlink" href="#cut-" title="Permanent link">&para;</a></h3>
 <p>表7.3 cut常用选项</p>
 <table>
 <thead>
@@ -4032,40 +4157,29 @@ sort -t &#39;:&#39; -k 7 /etc/passwd | head // passwd文件的分隔符是:, 按
 </tr>
 </tbody>
 </table>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>/* 例如文件a.txt内容格式如下：
-tinker:12/07/2017:complete task a
-jack:25/09/2017:complete task b
-*/
-cut -d: -f 2 a.txt | cut -c 7-10 // 输出年份
-</code></pre></div></td></tr></table></div>
-<h3 id="diff-">diff - 逐行比较文件</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>diff -Naur file1 file2 // 比较file2与file2
-</code></pre></div></td></tr></table></div>
-<h3 id="tr-">tr - 翻译或删除字符</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>echo &quot;lowercase letters&quot; | tr a-z A-Z // 小写转大写
-echo &quot;lowercase letters&quot; | tr [:lower:] [:upper:] // 小写转大写
-</code></pre></div></td></tr></table></div>
-<h3 id="sed-">sed - 文本的流编辑器</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>echo &quot;front&quot; | sed &#39;s/front/back/&#39; // 输出back
-sed -n &quot;/string/p&quot; logFile // 打印包含string的行
-sed -n &#39;5,10p&#39; /etc/passwd  // 查看文件5到10行
-sed -n &#39;3,5{=;p}&#39; logFile // 打印3到5行，并且打印行号
-sed &#39;/^$/d&#39; file // 删除空行
-sed -i &quot;s/原字符串/新字符串/g&quot; `grep 原字符串 -rl 所在目录` // 替换目录下字符串
-sed -n &#39;/script_filename =/{n;p}&#39;  www.log.slow // 获取匹配行的下一行内容
-</code></pre></div></td></tr></table></div>
-<h3 id="awk-">awk - 文本分析工具</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>/* 例如文件a.txt内容格式如下：
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>tinker:12/07/2017:complete task a
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>jack:25/09/2017:complete task b
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>*/
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>cut -d: -f 2 a.txt | cut -c 7-10 // 输出年份
+</span></code></pre></div>
+<h3 id="diff-">diff - 逐行比较文件<a class="headerlink" href="#diff-" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>diff -Naur file1 file2 // 比较file2与file2
+</span></code></pre></div>
+<h3 id="tr-">tr - 翻译或删除字符<a class="headerlink" href="#tr-" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>echo &quot;lowercase letters&quot; | tr a-z A-Z // 小写转大写
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>echo &quot;lowercase letters&quot; | tr [:lower:] [:upper:] // 小写转大写
+</span></code></pre></div>
+<h3 id="sed-">sed - 文本的流编辑器<a class="headerlink" href="#sed-" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>echo &quot;front&quot; | sed &#39;s/front/back/&#39; // 输出back
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>sed -n &quot;/string/p&quot; logFile // 打印包含string的行
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>sed -n &#39;5,10p&#39; /etc/passwd  // 查看文件5到10行
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>sed -n &#39;3,5{=;p}&#39; logFile // 打印3到5行，并且打印行号
+</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>sed &#39;/^$/d&#39; file // 删除空行
+</span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>sed -i &quot;s/原字符串/新字符串/g&quot; `grep 原字符串 -rl 所在目录` // 替换目录下字符串
+</span><span id="__span-36-7"><a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a>sed -n &#39;/script_filename =/{n;p}&#39;  www.log.slow // 获取匹配行的下一行内容
+</span></code></pre></div>
+<h3 id="awk-">awk - 文本分析工具<a class="headerlink" href="#awk-" title="Permanent link">&para;</a></h3>
 <p>awk是超强大的文本分析工具。不仅仅是linux系统中的一个命令，而且是一种编程语言</p>
 <p>awk指令是由模式，动作，或者模式和动作的组合组成。awk处理文件按照一行行来处理,默认每行按照空格进行分割</p>
 <p>awk使用方法：
@@ -4073,57 +4187,39 @@ awk 'pattern  { action } '文件
 pattern即模式，用来筛选符合一定规则的行
 action即动作，用来做相应处理，通常是print</p>
 <p><img alt="awk" src="https://static.cyub.vip/images/201904/awk.jpg" /></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>awk &#39;{print $2,$5;}&#39; a.txt // 打印指定的2，5字段
-ps aux | grep mysql | grep -v grep |awk &#39;{print $2}&#39; | xargs kill -9 // 杀掉mysql进程
-awk &#39;{print $7}&#39; access.log  | uniq -c | sort -nr | head -n10 // 访问最多的10个url
-cat /proc/meminfo | awk &#39;/^MemTotal/{ers/{j=$0}/^Cached/{k=$0}END{printf(&quot;%s\n%s\n%s\n%s\n&quot;, h,i,j,k)}&#39; // 查看内存信息
-awk -F &#39;[][]&#39; &#39;{print $3}&#39; file // []作为分隔符
-awk &#39;$9 &gt; 500 {print $0}&#39; access.log | wc -l  // 统计nginx访问日志里面状态码大于等于500的行数
-awk -F\&quot; &#39;$2 ~ &quot;^GET /api&quot; {print $0}&#39; access.log // 打印nginx访问日志里面请求方法为GET，url已/api开头的记录
-awk &#39;{if(NR&gt;=10 &amp;&amp; NR&lt;=20) print $0}&#39; access.log // 打印10到20行
-awk &#39;/NR&gt;=10, NR&lt;=20/{print $0}&#39; access.log // 打印10到20行。基于范围模式匹配模式
-awk &#39;/script_filename =/{getline a;print a;}&#39;  www.log.slow // 获取匹配行的下一行内容。getline是读取下一行内容并复制给变量a，接着打印出来。其中变量a可以省略
-</code></pre></div></td></tr></table></div>
-<h3 id="head-">head - 显示开头文字行</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>head -n 5 a.txt // 显示头5行文字
-head -n -5 a.txt // 显示排除掉末尾5行的其他文字
-head -c 100 a.txt 显示最开始100个字符
-</code></pre></div></td></tr></table></div>
-<h3 id="tail">tail</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>tail -n 10 a.txt // 查看文件最后10行
-tail -f /var/log/messages // 不停得读取最新内容
-</code></pre></div></td></tr></table></div>
-<h3 id="vim">vim</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>vim +10 file1.txt // 打开文件并调到第10行
-vim +/search_term file2.txt // 打开文件并调到第一个匹配的行
-vim -R /etc/passwd // 只读模式打开文件
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>awk &#39;{print $2,$5;}&#39; a.txt // 打印指定的2，5字段
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>ps aux | grep mysql | grep -v grep |awk &#39;{print $2}&#39; | xargs kill -9 // 杀掉mysql进程
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>awk &#39;{print $7}&#39; access.log  | uniq -c | sort -nr | head -n10 // 访问最多的10个url
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>cat /proc/meminfo | awk &#39;/^MemTotal/{ers/{j=$0}/^Cached/{k=$0}END{printf(&quot;%s\n%s\n%s\n%s\n&quot;, h,i,j,k)}&#39; // 查看内存信息
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>awk -F &#39;[][]&#39; &#39;{print $3}&#39; file // []作为分隔符
+</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>awk &#39;$9 &gt; 500 {print $0}&#39; access.log | wc -l  // 统计nginx访问日志里面状态码大于等于500的行数
+</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a>awk -F\&quot; &#39;$2 ~ &quot;^GET /api&quot; {print $0}&#39; access.log // 打印nginx访问日志里面请求方法为GET，url已/api开头的记录
+</span><span id="__span-37-8"><a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a>awk &#39;{if(NR&gt;=10 &amp;&amp; NR&lt;=20) print $0}&#39; access.log // 打印10到20行
+</span><span id="__span-37-9"><a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a>awk &#39;/NR&gt;=10, NR&lt;=20/{print $0}&#39; access.log // 打印10到20行。基于范围模式匹配模式
+</span><span id="__span-37-10"><a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a>awk &#39;/script_filename =/{getline a;print a;}&#39;  www.log.slow // 获取匹配行的下一行内容。getline是读取下一行内容并复制给变量a，接着打印出来。其中变量a可以省略
+</span></code></pre></div>
+<h3 id="head-">head - 显示开头文字行<a class="headerlink" href="#head-" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>head -n 5 a.txt // 显示头5行文字
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>head -n -5 a.txt // 显示排除掉末尾5行的其他文字
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>head -c 100 a.txt 显示最开始100个字符
+</span></code></pre></div>
+<h3 id="tail">tail<a class="headerlink" href="#tail" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>tail -n 10 a.txt // 查看文件最后10行
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>tail -f /var/log/messages // 不停得读取最新内容
+</span></code></pre></div>
+<h3 id="vim">vim<a class="headerlink" href="#vim" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>vim +10 file1.txt // 打开文件并调到第10行
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>vim +/search_term file2.txt // 打开文件并调到第一个匹配的行
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>vim -R /etc/passwd // 只读模式打开文件
+</span></code></pre></div>
 <p><strong>替换字符用法</strong></p>
 <p>语法：[addr]s/源字符串/目的字符串/[option]
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>:s/vivian/sky/ 替换当前行第一个 vivian 为 sky
-:s/vivian/sky/g 替换当前行所有 vivian 为 sky
-:n,$s/vivian/sky/g 替换第 n 行开始到最后一行中每一行所有 vivian 为 sky（n 为数字，若 n 为 .，表示从当前行开始到最后一行）
-:%s/vivian/sky/（等同于 :g/vivian/s//sky/）替换每一行的第一个 vivian 为 sky
-:%s/vivian/sky/g（等同于 :g/vivian/s//sky/g）替换每一行中所有 vivian 为 sky
-</code></pre></div></td></tr></table></div></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>:s/vivian/sky/ 替换当前行第一个 vivian 为 sky
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>:s/vivian/sky/g 替换当前行所有 vivian 为 sky
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>:n,$s/vivian/sky/g 替换第 n 行开始到最后一行中每一行所有 vivian 为 sky（n 为数字，若 n 为 .，表示从当前行开始到最后一行）
+</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>:%s/vivian/sky/（等同于 :g/vivian/s//sky/）替换每一行的第一个 vivian 为 sky
+</span><span id="__span-41-5"><a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a>:%s/vivian/sky/g（等同于 :g/vivian/s//sky/g）替换每一行中所有 vivian 为 sky
+</span></code></pre></div></p>
 <table>
 <thead>
 <tr>
@@ -4146,23 +4242,18 @@ vim -R /etc/passwd // 只读模式打开文件
 </tr>
 </tbody>
 </table>
-<h3 id="xargs">xargs</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>find . -name &#39;*.sh&#39; -maxdepth 1 | xargs -I {} ls &#39;{}&#39; // -I指定替换字符
-ls -al | xargs -n 10 rm // 每10做一个分组
-find . -name &quot;*.html&quot;  -print0 | xargs -0 rm -rf  // xargs 默认是以空白字符 (空格,tab,换行符) 做分割，-0表明是使用null字符(&#39;&#39;)进行分割，可以解决文件名称中出现空格的问题
-ls|grep {关键字} |  xargs -n 10 rm -fr
-</code></pre></div></td></tr></table></div>
-<h3 id="wc-">wc - 统计行和字符的工具</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>wc -l file // 统计行数
-wc -w file // 统计单词数
-wc -c file // 统计字符数
-</code></pre></div></td></tr></table></div>
-<h3 id="split-">split - 切割文件</h3>
+<h3 id="xargs">xargs<a class="headerlink" href="#xargs" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>find . -name &#39;*.sh&#39; -maxdepth 1 | xargs -I {} ls &#39;{}&#39; // -I指定替换字符
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>ls -al | xargs -n 10 rm // 每10做一个分组
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>find . -name &quot;*.html&quot;  -print0 | xargs -0 rm -rf  // xargs 默认是以空白字符 (空格,tab,换行符) 做分割，-0表明是使用null字符(&#39;&#39;)进行分割，可以解决文件名称中出现空格的问题
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>ls|grep {关键字} |  xargs -n 10 rm -fr
+</span></code></pre></div>
+<h3 id="wc-">wc - 统计行和字符的工具<a class="headerlink" href="#wc-" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>wc -l file // 统计行数
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>wc -w file // 统计单词数
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>wc -c file // 统计字符数
+</span></code></pre></div>
+<h3 id="split-">split - 切割文件<a class="headerlink" href="#split-" title="Permanent link">&para;</a></h3>
 <p>split用于将文件切割成多个小文件</p>
 <p>表7.4 split选项</p>
 <table>
@@ -4191,24 +4282,21 @@ wc -c file // 统计字符数
 </tr>
 </tbody>
 </table>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>split -b 10k date.file // 将文件分割成大小为10KB的小文件
-split -b 10k date.file -d -a 3 new_file_name // 将文件分割成大小为10KB的小文件, 新文件名以数字作为后缀
-split -l 10 date.file // 把文件分割成每个包含10行的小文件
-</code></pre></div></td></tr></table></div>
-<h2 id="8">8. 网络管理</h2>
-<h3 id="ping-icmp-echo_request">ping - 发送 ICMP ECHO_REQUEST 软件包到网络主机</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>split -b 10k date.file // 将文件分割成大小为10KB的小文件
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>split -b 10k date.file -d -a 3 new_file_name // 将文件分割成大小为10KB的小文件, 新文件名以数字作为后缀
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>split -l 10 date.file // 把文件分割成每个包含10行的小文件
+</span></code></pre></div>
+<h2 id="8">8. 网络管理<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<h3 id="ping-icmp-echo_request">ping - 发送 ICMP ECHO_REQUEST 软件包到网络主机<a class="headerlink" href="#ping-icmp-echo_request" title="Permanent link">&para;</a></h3>
 <p>ping 命令发送一个特殊的网络数据包，叫做IMCP ECHO_REQUEST，到 一台指定的主机。大多数接收这个包的网络设备将会回复它，来允许网络连接验证，反应连接速度。</p>
 <p>注意：大多数网络设备（包括 Linux 主机）都可以被配置为忽略这些数据包。通常，这样做是出于网络安全 原因，部分地遮蔽一台主机免受一个潜在攻击者地侵袭。配置防火墙来阻塞IMCP流量也很普遍。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>ping www.cyub.vip // 测试cyub.me网站
-ping -c 5 www.cyub.vip // 发送5个数据包
-</code></pre></div></td></tr></table></div>
-<h3 id="traceroute-">traceroute - 打印到一台网络主机的路由数据包</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>ping www.cyub.vip // 测试cyub.me网站
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>ping -c 5 www.cyub.vip // 发送5个数据包
+</span></code></pre></div>
+<h3 id="traceroute-">traceroute - 打印到一台网络主机的路由数据包<a class="headerlink" href="#traceroute-" title="Permanent link">&para;</a></h3>
 <p>显示从本地到指定主机 要经过的所有路由</p>
 <p><code>traceroute www.cyub.vip</code></p>
-<h3 id="netstat-">netstat - 网络查看工具</h3>
+<h3 id="netstat-">netstat - 网络查看工具<a class="headerlink" href="#netstat-" title="Permanent link">&para;</a></h3>
 <p>表7.5 netstat常见选项</p>
 <table>
 <thead>
@@ -4260,78 +4348,51 @@ ping -c 5 www.cyub.vip // 发送5个数据包
 </tr>
 </tbody>
 </table>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>netstat -ie // 查看系统网络接口
-netstat -nr // 查看路由
-netstat -an|awk &#39;/^tcp/{++S[$NF]}END{for (a in S)print a,S[a]}&#39;   // 查看tcp链接数
-netstat -pant |grep &quot;:80&quot;|awk &#39;{print $5}&#39; | awk -F: &#39;{print $1}&#39;|sort|uniq -c|sort -nr  // 查看连接数最多的ip
-netstat -tunlp | grep 22 // 查看22端口情况
-sudo netstat -pnt | grep :80 | wc -l // 粗略估计访问80端口人数
-</code></pre></div></td></tr></table></div>
-<h3 id="ftp-">ftp - 因特网文件传输程序</h3>
-<h3 id="wget-">wget - 非交互式网络下载器</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>wget http://www.cyub.vip
-wget http://www.cyub.vip -O a.html
-</code></pre></div></td></tr></table></div>
-<h3 id="ssh-ssh">ssh - SSH 客户端</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">ssh</span><span class="w"> </span><span class="nx">test</span><span class="err">@</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 以test用户身份登录cyub.vip主机</span>
-<span class="nx">ssh</span><span class="w"> </span><span class="o">-</span><span class="nx">p</span><span class="w"> </span><span class="mf">2222</span><span class="w"> </span><span class="nx">test</span><span class="err">@</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span>
-</code></pre></div></td></tr></table></div>
-<h3 id="nslookup-dns">nslookup - 查看dns解析</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>nslookup www.cyub.vip
-</code></pre></div></td></tr></table></div>
-<h3 id="dig-dns">dig - 查看dns解析</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">dig</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="c1">// 查询域名的A记录，最后的a可省略</span>
-<span class="nx">dig</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="nx">mx</span><span class="w"> </span><span class="c1">// 查询域名的mx记录，其他类型的记录有MX，CNAME，NS，PTR等，默认a记录</span>
-<span class="nx">dig</span><span class="w"> </span><span class="err">@</span><span class="mf">10.255.1.174</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 指定dns服务器</span>
-<span class="nx">dig</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="nx">tcp</span><span class="w"> </span><span class="c1">// dig默认使用udp协议进行查询，+tcp参数则指定tcp方式查询</span>
-<span class="nx">dig</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="nx">trace</span><span class="w"> </span><span class="c1">// +trace参数将显示从根域逐级查询的过程</span>
-</code></pre></div></td></tr></table></div>
-<h3 id="curl-">curl - 传输数据工具</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">curl</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 查看网页内容</span>
-<span class="nx">curl</span><span class="w"> </span><span class="o">-</span><span class="nx">s</span><span class="w"> </span><span class="o">-</span><span class="nx">o</span><span class="w"> </span><span class="nx">cyub</span><span class="p">.</span><span class="nx">me</span><span class="p">.</span><span class="nx">txt</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 保存网页内容, -s表示silent，不会显示下载进度</span>
-<span class="nx">curl</span><span class="w"> </span><span class="o">-</span><span class="nx">O</span><span class="w"> </span><span class="o">--</span><span class="nx">progress</span><span class="w"> </span><span class="o">-</span><span class="nx">C</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="o">/</span><span class="nx">file</span><span class="p">.</span><span class="nx">zip</span><span class="w"> </span><span class="c1">// 下载文件，本地文件名称与远程服务器文件名称一样。--progress显示进度条,-C继续断点下载</span>
-<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">head</span><span class="p">(</span><span class="nx">I</span><span class="p">)</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 查看网页响应头</span>
-<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">data</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;birthyear=1905&amp;press=%20OK%20&quot;</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 以Content-Type=application/x-www-form-urlencoded形式</span>
-<span class="c1">// POST数据，此时的数据需要urlencode处理好</span>
-<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">data</span><span class="o">-</span><span class="nx">urlencode</span><span class="w"> </span><span class="s2">&quot;name=I am Daniel&quot;</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 跟上一条命令类似，但数据不用预先编码处理</span>
-<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">form</span><span class="w"> </span><span class="nx">upload</span><span class="o">=</span><span class="err">@</span><span class="nx">localfilename</span><span class="w"> </span><span class="o">--</span><span class="nx">form</span><span class="w"> </span><span class="nx">press</span><span class="o">=</span><span class="nx">OK</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 文件上传，Content-Type是multipart/form-data</span>
-<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">proxy</span><span class="w"> </span><span class="nx">proxy</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="o">:</span><span class="mf">4321</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="o">/</span><span class="w"> </span><span class="c1">// 设置代理</span>
-<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">user</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="nx">password</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// Basic Authentication</span>
-<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">cookie</span><span class="w"> </span><span class="s2">&quot;name=tinker&quot;</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// cookie</span>
-<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">dump</span><span class="o">-</span><span class="nx">header</span><span class="w"> </span><span class="nx">headers_and_cookies</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span>
-<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">header</span><span class="p">(</span><span class="nx">H</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Content-Type: text/xml&quot;</span><span class="w">  </span><span class="o">--</span><span class="nx">request</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span>
-<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">request</span><span class="p">(</span><span class="nx">X</span><span class="p">)</span><span class="w"> </span><span class="nx">POST</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 指定请求方法</span>
-<span class="nx">curl</span><span class="w"> </span><span class="o">-</span><span class="nx">v</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 显示通信过程</span>
-<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">trace</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">txt</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 显示通信过程，内容比上一条命令详细</span>
-<span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">trace</span><span class="o">-</span><span class="nx">ascii</span><span class="w"> </span><span class="nx">dump</span><span class="p">.</span><span class="nx">txt</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 显示通信过程</span>
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>netstat -ie // 查看系统网络接口
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>netstat -nr // 查看路由
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>netstat -an|awk &#39;/^tcp/{++S[$NF]}END{for (a in S)print a,S[a]}&#39;   // 查看tcp链接数
+</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>netstat -pant |grep &quot;:80&quot;|awk &#39;{print $5}&#39; | awk -F: &#39;{print $1}&#39;|sort|uniq -c|sort -nr  // 查看连接数最多的ip
+</span><span id="__span-46-5"><a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>netstat -tunlp | grep 22 // 查看22端口情况
+</span><span id="__span-46-6"><a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a>sudo netstat -pnt | grep :80 | wc -l // 粗略估计访问80端口人数
+</span></code></pre></div>
+<h3 id="ftp-">ftp - 因特网文件传输程序<a class="headerlink" href="#ftp-" title="Permanent link">&para;</a></h3>
+<h3 id="wget-">wget - 非交互式网络下载器<a class="headerlink" href="#wget-" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>wget http://www.cyub.vip
+</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>wget http://www.cyub.vip -O a.html
+</span></code></pre></div>
+<h3 id="ssh-ssh">ssh - SSH 客户端<a class="headerlink" href="#ssh-ssh" title="Permanent link">&para;</a></h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="nx">ssh</span><span class="w"> </span><span class="nx">test</span><span class="err">@</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 以test用户身份登录cyub.vip主机</span>
+</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="nx">ssh</span><span class="w"> </span><span class="o">-</span><span class="nx">p</span><span class="w"> </span><span class="mf">2222</span><span class="w"> </span><span class="nx">test</span><span class="err">@</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span>
+</span></code></pre></div>
+<h3 id="nslookup-dns">nslookup - 查看dns解析<a class="headerlink" href="#nslookup-dns" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>nslookup www.cyub.vip
+</span></code></pre></div>
+<h3 id="dig-dns">dig - 查看dns解析<a class="headerlink" href="#dig-dns" title="Permanent link">&para;</a></h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="nx">dig</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="c1">// 查询域名的A记录，最后的a可省略</span>
+</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="nx">dig</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="nx">mx</span><span class="w"> </span><span class="c1">// 查询域名的mx记录，其他类型的记录有MX，CNAME，NS，PTR等，默认a记录</span>
+</span><span id="__span-50-3"><a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a><span class="nx">dig</span><span class="w"> </span><span class="err">@</span><span class="mf">10.255.1.174</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 指定dns服务器</span>
+</span><span id="__span-50-4"><a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a><span class="nx">dig</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="nx">tcp</span><span class="w"> </span><span class="c1">// dig默认使用udp协议进行查询，+tcp参数则指定tcp方式查询</span>
+</span><span id="__span-50-5"><a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a><span class="nx">dig</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="nx">trace</span><span class="w"> </span><span class="c1">// +trace参数将显示从根域逐级查询的过程</span>
+</span></code></pre></div>
+<h3 id="curl-">curl - 传输数据工具<a class="headerlink" href="#curl-" title="Permanent link">&para;</a></h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="nx">curl</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 查看网页内容</span>
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="nx">curl</span><span class="w"> </span><span class="o">-</span><span class="nx">s</span><span class="w"> </span><span class="o">-</span><span class="nx">o</span><span class="w"> </span><span class="nx">cyub</span><span class="p">.</span><span class="nx">me</span><span class="p">.</span><span class="nx">txt</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 保存网页内容, -s表示silent，不会显示下载进度</span>
+</span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="nx">curl</span><span class="w"> </span><span class="o">-</span><span class="nx">O</span><span class="w"> </span><span class="o">--</span><span class="nx">progress</span><span class="w"> </span><span class="o">-</span><span class="nx">C</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="o">/</span><span class="nx">file</span><span class="p">.</span><span class="nx">zip</span><span class="w"> </span><span class="c1">// 下载文件，本地文件名称与远程服务器文件名称一样。--progress显示进度条,-C继续断点下载</span>
+</span><span id="__span-51-4"><a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a><span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">head</span><span class="p">(</span><span class="nx">I</span><span class="p">)</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 查看网页响应头</span>
+</span><span id="__span-51-5"><a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a><span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">data</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;birthyear=1905&amp;press=%20OK%20&quot;</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 以Content-Type=application/x-www-form-urlencoded形式</span>
+</span><span id="__span-51-6"><a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a><span class="c1">// POST数据，此时的数据需要urlencode处理好</span>
+</span><span id="__span-51-7"><a id="__codelineno-51-7" name="__codelineno-51-7" href="#__codelineno-51-7"></a><span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">data</span><span class="o">-</span><span class="nx">urlencode</span><span class="w"> </span><span class="s2">&quot;name=I am Daniel&quot;</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 跟上一条命令类似，但数据不用预先编码处理</span>
+</span><span id="__span-51-8"><a id="__codelineno-51-8" name="__codelineno-51-8" href="#__codelineno-51-8"></a><span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">form</span><span class="w"> </span><span class="nx">upload</span><span class="o">=</span><span class="err">@</span><span class="nx">localfilename</span><span class="w"> </span><span class="o">--</span><span class="nx">form</span><span class="w"> </span><span class="nx">press</span><span class="o">=</span><span class="nx">OK</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 文件上传，Content-Type是multipart/form-data</span>
+</span><span id="__span-51-9"><a id="__codelineno-51-9" name="__codelineno-51-9" href="#__codelineno-51-9"></a><span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">proxy</span><span class="w"> </span><span class="nx">proxy</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="o">:</span><span class="mf">4321</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="o">/</span><span class="w"> </span><span class="c1">// 设置代理</span>
+</span><span id="__span-51-10"><a id="__codelineno-51-10" name="__codelineno-51-10" href="#__codelineno-51-10"></a><span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">user</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="nx">password</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// Basic Authentication</span>
+</span><span id="__span-51-11"><a id="__codelineno-51-11" name="__codelineno-51-11" href="#__codelineno-51-11"></a><span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">cookie</span><span class="w"> </span><span class="s2">&quot;name=tinker&quot;</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// cookie</span>
+</span><span id="__span-51-12"><a id="__codelineno-51-12" name="__codelineno-51-12" href="#__codelineno-51-12"></a><span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">dump</span><span class="o">-</span><span class="nx">header</span><span class="w"> </span><span class="nx">headers_and_cookies</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span>
+</span><span id="__span-51-13"><a id="__codelineno-51-13" name="__codelineno-51-13" href="#__codelineno-51-13"></a><span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">header</span><span class="p">(</span><span class="nx">H</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Content-Type: text/xml&quot;</span><span class="w">  </span><span class="o">--</span><span class="nx">request</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span>
+</span><span id="__span-51-14"><a id="__codelineno-51-14" name="__codelineno-51-14" href="#__codelineno-51-14"></a><span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">request</span><span class="p">(</span><span class="nx">X</span><span class="p">)</span><span class="w"> </span><span class="nx">POST</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 指定请求方法</span>
+</span><span id="__span-51-15"><a id="__codelineno-51-15" name="__codelineno-51-15" href="#__codelineno-51-15"></a><span class="nx">curl</span><span class="w"> </span><span class="o">-</span><span class="nx">v</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 显示通信过程</span>
+</span><span id="__span-51-16"><a id="__codelineno-51-16" name="__codelineno-51-16" href="#__codelineno-51-16"></a><span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">trace</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">txt</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 显示通信过程，内容比上一条命令详细</span>
+</span><span id="__span-51-17"><a id="__codelineno-51-17" name="__codelineno-51-17" href="#__codelineno-51-17"></a><span class="nx">curl</span><span class="w"> </span><span class="o">--</span><span class="nx">trace</span><span class="o">-</span><span class="nx">ascii</span><span class="w"> </span><span class="nx">dump</span><span class="p">.</span><span class="nx">txt</span><span class="w"> </span><span class="nx">www</span><span class="p">.</span><span class="nx">cyub</span><span class="p">.</span><span class="nx">vip</span><span class="w"> </span><span class="c1">// 显示通信过程</span>
+</span></code></pre></div>
 <p>curl还可以通过设置-w选项的时间变量来查看具体传输请求时间，常用变量如下：</p>
 <table>
 <thead>
@@ -4413,76 +4474,51 @@ wget http://www.cyub.vip -O a.html
 </table>
 <p><strong>注意:</strong> 某些变量高版本curl才支持, 具体参见<a href="https://curl.haxx.se/docs/manpage.html">curl man page</a></p>
 <p>用法如下：
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>curl -o /dev/null -s -w %{http_code}:%{remote_ip}:%{time_total} http://www.cyub.vip
-// 把变量写入curl-format.txt文件里面
-curl -o /dev/null -s -w &quot;@curl-format.txt&quot; http://www.cyub.vip
-</code></pre></div></td></tr></table></div></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>// curl-format.txt
-     response_code: %{http_code} %{content_type}\n
-     client_server: %{local_ip}:%{local_port} =&gt; %{remote_ip}:%{remote_port}\n
-    dns_resolution: %{time_namelookup}s\n
-   tcp_established: %{time_connect}s\n
-ssl_handshake_done: %{time_appconnect}s\n
-              TTFB: %{time_starttransfer}s\n
-        time_total: %{time_total}s\n
-     size_download: %{size_download}bytes\n
-    speed_download: %{speed_download}byte/s\n
-</code></pre></div></td></tr></table></div>
-<h3 id="tcpdump-">tcpdump - 网络流量监测工具</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>curl -o /dev/null -s -w %{http_code}:%{remote_ip}:%{time_total} http://www.cyub.vip
+</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>// 把变量写入curl-format.txt文件里面
+</span><span id="__span-52-3"><a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a>curl -o /dev/null -s -w &quot;@curl-format.txt&quot; http://www.cyub.vip
+</span></code></pre></div></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>// curl-format.txt
+</span><span id="__span-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>     response_code: %{http_code} %{content_type}\n
+</span><span id="__span-53-3"><a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a>     client_server: %{local_ip}:%{local_port} =&gt; %{remote_ip}:%{remote_port}\n
+</span><span id="__span-53-4"><a id="__codelineno-53-4" name="__codelineno-53-4" href="#__codelineno-53-4"></a>    dns_resolution: %{time_namelookup}s\n
+</span><span id="__span-53-5"><a id="__codelineno-53-5" name="__codelineno-53-5" href="#__codelineno-53-5"></a>   tcp_established: %{time_connect}s\n
+</span><span id="__span-53-6"><a id="__codelineno-53-6" name="__codelineno-53-6" href="#__codelineno-53-6"></a>ssl_handshake_done: %{time_appconnect}s\n
+</span><span id="__span-53-7"><a id="__codelineno-53-7" name="__codelineno-53-7" href="#__codelineno-53-7"></a>              TTFB: %{time_starttransfer}s\n
+</span><span id="__span-53-8"><a id="__codelineno-53-8" name="__codelineno-53-8" href="#__codelineno-53-8"></a>        time_total: %{time_total}s\n
+</span><span id="__span-53-9"><a id="__codelineno-53-9" name="__codelineno-53-9" href="#__codelineno-53-9"></a>     size_download: %{size_download}bytes\n
+</span><span id="__span-53-10"><a id="__codelineno-53-10" name="__codelineno-53-10" href="#__codelineno-53-10"></a>    speed_download: %{speed_download}byte/s\n
+</span></code></pre></div>
+<h3 id="tcpdump-">tcpdump - 网络流量监测工具<a class="headerlink" href="#tcpdump-" title="Permanent link">&para;</a></h3>
 <p>tcpdump默认抓取68个字节。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>tcpdump -i eth0 not port 22 // 查看eth0接口非22端口的流量
-tcpdump -i eth0 -s 0 -w file.cap // 保存抓包信息到文件中
-Tcpdump -r file.pcap // 读取抓包文件
-tcpdump -A -r file.pcap // 以ascii吗形式显示包内容
-</code></pre></div></td></tr></table></div>
-<h3 id="firewall-cmd-">firewall-cmd - 防火墙管理</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>tcpdump -i eth0 not port 22 // 查看eth0接口非22端口的流量
+</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>tcpdump -i eth0 -s 0 -w file.cap // 保存抓包信息到文件中
+</span><span id="__span-54-3"><a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a>Tcpdump -r file.pcap // 读取抓包文件
+</span><span id="__span-54-4"><a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a>tcpdump -A -r file.pcap // 以ascii吗形式显示包内容
+</span></code></pre></div>
+<h3 id="firewall-cmd-">firewall-cmd - 防火墙管理<a class="headerlink" href="#firewall-cmd-" title="Permanent link">&para;</a></h3>
 <p><strong>FirewallD</strong> 是 <code>iptables</code> 的前端控制器，用于实现持久的网络流量规则。它提供命令行和图形界面</p>
 <p>防火墙启动与关闭
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>systemctl start firewalld // 启动防火墙
-systemctl enable firewalld // 设置开机启动
-systemctl stop firewalld // 关闭防火墙
-systemctl disable firewalld // 设置不开机启动
-</code></pre></div></td></tr></table></div></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>systemctl start firewalld // 启动防火墙
+</span><span id="__span-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a>systemctl enable firewalld // 设置开机启动
+</span><span id="__span-55-3"><a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a>systemctl stop firewalld // 关闭防火墙
+</span><span id="__span-55-4"><a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a>systemctl disable firewalld // 设置不开机启动
+</span></code></pre></div></p>
 <p><code>firewall-cmd</code>用例
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>firewall-cmd<span class="w"> </span>--zone<span class="o">=</span>public<span class="w"> </span>--add-port<span class="o">=</span><span class="m">80</span>/tcp<span class="w"> </span>--permanent<span class="w"> </span>//<span class="w"> </span>开放80端口
-firewall-cmd<span class="w"> </span>--reload<span class="w"> </span>//<span class="w"> </span>重新加载防火墙配置
-firewall-cmd<span class="w"> </span>--state<span class="w">  </span>//<span class="w"> </span>查看防火墙状态
-firewall-cmd<span class="w"> </span>--get-zones<span class="w"> </span>//<span class="w"> </span>列出支持的zone
-firewall-cmd<span class="w"> </span>--get-services<span class="w"> </span>//<span class="w"> </span>列出支持的服务，在列表中的服务是放行的
-firewall-cmd<span class="w"> </span>--query-service<span class="w"> </span>ftp<span class="w"> </span>//<span class="w"> </span>查看ftp服务是否支持，返回yes或者no
-firewall-cmd<span class="w"> </span>--add-service<span class="o">=</span>ftp<span class="w">  </span>//<span class="w"> </span>临时开放ftp服务
-firewall-cmd<span class="w"> </span>--add-service<span class="o">=</span>ftp<span class="w"> </span>--permanent<span class="w">  </span>//<span class="w"> </span>永久开放ftp服务
-firewall-cmd<span class="w"> </span>--remove-service<span class="o">=</span>ftp<span class="w"> </span>--permanent<span class="w">  </span>//<span class="w"> </span>永久移除ftp服务
-</code></pre></div></td></tr></table></div></p>
-<h3 id="ifconfig">ifconfig</h3>
-<h3 id="sftp">sftp</h3>
-<h3 id="scp">scp</h3>
-<h3 id="nc-">nc - 网络工具中的瑞士军刀</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>firewall-cmd<span class="w"> </span>--zone<span class="o">=</span>public<span class="w"> </span>--add-port<span class="o">=</span><span class="m">80</span>/tcp<span class="w"> </span>--permanent<span class="w"> </span>//<span class="w"> </span>开放80端口
+</span><span id="__span-56-2"><a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a>firewall-cmd<span class="w"> </span>--reload<span class="w"> </span>//<span class="w"> </span>重新加载防火墙配置
+</span><span id="__span-56-3"><a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a>firewall-cmd<span class="w"> </span>--state<span class="w">  </span>//<span class="w"> </span>查看防火墙状态
+</span><span id="__span-56-4"><a id="__codelineno-56-4" name="__codelineno-56-4" href="#__codelineno-56-4"></a>firewall-cmd<span class="w"> </span>--get-zones<span class="w"> </span>//<span class="w"> </span>列出支持的zone
+</span><span id="__span-56-5"><a id="__codelineno-56-5" name="__codelineno-56-5" href="#__codelineno-56-5"></a>firewall-cmd<span class="w"> </span>--get-services<span class="w"> </span>//<span class="w"> </span>列出支持的服务，在列表中的服务是放行的
+</span><span id="__span-56-6"><a id="__codelineno-56-6" name="__codelineno-56-6" href="#__codelineno-56-6"></a>firewall-cmd<span class="w"> </span>--query-service<span class="w"> </span>ftp<span class="w"> </span>//<span class="w"> </span>查看ftp服务是否支持，返回yes或者no
+</span><span id="__span-56-7"><a id="__codelineno-56-7" name="__codelineno-56-7" href="#__codelineno-56-7"></a>firewall-cmd<span class="w"> </span>--add-service<span class="o">=</span>ftp<span class="w">  </span>//<span class="w"> </span>临时开放ftp服务
+</span><span id="__span-56-8"><a id="__codelineno-56-8" name="__codelineno-56-8" href="#__codelineno-56-8"></a>firewall-cmd<span class="w"> </span>--add-service<span class="o">=</span>ftp<span class="w"> </span>--permanent<span class="w">  </span>//<span class="w"> </span>永久开放ftp服务
+</span><span id="__span-56-9"><a id="__codelineno-56-9" name="__codelineno-56-9" href="#__codelineno-56-9"></a>firewall-cmd<span class="w"> </span>--remove-service<span class="o">=</span>ftp<span class="w"> </span>--permanent<span class="w">  </span>//<span class="w"> </span>永久移除ftp服务
+</span></code></pre></div></p>
+<h3 id="ifconfig">ifconfig<a class="headerlink" href="#ifconfig" title="Permanent link">&para;</a></h3>
+<h3 id="sftp">sftp<a class="headerlink" href="#sftp" title="Permanent link">&para;</a></h3>
+<h3 id="scp">scp<a class="headerlink" href="#scp" title="Permanent link">&para;</a></h3>
+<h3 id="nc-">nc - 网络工具中的瑞士军刀<a class="headerlink" href="#nc-" title="Permanent link">&para;</a></h3>
 <p>nc是netcat命令别名</p>
 <p>表7.6 nc常见选项</p>
 <table>
@@ -4527,70 +4563,43 @@ firewall-cmd<span class="w"> </span>--remove-service<span class="o">=</span>ftp<
 </tr>
 </tbody>
 </table>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code>//<span class="w"> </span>扫描192.168.33.10的20至25的端口
-nc<span class="w"> </span>-nzv<span class="w"> </span><span class="m">192</span>.168.33.10<span class="w"> </span><span class="m">20</span>-25
-//<span class="w"> </span>使用10.1.2.3作为源地址，31337作为源端口，连接host.example.com的42端口，超时时间设为5秒
-nc<span class="w"> </span>-s<span class="w"> </span><span class="m">10</span>.1.2.3<span class="w"> </span>-p<span class="w"> </span><span class="m">31337</span><span class="w"> </span>-w<span class="w"> </span><span class="m">5</span><span class="w"> </span>host.example.com<span class="w"> </span><span class="m">42</span>
-//<span class="w"> </span>模拟http请求,<span class="w"> </span>注意最后面需要两个换行
-nc<span class="w"> </span>www.cyub.vip<span class="w"> </span><span class="m">80</span><span class="w"> </span><span class="s1">&#39;</span>
-<span class="s1">GET / HTTP/1.1</span>
-<span class="s1">Host: www.cyub.vip</span>
-<span class="s1">User-Agent: self-browser</span>
-
-
-<span class="s1">&#39;</span>
-或者
-nc<span class="w"> </span>www.cyub.vip<span class="w"> </span><span class="m">80</span><span class="w"> </span>&lt;<span class="w"> </span>request.text<span class="w"> </span>&gt;<span class="w"> </span>index.html
-//<span class="w"> </span>使用HTTP<span class="w"> </span>proxy代理10.2.3.4:8080连接host.example.com
-nc<span class="w"> </span>-x10.2.3.4:8080<span class="w"> </span>-Xconnect<span class="w"> </span>host.example.com<span class="w"> </span><span class="m">42</span>
-//<span class="w"> </span>创建和监听UNIX-domain<span class="w"> </span>stream<span class="w"> </span>socket
-nc<span class="w"> </span>-lU<span class="w"> </span>/var/tmp/dsocket
-</code></pre></div></td></tr></table></div>
-<h2 id="9">9. 系统监控</h2>
-<h3 id="uptime">uptime</h3>
-<h3 id="htop">htop</h3>
-<h3 id="iotop">iotop</h3>
-<h3 id="vmstat-">vmstat - 显示资源使用快照</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>//<span class="w"> </span>扫描192.168.33.10的20至25的端口
+</span><span id="__span-57-2"><a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>nc<span class="w"> </span>-nzv<span class="w"> </span><span class="m">192</span>.168.33.10<span class="w"> </span><span class="m">20</span>-25
+</span><span id="__span-57-3"><a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a>//<span class="w"> </span>使用10.1.2.3作为源地址，31337作为源端口，连接host.example.com的42端口，超时时间设为5秒
+</span><span id="__span-57-4"><a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a>nc<span class="w"> </span>-s<span class="w"> </span><span class="m">10</span>.1.2.3<span class="w"> </span>-p<span class="w"> </span><span class="m">31337</span><span class="w"> </span>-w<span class="w"> </span><span class="m">5</span><span class="w"> </span>host.example.com<span class="w"> </span><span class="m">42</span>
+</span><span id="__span-57-5"><a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a>//<span class="w"> </span>模拟http请求,<span class="w"> </span>注意最后面需要两个换行
+</span><span id="__span-57-6"><a id="__codelineno-57-6" name="__codelineno-57-6" href="#__codelineno-57-6"></a>nc<span class="w"> </span>www.cyub.vip<span class="w"> </span><span class="m">80</span><span class="w"> </span><span class="s1">&#39;</span>
+</span><span id="__span-57-7"><a id="__codelineno-57-7" name="__codelineno-57-7" href="#__codelineno-57-7"></a><span class="s1">GET / HTTP/1.1</span>
+</span><span id="__span-57-8"><a id="__codelineno-57-8" name="__codelineno-57-8" href="#__codelineno-57-8"></a><span class="s1">Host: www.cyub.vip</span>
+</span><span id="__span-57-9"><a id="__codelineno-57-9" name="__codelineno-57-9" href="#__codelineno-57-9"></a><span class="s1">User-Agent: self-browser</span>
+</span><span id="__span-57-10"><a id="__codelineno-57-10" name="__codelineno-57-10" href="#__codelineno-57-10"></a>
+</span><span id="__span-57-11"><a id="__codelineno-57-11" name="__codelineno-57-11" href="#__codelineno-57-11"></a>
+</span><span id="__span-57-12"><a id="__codelineno-57-12" name="__codelineno-57-12" href="#__codelineno-57-12"></a><span class="s1">&#39;</span>
+</span><span id="__span-57-13"><a id="__codelineno-57-13" name="__codelineno-57-13" href="#__codelineno-57-13"></a>或者
+</span><span id="__span-57-14"><a id="__codelineno-57-14" name="__codelineno-57-14" href="#__codelineno-57-14"></a>nc<span class="w"> </span>www.cyub.vip<span class="w"> </span><span class="m">80</span><span class="w"> </span>&lt;<span class="w"> </span>request.text<span class="w"> </span>&gt;<span class="w"> </span>index.html
+</span><span id="__span-57-15"><a id="__codelineno-57-15" name="__codelineno-57-15" href="#__codelineno-57-15"></a>//<span class="w"> </span>使用HTTP<span class="w"> </span>proxy代理10.2.3.4:8080连接host.example.com
+</span><span id="__span-57-16"><a id="__codelineno-57-16" name="__codelineno-57-16" href="#__codelineno-57-16"></a>nc<span class="w"> </span>-x10.2.3.4:8080<span class="w"> </span>-Xconnect<span class="w"> </span>host.example.com<span class="w"> </span><span class="m">42</span>
+</span><span id="__span-57-17"><a id="__codelineno-57-17" name="__codelineno-57-17" href="#__codelineno-57-17"></a>//<span class="w"> </span>创建和监听UNIX-domain<span class="w"> </span>stream<span class="w"> </span>socket
+</span><span id="__span-57-18"><a id="__codelineno-57-18" name="__codelineno-57-18" href="#__codelineno-57-18"></a>nc<span class="w"> </span>-lU<span class="w"> </span>/var/tmp/dsocket
+</span></code></pre></div>
+<h2 id="9">9. 系统监控<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
+<h3 id="uptime">uptime<a class="headerlink" href="#uptime" title="Permanent link">&para;</a></h3>
+<h3 id="htop">htop<a class="headerlink" href="#htop" title="Permanent link">&para;</a></h3>
+<h3 id="iotop">iotop<a class="headerlink" href="#iotop" title="Permanent link">&para;</a></h3>
+<h3 id="vmstat-">vmstat - 显示资源使用快照<a class="headerlink" href="#vmstat-" title="Permanent link">&para;</a></h3>
 <p>显示资源快照,包括内存，交换分区和磁盘 I/O</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>vmstat 1 // 1秒内的资源快照
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0 488124 105284  96596 429796    0    1     4     6   23   12  0  0 99  0  0
- 0  0 488124 105160  96596 429796    0    0     0     0  280  554  0  1 99  0  0
- 0  0 488124 105160  96596 429804    0    0     0     0  260  544  1  0 99  0  0
- 0  0 488124 105160  96596 429796    0    0     0     0  254  539  0  1 99  0  0
- 0  0 488124 105160  96596 429804    0    0     0     0  268  550  0  1 99  0  0
- 0  0 488124 105160  96600 429792    0    0     0    64  680 1456  2  3 95  0  0
- 1  0 488112  96972  96608 429812    0    0     0    40  824 1393 31  4 65  0  0
- 0  0 488112  96880  96608 429804    0    0     0     0  269  566  0  0 100  0  0
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>vmstat 1 // 1秒内的资源快照
+</span><span id="__span-58-2"><a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a>procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+</span><span id="__span-58-3"><a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a> r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+</span><span id="__span-58-4"><a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a> 0  0 488124 105284  96596 429796    0    1     4     6   23   12  0  0 99  0  0
+</span><span id="__span-58-5"><a id="__codelineno-58-5" name="__codelineno-58-5" href="#__codelineno-58-5"></a> 0  0 488124 105160  96596 429796    0    0     0     0  280  554  0  1 99  0  0
+</span><span id="__span-58-6"><a id="__codelineno-58-6" name="__codelineno-58-6" href="#__codelineno-58-6"></a> 0  0 488124 105160  96596 429804    0    0     0     0  260  544  1  0 99  0  0
+</span><span id="__span-58-7"><a id="__codelineno-58-7" name="__codelineno-58-7" href="#__codelineno-58-7"></a> 0  0 488124 105160  96596 429796    0    0     0     0  254  539  0  1 99  0  0
+</span><span id="__span-58-8"><a id="__codelineno-58-8" name="__codelineno-58-8" href="#__codelineno-58-8"></a> 0  0 488124 105160  96596 429804    0    0     0     0  268  550  0  1 99  0  0
+</span><span id="__span-58-9"><a id="__codelineno-58-9" name="__codelineno-58-9" href="#__codelineno-58-9"></a> 0  0 488124 105160  96600 429792    0    0     0    64  680 1456  2  3 95  0  0
+</span><span id="__span-58-10"><a id="__codelineno-58-10" name="__codelineno-58-10" href="#__codelineno-58-10"></a> 1  0 488112  96972  96608 429812    0    0     0    40  824 1393 31  4 65  0  0
+</span><span id="__span-58-11"><a id="__codelineno-58-11" name="__codelineno-58-11" href="#__codelineno-58-11"></a> 0  0 488112  96880  96608 429804    0    0     0     0  269  566  0  0 100  0  0
+</span></code></pre></div>
 <p><strong>说明：</strong></p>
 <table>
 <thead>
@@ -4679,7 +4688,7 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
 </tbody>
 </table>
 
-<h3 id="iostat-cpu">iostat - 监视系统输入输出设备和CPU的使用情况</h3>
+<h3 id="iostat-cpu">iostat - 监视系统输入输出设备和CPU的使用情况<a class="headerlink" href="#iostat-cpu" title="Permanent link">&para;</a></h3>
 <p>常用选项：</p>
 <table>
 <thead>
@@ -4719,26 +4728,17 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
 </tr>
 </tbody>
 </table>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code> iostat -x
-Linux 4.4.0-101-generic (vagrant)   02/10/2018  _x86_64_    (1 CPU)
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.20    0.01    0.29    0.03    0.00   99.48
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-sda               0.02     0.73    0.24    0.78     3.76     6.20    19.47     0.00    0.45    0.62    0.40   0.33   0.03
-dm-0              0.00     0.00    0.22    1.18     3.55     5.39    12.77     0.00    0.44    0.60    0.42   0.24   0.03
-dm-1              0.00     0.00    0.04    0.20     0.15     0.81     8.03     0.00    5.62    0.51    6.57   0.05   0.00
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a> iostat -x
+</span><span id="__span-59-2"><a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a>Linux 4.4.0-101-generic (vagrant)   02/10/2018  _x86_64_    (1 CPU)
+</span><span id="__span-59-3"><a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a>
+</span><span id="__span-59-4"><a id="__codelineno-59-4" name="__codelineno-59-4" href="#__codelineno-59-4"></a>avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+</span><span id="__span-59-5"><a id="__codelineno-59-5" name="__codelineno-59-5" href="#__codelineno-59-5"></a>           0.20    0.01    0.29    0.03    0.00   99.48
+</span><span id="__span-59-6"><a id="__codelineno-59-6" name="__codelineno-59-6" href="#__codelineno-59-6"></a>
+</span><span id="__span-59-7"><a id="__codelineno-59-7" name="__codelineno-59-7" href="#__codelineno-59-7"></a>Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+</span><span id="__span-59-8"><a id="__codelineno-59-8" name="__codelineno-59-8" href="#__codelineno-59-8"></a>sda               0.02     0.73    0.24    0.78     3.76     6.20    19.47     0.00    0.45    0.62    0.40   0.33   0.03
+</span><span id="__span-59-9"><a id="__codelineno-59-9" name="__codelineno-59-9" href="#__codelineno-59-9"></a>dm-0              0.00     0.00    0.22    1.18     3.55     5.39    12.77     0.00    0.44    0.60    0.42   0.24   0.03
+</span><span id="__span-59-10"><a id="__codelineno-59-10" name="__codelineno-59-10" href="#__codelineno-59-10"></a>dm-1              0.00     0.00    0.04    0.20     0.15     0.81     8.03     0.00    5.62    0.51    6.57   0.05   0.00
+</span></code></pre></div>
 <p><strong>说明</strong></p>
 <table>
 <thead>
@@ -4806,8 +4806,8 @@ dm-1              0.00     0.00    0.04    0.20     0.15     0.81     8.03     0
 </tr>
 </tbody>
 </table>
-<h3 id="systemctl-">systemctl - 系统服务管理</h3>
-<p><strong>systemctl</strong>是系统服务管理命令，它实际上将<code>service</code>和<code>chkconfig</code>这两个命令组合到一起。</p>
+<h3 id="systemctl-">systemctl - 系统服务管理<a class="headerlink" href="#systemctl-" title="Permanent link">&para;</a></h3>
+<p>**systemctl**是系统服务管理命令，它实际上将<code>service</code>和<code>chkconfig</code>这两个命令组合到一起。</p>
 <table>
 <thead>
 <tr>
@@ -4854,55 +4854,39 @@ dm-1              0.00     0.00    0.04    0.20     0.15     0.81     8.03     0
 </tr>
 </tbody>
 </table>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>systemctl start nfs-server.service // 启动nfs服务
-systemctl enable nfs-server.service // 设置开机自启动
-systemctl disable nfs-server.service // 停止开机自启动
-systemctl status nfs-server.service // 查看服务当前状态
-systemctl restart nfs-server.service // 重新启动某服务
-systemctl list -units --type=service // 查看所有已启动的服务
-systemctl list-dependencies nfs-server // 列出服务的依赖
-</code></pre></div></td></tr></table></div>
-<h3 id="lsof-">lsof - 一切皆文件</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>systemctl start nfs-server.service // 启动nfs服务
+</span><span id="__span-60-2"><a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a>systemctl enable nfs-server.service // 设置开机自启动
+</span><span id="__span-60-3"><a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a>systemctl disable nfs-server.service // 停止开机自启动
+</span><span id="__span-60-4"><a id="__codelineno-60-4" name="__codelineno-60-4" href="#__codelineno-60-4"></a>systemctl status nfs-server.service // 查看服务当前状态
+</span><span id="__span-60-5"><a id="__codelineno-60-5" name="__codelineno-60-5" href="#__codelineno-60-5"></a>systemctl restart nfs-server.service // 重新启动某服务
+</span><span id="__span-60-6"><a id="__codelineno-60-6" name="__codelineno-60-6" href="#__codelineno-60-6"></a>systemctl list -units --type=service // 查看所有已启动的服务
+</span><span id="__span-60-7"><a id="__codelineno-60-7" name="__codelineno-60-7" href="#__codelineno-60-7"></a>systemctl list-dependencies nfs-server // 列出服务的依赖
+</span></code></pre></div>
+<h3 id="lsof-">lsof - 一切皆文件<a class="headerlink" href="#lsof-" title="Permanent link">&para;</a></h3>
 <p>lsof（list open files）是一个查看当前系统文件的工具。
 在linux环境下，任何事物都以文件的形式存在，通过文件不仅仅可以访问常规数据，还可以访问网络连接和硬件。
 如传输控制协议 (TCP) 和用户数据报协议 (UDP) 套接字等，系统在后台都为该应用程序分配了一个文件描述符，该文件描述符提供了大量关于这个应用程序本身的信息。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">lsof</span><span class="w"> </span><span class="o">/</span><span class="kd">var</span><span class="err">/log/nginx/access.log // 查看哪个进程打开access.log</span>
-<span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">p</span><span class="w"> </span><span class="sb">`pgrep redis`</span><span class="w">  </span><span class="c1">// 查看进程打开的文件，参数是pid</span>
-<span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">c</span><span class="w"> </span><span class="nx">php</span><span class="o">-</span><span class="nx">fpm7</span><span class="w"> </span><span class="c1">// 查看进程打开的文件，参数是进程名称</span>
-<span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">u</span><span class="w"> </span><span class="nx">vagrant</span><span class="w"> </span><span class="c1">// 查看用户打开的文件</span>
-<span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">i</span><span class="o">:</span><span class="mf">80</span><span class="w"> </span><span class="c1">// 查看哪个进程监听80端口</span>
-<span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">i4</span><span class="w"> </span><span class="c1">// 列出ipv4相关信息</span>
-<span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">d</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="c1">// 列出占用文件描述符1的进程</span>
-<span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">d</span><span class="w"> </span><span class="o">/</span><span class="nx">tmp</span><span class="w"> </span><span class="c1">// 列出/tmp目录下被打开的文件</span>
-<span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">D</span><span class="w"> </span><span class="o">/</span><span class="nx">tmp</span><span class="w"> </span><span class="c1">// 递归列出/tmp目录下被打开的文件</span>
-</code></pre></div></td></tr></table></div>
-<h3 id="free">free</h3>
-<h3 id="df">df</h3>
-<h3 id="shutdown-">shutdown - 系统关机</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>shutdown -h now // 系统立即关机
-shutdown -h +10 // 10分钟后关机
-shutdown -r now // 重启
-</code></pre></div></td></tr></table></div>
-<h3 id="watch-">watch - 定时监控命令</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>watch -n 10 &#39;cat /proc/loadavg&#39; // 每隔10s输出系统平均负载
-</code></pre></div></td></tr></table></div>
-<h3 id="strace-">strace - 跟踪程序执行</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="nx">lsof</span><span class="w"> </span><span class="o">/</span><span class="kd">var</span><span class="err">/log/nginx/access.log // 查看哪个进程打开access.log</span>
+</span><span id="__span-61-2"><a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a><span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">p</span><span class="w"> </span><span class="sb">`pgrep redis`</span><span class="w">  </span><span class="c1">// 查看进程打开的文件，参数是pid</span>
+</span><span id="__span-61-3"><a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a><span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">c</span><span class="w"> </span><span class="nx">php</span><span class="o">-</span><span class="nx">fpm7</span><span class="w"> </span><span class="c1">// 查看进程打开的文件，参数是进程名称</span>
+</span><span id="__span-61-4"><a id="__codelineno-61-4" name="__codelineno-61-4" href="#__codelineno-61-4"></a><span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">u</span><span class="w"> </span><span class="nx">vagrant</span><span class="w"> </span><span class="c1">// 查看用户打开的文件</span>
+</span><span id="__span-61-5"><a id="__codelineno-61-5" name="__codelineno-61-5" href="#__codelineno-61-5"></a><span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">i</span><span class="o">:</span><span class="mf">80</span><span class="w"> </span><span class="c1">// 查看哪个进程监听80端口</span>
+</span><span id="__span-61-6"><a id="__codelineno-61-6" name="__codelineno-61-6" href="#__codelineno-61-6"></a><span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">i4</span><span class="w"> </span><span class="c1">// 列出ipv4相关信息</span>
+</span><span id="__span-61-7"><a id="__codelineno-61-7" name="__codelineno-61-7" href="#__codelineno-61-7"></a><span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">d</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="c1">// 列出占用文件描述符1的进程</span>
+</span><span id="__span-61-8"><a id="__codelineno-61-8" name="__codelineno-61-8" href="#__codelineno-61-8"></a><span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">d</span><span class="w"> </span><span class="o">/</span><span class="nx">tmp</span><span class="w"> </span><span class="c1">// 列出/tmp目录下被打开的文件</span>
+</span><span id="__span-61-9"><a id="__codelineno-61-9" name="__codelineno-61-9" href="#__codelineno-61-9"></a><span class="nx">lsof</span><span class="w"> </span><span class="o">-</span><span class="nx">D</span><span class="w"> </span><span class="o">/</span><span class="nx">tmp</span><span class="w"> </span><span class="c1">// 递归列出/tmp目录下被打开的文件</span>
+</span></code></pre></div>
+<h3 id="free">free<a class="headerlink" href="#free" title="Permanent link">&para;</a></h3>
+<h3 id="df">df<a class="headerlink" href="#df" title="Permanent link">&para;</a></h3>
+<h3 id="shutdown-">shutdown - 系统关机<a class="headerlink" href="#shutdown-" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>shutdown -h now // 系统立即关机
+</span><span id="__span-62-2"><a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a>shutdown -h +10 // 10分钟后关机
+</span><span id="__span-62-3"><a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a>shutdown -r now // 重启
+</span></code></pre></div>
+<h3 id="watch-">watch - 定时监控命令<a class="headerlink" href="#watch-" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>watch -n 10 &#39;cat /proc/loadavg&#39; // 每隔10s输出系统平均负载
+</span></code></pre></div>
+<h3 id="strace-">strace - 跟踪程序执行<a class="headerlink" href="#strace-" title="Permanent link">&para;</a></h3>
 <p>strace命令是一个集诊断、调试、统计与一体的工具</p>
 <p>表9.1 strace常用选项</p>
 <table>
@@ -4954,45 +4938,35 @@ shutdown -r now // 重启
 + -e trace=network 跟踪与网络有关的所有系统调用.
 + -e strace=signal 跟踪所有与系统信号有关的系统调用
 + -e trace=ipc 跟踪所有与进程通讯有关的系统调用</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>strace -e open,access 2&gt;&amp;1 | grep your-filename // 查看打开文件情况
-strace -e open php 2&gt;&amp;1 | grep php.ini // 查看php加载php.ini信息
-strace -c &gt;/dev/null ls // 跟踪ls命令执行情况
-strace -f $(pidof php-fpm | sed &#39;s/\([0-9]*\)/\-p \1/g&#39;) // 查看php-fpm进程情况
-strace -f -tt -o /tmp/php.trace -s1024 -p `pidof php5-fpm | tr &#39; &#39; &#39;,&#39;` // 同上
-</code></pre></div></td></tr></table></div>
-<h2 id="10">10. 其他</h2>
-<h3 id="ulimit">ulimit</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>strace -e open,access 2&gt;&amp;1 | grep your-filename // 查看打开文件情况
+</span><span id="__span-64-2"><a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a>strace -e open php 2&gt;&amp;1 | grep php.ini // 查看php加载php.ini信息
+</span><span id="__span-64-3"><a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a>strace -c &gt;/dev/null ls // 跟踪ls命令执行情况
+</span><span id="__span-64-4"><a id="__codelineno-64-4" name="__codelineno-64-4" href="#__codelineno-64-4"></a>strace -f $(pidof php-fpm | sed &#39;s/\([0-9]*\)/\-p \1/g&#39;) // 查看php-fpm进程情况
+</span><span id="__span-64-5"><a id="__codelineno-64-5" name="__codelineno-64-5" href="#__codelineno-64-5"></a>strace -f -tt -o /tmp/php.trace -s1024 -p `pidof php5-fpm | tr &#39; &#39; &#39;,&#39;` // 同上
+</span></code></pre></div>
+<h2 id="10">10. 其他<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
+<h3 id="ulimit">ulimit<a class="headerlink" href="#ulimit" title="Permanent link">&para;</a></h3>
 <p>linux 默认值 open files 和 max user processes 为 1024
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>ulimit -n // 最多打开文件数
-ulimit -u // 最多处理用户进程数
-</code></pre></div></td></tr></table></div></p>
-<h3 id="uname">uname</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>uname -a // 查看系统信息
-</code></pre></div></td></tr></table></div>
-<h3 id="timedatectl-">timedatectl - 查看和设置时间</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>ulimit -n // 最多打开文件数
+</span><span id="__span-65-2"><a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a>ulimit -u // 最多处理用户进程数
+</span></code></pre></div></p>
+<h3 id="uname">uname<a class="headerlink" href="#uname" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>uname -a // 查看系统信息
+</span></code></pre></div>
+<h3 id="timedatectl-">timedatectl - 查看和设置时间<a class="headerlink" href="#timedatectl-" title="Permanent link">&para;</a></h3>
 <p>timedatectl是用来查询和修改系统时间和配置的Linux应用程序。它是systemd 系统服务管理的一部分，并且允许你检查和修改系统时钟的配置。
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>timedatectl<span class="w"> </span>//<span class="w"> </span>查看当前时间和时区
-timedatectl<span class="w"> </span>set-time<span class="w"> </span>YYYY-MM-DD<span class="w"> </span>//<span class="w"> </span>设置日期
-timedatectl<span class="w"> </span>set-time<span class="w"> </span>HH:MM:SS<span class="w"> </span>//<span class="w"> </span>设置时间
-timedatectl<span class="w"> </span>list-timezones<span class="w"> </span>//<span class="w"> </span>查看所有时区
-timedatectl<span class="w"> </span>set-timezone<span class="w"> </span><span class="s1">&#39;Asia/Shanghai&#39;</span><span class="w"> </span>//<span class="w"> </span>设置时区
-timedatectl<span class="w"> </span>set-ntp<span class="w"> </span>yes<span class="w"> </span>//<span class="w"> </span>设置NTP同步，使用“no”关闭NTP同步，使用“yes”开启
-</code></pre></div></td></tr></table></div></p>
-<h3 id="nice">nice</h3>
-<h3 id="ssh-keygen">ssh-keygen</h3>
-<h3 id="openssl">openssl</h3>
-<h3 id="date">date</h3>
-<h3 id="_1">快捷键</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>timedatectl<span class="w"> </span>//<span class="w"> </span>查看当前时间和时区
+</span><span id="__span-67-2"><a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a>timedatectl<span class="w"> </span>set-time<span class="w"> </span>YYYY-MM-DD<span class="w"> </span>//<span class="w"> </span>设置日期
+</span><span id="__span-67-3"><a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a>timedatectl<span class="w"> </span>set-time<span class="w"> </span>HH:MM:SS<span class="w"> </span>//<span class="w"> </span>设置时间
+</span><span id="__span-67-4"><a id="__codelineno-67-4" name="__codelineno-67-4" href="#__codelineno-67-4"></a>timedatectl<span class="w"> </span>list-timezones<span class="w"> </span>//<span class="w"> </span>查看所有时区
+</span><span id="__span-67-5"><a id="__codelineno-67-5" name="__codelineno-67-5" href="#__codelineno-67-5"></a>timedatectl<span class="w"> </span>set-timezone<span class="w"> </span><span class="s1">&#39;Asia/Shanghai&#39;</span><span class="w"> </span>//<span class="w"> </span>设置时区
+</span><span id="__span-67-6"><a id="__codelineno-67-6" name="__codelineno-67-6" href="#__codelineno-67-6"></a>timedatectl<span class="w"> </span>set-ntp<span class="w"> </span>yes<span class="w"> </span>//<span class="w"> </span>设置NTP同步，使用“no”关闭NTP同步，使用“yes”开启
+</span></code></pre></div></p>
+<h3 id="nice">nice<a class="headerlink" href="#nice" title="Permanent link">&para;</a></h3>
+<h3 id="ssh-keygen">ssh-keygen<a class="headerlink" href="#ssh-keygen" title="Permanent link">&para;</a></h3>
+<h3 id="openssl">openssl<a class="headerlink" href="#openssl" title="Permanent link">&para;</a></h3>
+<h3 id="date">date<a class="headerlink" href="#date" title="Permanent link">&para;</a></h3>
+<h3 id="_1">快捷键<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -5051,7 +5025,7 @@ timedatectl<span class="w"> </span>set-ntp<span class="w"> </span>yes<span class
 </tr>
 </tbody>
 </table>
-<h2 id="11">11. 相关资源</h2>
+<h2 id="11">11. 相关资源<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.kancloud.cn/thinkphp/linux-command-line">The Linux Command Line 中文版</a></li>
 <li><a href="http://linuxtools-rst.readthedocs.io/zh_CN/latest/index.html">Linux工具快速教程</a></li>
@@ -5068,6 +5042,8 @@ timedatectl<span class="w"> </span>set-ntp<span class="w"> </span>yes<span class
 </ul>
 
 
+  
+
 
 
 
@@ -5078,18 +5054,129 @@ timedatectl<span class="w"> </span>set-ntp<span class="w"> </span>yes<span class
           
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
       </main>
       
         <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../nptl/" class="md-footer__link md-footer__link--prev" aria-label="上一页: NPTL">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                NPTL
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../systemtap/" class="md-footer__link md-footer__link--next" aria-label="下一页: Systemtap">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                Systemtap
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 - 2024 Tink
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
       Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/squidfunk" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://hub.docker.com/r/squidfunk/mkdocs-material/" target="_blank" rel="noopener" title="hub.docker.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://pypi.org/project/mkdocs-material/" target="_blank" rel="noopener" title="pypi.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"/></svg>
+    </a>
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/squidfunk" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
     </a>
   
 </div>
@@ -5104,7 +5191,7 @@ timedatectl<span class="w"> </span>set-ntp<span class="w"> </span>yes<span class
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.94c44541.min.js"></script>
