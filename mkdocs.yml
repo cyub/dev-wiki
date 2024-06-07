@@ -36,8 +36,14 @@ nav:
     - 镜像: container/image.md
     - cgroup: container/cgroup.md
     - namespace: container/namespace.md
-  - 语言:
+  - 开发语言:
     - Go: language/Go.md
+  - Jupyter:
+    - Go-Frameworks-Github-Fork-Stats: jupyter/Go-Frameworks-Github-Fork-Stats.ipynb
+    - Pandas完全指南: jupyter/Pandas完全指南.ipynb
+    - Spark上手示例:
+      - jupyter/Spark上手示例1：RDD操作.ipynb
+      - jupyter/Spark上手示例2：DataFrame操作.ipynb
   - QA:
     - redis: qa/redis.md
     - mysql: qa/mysql.md
@@ -48,7 +54,7 @@ nav:
     - 消息队列: qa/queue.md
     - IO: qa/io.md
     - protobuf: qa/protobuf.md
-    - go: qa/go.md
+    - go: qa/go.md 
     - 分布式: qa/dist.md
     - Elasticsearch: qa/es.md
     - docker: qa/docker.md
@@ -118,7 +124,12 @@ theme:
 
 plugins:
   - search:
-      separator: '[\s\u200b\-]'
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - git-revision-date-localized:
+      type: iso_date
+  - glightbox
+  - mkdocs-jupyter
+  - print-site
 
 # Additional configuration
 extra:
