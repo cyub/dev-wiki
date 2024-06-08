@@ -5,7 +5,7 @@
 【中英字幕】油管百万播放的《数据结构》教程，Google顶尖程序员亲授，4小时快速入门，完全深度详细讲解！！！
 
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=1954255141&bvid=BV1dC411E77b&cid=1536736699&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=1954255141&bvid=BV1dC411E77b&cid=1536736699&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 ## Data Structures Easy to Advanced Course - Full Tutorial from a Google Engineer
 

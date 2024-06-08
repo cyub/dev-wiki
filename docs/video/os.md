@@ -50,3 +50,9 @@ https://www.youtube.com/playlist?list=PLbtzT1TYeoMhTPzyTZboW_j7TPAnjv9XB
 ## Circuit Breaker Pattern - Fault Tolerant Microservices
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ADHcBxEXvFA?si=8-CCD2PDvAVyQGY8&amp;start=505" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## 操作系统：设计与实现
+
+2024 南京大学《操作系统：设计与实现》。课程主页（含讲义）：https://jyywiki.cn/OS/2024/。
+
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=1901248603&bvid=BV1Xm411f7CM&cid=1452947593&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
