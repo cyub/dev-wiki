@@ -10,6 +10,11 @@ nav:
     - IO: computer-system/io.md
     - proc文件系统: computer-system/proc.md
     - NPTL: computer-system/nptl.md
+    - 容器:
+      - 简介: container/install.md
+      - 镜像: container/image.md
+      - cgroup: container/cgroup.md
+      - namespace: container/namespace.md
     - 常用命令: computer-system/command.md
     - Systemtap: computer-system/systemtap.md
     - CPU架构: computer-system/cpu-arch.md
@@ -30,20 +35,24 @@ nav:
       - 生产配置参考: database/elasticsearch/production_configuring.md
       - docs value与 field data: database/elasticsearch/doc_values_and_fielddata.md
     - Redis: database/redis/redis.md
-  - 缓存系统: cache/README.md
-  - 容器: 
-    - 简介: container/install.md
-    - 镜像: container/image.md
-    - cgroup: container/cgroup.md
-    - namespace: container/namespace.md
   - 开发语言:
     - Go: language/Go.md
+  - 系统设计:
+    - 系统设计: system-design/index.md
+    - 缓存系统: cache/README.md
+    - 系统设计入门: system-design/system-design-primer/index.md
+    - what you should know:
+      - Ｃ程序员该知道的内存知识: what-should-you-know/README.md
   - Jupyter:
     - Go-Frameworks-Github-Fork-Stats: jupyter/Go-Frameworks-Github-Fork-Stats.ipynb
     - Pandas完全指南: jupyter/Pandas完全指南.ipynb
     - Spark上手示例:
       - jupyter/Spark上手示例1：RDD操作.ipynb
       - jupyter/Spark上手示例2：DataFrame操作.ipynb
+  - 视频:
+    - 操作系统: video/os.md
+    - 数据结构与算法: video/Data structures.md
+    - C/C++: video/c_c++.md
   - QA:
     - redis: qa/redis.md
     - mysql: qa/mysql.md
@@ -128,7 +137,9 @@ plugins:
   - git-revision-date-localized:
       type: iso_date
   - glightbox
-  - mkdocs-jupyter
+  - mkdocs-jupyter:
+      include: ["*.ipynb"]
+      ignore: ["system-design/*.ipynb"]
   - print-site
 
 # Additional configuration
