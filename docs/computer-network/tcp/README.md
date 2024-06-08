@@ -1141,7 +1141,7 @@ net.ipv4.tcp_keepalive_probes=9
 
 也就是说在 Linux 系统中，最少需要经过 2 小时 11 分 15 秒才可以发现一个「死亡」连接。
 
-![](../images/tcp_keep_alive.jpg)
+![](../images/tcp/tcp_keep_alive.jpg)
 
 这个时间是有点长的，我们也可以根据实际的需求，对以上的保活相关的参数进行设置。
 
