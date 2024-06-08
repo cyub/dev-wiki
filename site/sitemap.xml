@@ -386,6 +386,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.cyub.vip/dev-wiki/video/Go/</loc>
+         <lastmod>2024-06-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.cyub.vip/dev-wiki/video/c_c%2B%2B/</loc>
          <lastmod>2024-06-08</lastmod>
          <changefreq>daily</changefreq>
@@ -397,6 +402,11 @@
     </url>
     <url>
          <loc>https://docs.cyub.vip/dev-wiki/what-should-you-know/</loc>
+         <lastmod>2024-06-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.cyub.vip/dev-wiki/what-should-you-know/GPU/</loc>
          <lastmod>2024-06-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
