@@ -56,3 +56,7 @@ https://www.youtube.com/playlist?list=PLbtzT1TYeoMhTPzyTZboW_j7TPAnjv9XB
 2024 南京大学《操作系统：设计与实现》。课程主页（含讲义）：https://jyywiki.cn/OS/2024/。
 
 <iframe width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=1901248603&bvid=BV1Xm411f7CM&cid=1452947593&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+## 每个程序员都应该了解的
+
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=491219273&bvid=BV1kN411H7Db&cid=1273780705&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>

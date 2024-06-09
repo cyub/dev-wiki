@@ -49,6 +49,9 @@ nav:
         - 【总结版】每个程序员都应该了解的内存知识: what-should-you-know/每个程序员都应该了解的内存知识.md
         - 【英文】What Every Programmer Should Know About Memory: what-should-you-know/What Every Programmer Should Know About Memory.pdf
         - 【中文】每个程序员都应该了解的内存知识: what-should-you-know/每个程序员都应该了解的内存知识.pdf
+      - 每个系统程序员都应该了解的并发知识: 
+        - 【英文】What every systems programmer should know about concurrency: what-should-you-know/concurrency-primer.pdf
+        - 【中文】每个系统程序员都应该了解的并发知识: https://www.bilibili.com/read/cv26734224
   - Jupyter:
     - Go-Frameworks-Github-Fork-Stats: jupyter/Go-Frameworks-Github-Fork-Stats.ipynb
     - Pandas完全指南: jupyter/Pandas完全指南.ipynb
