@@ -137,7 +137,7 @@ theme:
   font:
     text: Fira Code
     code: Fira Code
-  favicon: assets/favicon.png
+  favicon: images/favicon.ico
   icon:
     logo: logo
 
