@@ -57,8 +57,8 @@ nav:
       - Go-Frameworks-Github-Fork-Stats: jupyter/Go-Frameworks-Github-Fork-Stats.ipynb
       - Pandas完全指南: jupyter/Pandas完全指南.ipynb
       - Spark上手示例:
-        - jupyter/"Spark上手示例1：RDD操作.ipynb"
-        - jupyter/"Spark上手示例2：DataFrame操作.ipynb"
+        - jupyter/Spark上手示例1：RDD操作.ipynb
+        - jupyter/Spark上手示例2：DataFrame操作.ipynb
     - 视频:
       - 操作系统: video/os.md
       - 数据结构与算法: video/Data structures.md
