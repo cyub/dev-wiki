@@ -2918,9 +2918,15 @@
 <li>线程 B 删除缓存</li>
 <li>线程 A 将查到的旧值写入缓存</li>
 </ul>
-<p>解决办法：
-- Cache Aside Pattern</p>
+<p>解决办法：</p>
+<ul>
+<li>Cache-Aside模式</li>
+</ul>
 <p><a class="glightbox" href="images/cache_aside.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="images/cache_aside.jpg" /></a></p>
+<div class="admonition info">
+<p class="admonition-title">什么是Cache-Aside模式？</p>
+<p><strong>Cache-Aside(旁路缓存)模式</strong> 是一种缓存策略，当缓存未命中时从数据库加载数据并更新缓存，以提高读取效率，同时在数据更新时同步更新缓存和数据库以保持一致性。</p>
+</div>
 <ul>
 <li>binlog模式</li>
 </ul>
@@ -2935,7 +2941,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-11</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-06-13</span>
       
     
   </small>
