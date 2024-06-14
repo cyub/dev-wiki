@@ -53,18 +53,23 @@ nav:
         - 【英文】What every systems programmer should know about concurrency: what-should-you-know/concurrency-primer.pdf
         - 【中文】每个系统程序员都应该了解的并发知识: https://www.bilibili.com/read/cv26734224
         - 【机翻中文】每个系统程序员都应该了解的并发知识: what-should-you-know/每个系统程序员都应该了解的并发知识.md
-  - Jupyter/视频/PPT:
+  - 教程:
     - Jupyter:
       - Go-Frameworks-Github-Fork-Stats: jupyter/Go-Frameworks-Github-Fork-Stats.ipynb
       - Pandas完全指南: jupyter/Pandas完全指南.ipynb
       - Spark上手示例:
         - jupyter/Spark上手示例1：RDD操作.ipynb
         - jupyter/Spark上手示例2：DataFrame操作.ipynb
-    - 视频:
-      - 操作系统: video/os.md
-      - 数据结构与算法: video/Data structures.md
-      - C/C++: video/c_c++.md
-      - Go: video/Go.md
+    - 编程:
+      - 操作系统:
+        - 视频: video/os.md
+      - 数据结构与算法:
+        - 视频: video/Data structures.md
+      - C/C++:
+        - 视频: video/c_c++.md
+        - 文本: course/c_c++.md
+      - Go:
+        - 视频: video/Go.md
     - PPT:
       - Go语言简介: assets/ppt/Golang简介.pdf
   - QA:
@@ -138,9 +143,7 @@ theme:
       toggle:
         icon: material/toggle-switch-off
         name: Switch to system preference
-  font:
-    text: Fira Code
-    code: Fira Code
+  font: false
   favicon: images/favicon.ico
   icon:
     logo: logo
@@ -154,7 +157,6 @@ plugins:
   - mkdocs-jupyter:
       include: ["*.ipynb"]
       ignore: ["system-design/*.ipynb"]
-  - print-site
 
 # Additional configuration
 extra:
@@ -175,6 +177,11 @@ extra:
       link: https://fosstodon.org/@squidfunk
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/squidfunk
+
+extra_css:
+  - 'css/extra.css'
+  - 'https://cdn.jsdelivr.net/npm/roboto-font@0.1.0/css/fonts.min.css'
+  - 'https://cdn.jsdelivr.net/npm/typeface-roboto-mono@1.1.13/index.css'
 
 # Extensions
 markdown_extensions:
