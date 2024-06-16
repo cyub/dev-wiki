@@ -8,8 +8,8 @@ https://www.youtube.com/watch?v=rx6CPDK_5mU&list=PLy_6D98if3ULEtXtNSY_2qN21VCKgo
 
 Github地址: https://github.com/techschool/simplebank
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=245437113&bvid=BV1Zv411t7aq&cid=262407176&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+<iframe width="760" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=245437113&bvid=BV1Zv411t7aq&cid=262407176&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 ## 【幼麟实验室】Golang合辑
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=246038798&bvid=BV1hv411x7we&cid=279322631&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+<iframe width="760" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=246038798&bvid=BV1hv411x7we&cid=279322631&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>

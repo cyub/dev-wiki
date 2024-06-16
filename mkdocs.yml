@@ -70,6 +70,8 @@ nav:
         - 文本: course/c_c++.md
       - Go:
         - 视频: video/Go.md
+      - Rust: course/rust.md
+      - 更多: course/more.md
     - PPT:
       - Go语言简介: assets/ppt/Golang简介.pdf
   - QA:
@@ -167,17 +169,13 @@ extra:
     provider: google
     property: !ENV GOOGLE_ANALYTICS_KEY
   social:
+    - icon: fontawesome/solid/blog
+      link: https://www.cyub.vip
+    - icon: fontawesome/brands/golang
+      link: https://go.cyub.vip
     - icon: fontawesome/brands/github
-      link: https://github.com/squidfunk
-    - icon: fontawesome/brands/docker
-      link: https://hub.docker.com/r/squidfunk/mkdocs-material/
-    - icon: fontawesome/brands/python
-      link: https://pypi.org/project/mkdocs-material/
-    - icon: fontawesome/brands/mastodon
-      link: https://fosstodon.org/@squidfunk
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/squidfunk
-
+      link: https://github.com/cyub
+  
 extra_css:
   - 'css/extra.css'
   - 'https://cdn.jsdelivr.net/npm/roboto-font@0.1.0/css/fonts.min.css'
