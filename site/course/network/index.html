@@ -12,24 +12,28 @@
         <meta name="author" content="tink">
       
       
-        <link rel="canonical" href="https://docs.cyub.vip/dev-wiki/system-design/system-design-primer/solutions/system_design/scaling_aws/README-zh-Hans/">
+        <link rel="canonical" href="https://docs.cyub.vip/dev-wiki/course/network/">
       
       
+        <link rel="prev" href="../../video/os/">
       
       
-      <link rel="icon" href="../../../../../../images/favicon.ico">
+        <link rel="next" href="../../video/Data%20structures/">
+      
+      
+      <link rel="icon" href="../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.4">
     
     
       
-        <title>在 AWS 上设计支持百万级到千万级用户的系统 - 开发知识wiki</title>
+        <title>网络 - 开发知识wiki</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.bd3936ea.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bd3936ea.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -42,13 +46,13 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../../css/extra.css">
+      <link rel="stylesheet" href="../../css/extra.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/roboto-font@0.1.0/css/fonts.min.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-roboto-mono@1.1.13/index.css">
     
-    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -65,7 +69,7 @@
     
     
     
-   <link href="../../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -74,7 +78,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../../../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -96,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aws" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -110,7 +114,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../../../.." title="开发知识wiki" class="md-header__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
+    <a href="../.." title="开发知识wiki" class="md-header__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -135,7 +139,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              在 AWS 上设计支持百万级到千万级用户的系统
+              网络
             
           </span>
         </div>
@@ -244,7 +248,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -263,7 +267,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../../computer-system/io/" class="md-tabs__link">
+        <a href="../../computer-system/io/" class="md-tabs__link">
           
   
     
@@ -283,7 +287,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../../computer-network/tcp/" class="md-tabs__link">
+        <a href="../../computer-network/tcp/" class="md-tabs__link">
           
   
     
@@ -309,7 +313,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../../database/mysql/%E7%AE%80%E4%BB%8B/" class="md-tabs__link">
+        <a href="../../database/mysql/%E7%AE%80%E4%BB%8B/" class="md-tabs__link">
           
   
     
@@ -332,7 +336,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../../language/Go/" class="md-tabs__link">
+        <a href="../../language/Go/" class="md-tabs__link">
           
   
     
@@ -352,7 +356,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../" class="md-tabs__link">
+        <a href="../../system-design/" class="md-tabs__link">
           
   
     
@@ -368,17 +372,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../../../../jupyter/Go-Frameworks-Github-Fork-Stats/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../jupyter/Go-Frameworks-Github-Fork-Stats/" class="md-tabs__link">
           
   
     
@@ -401,7 +409,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../../qa/redis/" class="md-tabs__link">
+        <a href="../../qa/redis/" class="md-tabs__link">
           
   
     
@@ -436,7 +444,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../../.." title="开发知识wiki" class="md-nav__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
+    <a href="../.." title="开发知识wiki" class="md-nav__button md-logo" aria-label="开发知识wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -458,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -534,7 +542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../computer-system/io/" class="md-nav__link">
+      <a href="../../computer-system/io/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -554,7 +562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../computer-system/proc/" class="md-nav__link">
+      <a href="../../computer-system/proc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -574,7 +582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../computer-system/nptl/" class="md-nav__link">
+      <a href="../../computer-system/nptl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -643,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../container/install/" class="md-nav__link">
+      <a href="../../container/install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -663,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../container/image/" class="md-nav__link">
+      <a href="../../container/image/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -683,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../container/cgroup/" class="md-nav__link">
+      <a href="../../container/cgroup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -703,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../container/namespace/" class="md-nav__link">
+      <a href="../../container/namespace/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -731,7 +739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../computer-system/command/" class="md-nav__link">
+      <a href="../../computer-system/command/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -751,7 +759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../computer-system/systemtap/" class="md-nav__link">
+      <a href="../../computer-system/systemtap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -771,7 +779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../computer-system/cpu-arch/" class="md-nav__link">
+      <a href="../../computer-system/cpu-arch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -791,7 +799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../computer-system/compiling-linux-kernel/" class="md-nav__link">
+      <a href="../../computer-system/compiling-linux-kernel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -845,7 +853,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../../computer-network/tcp/" class="md-nav__link ">
+            <a href="../../computer-network/tcp/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -877,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../computer-network/http/" class="md-nav__link">
+      <a href="../../computer-network/http/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1000,7 +1008,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../database/mysql/%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../database/mysql/%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1020,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../database/mysql/%E4%BA%8B%E5%8A%A1/" class="md-nav__link">
+      <a href="../../database/mysql/%E4%BA%8B%E5%8A%A1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1040,7 +1048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../database/mysql/%E7%B4%A2%E5%BC%95/" class="md-nav__link">
+      <a href="../../database/mysql/%E7%B4%A2%E5%BC%95/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1060,7 +1068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../database/mysql/FAQ/" class="md-nav__link">
+      <a href="../../database/mysql/FAQ/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1119,7 +1127,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../../database/elasticsearch/" class="md-nav__link ">
+            <a href="../../database/elasticsearch/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1151,7 +1159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../database/elasticsearch/memory/" class="md-nav__link">
+      <a href="../../database/elasticsearch/memory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1171,7 +1179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../database/elasticsearch/performance_tuning/" class="md-nav__link">
+      <a href="../../database/elasticsearch/performance_tuning/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1191,7 +1199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../database/elasticsearch/production_configuring/" class="md-nav__link">
+      <a href="../../database/elasticsearch/production_configuring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1211,7 +1219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../database/elasticsearch/doc_values_and_fielddata/" class="md-nav__link">
+      <a href="../../database/elasticsearch/doc_values_and_fielddata/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1239,7 +1247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../database/redis/redis/" class="md-nav__link">
+      <a href="../../database/redis/redis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1309,7 +1317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../language/Go/" class="md-nav__link">
+      <a href="../../language/Go/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1369,7 +1377,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../" class="md-nav__link ">
+            <a href="../../system-design/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1401,7 +1409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cache/" class="md-nav__link">
+      <a href="../../cache/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1421,7 +1429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../" class="md-nav__link">
+      <a href="../../system-design/system-design-primer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1472,7 +1480,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../../what-should-you-know/" class="md-nav__link ">
+            <a href="../../what-should-you-know/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1502,7 +1510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../what-should-you-know/GPU/" class="md-nav__link">
+      <a href="../../what-should-you-know/GPU/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1524,7 +1532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../what-should-you-know/hardware/" class="md-nav__link">
+      <a href="../../what-should-you-know/hardware/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1588,7 +1596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../what-should-you-know/%E6%AF%8F%E4%B8%AA%E7%A8%8B%E5%BA%8F%E5%91%98%E9%83%BD%E5%BA%94%E8%AF%A5%E4%BA%86%E8%A7%A3%E7%9A%84%E5%86%85%E5%AD%98%E7%9F%A5%E8%AF%86/" class="md-nav__link">
+      <a href="../../what-should-you-know/%E6%AF%8F%E4%B8%AA%E7%A8%8B%E5%BA%8F%E5%91%98%E9%83%BD%E5%BA%94%E8%AF%A5%E4%BA%86%E8%A7%A3%E7%9A%84%E5%86%85%E5%AD%98%E7%9F%A5%E8%AF%86/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1608,7 +1616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../what-should-you-know/What%20Every%20Programmer%20Should%20Know%20About%20Memory.pdf" class="md-nav__link">
+      <a href="../../what-should-you-know/What%20Every%20Programmer%20Should%20Know%20About%20Memory.pdf" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1628,7 +1636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../what-should-you-know/%E6%AF%8F%E4%B8%AA%E7%A8%8B%E5%BA%8F%E5%91%98%E9%83%BD%E5%BA%94%E8%AF%A5%E4%BA%86%E8%A7%A3%E7%9A%84%E5%86%85%E5%AD%98%E7%9F%A5%E8%AF%86.pdf" class="md-nav__link">
+      <a href="../../what-should-you-know/%E6%AF%8F%E4%B8%AA%E7%A8%8B%E5%BA%8F%E5%91%98%E9%83%BD%E5%BA%94%E8%AF%A5%E4%BA%86%E8%A7%A3%E7%9A%84%E5%86%85%E5%AD%98%E7%9F%A5%E8%AF%86.pdf" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1700,7 +1708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../what-should-you-know/concurrency-primer.pdf" class="md-nav__link">
+      <a href="../../what-should-you-know/concurrency-primer.pdf" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1740,7 +1748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../what-should-you-know/%E6%AF%8F%E4%B8%AA%E7%B3%BB%E7%BB%9F%E7%A8%8B%E5%BA%8F%E5%91%98%E9%83%BD%E5%BA%94%E8%AF%A5%E4%BA%86%E8%A7%A3%E7%9A%84%E5%B9%B6%E5%8F%91%E7%9F%A5%E8%AF%86/" class="md-nav__link">
+      <a href="../../what-should-you-know/%E6%AF%8F%E4%B8%AA%E7%B3%BB%E7%BB%9F%E7%A8%8B%E5%BA%8F%E5%91%98%E9%83%BD%E5%BA%94%E8%AF%A5%E4%BA%86%E8%A7%A3%E7%9A%84%E5%B9%B6%E5%8F%91%E7%9F%A5%E8%AF%86/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1781,6 +1789,8 @@
       
   
   
+    
+  
   
     
     
@@ -1798,12 +1808,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
@@ -1817,7 +1827,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             教程
@@ -1877,7 +1887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../jupyter/Go-Frameworks-Github-Fork-Stats/" class="md-nav__link">
+      <a href="../../jupyter/Go-Frameworks-Github-Fork-Stats/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1897,7 +1907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../jupyter/Pandas%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/" class="md-nav__link">
+      <a href="../../jupyter/Pandas%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1959,7 +1969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../jupyter/Spark%E4%B8%8A%E6%89%8B%E7%A4%BA%E4%BE%8B1%EF%BC%9ARDD%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+      <a href="../../jupyter/Spark%E4%B8%8A%E6%89%8B%E7%A4%BA%E4%BE%8B1%EF%BC%9ARDD%E6%93%8D%E4%BD%9C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1979,7 +1989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../jupyter/Spark%E4%B8%8A%E6%89%8B%E7%A4%BA%E4%BE%8B2%EF%BC%9ADataFrame%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+      <a href="../../jupyter/Spark%E4%B8%8A%E6%89%8B%E7%A4%BA%E4%BE%8B2%EF%BC%9ADataFrame%E6%93%8D%E4%BD%9C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2013,6 +2023,8 @@
                 
   
   
+    
+  
   
     
     
@@ -2038,12 +2050,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" checked>
         
           
           <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="">
@@ -2057,7 +2069,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7_2">
             <span class="md-nav__icon md-icon"></span>
             编程
@@ -2110,7 +2122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../video/os/" class="md-nav__link">
+      <a href="../../video/os/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2136,9 +2148,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../../../../course/network/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    网络
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2147,6 +2179,33 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linux-network-internals" class="md-nav__link">
+    Linux network internals
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2198,7 +2257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../video/Data%20structures/" class="md-nav__link">
+      <a href="../../video/Data%20structures/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2268,7 +2327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../video/c_c%2B%2B/" class="md-nav__link">
+      <a href="../../video/c_c%2B%2B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2288,7 +2347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../course/c_c%2B%2B/" class="md-nav__link">
+      <a href="../c_c%2B%2B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2356,7 +2415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../video/Go/" class="md-nav__link">
+      <a href="../../video/Go/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2384,7 +2443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../course/rust/" class="md-nav__link">
+      <a href="../rust/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2404,7 +2463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../course/more/" class="md-nav__link">
+      <a href="../more/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2475,7 +2534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../assets/ppt/Golang%E7%AE%80%E4%BB%8B.pdf" class="md-nav__link">
+      <a href="../../assets/ppt/Golang%E7%AE%80%E4%BB%8B.pdf" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2579,7 +2638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../qa/redis/" class="md-nav__link">
+      <a href="../../qa/redis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2599,7 +2658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../qa/mysql/" class="md-nav__link">
+      <a href="../../qa/mysql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2619,7 +2678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../qa/tcp/" class="md-nav__link">
+      <a href="../../qa/tcp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2639,7 +2698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../qa/http/" class="md-nav__link">
+      <a href="../../qa/http/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2659,7 +2718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../qa/cache/" class="md-nav__link">
+      <a href="../../qa/cache/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2679,7 +2738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../qa/nginx/" class="md-nav__link">
+      <a href="../../qa/nginx/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2699,7 +2758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../qa/queue/" class="md-nav__link">
+      <a href="../../qa/queue/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2719,7 +2778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../qa/io/" class="md-nav__link">
+      <a href="../../qa/io/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2739,7 +2798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../qa/protobuf/" class="md-nav__link">
+      <a href="../../qa/protobuf/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2759,7 +2818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../qa/go/" class="md-nav__link">
+      <a href="../../qa/go/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2779,7 +2838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../qa/dist/" class="md-nav__link">
+      <a href="../../qa/dist/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2799,7 +2858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../qa/es/" class="md-nav__link">
+      <a href="../../qa/es/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2819,7 +2878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../qa/docker/" class="md-nav__link">
+      <a href="../../qa/docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2839,7 +2898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../qa/ref/" class="md-nav__link">
+      <a href="../../qa/ref/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2887,395 +2946,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    第 1 步：用例和约束概要
+  <a href="#linux-network-internals" class="md-nav__link">
+    Linux network internals
   </a>
-  
-    <nav class="md-nav" aria-label="第 1 步：用例和约束概要">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    用例
-  </a>
-  
-    <nav class="md-nav" aria-label="用例">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    我们就处理以下用例讨论这一问题
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    约束和假设
-  </a>
-  
-    <nav class="md-nav" aria-label="约束和假设">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    状态假设
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    计算使用
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    第 2 步：创建高级设计方案
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    第 3 步：设计核心组件
-  </a>
-  
-    <nav class="md-nav" aria-label="第 3 步：设计核心组件">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    用例：用户进行读写请求
-  </a>
-  
-    <nav class="md-nav" aria-label="用例：用户进行读写请求">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    目标
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    以单台服务器开始
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sql-nosql" class="md-nav__link">
-    自 SQL 开始，但认真考虑 NoSQL
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ip" class="md-nav__link">
-    分配公共静态 IP
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dns" class="md-nav__link">
-    使用 DNS 服务
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#web" class="md-nav__link">
-    安全的 Web 服务器
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    第 4 步：扩展设计
-  </a>
-  
-    <nav class="md-nav" aria-label="第 4 步：扩展设计">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    用户+
-  </a>
-  
-    <nav class="md-nav" aria-label="用户+">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    假设
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    目标
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    独立保存静态内容
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mysql" class="md-nav__link">
-    迁移 MySQL 数据库到独立机器上
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    系统安全
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    用户+++
-  </a>
-  
-    <nav class="md-nav" aria-label="用户+++">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
-    假设
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
-    目标
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    用户+++
-  </a>
-  
-    <nav class="md-nav" aria-label="用户+++">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
-    假设
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
-    目标
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mysql_1" class="md-nav__link">
-    添加 MySQL 读取副本
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
-    用户++++
-  </a>
-  
-    <nav class="md-nav" aria-label="用户++++">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_21" class="md-nav__link">
-    假设
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_22" class="md-nav__link">
-    目标
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_23" class="md-nav__link">
-    添加自动扩展
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_24" class="md-nav__link">
-    用户+++++
-  </a>
-  
-    <nav class="md-nav" aria-label="用户+++++">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_25" class="md-nav__link">
-    假设
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_26" class="md-nav__link">
-    目标
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_27" class="md-nav__link">
-    额外的话题
-  </a>
-  
-    <nav class="md-nav" aria-label="额外的话题">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sql" class="md-nav__link">
-    SQL 扩展模式
-  </a>
-  
-    <nav class="md-nav" aria-label="SQL 扩展模式">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#nosql" class="md-nav__link">
-    NoSQL
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_28" class="md-nav__link">
-    缓存
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_29" class="md-nav__link">
-    异步性和微服务
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_30" class="md-nav__link">
-    沟通
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_31" class="md-nav__link">
-    安全性
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_32" class="md-nav__link">
-    延迟数字指标
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_33" class="md-nav__link">
-    正在进行
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3294,456 +2967,17 @@
                   
 
 
-<h1 id="aws">在 AWS 上设计支持百万级到千万级用户的系统<a class="headerlink" href="#aws" title="Permanent link">&para;</a></h1>
-<p><strong>注释：为了避免重复，这篇文章的链接直接关联到 <a href="https://github.com/donnemartin/system-design-primer#index-of-system-design-topics">系统设计主题</a> 的相关章节。为一讨论要点、折中方案和可选方案做参考。</strong></p>
-<h2 id="1">第 1 步：用例和约束概要<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>收集需求并调查问题。
-通过提问清晰用例和约束。
-讨论假设。</p>
-</blockquote>
-<p>如果没有面试官提出明确的问题，我们将自己定义一些用例和约束条件。</p>
-<h3 id="_1">用例<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>解决这个问题是一个循序渐进的过程：1) <strong>基准/负载 测试</strong>， 2) 瓶颈 <strong>概述</strong>， 3) 当评估可选和折中方案时定位瓶颈，4) 重复，这是向可扩展的设计发展基础设计的好模式。</p>
-<p>除非你有 AWS 的背景或者正在申请需要 AWS 知识的相关职位，否则不要求了解 AWS 的相关细节。并且，这个练习中讨论的许多原则可以更广泛地应用于AWS生态系统之外。</p>
-<h4 id="_2">我们就处理以下用例讨论这一问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<ul>
-<li><strong>用户</strong> 进行读或写请求<ul>
-<li><strong>服务</strong> 进行处理，存储用户数据，然后返回结果</li>
-</ul>
-</li>
-<li><strong>服务</strong> 需要从支持小规模用户开始到百万用户<ul>
-<li>在我们演化架构来处理大量的用户和请求时，讨论一般的扩展模式</li>
-</ul>
-</li>
-<li><strong>服务</strong> 高可用</li>
-</ul>
-<h3 id="_3">约束和假设<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<h4 id="_4">状态假设<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<ul>
-<li>流量不均匀分布</li>
-<li>需要关系数据</li>
-<li>从一个用户扩展到千万用户<ul>
-<li>表示用户量的增长<ul>
-<li>用户量+</li>
-<li>用户量++</li>
-<li>用户量+++</li>
-<li>...</li>
-</ul>
-</li>
-<li>1000 万用户</li>
-<li>每月 10 亿次写入</li>
-<li>每月 1000 亿次读出</li>
-<li>100:1 读写比率</li>
-<li>每次写入 1 KB 内容</li>
-</ul>
-</li>
-</ul>
-<h4 id="_5">计算使用<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
-<p><strong>向你的面试官厘清你是否应该做粗略的使用计算</strong></p>
-<ul>
-<li>1 TB 新内容 / 月<ul>
-<li>1 KB 每次写入 * 10 亿 写入 / 月</li>
-<li>36 TB 新内容 / 3 年</li>
-<li>假设大多数写入都是新内容而不是更新已有内容</li>
-</ul>
-</li>
-<li>平均每秒 400 次写入</li>
-<li>平均每秒 40,000 次读取</li>
-</ul>
-<p>便捷的转换指南：</p>
-<ul>
-<li>250 万秒 / 月</li>
-<li>1 次请求 / 秒 = 250 万次请求 / 月</li>
-<li>40 次请求 / 秒 = 1 亿次请求 / 月</li>
-<li>400 次请求 / 秒 = 10 亿请求 / 月</li>
-</ul>
-<h2 id="2">第 2 步：创建高级设计方案<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>用所有重要组件概述高水平设计</p>
-</blockquote>
-<p><a class="glightbox" href="http://i.imgur.com/B8LDKD7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Imgur" src="http://i.imgur.com/B8LDKD7.png" /></a></p>
-<h2 id="3">第 3 步：设计核心组件<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>深入每个核心组件的细节。</p>
-</blockquote>
-<h3 id="_6">用例：用户进行读写请求<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<h4 id="_7">目标<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
-<ul>
-<li>只有 1-2 个用户时，你只需要基础配置<ul>
-<li>为简单起见，只需要一台服务器</li>
-<li>必要时进行纵向扩展</li>
-<li>监控以确定瓶颈</li>
-</ul>
-</li>
-</ul>
-<h4 id="_8">以单台服务器开始<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
-<ul>
-<li><strong>Web 服务器</strong> 在 EC2 上<ul>
-<li>存储用户数据</li>
-<li><a href="https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms"><strong>MySQL 数据库</strong></a></li>
-</ul>
-</li>
-</ul>
-<p>运用 <strong>纵向扩展</strong>：</p>
-<ul>
-<li>选择一台更大容量的服务器</li>
-<li>密切关注指标，确定如何扩大规模<ul>
-<li>使用基本监控来确定瓶颈:CPU、内存、IO、网络等</li>
-<li>CloudWatch, top, nagios, statsd, graphite等</li>
-</ul>
-</li>
-<li>纵向扩展的代价将变得更昂贵</li>
-<li>无冗余/容错</li>
-</ul>
-<p><strong>折中方案, 可选方案, 和其他细节:</strong></p>
-<ul>
-<li><strong>纵向扩展</strong> 的可选方案是 <a href="https://github.com/donnemartin/system-design-primer#horizontal-scaling"><strong>横向扩展</strong></a></li>
-</ul>
-<h4 id="sql-nosql">自 SQL 开始，但认真考虑 NoSQL<a class="headerlink" href="#sql-nosql" title="Permanent link">&para;</a></h4>
-<p>约束条件假设需要关系型数据。我们可以开始时在单台服务器上使用 <strong>MySQL 数据库</strong>。</p>
-<p><strong>折中方案, 可选方案, 和其他细节:</strong></p>
-<ul>
-<li>查阅 <a href="https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms">关系型数据库管理系统 (RDBMS)</a> 章节</li>
-<li>讨论使用 <a href="https://github.com/donnemartin/system-design-primer#sql-or-nosql">SQL 或 NoSQL</a> 的原因</li>
-</ul>
-<h4 id="ip">分配公共静态 IP<a class="headerlink" href="#ip" title="Permanent link">&para;</a></h4>
-<ul>
-<li>弹性 IP 提供了一个公共端点，不会在重启时改变 IP。</li>
-<li>故障转移时只需要把域名指向新 IP。</li>
-</ul>
-<h4 id="dns">使用 DNS 服务<a class="headerlink" href="#dns" title="Permanent link">&para;</a></h4>
-<p>添加 <strong>DNS</strong> 服务，比如 Route 53（<a href="https://aws.amazon.com/cn/route53/">Amazon Route 53</a> - 译者注），将域映射到实例的公共 IP 中。</p>
-<p><strong>折中方案, 可选方案, 和其他细节:</strong></p>
-<ul>
-<li>查阅 <a href="https://github.com/donnemartin/system-design-primer#domain-name-system">域名系统</a> 章节</li>
-</ul>
-<h4 id="web">安全的 Web 服务器<a class="headerlink" href="#web" title="Permanent link">&para;</a></h4>
-<ul>
-<li>只开放必要的端口<ul>
-<li>允许 Web 服务器响应来自以下端口的请求<ul>
-<li>HTTP 80</li>
-<li>HTTPS 443</li>
-<li>SSH IP 白名单 22</li>
-</ul>
-</li>
-<li>防止 Web 服务器启动外链</li>
-</ul>
-</li>
-</ul>
-<p><strong>折中方案, 可选方案, 和其他细节:</strong></p>
-<ul>
-<li>查阅 <a href="https://github.com/donnemartin/system-design-primer#security">安全</a> 章节</li>
-</ul>
-<h2 id="4">第 4 步：扩展设计<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>在给定约束条件下，定义和确认瓶颈。</p>
-</blockquote>
-<h3 id="_9">用户+<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p><a class="glightbox" href="http://i.imgur.com/rrfjMXB.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Imgur" src="http://i.imgur.com/rrfjMXB.png" /></a></p>
-<h4 id="_10">假设<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
-<p>我们的用户数量开始上升，并且单台服务器的负载上升。<strong>基准/负载测试</strong> 和 <strong>分析</strong> 指出 <strong>MySQL 数据库</strong> 占用越来越多的内存和 CPU 资源，同时用户数据将填满硬盘空间。</p>
-<p>目前，我们尚能在纵向扩展时解决这些问题。不幸的是，解决这些问题的代价变得相当昂贵，并且原来的系统并不能允许在 <strong>MySQL 数据库</strong> 和 <strong>Web 服务器</strong> 的基础上进行独立扩展。</p>
-<h4 id="_11">目标<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
-<ul>
-<li>减轻单台服务器负载并且允许独立扩展<ul>
-<li>在 <strong>对象存储</strong> 中单独存储静态内容</li>
-<li>将 <strong>MySQL 数据库</strong> 迁移到单独的服务器上</li>
-</ul>
-</li>
-<li>缺点<ul>
-<li>这些变化会增加复杂性，并要求对 <strong>Web服务器</strong> 进行更改，以指向 <strong>对象存储</strong> 和 <strong>MySQL 数据库</strong></li>
-<li>必须采取额外的安全措施来确保新组件的安全</li>
-<li>AWS 的成本也会增加，但应该与自身管理类似系统的成本做比较</li>
-</ul>
-</li>
-</ul>
-<h4 id="_12">独立保存静态内容<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
-<ul>
-<li>考虑使用像 S3 这样可管理的 <strong>对象存储</strong> 服务来存储静态内容<ul>
-<li>高扩展性和可靠性</li>
-<li>服务器端加密</li>
-</ul>
-</li>
-<li>迁移静态内容到 S3<ul>
-<li>用户文件</li>
-<li>JS</li>
-<li>CSS</li>
-<li>图片</li>
-<li>视频</li>
-</ul>
-</li>
-</ul>
-<h4 id="mysql">迁移 MySQL 数据库到独立机器上<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h4>
-<ul>
-<li>考虑使用类似 RDS 的服务来管理 <strong>MySQL 数据库</strong><ul>
-<li>简单的管理，扩展</li>
-<li>多个可用区域</li>
-<li>空闲时加密</li>
-</ul>
-</li>
-</ul>
-<h4 id="_13">系统安全<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
-<ul>
-<li>在传输和空闲时对数据进行加密</li>
-<li>使用虚拟私有云<ul>
-<li>为单个 <strong>Web 服务器</strong> 创建一个公共子网，这样就可以发送和接收来自 internet 的流量</li>
-<li>为其他内容创建一个私有子网，禁止外部访问</li>
-<li>在每个组件上只为白名单 IP 打开端口</li>
-</ul>
-</li>
-<li>这些相同的模式应当在新的组件的实现中实践</li>
-</ul>
-<p><strong>折中方案, 可选方案, 和其他细节:</strong></p>
-<ul>
-<li>查阅 <a href="https://github.com/donnemartin/system-design-primer#security">安全</a> 章节</li>
-</ul>
-<h3 id="_14">用户+++<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
-<p><a class="glightbox" href="http://i.imgur.com/raoFTXM.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Imgur" src="http://i.imgur.com/raoFTXM.png" /></a></p>
-<h4 id="_15">假设<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
-<p>我们的 <strong>基准/负载测试</strong> 和 <strong>性能测试</strong> 显示，在高峰时段，我们的单一 <strong>Web服务器</strong> 存在瓶颈，导致响应缓慢，在某些情况下还会宕机。随着服务的成熟，我们也希望朝着更高的可用性和冗余发展。</p>
-<h4 id="_16">目标<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
-<ul>
-<li>下面的目标试图用 <strong>Web服务器</strong> 解决扩展问题<ul>
-<li>基于 <strong>基准/负载测试</strong> 和 <strong>分析</strong>，你可能只需要实现其中的一两个技术</li>
-</ul>
-</li>
-<li>使用 <a href="https://github.com/donnemartin/system-design-primer#horizontal-scaling"><strong>横向扩展</strong></a> 来处理增加的负载和单点故障<ul>
-<li>添加 <a href="https://github.com/donnemartin/system-design-primer#load-balancer"><strong>负载均衡器</strong></a> 例如 Amazon 的 ELB 或 HAProxy<ul>
-<li>ELB 是高可用的</li>
-<li>如果你正在配置自己的 <strong>负载均衡器</strong>, 在多个可用区域中设置多台服务器用于 <a href="https://github.com/donnemartin/system-design-primer#active-active">双活</a> 或 <a href="https://github.com/donnemartin/system-design-primer#active-passive">主被</a> 将提高可用性</li>
-<li>终止在 <strong>负载平衡器</strong> 上的SSL，以减少后端服务器上的计算负载，并简化证书管理</li>
-</ul>
-</li>
-<li>在多个可用区域中使用多台 <strong>Web服务器</strong></li>
-<li>在多个可用区域的 <a href="https://github.com/donnemartin/system-design-primer#master-slave-replication"><strong>主-从 故障转移</strong></a> 模式中使用多个 <strong>MySQL</strong> 实例来改进冗余</li>
-</ul>
-</li>
-<li>分离 <strong>Web 服务器</strong> 和 <a href="https://github.com/donnemartin/system-design-primer#application-layer"><strong>应用服务器</strong></a><ul>
-<li>独立扩展和配置每一层</li>
-<li><strong>Web 服务器</strong> 可以作为 <a href="https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server"><strong>反向代理</strong></a></li>
-<li>例如, 你可以添加 <strong>应用服务器</strong> 处理 <strong>读 API</strong> 而另外一些处理 <strong>写 API</strong></li>
-</ul>
-</li>
-<li>将静态（和一些动态）内容转移到 <a href="https://github.com/donnemartin/system-design-primer#content-delivery-network"><strong>内容分发网络 (CDN)</strong></a> 例如 CloudFront 以减少负载和延迟</li>
-</ul>
-<p><strong>折中方案, 可选方案, 和其他细节:</strong></p>
-<ul>
-<li>查阅以上链接获得更多细节</li>
-</ul>
-<h3 id="_17">用户+++<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
-<p><a class="glightbox" href="http://i.imgur.com/OZCxJr0.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Imgur" src="http://i.imgur.com/OZCxJr0.png" /></a></p>
-<p><strong>注意：</strong> <strong>内部负载均衡</strong> 不显示以减少混乱</p>
-<h4 id="_18">假设<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
-<p>我们的 <strong>性能/负载测试</strong> 和 <strong>性能测试</strong> 显示我们读操作频繁（100:1 的读写比率），并且数据库在高读请求时表现很糟糕。</p>
-<h4 id="_19">目标<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
-<ul>
-<li>下面的目标试图解决 <strong>MySQL数据库</strong> 的伸缩性问题<ul>
-<li>
-<ul>
-<li>基于 <strong>基准/负载测试</strong> 和 <strong>分析</strong>，你可能只需要实现其中的一两个技术</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>将下列数据移动到一个 <a href="https://github.com/donnemartin/system-design-primer#cache"><strong>内存缓存</strong></a>，例如弹性缓存，以减少负载和延迟：<ul>
-<li><strong>MySQL</strong> 中频繁访问的内容<ul>
-<li>首先, 尝试配置 <strong>MySQL 数据库</strong> 缓存以查看是否足以在实现 <strong>内存缓存</strong> 之前缓解瓶颈</li>
-</ul>
-</li>
-<li>来自 <strong>Web 服务器</strong> 的会话数据<ul>
-<li><strong>Web 服务器</strong> 变成无状态的, 允许 <strong>自动伸缩</strong></li>
-</ul>
-</li>
-<li>从内存中读取 1 MB 内存需要大约 250 微秒，而从SSD中读取时间要长 4 倍，从磁盘读取的时间要长 80 倍。<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup></li>
-</ul>
-</li>
-<li>添加 <a href="https://github.com/donnemartin/system-design-primer#master-slave-replication"><strong>MySQL 读取副本</strong></a> 来减少写主线程的负载</li>
-<li>添加更多 <strong>Web 服务器</strong> and <strong>应用服务器</strong> 来提高响应</li>
-</ul>
-<p><strong>折中方案, 可选方案, 和其他细节:</strong></p>
-<ul>
-<li>查阅以上链接获得更多细节</li>
-</ul>
-<h4 id="mysql_1">添加 MySQL 读取副本<a class="headerlink" href="#mysql_1" title="Permanent link">&para;</a></h4>
-<ul>
-<li>除了添加和扩展 <strong>内存缓存</strong>，<strong>MySQL 读副本服务器</strong> 也能够帮助缓解在 <strong>MySQL 写主服务器</strong> 的负载。</li>
-<li>添加逻辑到 <strong>Web 服务器</strong> 来区分读和写操作</li>
-<li>在 <strong>MySQL 读副本服务器</strong> 之上添加 <strong>负载均衡器</strong> （不是为了减少混乱）</li>
-<li>大多数服务都是读取负载大于写入负载</li>
-</ul>
-<p><strong>折中方案, 可选方案, 和其他细节:</strong></p>
-<ul>
-<li>查阅 <a href="https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms">关系型数据库管理系统 (RDBMS)</a> 章节</li>
-</ul>
-<h3 id="_20">用户++++<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
-<p><a class="glightbox" href="http://i.imgur.com/3X8nmdL.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Imgur" src="http://i.imgur.com/3X8nmdL.png" /></a></p>
-<h4 id="_21">假设<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
-<p><strong>基准/负载测试</strong> 和 <strong>分析</strong> 显示，在美国，正常工作时间存在流量峰值，当用户离开办公室时，流量骤降。我们认为，可以通过真实负载自动转换服务器数量来降低成本。我们是一家小商店，所以我们希望 DevOps 尽量自动化地进行 <strong>自动伸缩</strong> 和通用操作。</p>
-<h4 id="_22">目标<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h4>
-<ul>
-<li>根据需要添加 <strong>自动扩展</strong><ul>
-<li>跟踪流量高峰</li>
-<li>通过关闭未使用的实例来降低成本</li>
-</ul>
-</li>
-<li>自动化 DevOps<ul>
-<li>Chef, Puppet, Ansible 工具等</li>
-</ul>
-</li>
-<li>继续监控指标以解决瓶颈<ul>
-<li><strong>主机水平</strong> - 检查一个 EC2 实例</li>
-<li><strong>总水平</strong> - 检查负载均衡器统计数据</li>
-<li><strong>日志分析</strong> - CloudWatch, CloudTrail, Loggly, Splunk, Sumo</li>
-<li><strong>外部站点的性能</strong> - Pingdom or New Relic</li>
-<li><strong>处理通知和事件</strong> - PagerDuty</li>
-<li><strong>错误报告</strong> - Sentry</li>
-</ul>
-</li>
-</ul>
-<h4 id="_23">添加自动扩展<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h4>
-<ul>
-<li>考虑使用一个托管服务，比如AWS <strong>自动扩展</strong><ul>
-<li>为每个 <strong>Web 服务器</strong> 创建一个组，并为每个 <strong>应用服务器</strong> 类型创建一个组，将每个组放置在多个可用区域中</li>
-<li>设置最小和最大实例数</li>
-<li>通过 CloudWatch 来扩展或收缩<ul>
-<li>可预测负载的简单时间度量</li>
-<li>一段时间内的指标：<ul>
-<li>CPU 负载</li>
-<li>延迟</li>
-<li>网络流量</li>
-<li>自定义指标</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>缺点<ul>
-<li>自动扩展会引入复杂性</li>
-<li>可能需要一段时间才能适当扩大规模，以满足增加的需求，或者在需求下降时缩减规模</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="_24">用户+++++<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
-<p><a class="glightbox" href="http://i.imgur.com/jj3A5N8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Imgur" src="http://i.imgur.com/jj3A5N8.png" /></a></p>
-<p><strong>注释：</strong> <strong>自动伸缩</strong> 组不显示以减少混乱</p>
-<h4 id="_25">假设<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h4>
-<p>当服务继续向着限制条件概述的方向发展，我们反复地运行 <strong>基准/负载测试</strong> 和 <strong>分析</strong> 来进一步发现和定位新的瓶颈。</p>
-<h4 id="_26">目标<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h4>
-<p>由于问题的约束，我们将继续提出扩展性的问题：</p>
-<ul>
-<li>如果我们的 <strong>MySQL 数据库</strong> 开始变得过于庞大, 我们可能只考虑把数据在数据库中存储一段有限的时间, 同时在例如 Redshift 这样的数据仓库中存储其余的数据<ul>
-<li>像 Redshift 这样的数据仓库能够轻松处理每月 1TB 的新内容</li>
-</ul>
-</li>
-<li>平均每秒 40,000 次的读取请求, 可以通过扩展 <strong>内存缓存</strong> 来处理热点内容的读取流量，这对于处理不均匀分布的流量和流量峰值也很有用<ul>
-<li><strong>SQL读取副本</strong> 可能会遇到处理缓存未命中的问题, 我们可能需要使用额外的 SQL 扩展模式</li>
-</ul>
-</li>
-<li>对于单个 <strong>SQL 写主-从</strong> 模式来说，平均每秒 400 次写操作（明显更高）可能会很困难，同时还需要更多的扩展技术</li>
-</ul>
-<p>SQL 扩展模型包括：</p>
-<ul>
-<li><a href="https://github.com/donnemartin/system-design-primer#federation">集合</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#sharding">分片</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#denormalization">反范式</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#sql-tuning">SQL 调优</a></li>
-</ul>
-<p>为了进一步处理高读和写请求，我们还应该考虑将适当的数据移动到一个 <a href="https://github.com/donnemartin/system-design-primer#nosql"><strong>NoSQL数据库</strong></a> ，例如 DynamoDB。</p>
-<p>我们可以进一步分离我们的 <a href="https://github.com/donnemartin/system-design-primer#application-layer"><strong>应用服务器</strong></a> 以允许独立扩展。不需要实时完成的批处理任务和计算可以通过 Queues 和 Workers 异步完成：</p>
-<ul>
-<li>以照片服务为例，照片上传和缩略图的创建可以分开进行<ul>
-<li><strong>客户端</strong> 上传图片</li>
-<li><strong>应用服务器</strong> 推送一个任务到 <strong>队列</strong> 例如 SQS</li>
-<li>EC2 上的 <strong>Worker 服务</strong> 或者 Lambda 从 <strong>队列</strong> 拉取 work，然后：<ul>
-<li>创建缩略图</li>
-<li>更新 <strong>数据库</strong></li>
-<li>在 <strong>对象存储</strong> 中存储缩略图</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>折中方案, 可选方案, 和其他细节:</strong></p>
-<ul>
-<li>查阅以上链接获得更多细节</li>
-</ul>
-<h2 id="_27">额外的话题<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>根据问题的范围和剩余时间，还需要深入讨论其他问题。</p>
-</blockquote>
-<h3 id="sql">SQL 扩展模式<a class="headerlink" href="#sql" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://github.com/donnemartin/system-design-primer#master-slave-replication">读取副本</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#federation">集合</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#sharding">分区</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#denormalization">反规范化</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#sql-tuning">SQL 调优</a></li>
-</ul>
-<h4 id="nosql">NoSQL<a class="headerlink" href="#nosql" title="Permanent link">&para;</a></h4>
-<ul>
-<li><a href="https://github.com/donnemartin/system-design-primer#key-value-store">键值存储</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#document-store">文档存储</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#wide-column-store">宽表存储</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#graph-database">图数据库</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#sql-or-nosql">SQL vs NoSQL</a></li>
-</ul>
-<h3 id="_28">缓存<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
-<ul>
-<li>缓存到哪里<ul>
-<li><a href="https://github.com/donnemartin/system-design-primer#client-caching">客户端缓存</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#cdn-caching">CDN 缓存</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#web-server-caching">Web 服务缓存</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#database-caching">数据库缓存</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#application-caching">应用缓存</a></li>
-</ul>
-</li>
-<li>缓存什么<ul>
-<li><a href="https://github.com/donnemartin/system-design-primer#caching-at-the-database-query-level">数据库请求层缓存</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#caching-at-the-object-level">对象层缓存</a></li>
-</ul>
-</li>
-<li>何时更新缓存<ul>
-<li><a href="https://github.com/donnemartin/system-design-primer#cache-aside">预留缓存</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#write-through">完全写入</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#write-behind-write-back">延迟写 (写回)</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#refresh-ahead">事先更新</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="_29">异步性和微服务<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://github.com/donnemartin/system-design-primer#message-queues">消息队列</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#task-queues">任务队列</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#back-pressure">回退压力</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer#microservices">微服务</a></li>
-</ul>
-<h3 id="_30">沟通<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h3>
-<ul>
-<li>关于折中方案的讨论:<ul>
-<li>客户端的外部通讯 - <a href="https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest">遵循 REST 的 HTTP APIs</a></li>
-<li>内部通讯 - <a href="https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc">RPC</a></li>
-</ul>
-</li>
-<li><a href="https://github.com/donnemartin/system-design-primer#service-discovery">服务探索</a></li>
-</ul>
-<h3 id="_31">安全性<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
-<p>参考 <a href="https://github.com/donnemartin/system-design-primer#security">安全章节</a></p>
-<h3 id="_32">延迟数字指标<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h3>
-<p>查阅 <a href="https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know">每个程序员必懂的延迟数字</a></p>
-<h3 id="_33">正在进行<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
-<ul>
-<li>继续基准测试并监控你的系统以解决出现的瓶颈问题</li>
-<li>扩展是一个迭代的过程</li>
-</ul>
+<h1 id="_1">网络<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="linux-network-internals">Linux network internals<a class="headerlink" href="#linux-network-internals" title="Permanent link">&para;</a></h2>
+<p>Start learning with basic concepts like  Key problems with networking, Network interface card (NIC) device drivers, System initialization, Layer 2 (link-layer) tasks  implementation and problems based on these data asked in product based tier etc.</p>
+<iframe width="760" height="315" src="https://www.youtube.com/embed/aq0TLYXGQCA?si=kxvvfvgnRlzJ2OKk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-06-08</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-06-18</span>
       
     
   </small>
@@ -3772,6 +3006,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../../video/os/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 视频">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                视频
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../video/Data%20structures/" class="md-footer__link md-footer__link--next" aria-label="下一页: 视频">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                视频
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -3837,10 +3109,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../../../../assets/javascripts/bundle.94c44541.min.js"></script>
+      <script src="../../assets/javascripts/bundle.94c44541.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
