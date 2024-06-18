@@ -63,6 +63,7 @@ nav:
     - 编程:
       - 操作系统:
         - 视频: video/os.md
+      - 网络: course/network.md
       - 数据结构与算法:
         - 视频: video/Data structures.md
       - C/C++:
