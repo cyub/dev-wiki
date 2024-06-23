@@ -20,4 +20,9 @@ plugin:
 	pip install mkdocs-print-site-plugin # print site
 	pip install mkdocs-jupyter # jupyter
 	pip install mkdocs-glightbox # image lightbox
+	pip install mkdocs-git-committers-plugin-2
+
+push:
+	git push origin
+	git push github
 

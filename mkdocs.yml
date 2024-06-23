@@ -4,6 +4,10 @@ site_author: tink
 site_url: https://docs.cyub.vip/dev-wiki
 strict: false
 
+repo_name: cyub/dev-wiki
+repo_url: https://github.com/cyub/dev-wiki
+edit_uri: edit/main/docs/
+
 nav:
   - 简介: index.md
   - 操作系统: 
@@ -160,6 +164,9 @@ plugins:
   - mkdocs-jupyter:
       include: ["*.ipynb"]
       ignore: ["system-design/*.ipynb"]
+  - git-committers:
+      repository: cyub/dev-wiki
+      branch: main
 
 # Additional configuration
 extra:
