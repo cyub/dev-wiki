@@ -60,3 +60,13 @@ https://www.youtube.com/playlist?list=PLbtzT1TYeoMhTPzyTZboW_j7TPAnjv9XB
 ## 每个程序员都应该了解的
 
 <iframe width="760" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=491219273&bvid=BV1kN411H7Db&cid=1273780705&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+## 计算机科学速成课
+
+开始2月22日，凯莉安妮·菲尔宾将举办速成班计算机科学！在这个系列中，我们要跟踪我们的现代计算机的起源，采取在那给了我们当前的硬件和软件的思想仔细看看，讨论如何以及为什么我们的智能设备发展得越来越聪明，甚至目光移向未来！计算机填补了我国社会的功能至关重要的作用，这是我们的希望，在这一系列的过程中，你会更好地了解多远电脑已经带我们走多远，他们可以带我们走向未来。 
+
+<iframe width="760" height="315" src="https://www.youtube.com/embed/tpIctyqH29Q?si=3L7T2QIkmHqRM1XX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## x86 Assembly with NASM
+
+<iframe width="760" height="315" src="https://www.youtube.com/embed/videoseries?si=LQk0Cp8OZPVIfvka&amp;list=PL2EF13wm-hWCoj6tUBGUmrkJmH1972dBB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

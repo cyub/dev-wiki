@@ -17,3 +17,7 @@ Pointers in C and C++ are often challenging to understand. In this course, they 
 另外一个版本：【C++标准库编程 cs106L 2019】斯坦福—中英字幕
 
 <iframe width="760" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=1005411134&bvid=BV19x4y1E79V&cid=1567388692&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+## 【编程抽象方法 cs106x 2017】斯坦福—中英字幕
+
+<iframe width="760" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=1955276817&bvid=BV1By411h75g&cid=1567773882&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
