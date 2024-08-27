@@ -118,6 +118,17 @@
 
 ![](./images/cache_binlog.jpg)
 
+## 缓存模式
+
+### 旁路(cache-aside)模式
+
+![](./images/cache-aside.png)
+
+
 ## 资料
 
 - [链表（上）：如何实现LRU缓存淘汰算法?](https://jingbin.me/2019/04/13/list/)
+- [Caching Strategy: Cache-Aside Pattern](https://www.enjoyalgorithms.com/blog/cache-aside-caching-strategy)
+- [What is Read-Through vs Write-Through Cache?](https://www.designgurus.io/answers/detail/what-is-read-through-vs-write-through-cache)
+- [Caching patterns](https://docs.aws.amazon.com/whitepapers/latest/database-caching-strategies-using-redis/caching-patterns.html)
+- [A Hitchhiker’s Guide to Caching Patterns](https://hazelcast.com/blog/a-hitchhikers-guide-to-caching-patterns/)

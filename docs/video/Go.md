@@ -25,3 +25,9 @@ Udemy: https://www.udemy.com/course/multithreading-in-go-lang/
 Udemy: https://www.udemy.com/course/working-with-concurrency-in-go-golang/
 
 <iframe width="760" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=471642000&bvid=BV1TT411L7mt&cid=794192308&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+## Distributed File Storage In Go – Full Course
+
+Learn how to build a decentralized, fully distributed content-addressable file storage system using Go that can handle and stream very large files. This course covers system design, low-level programming, and network protocols, all while building a highly practical and scalable application. 
+
+<iframe width="760" height="315" src="https://www.youtube.com/embed/IoY6bE--A54?si=CyVdHaAGzWcKYyjp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

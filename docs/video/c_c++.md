@@ -21,3 +21,7 @@ Pointers in C and C++ are often challenging to understand. In this course, they 
 ## 【编程抽象方法 cs106x 2017】斯坦福—中英字幕
 
 <iframe width="760" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=1955276817&bvid=BV1By411h75g&cid=1567773882&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+## C++ Development In Visual Studio Code - The perfect setup.
+
+<iframe width="760" height="315" src="https://www.youtube.com/embed/videoseries?si=vbRbZemjrkNDmDUQ&amp;list=PLQMs5svASiXPpae_tifdn7rElAAJotCwm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

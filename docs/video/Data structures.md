@@ -35,3 +35,11 @@ Rob teaches CS310, Data Structures in Java at San Diego State University. These 
 
 <iframe width="760" height="315" src="https://www.youtube.com/embed/videoseries?si=3cIw5iM67-rXJWij&amp;list=PLpPXw4zFa0uKKhaSz87IowJnOTzh9tiBk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+## 普林斯顿大学: 算法
+
+<iframe width="760" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=1102309518&bvid=BV1WA4m1N7v2&cid=1486798617&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+## LeetCode算法题解动画片
+
+<iframe width="760" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=112609630096277&bvid=BV1GbGSenEDq&cid=500001580876679&p=3&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+

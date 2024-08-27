@@ -70,3 +70,7 @@ https://www.youtube.com/playlist?list=PLbtzT1TYeoMhTPzyTZboW_j7TPAnjv9XB
 ## x86 Assembly with NASM
 
 <iframe width="760" height="315" src="https://www.youtube.com/embed/videoseries?si=LQk0Cp8OZPVIfvka&amp;list=PL2EF13wm-hWCoj6tUBGUmrkJmH1972dBB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## UC伯克利CS162: 操作系统与系统编程
+
+<iframe width="760" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=1901607247&bvid=BV18m411d7uz&cid=1466926268&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>

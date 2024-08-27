@@ -21,6 +21,7 @@ plugin:
 	pip install mkdocs-jupyter # jupyter
 	pip install mkdocs-glightbox # image lightbox
 	pip install mkdocs-git-committers-plugin-2
+	pip install mkdocs-rss-plugin
 
 push:
 	git push origin
