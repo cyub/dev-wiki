@@ -1,7 +1,7 @@
 site_name: 开发知识wiki
 site_description: 开发知识wiki
 site_author: tink
-site_url: https://docs.cyub.vip/dev-wiki
+site_url: https://wiki.cyub.vip
 strict: false
 
 repo_name: cyub/dev-wiki
