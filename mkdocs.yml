@@ -8,99 +8,6 @@ repo_name: cyub/dev-wiki
 repo_url: https://github.com/cyub/dev-wiki
 edit_uri: edit/main/docs/
 
-nav:
-  - 简介: index.md
-  - 操作系统: 
-    - IO: computer-system/io.md
-    - proc文件系统: computer-system/proc.md
-    - NPTL: computer-system/nptl.md
-    - 容器:
-      - 简介: container/install.md
-      - 镜像: container/image.md
-      - cgroup: container/cgroup.md
-      - namespace: container/namespace.md
-    - 常用命令: computer-system/command.md
-    - Systemtap: computer-system/systemtap.md
-    - CPU架构: computer-system/cpu-arch.md
-    - 编译Linux内核: computer-system/compiling-linux-kernel.md
-  - 计算机网络:
-    - TCP: computer-network/tcp/README.md
-    - HTTP: computer-network/http/README.md
-  - 数据库:
-    - mysql:
-      - 概览: database/mysql/简介.md
-      - 事务: database/mysql/事务.md
-      - 索引: database/mysql/索引.md
-      - FAQ: database/mysql/FAQ.md
-    - Elasticsearch:
-      - 概览: database/elasticsearch/README.md
-      - 内存占用: database/elasticsearch/memory.md
-      - 性能调优: database/elasticsearch/performance_tuning.md
-      - 生产配置参考: database/elasticsearch/production_configuring.md
-      - docs value与 field data: database/elasticsearch/doc_values_and_fielddata.md
-    - Redis: database/redis/redis.md
-  - 开发语言:
-    - Go: language/Go.md
-  - 系统设计:
-    - 系统设计: system-design/index.md
-    - 缓存系统: cache/README.md
-    - 系统设计入门: system-design/system-design-primer/index.md
-    - what you should know:
-      - 每个开发人员都应该了解 GPU 计算的知识: what-should-you-know/GPU.md
-      - Ｃ程序员该知道的内存知识: what-should-you-know/README.md
-      - 每个程序员都应该了解的硬件知识: what-should-you-know/hardware.md
-      - 每个程序员都应该了解的内存知识:
-        - 【总结版】每个程序员都应该了解的内存知识: what-should-you-know/每个程序员都应该了解的内存知识.md
-        - 【英文】What Every Programmer Should Know About Memory: what-should-you-know/What Every Programmer Should Know About Memory.pdf
-        - 【中文】每个程序员都应该了解的内存知识: what-should-you-know/每个程序员都应该了解的内存知识.pdf
-      - 每个系统程序员都应该了解的并发知识: 
-        - 【英文】What every systems programmer should know about concurrency: what-should-you-know/concurrency-primer.pdf
-        - 【中文】每个系统程序员都应该了解的并发知识: https://www.bilibili.com/read/cv26734224
-        - 【机翻中文】每个系统程序员都应该了解的并发知识: what-should-you-know/每个系统程序员都应该了解的并发知识.md
-  - 教程:
-    - Jupyter:
-      - Go-Frameworks-Github-Fork-Stats: jupyter/Go-Frameworks-Github-Fork-Stats.ipynb
-      - Pandas完全指南: jupyter/Pandas完全指南.ipynb
-      - Spark上手示例:
-        - jupyter/Spark上手示例1：RDD操作.ipynb
-        - jupyter/Spark上手示例2：DataFrame操作.ipynb
-    - 编程:
-      - 操作系统:
-        - 视频: video/os.md
-      - 网络: course/network.md
-      - 数据结构与算法:
-        - 视频: video/Data structures.md
-      - C/C++:
-        - 视频: video/c_c++.md
-        - 文本: course/c_c++.md
-      - Go:
-        - 视频: video/Go.md
-      - Rust: course/rust.md
-      - 数据库:
-        - 视频: video/Database.md
-      - 更多: course/more.md
-    - PPT:
-      - Go语言简介: assets/ppt/Golang简介.pdf
-    - CheatSheet:
-      - Makefile: cheatsheet/makefile.md
-      - GDB: cheatsheet/gdb.md
-  - QA:
-    - redis: qa/redis.md
-    - mysql: qa/mysql.md
-    - tcp: qa/tcp.md
-    - http: qa/http.md
-    - 缓存: qa/cache.md
-    - nginx: qa/nginx.md
-    - 消息队列: qa/queue.md
-    - IO: qa/io.md
-    - protobuf: qa/protobuf.md
-    - go: qa/go.md 
-    - 分布式: qa/dist.md
-    - Elasticsearch: qa/es.md
-    - docker: qa/docker.md
-    - 参考资料: qa/ref.md
-
-
 # Copyright
 copyright: Copyright &copy; 2023 - 2024 Tink
 
@@ -257,3 +164,97 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+
+
+nav:
+  - 简介: index.md
+  - 操作系统:
+    - IO: computer-system/io.md
+    - proc文件系统: computer-system/proc.md
+    - NPTL: computer-system/nptl.md
+    - 容器:
+      - 简介: container/install.md
+      - 镜像: container/image.md
+      - cgroup: container/cgroup.md
+      - namespace: container/namespace.md
+    - 常用命令: computer-system/command.md
+    - Systemtap: computer-system/systemtap.md
+    - CPU架构: computer-system/cpu-arch.md
+    - 编译Linux内核: computer-system/compiling-linux-kernel.md
+  - 计算机网络:
+    - TCP: computer-network/tcp/README.md
+    - HTTP: computer-network/http/README.md
+  - 数据库:
+    - mysql:
+      - 概览: database/mysql/简介.md
+      - 事务: database/mysql/事务.md
+      - 索引: database/mysql/索引.md
+      - FAQ: database/mysql/FAQ.md
+    - Elasticsearch:
+      - 概览: database/elasticsearch/README.md
+      - 内存占用: database/elasticsearch/memory.md
+      - 性能调优: database/elasticsearch/performance_tuning.md
+      - 生产配置参考: database/elasticsearch/production_configuring.md
+      - docs value与 field data: database/elasticsearch/doc_values_and_fielddata.md
+    - Redis: database/redis/redis.md
+  - 开发语言:
+    - Go: language/Go.md
+  - 系统设计:
+    - 系统设计: system-design/index.md
+    - 缓存系统: cache/README.md
+    - 系统设计入门: system-design/system-design-primer/index.md
+    - what you should know:
+      - 每个开发人员都应该了解 GPU 计算的知识: what-should-you-know/GPU.md
+      - Ｃ程序员该知道的内存知识: what-should-you-know/README.md
+      - 每个程序员都应该了解的硬件知识: what-should-you-know/hardware.md
+      - 每个程序员都应该了解的内存知识:
+        - 【总结版】每个程序员都应该了解的内存知识: what-should-you-know/每个程序员都应该了解的内存知识.md
+        - 【英文】What Every Programmer Should Know About Memory: what-should-you-know/What Every Programmer Should Know About Memory.pdf
+        - 【中文】每个程序员都应该了解的内存知识: what-should-you-know/每个程序员都应该了解的内存知识.pdf
+      - 每个系统程序员都应该了解的并发知识:
+        - 【英文】What every systems programmer should know about concurrency: what-should-you-know/concurrency-primer.pdf
+        - 【中文】每个系统程序员都应该了解的并发知识: https://www.bilibili.com/read/cv26734224
+        - 【机翻中文】每个系统程序员都应该了解的并发知识: what-should-you-know/每个系统程序员都应该了解的并发知识.md
+  - 教程:
+    - Jupyter:
+      - Go-Frameworks-Github-Fork-Stats: jupyter/Go-Frameworks-Github-Fork-Stats.ipynb
+      - Pandas完全指南: jupyter/Pandas完全指南.ipynb
+      - Spark上手示例:
+        - jupyter/Spark上手示例1：RDD操作.ipynb
+        - jupyter/Spark上手示例2：DataFrame操作.ipynb
+    - 编程:
+      - 操作系统:
+        - 视频: video/os.md
+      - 网络: course/network.md
+      - 数据结构与算法:
+        - 视频: video/Data structures.md
+      - C/C++:
+        - 视频: video/c_c++.md
+        - 文本: course/c_c++.md
+      - Go:
+        - 视频: video/Go.md
+      - Rust: course/rust.md
+      - 数据库:
+        - 视频: video/Database.md
+      - 更多: course/more.md
+    - PPT:
+      - Go语言简介: assets/ppt/Golang简介.pdf
+    - CheatSheet:
+      - Makefile: cheatsheet/makefile.md
+      - GDB: cheatsheet/gdb.md
+      - CMake: cheatsheet/cmake.md
+  - QA:
+    - redis: qa/redis.md
+    - mysql: qa/mysql.md
+    - tcp: qa/tcp.md
+    - http: qa/http.md
+    - 缓存: qa/cache.md
+    - nginx: qa/nginx.md
+    - 消息队列: qa/queue.md
+    - IO: qa/io.md
+    - protobuf: qa/protobuf.md
+    - go: qa/go.md
+    - 分布式: qa/dist.md
+    - Elasticsearch: qa/es.md
+    - docker: qa/docker.md
+    - 参考资料: qa/ref.md
