@@ -109,7 +109,7 @@ add_library(another STATIC another.cpp another.h)
 target_link_libraries(another PUBLIC one) # 语法：目标名，依赖项类型，依赖项名
 ```
 
-依赖项类型有 `PUBLIC INTERFACE PRIVATE`，分别对应公开，接口，私有。
+依赖项类型有 `PUBLIC`， `INTERFACE`，`PRIVATE`，分别对应公开，接口，私有。
 
 当你使用 PUBLIC 关键字时，你指定的库不仅会被当前目标链接，而且这些库也会被传递给任何依赖于当前目标的其他目标，而使用 PRIVATE 关键字指定的库只会被当前目标链接，而不会被传递给依赖于当前目标的其他目标。
 
@@ -288,6 +288,36 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 ```cmake
 set_target_properties(lib1 PROPERTIES POSITION_INDEPENDENT_CODE ON)
 ```
+
+!!! note "什么是位置无关代码，以及它有什么优点？"
+    位置无关代码，可以简单理解为代码中的所有地址都是相对于当前位置的， 无绝对跳转，跳转都为相对跳转。
+
+    生成动态库时，需要加上 -fPIC 选项才能生成位置无关代码。位置无关代码优点有：
+
+    - **位置无关代码的共享库实现了真正意义上的多个进程共享**。多个进程引用同一个位置无关动态库时，操作系统会把它们映射到同一块物理内存上，进而实现共享内存。
+    - 另外 **位置无关代码支持地址空间布局随机化（ASLR），这是一种安全特性，可以防止缓冲区溢出攻击**。ASLR 通过在每次程序运行时随机化内存中的代码和数据位置来增加攻击者预测目标地址的难度。
+    - **位置无关代码使得动态加载和卸载代码模块变得更加容易和安全**。例如，使用 dlopen、dlsym 和 dlclose 等函数动态加载和链接共享库时，位置无关代码是必需的。
+
+
+
+### 生成动态库的 SONAME
+
+在生成动态库时，我们通常需要设置 SONAME，即共享库的版本号。SONAME 是一个符号，它表示共享库的版本号，它被保存在动态链接库中，当加载动态库时，动态链接器会根据 SONAME 来确定是否匹配。在 Linux 系统中，SONAME 通常在库文件的头信息中指定，并且可以通过 readelf 命令查看：
+
+```sh
+readelf -a /path/to/library.so | grep "SONAME"
+```
+
+共享库的版本号可以是任意的，但通常情况下，我们使用 MAJOR.MINOR.PATCH 格式来表示版本号，其中 MAJOR 表示主版本号，MINOR 表示次版本号，PATCH 表示补丁版本号。
+
+如果共享库的格式为：libname.MAJOR.MINOR.PATCH，它对应的 SONAME 的格式一般为：libname.MAJOR。例如，如果共享库的名称是 libfoo.so.2.1.3，那么它的 SONAME 可以设置为 libfoo.2。在 GCC 中，可以使用 -Wl,-soname,libexample.so.1 选项来设置 SONAME。
+
+```cmake
+set_target_properties(myLib PROPERTIES POSITION_INDEPENDENT_CODE ON) # 设置为位置无关代码
+
+set_target_properties(myLib PROPERTIES VERSION 2.1.3 SOVERSION 2) # 设置 SONAME
+```
+
 
 ### 增加构建子目录
 
