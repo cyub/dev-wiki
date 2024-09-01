@@ -111,6 +111,10 @@ target_link_libraries(another PUBLIC one) # 语法：目标名，依赖项类型
 
 依赖项类型有 `PUBLIC INTERFACE PRIVATE`，分别对应公开，接口，私有。
 
+当你使用 PUBLIC 关键字时，你指定的库不仅会被当前目标链接，而且这些库也会被传递给任何依赖于当前目标的其他目标，而使用 PRIVATE 关键字指定的库只会被当前目标链接，而不会被传递给依赖于当前目标的其他目标。
+
+举个例子，比如第三个库 third 依赖了 another，而 another 依赖 one 时指定为 PUBLIC，那么 one 库也会被 third 库链接到。
+
 ### 添加头文件搜索路径
 
 ```cmake
@@ -120,6 +124,9 @@ target_include_directories(myTarget PRIVATE
   external/include
 ) # 为指定目标添加头文件搜索路径
 ```
+
+通过 target_include_directories 指定的路径会被视为与系统路径等价，这意味着我们既可以 `#include "foo.h"` 引用这个文件，也可以使用  `#include <foo.h>`。
+
 
 ### 设置变量
 
