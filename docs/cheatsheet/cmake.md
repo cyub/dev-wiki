@@ -318,7 +318,6 @@ set_target_properties(myLib PROPERTIES POSITION_INDEPENDENT_CODE ON) # 设置为
 set_target_properties(myLib PROPERTIES VERSION 2.1.3 SOVERSION 2) # 设置 SONAME
 ```
 
-
 ### 增加构建子目录
 
 add_subdirectory命令可以用来增加构建子目录。例如，我们可以在项目根目录下创建一个子目录，然后使用add_subdirectory命令来构建子目录：
