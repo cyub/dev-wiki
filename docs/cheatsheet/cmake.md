@@ -339,6 +339,9 @@ FetchContent_Declare( # 声明依赖
 )
 
 FetchContent_MakeAvailable(fmt) # 下载外部依赖（如果没有下载的话），并包含外部项目（通过add_subdirectory实现）。
+
+add_executable(MyApp main.cpp) # 添加可执行文件
+target_link_libraries(MyApp PRIVATE fmt::fmt) # 将外部fmt库链接到当前项目
 ```
 
 ### 查找外部包
