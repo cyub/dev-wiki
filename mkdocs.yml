@@ -243,6 +243,7 @@ nav:
       - Makefile: cheatsheet/makefile.md
       - GDB: cheatsheet/gdb.md
       - CMake: cheatsheet/cmake.md
+      - Katex: cheatsheet/KaTex常用公式编辑.ipynb
   - QA:
     - redis: qa/redis.md
     - mysql: qa/mysql.md
