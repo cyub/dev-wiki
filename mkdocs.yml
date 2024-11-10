@@ -215,6 +215,8 @@ nav:
         - 【英文】What every systems programmer should know about concurrency: what-should-you-know/concurrency-primer.pdf
         - 【中文】每个系统程序员都应该了解的并发知识: https://www.bilibili.com/read/cv26734224
         - 【机翻中文】每个系统程序员都应该了解的并发知识: what-should-you-know/每个系统程序员都应该了解的并发知识.md
+  - 数据科学:
+    - 初中到大学的数学知识梳理: data-science/初中到大学的数学知识梳理.ipynb
   - 教程:
     - Jupyter:
       - Go-Frameworks-Github-Fork-Stats: jupyter/Go-Frameworks-Github-Fork-Stats.ipynb
