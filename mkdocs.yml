@@ -246,6 +246,7 @@ nav:
       - GDB: cheatsheet/gdb.md
       - CMake: cheatsheet/cmake.md
       - Katex: cheatsheet/KaTex常用公式编辑.ipynb
+      - "PKG-CONFIG": cheatsheet/pkg-config.md
   - QA:
     - redis: qa/redis.md
     - mysql: qa/mysql.md
