@@ -257,13 +257,101 @@ target_include_directories(MyApp PRIVATE ${CMAKE_CURRENT_BINARY_DIR}) # 将生�
 
 执行 `cmake -S . -B build` 命令后我们可以在 build 目录下看到生成 的config.h 文件，其中包含我们设置的版本号、编译时间和编译目录等信息。
 
-### 设置支持的 C++标准
+### 设置支持的 C 标准
+
+CMake 支持以下 C 标准版本：
+
+- `90` 或 `c_std_90`：C89/C90 标准
+
+- `99` 或 `c_std_99`：C99 标准
+
+- `11` 或 `c_std_11`：C11 标准
+
+- `17` 或 `c_std_17`：C17 标准
+
+- `23` 或 `c_std_23`：C23 标准（如果 CMake 和编译器支持）
+
+#### 设置全局 C 标准
+
+我们可以使用 `set(CMAKE_C_STANDARD <version>)` 设置全局 C 标准。例如：
 
 ```cmake
-set(CMAKE_CXX_STANDARD 17) # 设置C++标准版本为 17
-set(CMAKE_CXX_STANDARD_REQUIRED ON) # 要求必须满足C++标准版本要求，否则编译失败
-set(CMAKE_CXX_EXTENSIONS ON) # 允许使用C++的扩展特性，否则编译失败
+cmake_minimum_required(VERSION 3.10)
+project(MyProject)
+
+# 设置 C 标准为 C11
+set(CMAKE_C_STANDARD 11)
+
+# 强制使用指定标准，禁止回退
+set(CMAKE_C_STANDARD_REQUIRED ON)
+
+# 禁用编译器扩展（如 GNU 扩展）
+set(CMAKE_C_EXTENSIONS OFF)
 ```
+
+#### 为特定目标设置 C 标准
+
+如果只想为某个目标设置 C 标准，可以使用 `target_compile_features` 或 `set_property`：
+
+```cmake
+add_executable(myTarget main.c)
+
+# 设置 C 标准为 C11
+target_compile_features(myTarget PRIVATE c_std_11)
+```
+
+或者：
+
+```cmake
+add_executable(myTarget main.c)
+
+# 设置 C 标准为 C11
+set_property(TARGET myTarget PROPERTY C_STANDARD 11)
+set_property(TARGET myTarget PROPERTY C_STANDARD_REQUIRED ON)
+set_property(TARGET myTarget PROPERTY C_EXTENSIONS OFF)
+```
+
+#### 检查编译器支持的 C 标准
+
+我们可以使用 `check_c_compiler_flag` 检查编译器是否支持某个标准：
+
+```cmake
+include(CheckCCompilerFlag)
+check_c_compiler_flag(-std=c11 HAS_C11)
+if (HAS_C11)
+    set(CMAKE_C_STANDARD 11)
+else()
+    message(WARNING "C11 is not supported by the compiler")
+endif()
+```
+
+### 设置支持的 C++ 标准
+
+CMake 支持以下 C++ 标准版本：
+
+- `98` 或 `cxx_std_98`：C++98/C++03 标准
+
+- `11` 或 `cxx_std_11`：C++11 标准
+
+- `14` 或 `cxx_std_14`：C++14 标准
+
+- `17` 或 `cxx_std_17`：C++17 标准
+
+- `20` 或 `cxx_std_20`：C++20 标准
+
+- `23` 或 `cxx_std_23`：C++23 标准（如果 CMake 和编译器支持）
+
+#### 设置全局 C++ 标准
+
+使用 `set(CMAKE_CXX_STANDARD <version>)` 设置全局 `C++` 标准，这样所有编译目标都使用同一个的 `C++` 标准。
+
+```cmake
+set(CMAKE_CXX_STANDARD 17) # 设置C++标准版本为C++17
+set(CMAKE_CXX_STANDARD_REQUIRED ON) # 要求必须满足C++标准版本要求，否则编译失败
+set(CMAKE_CXX_EXTENSIONS ON) # 允许使用编译器扩展（比如GNU拓展）
+```
+
+#### 为特定目标设置 C++ 标准
 
 我们也可以通过设置编译目标属性来设置支持的 C++标准：
 
@@ -273,6 +361,36 @@ set_target_properties(myTarget PROPERTIES
     CXX_STANDARD_REQUIRED YES
     CXX_EXTENSIONS OFF
 )
+```
+
+或者使用 `target_compile_features`:
+
+```cmake
+# 设置 C 标准为 C11
+target_compile_features(myTarget PRIVATE c_std_11)
+```
+
+或者使用 `set_property`：
+
+```cmake
+# 设置 C++ 标准为 C++17
+set_property(TARGET myTarget PROPERTY CXX_STANDARD 17)
+set_property(TARGET myTarget PROPERTY CXX_STANDARD_REQUIRED ON)
+set_property(TARGET myTarget PROPERTY CXX_EXTENSIONS OFF)
+```
+
+#### 检查编译器支持的 C++ 标准
+
+我们可以使用 `check_cxx_compiler_flag` 检查编译器是否支持某个标准：
+
+```cmake
+include(CheckCXXCompilerFlag)
+check_cxx_compiler_flag(-std=c++17 HAS_CXX17)
+if (HAS_CXX17)
+    set(CMAKE_CXX_STANDARD 17)
+else()
+    message(WARNING "C++17 is not supported by the compiler")
+endif()
 ```
 
 ### 设置地址无关代码
