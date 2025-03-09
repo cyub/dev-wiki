@@ -23,7 +23,7 @@
 ## 通道（Channels）
 
 - 可以将其想象为一条水桶传递链  
-- 由 3 个部分组成：发送端、缓冲区、接收端  
+- 由 3 个部分组成：**发送端**、**缓冲区**、**接收端**  
 - 缓冲区是可选的
 
 ![](../../images/bucket_chain.png)
@@ -140,7 +140,7 @@ func Fanout(In <-chan int, OutA, OutB chan int) {
 }
 ```
 
-##### 扇入（Turnout）
+##### 分流（Turnout）
 
 ```go
 func Turnout(InA, InB <-chan int, OutA, OutB chan int) {
@@ -252,9 +252,11 @@ func Turnout(Quit <-chan int, InA, InB, OutA, OutB chan int) {
 
     1. **通道传递的是指针 `*Data`**，生产者和消费者都指向同一块内存。
     2. **数据竞争发生**：
-    - 生产者 `data.value = i` 在修改 `value` 后再发送指针。
-    - 但 **消费者此时可能已经在读取 `data.value`**，导致接收到的数据是不确定的。
+
+        - 生产者 `data.value = i` 在修改 `value` 后再发送指针。
+        - 但 **消费者此时可能已经在读取 `data.value`**，导致接收到的数据是不确定的。
     3. **可能导致消费者读取到的数据与发送的不一致**，例如：
+
     ```
     Sending: 0
     Sending: 1
@@ -262,6 +264,7 @@ func Turnout(Quit <-chan int, InA, InB, OutA, OutB chan int) {
     Sending: 2
     Received: 2
     ```
+
     这里，消费者本应按照 `0 -> 1 -> 2 ...` 顺序接收，但可能直接跳过某些值。
 
     ##### 正确示例：传递数据副本，而不是指针
@@ -564,9 +567,9 @@ func Turnout(Quit <-chan int, InA, InB, OutA, OutB chan int) {
     1. 不能简单用通道传递副本，因为数据是全局共享的。
     2. 需要使用 `sync.Mutex`、`sync.RWMutex` 或 `sync.Map` 进行同步：
 
-    - **`sync.Mutex`**：适用于 **读写均衡** 的情况。
-    - **`sync.RWMutex`**：适用于 **读多写少** 的情况。
-    - **`sync.Map`**：适用于 **高并发读写**，是 **无锁或少锁方案**。
+        - **`sync.Mutex`**：适用于 **读写均衡** 的情况。
+        - **`sync.RWMutex`**：适用于 **读多写少** 的情况。
+        - **`sync.Map`**：适用于 **高并发读写**，是 **无锁或少锁方案**。
     
 ## 互斥锁（Mutex）不是最佳解决方案
 
@@ -682,16 +685,15 @@ func (ts *TicketStore) Puts(s string) {
 
     - 每个资源或操作都应该有一个唯一的“所有者”或“处理者”。
     - 通过唯一性，避免竞争条件（Race Conditions），减少锁的使用，提高并发效率。
-
     - 典型的做法包括：
 
-    - **使用唯一 ID（如自增计数器、UUID）**
-    - **使用原子操作确保唯一性**
-    - **确保某个任务只有一个 goroutine 在处理**
+        - **使用唯一 ID（如自增计数器、UUID）**
+        - **使用原子操作确保唯一性**
+        - **确保某个任务只有一个 goroutine 在处理**
 
     ##### 示例：利用唯一性确保任务仅被一个 goroutine 处理
 
-    ###### 错误示例：多个 goroutine 可能同时处理同一个任务
+    **错误示例：多个 goroutine 可能同时处理同一个任务**
 
     ```go
     package main
@@ -745,7 +747,7 @@ func (ts *TicketStore) Puts(s string) {
 
     - 这里依赖 `sync.Mutex` 来保证任务的唯一性，但锁的开销较大，**每次获取任务时都要加锁**，可能会影响性能。
 
-    ###### 正确示例：利用原子操作和唯一性标识符
+    **正确示例：利用原子操作和唯一性标识符**
 
     改进方法：用 **`sync/atomic`** 确保任务只会被一个 goroutine 处理，而不需要锁。
 
@@ -795,7 +797,7 @@ func (ts *TicketStore) Puts(s string) {
     }
     ```
 
-    ###### 为什么这段代码更优？
+    **为什么这段代码更优？**
 
     1. **利用 `atomic.AddInt64` 生成唯一的任务索引**，避免竞争条件。
     2. **无锁（Lock-Free）方案**，比 `sync.Mutex` 版本性能更高，减少锁竞争。
@@ -803,12 +805,13 @@ func (ts *TicketStore) Puts(s string) {
 
     ##### 总结
 
-    **利用并强化唯一性**，就是在并发环境下确保某些资源、任务或数据只有一个 goroutine 访问或修改。  
+    **利用并强化唯一性**，就是在并发环境下确保某些资源、任务或数据只有一个 goroutine 访问或修改。
+
     - **用原子操作生成唯一 ID（如 `atomic.AddInt64`）** 来确保任务唯一性。  
     - **减少锁的使用，提高并发性能**。  
     - **确保任务不会被多个 goroutine 重复处理**，避免竞争条件（Race Conditions）。
 
-??? "“有时可以利用**位运算**来解决问题”，这句话如何理解？"
+!!! note "“有时可以利用**位运算**来解决问题”，这句话如何理解？"
 
     #### 📝 如何理解“有时可以利用位运算来解决问题”？
 
@@ -882,14 +885,16 @@ func (ts *TicketStore) Puts(s string) {
         - `WRITING = 0100`
     
     2. **使用 `atomic.OrInt32(&r.state, newState)` 来设置状态**：
-    - `OR` 操作（`|`）可以在不影响其他位的情况下 **打开某个状态位**。
+    
+        - `OR` 操作（`|`）可以在不影响其他位的情况下 **打开某个状态位**。
 
     3. **使用 `atomic.AndInt32(&r.state, ^oldState)` 来清除状态**：
-    - `AND` 操作（`&`）结合 `^` 取反，可以 **只清除特定的状态位，而不影响其他位**。
+    
+        - `AND` 操作（`&`）结合 `^` 取反，可以 **只清除特定的状态位，而不影响其他位**。
 
     4. **使用 `atomic.LoadInt32(&r.state)&checkState != 0` 来检查状态**：
 
-    - `AND` 操作（`&`）可以检测某个位是否被设置。
+        - `AND` 操作（`&`）可以检测某个位是否被设置。
 
     ##### 为什么这样做？
 
