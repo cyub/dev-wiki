@@ -234,6 +234,7 @@ nav:
         - 文本: course/c_c++.md
       - Go:
         - 视频: video/Go.md
+        - "Go 并发模式 - 资源合集": course/go.md
       - Rust: course/rust.md
       - 数据库:
         - 视频: video/Database.md
