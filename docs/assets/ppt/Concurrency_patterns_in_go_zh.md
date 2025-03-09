@@ -267,6 +267,25 @@ func (ts *TicketStore) GetDone() []string {
 }
 ```
 
+### 调试非阻塞代码
+
+- 我称之为 “**指令指针游戏**”（The Instruction Pointer Game）。
+- 规则如下：
+    - 打开 **两个窗口**（即两个 Goroutine），它们运行相同的代码。
+    - 你有 **一个指令指针**，它会依次执行你的代码。
+    - 你可以在 **任何一条指令** 处 **切换** 窗口（即在不同 Goroutine 之间切换执行顺序）。
+    - **观察** 变量的值，查找可能发生的数据竞争（Race Condition）。
+
+### 调试以排除故障
+
+```go
+func (ts *TicketStore) Puts(s string) {
+    ticket := atomic.AddUint64(ts.next, 1) -1
+    slots[ticket] = s
+    atomic.AddUint64(ts.done, 1)
+}
+```
+
 ## 并发实战
 
 - **避免阻塞，避免竞争**  
