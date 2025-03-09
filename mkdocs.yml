@@ -9,7 +9,7 @@ repo_url: https://github.com/cyub/dev-wiki
 edit_uri: edit/main/docs/
 
 # Copyright
-copyright: Copyright &copy; 2023 - 2024 Tink
+copyright: Copyright &copy; 2023 - 2025 Tink
 
 # Configuration
 theme:
@@ -127,8 +127,7 @@ markdown_extensions:
       permalink: true
   - pymdownx.arithmatex:
       generic: true
-  - pymdownx.betterem:
-      smart_enable: all
+  - pymdownx.betterem
   - pymdownx.caret
   - pymdownx.details
   - pymdownx.emoji:
@@ -240,7 +239,9 @@ nav:
         - 视频: video/Database.md
       - 更多: course/more.md
     - PPT:
-      - Go语言简介: assets/ppt/Golang简介.pdf
+      - Go:
+        - Go语言简介: assets/ppt/Golang简介.pdf
+        - "Concurrency patterns in go": assets/ppt/Concurrency_patterns_in_go.md
     - CheatSheet:
       - Makefile: cheatsheet/makefile.md
       - GDB: cheatsheet/gdb.md
