@@ -265,6 +265,254 @@ udpcli01: $(lib_objects) src/chap8/udpcli01.c dg_cli.o
 	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $@
 ```
 
+### 单个主文件
+
+项目结构如下：
+
+```css
+project/
+├── main.c
+├── Makefile
+```
+
+Makefile 示例：
+
+```makefile
+# 编译器
+CC = gcc
+
+# 编译选项
+CFLAGS = -Wall -Wextra -std=c11 -O2
+
+# 目标文件和最终可执行文件
+TARGET = main
+SRC = main.c
+
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	$(CC) $(CFLAGS) -o $(TARGET) $(SRC)
+
+clean:
+	rm -f $(TARGET)
+
+.PHONY: all clean
+```
+
+### 多个源文件
+
+项目结构如下：
+
+```css
+project/
+├── main.c
+├── utils.c
+├── utils.h
+├── Makefile
+```
+
+Makefile 示例：
+
+```makefile
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c11 -O2
+
+TARGET = app
+OBJS = main.o utils.o
+
+# 默认目标
+all: $(TARGET)
+
+# 链接
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+# 编译每个 .c 文件为 .o
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# 清理
+clean:
+	rm -f *.o $(TARGET)
+
+.PHONY: all clean
+```
+
+自动识别所有 .c 文件的 Makefile 的示例：
+
+```makefile
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c11 -O2
+
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
+TARGET = app
+
+all: $(TARGET)
+
+$(TARGET): $(OBJ)
+	$(CC) $(CFLAGS) -o $@ $^
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f *.o $(TARGET)
+
+.PHONY: all clean
+```
+
+### 支持模块库 + 安装 + 测试
+
+项目结构如下：
+
+```css
+your_project/
+├── Makefile
+├── src/
+│   ├── main.c
+│   ├── libmath/
+│   │   ├── math.c
+│   │   └── math.h
+│   ├── libnet/
+│   │   ├── net.c
+│   │   └── net.h
+├── include/
+│   └── common.h         # 通用头文件（可选）
+├── test/
+│   └── test_math.c
+├── build/               # 自动生成
+```
+
+Makefile 示例：
+
+```makefile
+# 编译器和选项
+CC := gcc
+AR := ar
+CFLAGS := -Wall -Wextra -fPIC -Iinclude
+LDFLAGS :=
+DEBUG_FLAGS := -g
+RELEASE_FLAGS := -O2
+
+SRC_DIR := src
+BUILD_DIR := build
+DEP_DIR := $(BUILD_DIR)/deps
+LIB_DIR := $(BUILD_DIR)/lib
+TEST_DIR := test
+INSTALL_PREFIX := /usr/local
+
+TARGET := $(BUILD_DIR)/app
+
+# 控制链接类型（默认静态）
+LINK_TYPE ?= static  # 可选 static / shared
+
+# 源文件
+MATH_SRC := $(wildcard $(SRC_DIR)/libmath/*.c)
+NET_SRC := $(wildcard $(SRC_DIR)/libnet/*.c)
+MAIN_SRC := $(filter-out $(MATH_SRC) $(NET_SRC), $(shell find $(SRC_DIR) -name '*.c'))
+
+# 对应 .o 文件
+MATH_OBJ := $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(MATH_SRC))
+NET_OBJ := $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(NET_SRC))
+MAIN_OBJ := $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(MAIN_SRC))
+
+# .a/.so 输出路径
+MATH_STATIC := $(LIB_DIR)/libmath.a
+NET_STATIC := $(LIB_DIR)/libnet.a
+MATH_SHARED := $(LIB_DIR)/libmath.so
+NET_SHARED := $(LIB_DIR)/libnet.so
+
+# 默认构建
+all: release
+
+release: CFLAGS += $(RELEASE_FLAGS)
+release: $(TARGET)
+
+debug: CFLAGS += $(DEBUG_FLAGS)
+debug: $(TARGET)
+
+# 主程序链接
+$(TARGET): $(MAIN_OBJ) $(MATH_LIB) $(NET_LIB)
+	@mkdir -p $(BUILD_DIR)
+ifeq ($(LINK_TYPE),shared)
+	$(CC) $(CFLAGS) $^ -L$(LIB_DIR) -lmath -lnet -o $@ $(LDFLAGS) -Wl,-rpath=$(LIB_DIR)
+else
+	$(CC) $(CFLAGS) $^ -o $@
+endif
+	@echo "✅ Linked: $@ (LINK_TYPE=$(LINK_TYPE))"
+
+# 模块构建静态库
+$(MATH_STATIC): $(MATH_OBJ)
+	@mkdir -p $(LIB_DIR)
+	$(AR) rcs $@ $@
+
+$(NET_STATIC): $(NET_OBJ)
+	@mkdir -p $(LIB_DIR)
+	$(AR) rcs $@ $@
+
+# 模块构建动态库
+$(MATH_SHARED): $(MATH_OBJ)
+	@mkdir -p $(LIB_DIR)
+	$(CC) -shared $^ -o $@
+
+$(NET_SHARED): $(NET_OBJ)
+	@mkdir -p $(LIB_DIR)
+	$(CC) -shared $^ -o $@
+
+# 模块输出选择（静态或动态）
+ifeq ($(LINK_TYPE),shared)
+MATH_LIB := $(MATH_SHARED)
+NET_LIB  := $(NET_SHARED)
+else
+MATH_LIB := $(MATH_STATIC)
+NET_LIB  := $(NET_STATIC)
+endif
+
+# 依赖
+ALL_SRCS := $(MATH_SRC) $(NET_SRC) $(MAIN_SRC)
+DEPS := $(patsubst $(SRC_DIR)/%.c, $(DEP_DIR)/%.d, $(ALL_SRCS))
+
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(dir $@) $(dir $(DEP_DIR)/$*.d)
+	$(CC) $(CFLAGS) -MMD -MF $(DEP_DIR)/$*.d -c $< -o $@
+
+-include $(DEPS)
+
+# 安装
+install:
+	@mkdir -p $(INSTALL_PREFIX)/bin
+	@mkdir -p $(INSTALL_PREFIX)/include
+	cp $(TARGET) $(INSTALL_PREFIX)/bin/
+	cp -r src/libmath/*.h src/libnet/*.h include/* $(INSTALL_PREFIX)/include/
+ifeq ($(LINK_TYPE),shared)
+	cp $(MATH_LIB) $(NET_LIB) $(INSTALL_PREFIX)/lib/
+else
+	cp $(MATH_LIB) $(NET_LIB) $(INSTALL_PREFIX)/lib/
+endif
+	@echo "✅ Installed to $(INSTALL_PREFIX)"
+
+# 测试
+test: $(TARGET)
+	@echo "🧪 Running test cases..."
+	@for file in $(wildcard $(TEST_DIR)/*.c); do \
+		obj=$$(basename $$file .c); \
+		$(CC) $(CFLAGS) -c $$file -o $(BUILD_DIR)/$$obj.o; \
+		if [ "$(LINK_TYPE)" = "shared" ]; then \
+			$(CC) $(BUILD_DIR)/$$obj.o -L$(LIB_DIR) -lmath -lnet -Wl,-rpath=$(LIB_DIR) -o $(BUILD_DIR)/$$obj; \
+		else \
+			$(CC) $(BUILD_DIR)/$$obj.o $(MATH_LIB) $(NET_LIB) -o $(BUILD_DIR)/$$obj; \
+		fi; \
+		./$(BUILD_DIR)/$$obj || exit 1; \
+	done
+
+clean:
+	rm -rf $(BUILD_DIR)
+	@echo "🧹 Cleaned build directory."
+
+.PHONY: all release debug clean install test
+```
+
 ## 进一步阅读
 
 - [isaacs's Makefile](https://gist.github.com/isaacs/62a2d1825d04437c6f08)
