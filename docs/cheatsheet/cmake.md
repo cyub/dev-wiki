@@ -118,7 +118,8 @@ target_link_libraries(another PUBLIC one) # 语法：目标名，依赖项类型
 ### 添加头文件搜索路径
 
 ```cmake
-include_directories(${PROJECT_SOURCE_DIR}) # 为整个项目添加头文件搜索路径
+# include_directories是一个全局命令，用于为整个CMakeLists.txt文件中的所有目标添加头文件搜索路径。
+include_directories(${PROJECT_SOURCE_DIR})
 target_include_directories(myTarget PRIVATE
   ${PROJECT_SOURCE_DIR}/include
   external/include
@@ -193,6 +194,7 @@ CMake 中已经有一些预置的变量，像 CMAKE_BUILD_TYPE 就是一个内�
 |  **CMAKE_CXX_STANDARD** |  设置C++标准版本 |  编译控制 | 
 |  **CMAKE_CXX_STANDARD_REQUIRED**  |  是否要求指定C++标准版本 |  编译控制 | 
 |  **CMAKE_CXX_EXTENSIONS** |  是否允许C++的扩展特性 |  编译控制 | 
+| **CMAKE_TOOLCHAIN_FILE** | 用于指定交叉编译工具链文件的路径 | 编译控制
 
 ### 动态创建配置文件
 
@@ -651,7 +653,6 @@ cmake --build build --target install
 cmake --install build # CMake 3.15+ only
 ```
 
-
 ### 设置选项
 
 在 CMake 中，你可以使用 -D 设置选项。你能使用 -L 列出所有选项，或者用 -LH 列出人类更易读的选项列表。如果你没有列出源代码目录或构建目录，这条命令将不会重新运行 CMake（使用 cmake -L 而不是 cmake -L .）。
@@ -668,6 +669,7 @@ CMake 支持缓存选项。CMake 中的变量可以被标记为 "cached"，这�
     - Release: 关闭调试信息，启用更高级别的优化，用于生成发布版本的软件。
     - RelWithDebInfo: 同时包含发布版优化和调试信息，适用于需要优化性能但也需要调试信息的场景。
     - MinSizeRel: 最小化生成的可执行文件或库的大小，通常用于需要最小化部署体积的场景。
+
 - CMAKE_INSTALL_PREFIX：用于指定安装位置。UNIX 系统默认的位置是 /usr/local，用户目录是 ~/.local
 - BUILD_SHARED_LIBS： 用于控制共享库的默认值，值为 ON 或者 OFF。值为 ON 时默认生成动态库，否则生成静态库。
 - BUILD_TESTING: 用于设置启用测试的通用名称
