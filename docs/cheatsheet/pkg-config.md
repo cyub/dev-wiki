@@ -6,7 +6,7 @@
 
 ## 如何使用 `pkg-config`
 
-###  查询库的编译和链接标志
+### 查询库的编译和链接标志
 
 使用`pkg-config`查询库的编译和链接标志是最常见的用途。例如，如果你想使用`libopus`库，你可以使用以下命令来获取编译和链接标志：
 
@@ -23,14 +23,14 @@ pkg-config --cflags --libs opus
 这些标志可以直接在编译命令中使用。
 
 ### 编译程序
+
 当你编译程序时，可以将`pkg-config`的输出直接嵌入到编译命令中。例如：
 
 ```bash
-gcc `pkg-config --cflags --libs opus` -o myprogram myprogram.c
+gcc myprogram.c `pkg-config --cflags --libs opus` -o myprogram
 ```
 
 这个命令会编译一个名为`myprogram`的程序，并且链接`libopus`库。
-
 
 如果使用`Makefile`时候，可以通过`pkg-config`动态获取参数：
 
@@ -57,6 +57,7 @@ import "C"
 ```
 
 ### 安装和使用.pc文件
+
 如果你正在开发一个库，并且想要让其他程序能够使用`pkg-config`来链接你的库，你需要创建一个`.pc`文件。这个文件通常包含以下内容：
 
 ```ini
@@ -99,7 +100,7 @@ Cflags: -I${includedir}/opus
 
 在Linux系统中，`.pc`文件的标准位置通常是以下几个目录之一：
     
-1. `/usr/lib/pkgconfig`：这是系统默认的库文件搜索路径之一，通常用于存放系统级库的`.pc`文件  。
+1. `/usr/lib/pkgconfig`：这是系统默认的库文件搜索路径之一，通常用于存放系统级库的`.pc`文件 。
 2. `/usr/share/pkgconfig`：这是另一个系统默认的库文件搜索路径，同样用于存放库的`.pc`文件。
 3. `/usr/local/lib/pkgconfig`：当库被安装在`/usr/local`目录下时，相应的`.pc`文件也会存放在这个路径下 。
 4. `/usr/lib/x86_64-linux-gnu/pkgconfig`：在某些系统上，特别是64位系统，`.pc`文件可能会存放在这个路径下 。

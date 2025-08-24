@@ -250,6 +250,7 @@ nav:
       - Katex: cheatsheet/KaTex常用公式编辑.ipynb
       - "PKG-CONFIG": cheatsheet/pkg-config.md
       - 九大命名规则: cheatsheet/九大命名规则.md
+      - vcpkg: cheatsheet/vcpkg.md
   - QA:
     - redis: qa/redis.md
     - mysql: qa/mysql.md
